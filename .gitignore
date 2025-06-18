@@ -1,0 +1,71 @@
+# ==============================
+# Python
+# ==============================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+.env.*
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Test / coverage
+.htmlcov/
+.coverage
+.pytest_cache/
+
+# ==============================
+# Lean 4 / Lake
+# ==============================
+# Lake build artifacts
+.lake/
+lake-packaging/
+
+# Compiled object files
+lean/src/**/*.olean
+
+# Si usas un directorio de build distinto:
+build/
+target/
+
+# ==============================
+# Datos y resultados intermedios
+# ==============================
+# Sólo versionar datos brutos; ignorar procesados
+data/processed/
+
+# ==============================
+# Documentación
+# ==============================
+docs/_build/
+
+# ==============================
+# Archivos de sistema
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.swp
+*~
+
+# ==============================
+# Logs y temporales
+# ==============================
+logs/
+*.log
