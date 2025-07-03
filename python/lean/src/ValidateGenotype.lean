@@ -1,99 +1,97 @@
-import ServiceMetrics
+-- file: lean/ValidateGenotype/src/ValidateGenotype.lean
+
 import Std.Data.Json
+import ServiceMetrics
 
 open Lean.Json
 open ServiceMetrics
 
-/-- LECTURA DE ARGUMENTOS, JSON Y DECODIFICACIÓN --/
-def readJson (path : String) : IO (Except String Json) := do
-  let txt ← IO.FS.readFile path
-  match Json.parse txt with
-  | Except.ok j  => pure (Except.ok j)
-  | Except.error e => pure (Except.error s!"JSON parse error: {e}")
+/-- Decodificar un ServiceMetrics.Operation desde JSON --/
+partial def decodeOperation (j : Json) : Except String Operation := do
+  let obj    ← j.getObj?      | Except.error "Operation no es un objeto"
+  let nm     ← obj.getStrVal? "name"
+  let arr    ← obj.getArrVal? "params"
+  let ps     ← arr.toList.mapM fun p => p.getStr? |>.mapError (fun _ => "Parámetro no es string")
+  pure { name := nm, params := ps }
 
-def decodeJson {α : Type} [FromJson α] (j : Json) : Except String α :=
-  match fromJson? j with
-  | Except.ok x  => Except.ok x
-  | Except.error e => Except.error s!"JSON decode error: {e}"
+/-- Decodificar un ServiceMetrics.Service (sin el campo name) --/
+partial def decodeService (j : Json) : Except String Service := do
+  let obj ← j.getObj?                | Except.error "Service no es un objeto"
+  let nm  ← obj.getStrVal? "name"
+  let arr ← obj.getArrVal? "operations"
+  let ops ← arr.toList.mapM decodeOperation
+  pure { name := nm, ops := ops }
 
-/-- ESTRUCTURAS LOCALES REFLEJANDO TU GENOTIPO JSON --/
-structure Call where
-  from : String
-  to   : String
+/-- Decodificar un ServiceMetrics.Call desde JSON --/
+partial def decodeCall (j : Json) : Except String Call := do
+  let obj ← j.getObj?    | Except.error "Call no es un objeto"
+  let fr  ← obj.getStrVal? "from"
+  let to_ ← obj.getStrVal? "to"
+  pure { from := fr, to := to_ }
 
-instance : FromJson Call where
-  fromJson? j := do
-    let o ← j.asObj?
-    let fm ← o.get? "from" |>.andThen Json.getStr?
-    let to ← o.get? "to"   |>.andThen Json.getStr?
-    pure ⟨fm, to⟩
-
-structure Operation where
-  name   : String
-  params : List String
-
-instance : FromJson Operation where
-  fromJson? j := do
-    let o    ← j.asObj?
-    let nm   ← o.get? "name"   |>.andThen Json.getStr?
-    let arr  ← o.get? "params" |>.andThen Json.getArr?
-    let ps   ← arr.mapM Json.getStr?
-    pure ⟨nm, ps⟩
-
-structure Service where
-  name       : String
-  operations : List Operation
-
-instance : FromJson Service where
-  fromJson? j := do
-    let o   ← j.asObj?
-    let nm  ← o.get? "name"       |>.andThen Json.getStr?
-    let arr ← o.get? "operations" |>.andThen Json.getArr?
-    let ops ← arr.mapM fromJson?
-    pure ⟨nm, ops⟩
-
+/-- Estructura completa del genotipo --/
 structure Genotype where
   services : List Service
   calls    : List Call
 
-instance : FromJson Genotype where
-  fromJson? j := do
-    let o   ← j.asObj?
-    let svs ← o.get? "services" |>.andThen Json.getArr? |>.andThen fun arr => arr.mapM fromJson?
-    let cs  ← o.get? "calls"    |>.andThen Json.getArr? |>.andThen fun arr => arr.mapM fromJson?
-    pure ⟨svs, cs⟩
+/-- Decodificar todo el Genotype --/
+partial def decodeGenotype (j : Json) : Except String Genotype := do
+  let servicesJ ← j.getArrVal? "services"
+  let services  ← servicesJ.toList.mapM decodeService
+  let callsJ    ← j.getArrVal? "calls"
+  let calls     ← callsJ.toList.mapM decodeCall
+  pure { services := services, calls := calls }
 
-/-- PROGRAMA PRINCIPAL: LEE, DECODIFICA Y CHEQUEA INVARIANTES --/
-def main : IO UInt32 := do
-  let args ← IO.getArgs
-  if args.size ≠ 1 then
-    IO.eprintln "Uso: verifyGenotype <ruta-json>"
+/-- Chequea todas tus invariantes --/
+def validateGenotype (gt : Genotype) : Except String Unit := do
+  -- 1) No self-calls
+  for c in gt.calls do
+    if c.from = c.to then throw s!"Self-call detectada: {c.from}"
+
+  -- 2) Sólo llamadas entre servicios declarados
+  let names := gt.services.map (·.name)
+  for c in gt.calls do
+    if !names.contains c.from then throw s!"Llamada desde no declarado: {c.from}"
+    if !names.contains c.to   then throw s!"Llamada hacia no declarado: {c.to}"
+
+  -- 3) Cohesión mínima
+  for svc in gt.services do
+    if LCOM svc > 0.8 then
+      throw s!"'{svc.name}': LCOM = {LCOM svc} > 0.8"
+
+  -- 4) Acoplamiento máximo (fan-out ≤ servicios−1)
+  let maxTargets := gt.services.length - 1
+  for svc in gt.services do
+    let co := coupling svc.name gt.calls
+    if co > maxTargets then
+      throw s!"'{svc.name}': CouplingOut = {co} > {maxTargets}"
+
+  -- 5) Granularidad media
+  for svc in gt.services do
+    let g := SGM svc
+    if g > 2.5 then
+      throw s!"'{svc.name}': SGM = {g} > 2.5"
+
+  pure ()
+
+/-- Entry point del ejecutable --/
+@[entryPoint]
+def main (args : List String) : IO UInt32 := do
+  match args with
+  | [filePath] =>
+    match Json.parse? (← IO.FS.readFile filePath) with
+    | Except.error err =>
+      IO.eprintln s!"[Lean] JSON inválido: {err}"; return 1
+    | Except.ok j =>
+      match decodeGenotype j with
+      | Except.error err =>
+        IO.eprintln s!"[Lean] Error decodificando: {err}"; return 1
+      | Except.ok gt =>
+        match validateGenotype gt with
+        | Except.error msg =>
+          IO.eprintln s!"[Lean] Falló invariante: {msg}"; return 1
+        | Except.ok _ =>
+          IO.println "OK"; return 0
+  | _ =>
+    IO.eprintln "Uso: verifyGenotype <genotype.json>"
     return 1
-
-  match ← readJson args[0] with
-  | Except.error e =>
-    IO.eprintln e; return 1
-  | Except.ok j =>
-    match decodeJson (j : Json) with
-    | Except.error e =>
-      IO.eprintln e; return 1
-    | Except.ok gt =>
-      -- 1) cohesion mínima
-      for svc in gt.services do
-        if LCOM svc > 0.8 then
-          IO.eprintln s!"❌ {svc.name}: LCOM = {LCOM svc} > 0.8"
-          return 1
-      -- 2) variabilidad de granularidad
-      for svc in gt.services do
-        if sgmSd svc > 0.5 then
-          IO.eprintln s!"❌ {svc.name}: SGM-σ = {sgmSd svc} > 0.5"
-          return 1
-      -- 3) acoplamiento máximo
-      for svc in gt.services do
-        let co := couplingOut svc.name gt.calls
-        if co > 10 then
-          IO.eprintln s!"❌ {svc.name}: CouplingOut = {co} > 10"
-          return 1
-      -- si llegó hasta aquí, todo OK
-      IO.println "OK"
-      return 0
