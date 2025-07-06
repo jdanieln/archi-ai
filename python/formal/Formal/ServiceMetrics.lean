@@ -1,80 +1,106 @@
 /-
-lean/src/ServiceMetrics.lean
+ServiceMetrics.lean
 
-Define operaciones y servicios, métricas LCOM, SGM, NOO, couplingOut y
-sgmSd (desviación estándar de SGM_op), usando exclusivamente mathlib4.
+Define operaciones, servicios y métricas:
+  • LCOM
+  • SGM (y SGM_op)
+  • NOO
+  • couplingOut
+  • sgmSd
+
+Usa exclusivamente Mathlib4.
 -/
-import Mathlib.Data.Real.Basic      -- Real, ℝ, sqrt
-import Mathlib.Data.List.Basic      -- List.bind, List.foldl, List.map, List.filter
-import Mathlib.Data.List.Lemmas      -- eraseDups
+import Mathlib.Data.Real.Basic   -- Real, ℝ
+import Mathlib.Data.Real.Sqrt    -- Real.sqrt
+import Mathlib.Data.List.Basic   -- List.flatMap, List.foldl, List.map, List.filter
+import Mathlib.Data.List.Lemmas  -- List.eraseDups
 
 namespace ServiceMetrics
 
-def Param := String
+open List
 
+/-- Una operación: nombre y lista de parámetros. -/
 structure Operation where
   name   : String
-  params : List Param
+  params : List String
 
+/-- Un servicio: nombre y lista de operaciones. -/
 structure Service where
   name : String
   ops  : List Operation
 
 /-- M(s): número de operaciones. -/
-def M (s : Service) : Nat := s.ops.length
+def M (s : Service) : Nat :=
+  s.ops.length
 
 /-- F(s): número de parámetros distintos. -/
-def F (s : Service) : Nat := (s.ops.bind (·.params)).eraseDups.length
+def F (s : Service) : Nat :=
+  (s.ops.flatMap (fun o => o.params)).eraseDups.length
 
-/-- MF(s): suma total de parámetros. -/
-def MF (s : Service) : Nat := s.ops.foldl (fun acc o => acc + o.params.length) 0
+/-- MF(s): suma total de ocurrencias de parámetros. -/
+def MF (s : Service) : Nat :=
+  s.ops.foldl (fun acc o => acc + o.params.length) 0
 
-/-- LCOM normalizado. -/
-def LCOM (s : Service) : Real :=
-  if s.M = 0 ∨ s.F = 0 then 1 else
-    1 - (MF s : Real) / Real.ofNat (s.M * s.F)
+/-- LCOM(s): 1 − MF/(M · F), o 1 si M=0 ∨ F=0. -/
+noncomputable def LCOM (s : Service) : Real :=
+  if M s = 0 ∨ F s = 0 then
+    1
+  else
+    1 - (MF s : Real) / (↑(M s * F s) : Real)
 
-/-- Peso CRUD. -/
+/-- Peso CRUD para granularidad funcional. -/
 def crudWeight : String → Real
-  | "create" := 4
-  | "update" := 3
-  | "delete" := 2
-  | _        := 1
+  | "create" => 4
+  | "update" => 3
+  | "delete" => 2
+  | _        => 1
 
-/-- FGS: granularidad funcional de una operación. -/
-def FGS (s : Service) (o : Operation) : Real := crudWeight o.name
+/-- FGS(s, o): granularidad funcional de la operación. -/
+def FGS (s : Service) (o : Operation) : Real :=
+  crudWeight o.name
 
-/-- DGS: granularidad de datos (|params|/F). -/
-def DGS (s : Service) (o : Operation) : Real :=
-  if s.F = 0 then 0 else (o.params.length : Real) / Real.ofNat (s.F)
+/-- DGS(s, o): granularidad de datos = |params| / F(s). -/
+noncomputable def DGS (s : Service) (o : Operation) : Real :=
+  if F s = 0 then 0 else (↑ o.params.length) / (↑ (F s) : Real)
 
-/-- SGM_op: granularidad combinada. -/
-def SGM_op (s : Service) (o : Operation) : Real := (FGS s o + DGS s o) / 2
+/-- SGM_op(s, o): granularidad combinada por operación. -/
+def SGM_op (s : Service) (o : Operation) : Real :=
+  (FGS s o + DGS s o) / 2
 
-/-- SGM: promedio de SGM_op. -/
-def SGM (s : Service) : Real :=
-  if s.M = 0 then 0 else (s.ops.foldl (fun acc o => acc + SGM_op s o) 0) / Real.ofNat (s.M)
+/-- SGM(s): promedio de SGM_op sobre todas las operaciones. -/
+noncomputable def SGM (s : Service) : Real :=
+  if M s = 0 then
+    0
+  else
+    (s.ops.foldl (fun acc o => acc + SGM_op s o) 0) / (↑(M s) : Real)
 
-/-- NOO: número de operaciones. -/
-def NOO (s : Service) : Nat := s.M
+/-- NOO(s): número de operaciones. -/
+def NOO (s : Service) : Nat :=
+  M s
 
 end ServiceMetrics
 
 open ServiceMetrics
+open List
 
-/-- Una llamada RPC. -/
+/-- Una llamada RPC entre servicios. -/
 structure Call where
-  from : String
-  to   : String
+  caller : String
+  callee : String
 
-/-- CouplingOut: destinos distintos a los que llama svcName. -/
+/-- couplingOut svcName calls: destinos distintos a los que llama svcName. -/
 def couplingOut (svcName : String) (calls : List Call) : Nat :=
-  (calls.filter (·.from = svcName)).map (·.to).eraseDups.length
+  (calls.filter (fun c => c.caller == svcName))
+        .map    (fun c => c.callee)
+        .eraseDups
+        .length
 
-/-- sgmSd: desviación estándar de SGM_op. -/
-def sgmSd (s : Service) : Real :=
-  if s.ops.isEmpty then 0 else
-    let xs  := s.ops.map (SGM_op s)
-    let μ   := xs.foldl (· + ·) 0 / Real.ofNat s.ops.length
-    let var := xs.foldl (fun acc x => acc + (x - μ) ^ 2) 0 / Real.ofNat s.ops.length
-    Real.sqrt var
+/-- sgmSd(s): desviación estándar de SGM_op en el servicio. -/
+noncomputable def sgmSd (s : ServiceMetrics.Service) : Real :=
+  if s.ops.isEmpty then
+    0
+  else
+    let xs   := s.ops.map (fun o => ServiceMetrics.SGM_op s o)
+    let μ    := xs.foldl (· + ·) 0 / (↑ xs.length : Real)
+    let varₓ := xs.foldl (fun acc x => acc + (x - μ) ^ 2) 0 / (↑ xs.length : Real)
+    Real.sqrt varₓ
