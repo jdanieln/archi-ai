@@ -3,16 +3,12 @@ open Lake DSL
 
 package «alpha_pipeline» {
   srcDir := "Formal"
-  -- Mantenemos esto para evitar problemas de caché, por si acaso.
-  leanOptions := #[
-    ⟨`build.noCache, true⟩
-  ]
 }
 
 -- Dependencias alineadas con Lean 4.22.0-rc3 (usando 'main' para la última compatibilidad)
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git"
-  @ "main" -- La rama 'main' de Mathlib suele estar alineada con la última RC/estable de Lean
+  @ "master" -- La rama 'main' de Mathlib suele estar alineada con la última RC/estable de Lean
 
 require aesop from git
   "https://github.com/leanprover-community/aesop"

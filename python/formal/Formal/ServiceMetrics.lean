@@ -6,7 +6,7 @@ Define operaciones, servicios y métricas:
   • SGM (y SGM_op)
   • NOO
   • couplingOut
-  • sgmSd
+• sgmSd
 
 Usa exclusivamente Mathlib4.
 -/
@@ -68,7 +68,7 @@ def SGM_op (s : Service) (o : Operation) : Real :=
   (FGS s o + DGS s o) / 2
 
 /-- SGM(s): promedio de SGM_op sobre todas las operaciones. -/
-noncomputable def SGM (s : Service) : Real :=
+noncomputable def SGM (s : Service) : Real := -- <<<<< CORRECCIÓN 1: 'noncomputable' AÑADIDO
   if M s = 0 then
     0
   else
@@ -90,7 +90,7 @@ structure Call where
 
 /-- couplingOut svcName calls: destinos distintos a los que llama svcName. -/
 def couplingOut (svcName : String) (calls : List Call) : Nat :=
-  (calls.filter (fun c => c.caller == svcName))
+  (List.filter (fun c => c.caller == svcName) calls) -- <<<<< CORRECCIÓN 2: `List.filter Predicado Lista`
         .map    (fun c => c.callee)
         .eraseDups
         .length
