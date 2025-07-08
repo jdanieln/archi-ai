@@ -14,6 +14,7 @@ import Mathlib.Data.Real.Basic   -- Real, ℝ
 import Mathlib.Data.Real.Sqrt    -- Real.sqrt
 import Mathlib.Data.List.Basic   -- List.flatMap, List.foldl, List.map, List.filter
 import Mathlib.Data.List.Lemmas  -- List.eraseDups
+open Std                         -- trae al scope las extensiones `xs.filter`, `xs.map`, `xs.eraseDups`, etc.
 
 namespace ServiceMetrics
 
@@ -64,11 +65,11 @@ noncomputable def DGS (s : Service) (o : Operation) : Real :=
   if F s = 0 then 0 else (↑ o.params.length) / (↑ (F s) : Real)
 
 /-- SGM_op(s, o): granularidad combinada por operación. -/
-def SGM_op (s : Service) (o : Operation) : Real :=
+noncomputable def SGM_op (s : Service) (o : Operation) : Real :=
   (FGS s o + DGS s o) / 2
 
 /-- SGM(s): promedio de SGM_op sobre todas las operaciones. -/
-noncomputable def SGM (s : Service) : Real := -- <<<<< CORRECCIÓN 1: 'noncomputable' AÑADIDO
+noncomputable def SGM (s : Service) : Real :=
   if M s = 0 then
     0
   else
@@ -90,10 +91,11 @@ structure Call where
 
 /-- couplingOut svcName calls: destinos distintos a los que llama svcName. -/
 def couplingOut (svcName : String) (calls : List Call) : Nat :=
-  (List.filter (fun c => c.caller == svcName) calls) -- <<<<< CORRECCIÓN 2: `List.filter Predicado Lista`
-        .map    (fun c => c.callee)
-        .eraseDups
-        .length
+  List.length <|
+    List.eraseDups <|
+    List.map (fun c => c.callee) <|
+    List.filter (fun c => c.caller == svcName) calls
+
 
 /-- sgmSd(s): desviación estándar de SGM_op en el servicio. -/
 noncomputable def sgmSd (s : ServiceMetrics.Service) : Real :=
