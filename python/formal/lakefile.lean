@@ -1,8 +1,8 @@
 import Lake
 open Lake DSL
 
-package «alpha_pipeline» {
-  srcDir := "Formal"
+package «archi-validator» {
+  srcDir := "."
 }
 
 require mathlib from git
