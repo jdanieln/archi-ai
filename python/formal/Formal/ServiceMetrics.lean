@@ -1,23 +1,10 @@
-/-
-ServiceMetrics.lean
+-- Formal/ServiceMetrics.lean
 
-Define operaciones, servicios y métricas:
-  • LCOM
-  • SGM (y SGM_op)
-  • NOO
-  • couplingOut
-• sgmSd
-
-Usa exclusivamente Mathlib4.
--/
-import Mathlib.Data.Real.Basic   -- Real, ℝ
-import Mathlib.Data.Real.Sqrt    -- Real.sqrt
-import Mathlib.Data.List.Basic   -- List.flatMap, List.foldl, List.map, List.filter
-import Mathlib.Data.List.Lemmas  -- List.eraseDups
-open Std                         -- trae al scope las extensiones `xs.filter`, `xs.map`, `xs.eraseDups`, etc.
-
-namespace ServiceMetrics
-
+import Mathlib.Data.Real.Basic    -- Real, ℝ
+import Mathlib.Data.Real.Sqrt     -- Real.sqrt
+import Mathlib.Data.List.Basic    -- List.flatMap, List.foldl, List.map, List.filter
+import Mathlib.Data.List.Lemmas   -- List.eraseDups
+open Std
 open List
 
 /-- Una operación: nombre y lista de parámetros. -/
@@ -31,23 +18,20 @@ structure Service where
   ops  : List Operation
 
 /-- M(s): número de operaciones. -/
-def M (s : Service) : Nat :=
-  s.ops.length
+def M (s : Service) : Nat := s.ops.length
 
 /-- F(s): número de parámetros distintos. -/
 def F (s : Service) : Nat :=
-  (s.ops.flatMap (fun o => o.params)).eraseDups.length
+  (s.ops.flatMap fun o => o.params).eraseDups.length
 
 /-- MF(s): suma total de ocurrencias de parámetros. -/
 def MF (s : Service) : Nat :=
   s.ops.foldl (fun acc o => acc + o.params.length) 0
 
-/-- LCOM(s): 1 − MF/(M · F), o 1 si M=0 ∨ F=0. -/
+/-- LCOM(s): 1 − MF/(M·F), o 1 si M=0 ∨ F=0. -/
 noncomputable def LCOM (s : Service) : Real :=
-  if M s = 0 ∨ F s = 0 then
-    1
-  else
-    1 - (MF s : Real) / (↑(M s * F s) : Real)
+  if M s = 0 ∨ F s = 0 then 1
+  else 1 - (MF s : Real) / (↑(M s * F s) : Real)
 
 /-- Peso CRUD para granularidad funcional. -/
 def crudWeight : String → Real
@@ -56,53 +40,40 @@ def crudWeight : String → Real
   | "delete" => 2
   | _        => 1
 
-/-- FGS(s, o): granularidad funcional de la operación. -/
-def FGS (s : Service) (o : Operation) : Real :=
-  crudWeight o.name
+/-- FGS(s,o): granularidad funcional de la operación. -/
+def FGS (s : Service) (o : Operation) : Real := crudWeight o.name
 
-/-- DGS(s, o): granularidad de datos = |params| / F(s). -/
+/-- DGS(s,o): granularidad de datos = |params| / F(s). -/
 noncomputable def DGS (s : Service) (o : Operation) : Real :=
-  if F s = 0 then 0 else (↑ o.params.length) / (↑ (F s) : Real)
+  if F s = 0 then 0 else (o.params.length : Real) / (F s : Real)
 
-/-- SGM_op(s, o): granularidad combinada por operación. -/
+/-- SGM_op(s,o): granularidad combinada por operación. -/
 noncomputable def SGM_op (s : Service) (o : Operation) : Real :=
   (FGS s o + DGS s o) / 2
 
 /-- SGM(s): promedio de SGM_op sobre todas las operaciones. -/
 noncomputable def SGM (s : Service) : Real :=
-  if M s = 0 then
-    0
-  else
-    (s.ops.foldl (fun acc o => acc + SGM_op s o) 0) / (↑(M s) : Real)
+  if M s = 0 then 0 else
+    let total : Real := s.ops.foldl (fun acc o => acc + SGM_op s o) 0
+    total / (M s : Real)
 
 /-- NOO(s): número de operaciones. -/
-def NOO (s : Service) : Nat :=
-  M s
+def NOO (s : Service) : Nat := M s
 
-end ServiceMetrics
-
-open ServiceMetrics
-open List
+/-- sgmSd(s): desviación estándar de SGM_op en el servicio. -/
+noncomputable def sgmSd (s : Service) : Real :=
+  if s.ops.isEmpty then 0 else
+    let xs   := s.ops.map (fun o => SGM_op s o)
+    let μ    := xs.foldl (· + ·) (0 : Real) / (xs.length : Real)
+    let varₓ := xs.foldl (fun acc x => acc + (x - μ) ^ 2) (0 : Real) / (xs.length : Real)
+    Real.sqrt varₓ
 
 /-- Una llamada RPC entre servicios. -/
 structure Call where
   caller : String
   callee : String
 
-/-- couplingOut svcName calls: destinos distintos a los que llama svcName. -/
+/-- Fan-out: destinos distintos a los que llama `svcName`. -/
 def couplingOut (svcName : String) (calls : List Call) : Nat :=
-  List.length <|
-    List.eraseDups <|
-    List.map (fun c => c.callee) <|
-    List.filter (fun c => c.caller == svcName) calls
-
-
-/-- sgmSd(s): desviación estándar de SGM_op en el servicio. -/
-noncomputable def sgmSd (s : ServiceMetrics.Service) : Real :=
-  if s.ops.isEmpty then
-    0
-  else
-    let xs   := s.ops.map (fun o => ServiceMetrics.SGM_op s o)
-    let μ    := xs.foldl (· + ·) 0 / (↑ xs.length : Real)
-    let varₓ := xs.foldl (fun acc x => acc + (x - μ) ^ 2) 0 / (↑ xs.length : Real)
-    Real.sqrt varₓ
+  let dests := (calls.filter fun c => c.caller == svcName).map fun c => c.callee
+  dests.eraseDups.length

@@ -5,7 +5,6 @@ package «alpha_pipeline» {
   srcDir := "Formal"
 }
 
--- Dependencias alineadas con Lean 4.22.0-rc3 (usando 'main' para la última compatibilidad)
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git"
   @ "master" -- La rama 'main' de Mathlib suele estar alineada con la última RC/estable de Lean
