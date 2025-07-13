@@ -1,10 +1,11 @@
 import Lake
 open Lake DSL
 
-package formal
+package formal { }
+-- Biblioteca de métricas (busca Src/ServiceMetrics.lean)
+lean_lib ServiceMetrics
 
-lean_lib Formal
-
-lean_exe formal {
-  root := `Formal.ValidateGenotype
-}
+-- Ejecutable de validación (busca Src/ValidateGenotype.lean)
+@[default_target]
+lean_exe validateGenotype where
+  root     := `ValidateGenotype
