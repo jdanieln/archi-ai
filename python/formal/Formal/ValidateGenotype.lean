@@ -1,9 +1,9 @@
 import Lean.Data.Json
-import Formal.ServiceMetrics -- Importa tu archivo local
+import Formal.ServiceMetrics -- Importa tu archivo local con métricas
 
 open Lean Json ServiceMetrics
 
--- Lean genera automáticamente los parsers de JSON a partir de las estructuras
+-- Si Operation, Service y Call están definidos en ServiceMetrics, no los repitas aquí.
 deriving instance FromJson for Operation
 deriving instance FromJson for Service
 deriving instance FromJson for Call
