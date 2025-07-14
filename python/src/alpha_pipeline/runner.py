@@ -6,27 +6,32 @@ import subprocess
 import tempfile
 from pathlib import Path
 
+# Las librerías de terceros que usas
 from dotenv import load_dotenv
 import openai
 
 # ──────────────────────────────────────────────────────────
-# 0) Carga del .env
+# 0) Carga del .env y Definición de Rutas
 # ──────────────────────────────────────────────────────────
-ROOT = Path(__file__).resolve().parents[2]   # .../archi-ai/python
-ENV  = ROOT / ".env"
-if not ENV.is_file():
-    raise FileNotFoundError(f"No encontré el archivo de configuración {ENV}")
-load_dotenv(dotenv_path=ENV)
+# Esta es la parte clave que ajustamos a tu estructura
+PYTHON_ROOT = Path(__file__).resolve().parents[2]  # Navega hasta la carpeta 'python'
+ENV_PATH = PYTHON_ROOT / ".env"
+LEAN_PROJECT_DIR = PYTHON_ROOT / "formal"          # La carpeta de tu proyecto Lean
+USER_STORIES_DIR = PYTHON_ROOT.parent / "data" / "user-stories-datasets" # Sube un nivel a ARCHI-AI y luego a data
+
+if not ENV_PATH.is_file():
+    raise FileNotFoundError(f"No encontré el archivo de configuración {ENV_PATH}")
+load_dotenv(dotenv_path=ENV_PATH)
 
 # ──────────────────────────────────────────────────────────
-# 1) Configuración de OpenAI
+# 1) Configuración de OpenAI (Sin cambios)
 # ──────────────────────────────────────────────────────────
 openai.api_key = os.getenv("OPENAI_API_KEY")
 if not openai.api_key:
     raise RuntimeError("La variable OPENAI_API_KEY no está definida en python/.env")
 
 # ──────────────────────────────────────────────────────────
-# 2) Extracción LLM (antes en extract.py)
+# 2) Extracción LLM (Sin cambios)
 # ──────────────────────────────────────────────────────────
 _PROMPT_TEMPLATE = """
 Toma estas historias de usuario y extrae servicios, operaciones y parámetros.
@@ -36,11 +41,13 @@ Devuélvelo SOLO como JSON con estructura:
     { "name": "...", "operations": [ { "name": "...", "params": ["..."] }, ... ] },
     ...
   ],
-  "calls": [ { "from": "...", "to": "..." }, ... ]
+  "calls": [ { "caller": "...", "callee": "..." }, ... ]
 }
 Historias:
 %%STORIES%%
 """
+# NOTA: Asegúrate de que tu prompt de OpenAI use "caller" y "callee"
+# para que coincida con las estructuras de Lean.
 
 def extract(gen_stories: str) -> dict:
     prompt = _PROMPT_TEMPLATE.replace("%%STORIES%%", gen_stories)
@@ -52,63 +59,54 @@ def extract(gen_stories: str) -> dict:
     return json.loads(resp.choices[0].message.content)
 
 # ──────────────────────────────────────────────────────────
-# 3) Importa las métricas desde metrics.py
-# ──────────────────────────────────────────────────────────
-from .metrics import lcom, sgm, noo, coupling_out, sgm_sd
-
-# ──────────────────────────────────────────────────────────
-# 4) Directorio de historias de usuario
-# ──────────────────────────────────────────────────────────
-USER_STORIES_DIR = ROOT / "../" / "data" / "user-stories-datasets"
-
-# ──────────────────────────────────────────────────────────
-# 5) Procesamiento de cada archivo
+# 3) Procesamiento de cada archivo (Lógica de Integración)
 # ──────────────────────────────────────────────────────────
 def process_file(path: Path):
     print(f"\n=== Procesando {path.name} ===")
-    text     = path.read_text(encoding="utf-8")
-    genotype = extract(text)
-    calls    = genotype.get("calls", [])
+    try:
+        text = path.read_text(encoding="utf-8")
+        genotype = extract(text)
+    except Exception as e:
+        print(f"❌ Error durante la extracción de OpenAI: {e}", file=sys.stderr)
+        return
 
-    # --- 5.1: Validación Lean ---
-    # vuelca el genotipo a JSON temporal dentro de lean/
-    lean_dir = ROOT / "lean"
-    tmp = tempfile.NamedTemporaryFile(
-        mode="w", suffix=".json", delete=False, dir=lean_dir
-    )
-    json.dump(genotype, tmp)
-    tmp.flush()
-    tmp.close()
+    # --- 3.1: Validación con Lean ---
+    # Usamos un archivo temporal para pasar el genotipo a Lean.
+    # Es la forma más robusta y segura.
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".json", delete=False, dir=LEAN_PROJECT_DIR, encoding="utf-8"
+    ) as tmp:
+        json.dump(genotype, tmp)
+        temp_file_path = tmp.name
 
-    # invoca el verificador Lean
-    res = subprocess.run(
-        ["lake", "run", "verifyGenotype", tmp.name],
-        cwd=str(lean_dir),
-        capture_output=True,
-        text=True
-    )
-    if res.returncode != 0:
-        print(f"❌ Genotipo rechazado por Lean: {res.stderr.strip()}", file=sys.stderr)
-        return  # aborta este archivo y pasa al siguiente
-
-    # --- 5.2: Cálculo e impresión de métricas ---
-    for svc in genotype.get("services", []):
-        name = svc["name"]
-        ops  = svc.get("operations", [])
-        co   = coupling_out(name, calls)
-        sd   = sgm_sd(ops)
-        print(
-            f"* {name}: "
-            f"LCOM={lcom(ops):.2f}, "
-            f"SGM={sgm(ops):.2f}, "
-            f"SGM-σ={sd:.2f}, "
-            f"NOO={noo(ops)}, "
-            f"CouplingOut={co}"
+    try:
+        # Invoca el verificador Lean pasándole la RUTA al archivo JSON temporal.
+        # NOTA: El nombre del ejecutable es "validate" (como en el lakefile.lean).
+        res = subprocess.run(
+            ["lake", "exe", "validate", temp_file_path],
+            cwd=str(LEAN_PROJECT_DIR), # Ejecuta el comando desde la carpeta del proyecto Lean
+            capture_output=True,
+            text=True,
+            encoding="utf-8"
         )
 
-    for c in calls:
-        print(f"    Llamada RPC: {c['from']} → {c['to']}")
+        # Analiza el resultado de Lean
+        lean_output = res.stdout.strip()
 
+        if lean_output == "OK":
+            print("✅ Genotipo aceptado por Lean.")
+        else:
+            # Si la salida no es "OK", es porque Lean encontró un error.
+            error_message = lean_output if lean_output else res.stderr.strip()
+            print(f"❌ Genotipo rechazado por Lean: {error_message}", file=sys.stderr)
+
+    finally:
+        # Asegúrate de limpiar el archivo temporal después de usarlo
+        os.remove(temp_file_path)
+
+# ──────────────────────────────────────────────────────────
+# 4) Función Principal
+# ──────────────────────────────────────────────────────────
 def main():
     if not USER_STORIES_DIR.exists():
         print(f"ERROR: No existe {USER_STORIES_DIR}", file=sys.stderr)
@@ -118,6 +116,15 @@ def main():
     if not txts:
         print(f"ERROR: No hay archivos .txt en {USER_STORIES_DIR}", file=sys.stderr)
         sys.exit(1)
+
+    # Primero, asegúrate de que el proyecto Lean esté construido
+    print("Construyendo el proyecto Lean (si es necesario)...")
+    build_res = subprocess.run(["lake", "build"], cwd=str(LEAN_PROJECT_DIR), capture_output=True, text=True)
+    if build_res.returncode != 0:
+        print("❌ ERROR: Falló la compilación de Lean. Abortando.", file=sys.stderr)
+        print(build_res.stderr, file=sys.stderr)
+        sys.exit(1)
+    print("Proyecto Lean construido exitosamente.")
 
     for txt in txts:
         process_file(txt)

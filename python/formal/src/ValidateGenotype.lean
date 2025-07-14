@@ -1,10 +1,8 @@
-import Lean
 import Lean.Data.Json
-import ServiceMetrics -- Importa tu archivo local con métricas
+import ServiceMetrics
 
 open Lean Json ServiceMetrics
 
--- Si Operation, Service y Call están definidos en ServiceMetrics, no los repitas aquí.
 deriving instance FromJson for Operation
 deriving instance FromJson for Service
 deriving instance FromJson for Call
@@ -14,8 +12,10 @@ structure Genotype where
   calls    : List Call
   deriving FromJson, Repr
 
-/-- Valida el `Genotype`. Es `noncomputable` porque usa LCOM y sgmSd. -/
-noncomputable def validateGenotype (gt : Genotype) : Except String Unit := do
+/--
+  Valida el `Genotype`. Ahora esta función es 100% computable.
+-/
+def validateGenotype (gt : Genotype) : Except String Unit := do
   let serviceNames := gt.services.map (·.name)
 
   for c in gt.calls do
@@ -25,6 +25,7 @@ noncomputable def validateGenotype (gt : Genotype) : Except String Unit := do
 
   let maxCoupling := if gt.services.isEmpty then 0 else gt.services.length - 1
   for svc in gt.services do
+    -- Ahora comparamos con Floats. Añadimos `.0` para claridad.
     if LCOM svc > 0.8 then
       throw s!"{svc.name}: Low cohesion (LCOM > 0.8)"
     if couplingOut svc.name gt.calls > maxCoupling then
@@ -35,22 +36,27 @@ noncomputable def validateGenotype (gt : Genotype) : Except String Unit := do
       throw s!"{svc.name}: Inconsistent granularity (SGM SD > 0.5)"
   pure ()
 
-/-- Punto de entrada del programa. Es `noncomputable` y maneja toda la I/O. -/
-noncomputable def main : IO UInt32 := do
-  -- Usa una ruta fija para el JSON (por ejemplo, formal/genotype.json)
-  let filePath := "genotype.json"
+/--
+  Punto de entrada. Como todo es computable, la estructura es muy simple.
+-/
+def main (args : List String) : IO UInt32 := do
+  if args.length != 1 then
+    -- Recuerda que el nombre del ejecutable lo definimos en el lakefile
+    IO.eprintln "Uso: lake exe validate <ruta_al_genotipo.json>"
+    return 1
+
+  let filePath := args.head!
   try
     let content ← IO.FS.readFile filePath
-
+    -- Todo se puede encadenar en un solo bloque `do` porque todo es computable.
     let result := do
       let json ← Json.parse content
       let genotype ← fromJson? (α := Genotype) json
       validateGenotype genotype
 
     match result with
-    | .error err => IO.eprintln s!"Error: {err}"; return (1 : UInt32)
-    | .ok _      => IO.println "OK"; return (0 : UInt32)
-
+    | .error err => IO.eprintln s!"Error: {err}"; return 1
+    | .ok _      => IO.println "OK"; return 0
   catch e =>
-    IO.eprintln s!"Error inesperado: {e}"
-    return (1 : UInt32)
+    IO.eprintln s!"Error de I/O: {e}"
+    return 1
