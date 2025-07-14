@@ -1,3 +1,4 @@
+import Lean
 import Lean.Data.Json
 import ServiceMetrics -- Importa tu archivo local con métricas
 
@@ -36,13 +37,9 @@ noncomputable def validateGenotype (gt : Genotype) : Except String Unit := do
 
 /-- Punto de entrada del programa. Es `noncomputable` y maneja toda la I/O. -/
 noncomputable def main : IO UInt32 := do
-  let args ← IO.getArgs
+  -- Usa una ruta fija para el JSON (por ejemplo, formal/genotype.json)
+  let filePath := "genotype.json"
   try
-    if args.length != 1 then
-      IO.eprintln "Uso: lake exe formal <ruta_al_genotipo.json>"
-      return 1
-
-    let filePath := args.head! -- Ya sabemos que la lista no está vacía
     let content ← IO.FS.readFile filePath
 
     let result := do
@@ -51,9 +48,9 @@ noncomputable def main : IO UInt32 := do
       validateGenotype genotype
 
     match result with
-    | .error err => IO.eprintln s!"Error: {err}"; return 1
-    | .ok _ => IO.println "OK"; return 0
+    | .error err => IO.eprintln s!"Error: {err}"; return (1 : UInt32)
+    | .ok _      => IO.println "OK"; return (0 : UInt32)
 
   catch e =>
     IO.eprintln s!"Error inesperado: {e}"
-    return 1
+    return (1 : UInt32)
