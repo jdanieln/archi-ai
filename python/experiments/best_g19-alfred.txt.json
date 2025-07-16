@@ -1,0 +1,223 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "ManagePrivacySettings",
+          "params": [
+            "userId",
+            "settings"
+          ]
+        },
+        {
+          "name": "ControlDataAccess",
+          "params": [
+            "userId",
+            "dataAccess"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeviceManagement",
+      "ops": [
+        {
+          "name": "InstallDevice",
+          "params": [
+            "deviceId",
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateDeviceSettings",
+          "params": [
+            "deviceId",
+            "settings"
+          ]
+        },
+        {
+          "name": "CheckBatteryStatus",
+          "params": [
+            "deviceId"
+          ]
+        },
+        {
+          "name": "ControlDevice",
+          "params": [
+            "deviceId",
+            "action"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "ops": [
+        {
+          "name": "SendMessage",
+          "params": [
+            "userId",
+            "message"
+          ]
+        },
+        {
+          "name": "MakeCall",
+          "params": [
+            "userId",
+            "contactId"
+          ]
+        },
+        {
+          "name": "VideoCall",
+          "params": [
+            "userId",
+            "contactId"
+          ]
+        },
+        {
+          "name": "WakeUpCall",
+          "params": [
+            "userId",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HealthMonitoring",
+      "ops": [
+        {
+          "name": "TrackVitalSigns",
+          "params": [
+            "userId",
+            "vitalSignType"
+          ]
+        },
+        {
+          "name": "SendHealthReminder",
+          "params": [
+            "userId",
+            "reminderType"
+          ]
+        },
+        {
+          "name": "DetectFall",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "ProvideHealthFeedback",
+          "params": [
+            "userId",
+            "feedbackType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Navigation",
+      "ops": [
+        {
+          "name": "GetDirections",
+          "params": [
+            "userId",
+            "destination"
+          ]
+        },
+        {
+          "name": "LocateUser",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "userId",
+            "notificationType"
+          ]
+        },
+        {
+          "name": "ReceiveAlert",
+          "params": [
+            "userId",
+            "alertType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AppManagement",
+      "ops": [
+        {
+          "name": "AddApp",
+          "params": [
+            "userId",
+            "appId"
+          ]
+        },
+        {
+          "name": "RemoveApp",
+          "params": [
+            "userId",
+            "appId"
+          ]
+        },
+        {
+          "name": "GetAppRecommendations",
+          "params": [
+            "userId",
+            "interests"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "DeviceManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Communication",
+      "callee": "Notification"
+    },
+    {
+      "caller": "HealthMonitoring",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Navigation",
+      "callee": "Notification"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "Notification"
+    }
+  ]
+}

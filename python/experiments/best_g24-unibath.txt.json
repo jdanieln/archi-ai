@@ -1,0 +1,181 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataDeposit",
+      "ops": [
+        {
+          "name": "DepositDataset",
+          "params": [
+            "datasetFiles",
+            "metadata",
+            "embargo",
+            "license",
+            "collaborators"
+          ]
+        },
+        {
+          "name": "MintDOI",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "LinkToPublication",
+          "params": [
+            "datasetId",
+            "publicationId"
+          ]
+        },
+        {
+          "name": "SpecifyDisposalPolicy",
+          "params": [
+            "datasetId",
+            "policy"
+          ]
+        },
+        {
+          "name": "ManageVersions",
+          "params": [
+            "datasetId",
+            "versionDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataRetrieval",
+      "ops": [
+        {
+          "name": "SearchArchive",
+          "params": [
+            "query",
+            "language"
+          ]
+        },
+        {
+          "name": "ViewDatasetDetails",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "GetPersistentURL",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ViewDatasetVersions",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdminManagement",
+      "ops": [
+        {
+          "name": "CheckDatasetQuality",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "RequireMinimumMetadata",
+          "params": [
+            "metadataRequirements"
+          ]
+        },
+        {
+          "name": "ApproveDisposal",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "QueryArchive",
+          "params": [
+            "query"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Integration",
+      "ops": [
+        {
+          "name": "IntegrateWithCRIS",
+          "params": [
+            "fundingData"
+          ]
+        },
+        {
+          "name": "LinkExternalRecords",
+          "params": [
+            "externalData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageService",
+      "ops": [
+        {
+          "name": "StoreArchivedData",
+          "params": [
+            "data",
+            "storageSystem"
+          ]
+        },
+        {
+          "name": "ExportData",
+          "params": [
+            "destinationSystem"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "DataDeposit"
+    },
+    {
+      "caller": "DataDeposit",
+      "callee": "DataRetrieval"
+    },
+    {
+      "caller": "DataRetrieval",
+      "callee": "AdminManagement"
+    },
+    {
+      "caller": "AdminManagement",
+      "callee": "Integration"
+    },
+    {
+      "caller": "Integration",
+      "callee": "StorageService"
+    }
+  ]
+}

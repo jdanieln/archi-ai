@@ -1,0 +1,220 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "UpdateUserProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InstallationService",
+      "ops": [
+        {
+          "name": "InstallNeurohub",
+          "params": [
+            "operatingSystem"
+          ]
+        },
+        {
+          "name": "TestInstallation",
+          "params": [
+            "installationId"
+          ]
+        },
+        {
+          "name": "MigrateData",
+          "params": [
+            "oldVersion",
+            "newVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LogBookService",
+      "ops": [
+        {
+          "name": "CreateLogBookPage",
+          "params": [
+            "experimentId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AttachFilesToLogBook",
+          "params": [
+            "logBookId",
+            "fileIds"
+          ]
+        },
+        {
+          "name": "DownloadFiles",
+          "params": [
+            "fileIds"
+          ]
+        },
+        {
+          "name": "ViewLogBookEntries",
+          "params": [
+            "logBookId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileManagement",
+      "ops": [
+        {
+          "name": "UploadFile",
+          "params": [
+            "file",
+            "metadata"
+          ]
+        },
+        {
+          "name": "DownloadFile",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "DeleteFile",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "RestoreFile",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "SendAlert",
+          "params": [
+            "userId",
+            "message"
+          ]
+        },
+        {
+          "name": "ForwardNews",
+          "params": [
+            "newsItem",
+            "mailingList"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CalendarService",
+      "ops": [
+        {
+          "name": "SyncWithExternalCalendar",
+          "params": [
+            "calendarType"
+          ]
+        },
+        {
+          "name": "ViewSharedCalendars",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "AttachStandardMetadata",
+          "params": [
+            "dataId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SearchByMetadata",
+          "params": [
+            "criteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExperimentManagement",
+      "ops": [
+        {
+          "name": "CreateExperiment",
+          "params": [
+            "experimentData"
+          ]
+        },
+        {
+          "name": "LinkFilesToExperiment",
+          "params": [
+            "experimentId",
+            "fileIds"
+          ]
+        },
+        {
+          "name": "AnnotateData",
+          "params": [
+            "dataId",
+            "metadata"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "LogBookService",
+      "callee": "FileManagement"
+    },
+    {
+      "caller": "FileManagement",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "InstallationService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "CalendarService",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "ExperimentManagement",
+      "callee": "LogBookService"
+    }
+  ]
+}

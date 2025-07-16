@@ -1,0 +1,184 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "CreateAccount",
+          "params": [
+            "userType",
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "ChangePassword",
+          "params": [
+            "username",
+            "oldPassword",
+            "newPassword"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RepositoryManagement",
+      "ops": [
+        {
+          "name": "UploadItem",
+          "params": [
+            "itemData",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SearchItem",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "BrowseItems",
+          "params": [
+            "filter"
+          ]
+        },
+        {
+          "name": "UpdateItem",
+          "params": [
+            "itemId",
+            "newData"
+          ]
+        },
+        {
+          "name": "DeleteItem",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendEmailNotification",
+          "params": [
+            "recipient",
+            "subject",
+            "message"
+          ]
+        },
+        {
+          "name": "ScheduleEmailNotification",
+          "params": [
+            "recipient",
+            "subject",
+            "message",
+            "scheduleTime"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "ops": [
+        {
+          "name": "GetUsageStatistics",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetUserStatistics",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControl",
+      "ops": [
+        {
+          "name": "ApplyEmbargo",
+          "params": [
+            "itemId",
+            "duration"
+          ]
+        },
+        {
+          "name": "RemoveEmbargo",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "AssignAccessRights",
+          "params": [
+            "itemId",
+            "userId",
+            "accessLevel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataManagement",
+      "ops": [
+        {
+          "name": "UploadDataVersion",
+          "params": [
+            "dataId",
+            "dataFile"
+          ]
+        },
+        {
+          "name": "ManageDataLicenses",
+          "params": [
+            "dataId",
+            "licenseType"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "RepositoryManagement",
+      "callee": "Analytics"
+    },
+    {
+      "caller": "DataManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "AccessControl",
+      "callee": "Notification"
+    }
+  ]
+}

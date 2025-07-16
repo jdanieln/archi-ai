@@ -1,0 +1,170 @@
+{
+  "microservices": [
+    {
+      "name": "RepositoryManagement",
+      "ops": [
+        {
+          "name": "ListCollections",
+          "params": [
+            "repositoryId"
+          ]
+        },
+        {
+          "name": "UpdateRepositoryInfo",
+          "params": [
+            "repositoryId",
+            "info"
+          ]
+        },
+        {
+          "name": "ConstrainAccess",
+          "params": [
+            "repositoryId",
+            "staffIds"
+          ]
+        },
+        {
+          "name": "DescribeCollection",
+          "params": [
+            "collectionId",
+            "description"
+          ]
+        },
+        {
+          "name": "KnowCuratorialResponsibility",
+          "params": [
+            "repositoryId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ObjectManagement",
+      "ops": [
+        {
+          "name": "DescribeObject",
+          "params": [
+            "objectId",
+            "description"
+          ]
+        },
+        {
+          "name": "IndicateCopyrightStatus",
+          "params": [
+            "objectId",
+            "status"
+          ]
+        },
+        {
+          "name": "IndicateLicenses",
+          "params": [
+            "objectId",
+            "licenses"
+          ]
+        },
+        {
+          "name": "ListComponents",
+          "params": [
+            "objectId"
+          ]
+        },
+        {
+          "name": "IndicateSubjects",
+          "params": [
+            "objectId",
+            "subjects"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "SearchByTitle",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "SearchByName",
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "ScopeSearchByLanguage",
+          "params": [
+            "language"
+          ]
+        },
+        {
+          "name": "BrowseCollections",
+          "params": []
+        },
+        {
+          "name": "AccessContentFiles",
+          "params": [
+            "objectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EventManagement",
+      "ops": [
+        {
+          "name": "TrackEvent",
+          "params": [
+            "eventId",
+            "details"
+          ]
+        },
+        {
+          "name": "ListCollectionEvents",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "ListObjectEvents",
+          "params": [
+            "objectId"
+          ]
+        },
+        {
+          "name": "ListComponentEvents",
+          "params": [
+            "componentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "userId",
+            "message"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "RepositoryManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "ObjectManagement",
+      "callee": "EventManagement"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    }
+  ]
+}

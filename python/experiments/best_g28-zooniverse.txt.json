@@ -1,0 +1,210 @@
+{
+  "microservices": [
+    {
+      "name": "MusicDiscovery",
+      "ops": [
+        {
+          "name": "SearchByContentID",
+          "params": [
+            "contentID"
+          ]
+        },
+        {
+          "name": "SearchByProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SearchBySimilarUsers",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SearchByContentSimilarity",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "SearchByMetadata",
+          "params": [
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoManagement",
+      "ops": [
+        {
+          "name": "UploadTaggedVideo",
+          "params": [
+            "videoFile",
+            "tags"
+          ]
+        },
+        {
+          "name": "ViewThumbnailSequences",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "GetSimilarVideoInfo",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "IdentifyPersons",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "IdentifyProducts",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "IdentifyLogos",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "IdentifyBrands",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "SearchBySpeechRecognition",
+          "params": [
+            "audioInput"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecommendationSystem",
+      "ops": [
+        {
+          "name": "GetRecommendationsByProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetRecommendationsByNews",
+          "params": [
+            "location"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdminTools",
+      "ops": [
+        {
+          "name": "ValidateVideoSegmentation",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "AnnotateNewsSegments",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "FilterAndRankVideos",
+          "params": [
+            "criteria"
+          ]
+        },
+        {
+          "name": "AssessAudioEditing",
+          "params": [
+            "audioFile"
+          ]
+        },
+        {
+          "name": "PrefilterNudityContent",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "ValidateCopyright",
+          "params": [
+            "contentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZooniverseAdminTools",
+      "ops": [
+        {
+          "name": "AssessImageInterest",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "DetectScientistPrompt",
+          "params": [
+            "annotations"
+          ]
+        },
+        {
+          "name": "IdentifyVolunteerTypes",
+          "params": []
+        },
+        {
+          "name": "PreclassifyGalaxyZooImages",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "DetectNoAnimals",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "ImageSeriesDetection",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "AnimalSpeciesPreclassification",
+          "params": [
+            "imageId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "MusicDiscovery",
+      "callee": "RecommendationSystem"
+    },
+    {
+      "caller": "VideoManagement",
+      "callee": "AdminTools"
+    },
+    {
+      "caller": "AdminTools",
+      "callee": "ZooniverseAdminTools"
+    }
+  ]
+}

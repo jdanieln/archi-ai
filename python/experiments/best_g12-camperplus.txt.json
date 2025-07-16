@@ -1,0 +1,188 @@
+{
+  "microservices": [
+    {
+      "name": "CamperManagement",
+      "ops": [
+        {
+          "name": "AddCamper",
+          "params": [
+            "camperDetails"
+          ]
+        },
+        {
+          "name": "RemoveCamper",
+          "params": [
+            "camperId"
+          ]
+        },
+        {
+          "name": "UploadConsentForm",
+          "params": [
+            "camperId",
+            "form"
+          ]
+        },
+        {
+          "name": "TrackFormSubmission",
+          "params": [
+            "camperId",
+            "formId"
+          ]
+        },
+        {
+          "name": "ModifyCamperInfo",
+          "params": [
+            "camperId",
+            "updatedDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ActivityManagement",
+      "ops": [
+        {
+          "name": "CreateGroup",
+          "params": [
+            "groupDetails"
+          ]
+        },
+        {
+          "name": "AddCamperToGroup",
+          "params": [
+            "camperId",
+            "groupId"
+          ]
+        },
+        {
+          "name": "ScheduleTask",
+          "params": [
+            "groupId",
+            "taskDetails"
+          ]
+        },
+        {
+          "name": "DeleteTask",
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "ViewGroupEvents",
+          "params": [
+            "groupId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "ModifyParentInfo",
+          "params": [
+            "parentId",
+            "updatedDetails"
+          ]
+        },
+        {
+          "name": "DeleteParent",
+          "params": [
+            "parentId"
+          ]
+        },
+        {
+          "name": "ViewConsentForms",
+          "params": [
+            "parentId"
+          ]
+        },
+        {
+          "name": "ConnectStaff",
+          "params": [
+            "parentId",
+            "staffId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AttendanceManagement",
+      "ops": [
+        {
+          "name": "LogAttendance",
+          "params": [
+            "camperId",
+            "date"
+          ]
+        },
+        {
+          "name": "TakeAttendance",
+          "params": [
+            "groupId",
+            "date"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FeedbackManagement",
+      "ops": [
+        {
+          "name": "SubmitFeedback",
+          "params": [
+            "parentId",
+            "feedback"
+          ]
+        },
+        {
+          "name": "ProvideFeedbackToParents",
+          "params": [
+            "parentId",
+            "feedbackDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "NotifyParents",
+          "params": [
+            "message"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "CamperManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "ActivityManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "AttendanceManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "FeedbackManagement",
+      "callee": "Notification"
+    }
+  ]
+}

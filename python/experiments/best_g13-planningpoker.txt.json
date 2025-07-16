@@ -1,0 +1,187 @@
+{
+  "microservices": [
+    {
+      "name": "GameManagement",
+      "ops": [
+        {
+          "name": "CreateGame",
+          "params": [
+            "name",
+            "description"
+          ]
+        },
+        {
+          "name": "InviteEstimators",
+          "params": [
+            "gameId",
+            "url"
+          ]
+        },
+        {
+          "name": "StartRound",
+          "params": [
+            "gameId",
+            "item"
+          ]
+        },
+        {
+          "name": "ShowItems",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "DeleteGame",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemManagement",
+      "ops": [
+        {
+          "name": "SelectItem",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "AddItem",
+          "params": [
+            "gameId",
+            "item"
+          ]
+        },
+        {
+          "name": "EditItem",
+          "params": [
+            "gameId",
+            "itemId",
+            "updatedItem"
+          ]
+        },
+        {
+          "name": "DeleteItem",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "ShowEstimates",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EstimationManagement",
+      "ops": [
+        {
+          "name": "EnterEstimate",
+          "params": [
+            "gameId",
+            "estimate"
+          ]
+        },
+        {
+          "name": "ShowAllEstimates",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "AcceptAverageEstimate",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "ReEstimateItem",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "ViewPriorEstimates",
+          "params": [
+            "gameId",
+            "estimatorId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "name",
+            "email",
+            "password",
+            "username"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "ChangeAccountDetails",
+          "params": [
+            "userId",
+            "details"
+          ]
+        },
+        {
+          "name": "DeleteAccount",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetPasswordReminder",
+          "params": [
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetricsManagement",
+      "ops": [
+        {
+          "name": "ViewUsageMetrics",
+          "params": []
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "GameManagement",
+      "callee": "ItemManagement"
+    },
+    {
+      "caller": "ItemManagement",
+      "callee": "EstimationManagement"
+    },
+    {
+      "caller": "EstimationManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "MetricsManagement"
+    }
+  ]
+}

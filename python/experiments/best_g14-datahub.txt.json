@@ -1,0 +1,169 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "InviteUser",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "EditProfile",
+          "params": [
+            "userId",
+            "newInfo"
+          ]
+        },
+        {
+          "name": "RemoveUser",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetManagement",
+      "ops": [
+        {
+          "name": "PublishDataset",
+          "params": [
+            "datasetId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "UnpublishDataset",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "DeleteDataset",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "RestoreDataset",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "UpdateDataset",
+          "params": [
+            "datasetId",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "NotifyUser",
+          "params": [
+            "userId",
+            "message"
+          ]
+        },
+        {
+          "name": "NotifyChanges",
+          "params": [
+            "datasetId",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "ops": [
+        {
+          "name": "GetUsageMetrics",
+          "params": [
+            "adminId"
+          ]
+        },
+        {
+          "name": "GetDownloadStats",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "ops": [
+        {
+          "name": "SearchDataPackages",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "SearchDataPackagesByDescription",
+          "params": [
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pricing",
+      "ops": [
+        {
+          "name": "GetPricingPlan",
+          "params": []
+        },
+        {
+          "name": "SignUpForPricingPlan",
+          "params": [
+            "planId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "DatasetManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Analytics",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "Search",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "Pricing",
+      "callee": "UserManagement"
+    }
+  ]
+}

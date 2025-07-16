@@ -1,0 +1,114 @@
+{
+  "microservices": [
+    {
+      "name": "FileManagement",
+      "ops": [
+        {
+          "name": "ApplyLicense",
+          "params": [
+            "fileId",
+            "licenseStatement"
+          ]
+        },
+        {
+          "name": "MarkFileAsRestricted",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "SetRestrictionEndDate",
+          "params": [
+            "fileId",
+            "endDate"
+          ]
+        },
+        {
+          "name": "UploadFile",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "CreateAccessCopies",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "CreateUserGroup",
+          "params": [
+            "groupName"
+          ]
+        },
+        {
+          "name": "AssignUserToGroup",
+          "params": [
+            "userId",
+            "groupId"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchByKeyword",
+          "params": [
+            "keyword"
+          ]
+        },
+        {
+          "name": "SearchByTag",
+          "params": [
+            "tag"
+          ]
+        },
+        {
+          "name": "SearchImagesByPhotographer",
+          "params": [
+            "photographerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "userId",
+            "message"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "FileManagement",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "FileManagement"
+    }
+  ]
+}

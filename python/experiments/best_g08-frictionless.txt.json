@@ -1,0 +1,181 @@
+{
+  "microservices": [
+    {
+      "name": "DataPackageManagement",
+      "ops": [
+        {
+          "name": "ImportDataPackage",
+          "params": [
+            "format",
+            "source"
+          ]
+        },
+        {
+          "name": "ExportDataPackage",
+          "params": [
+            "format",
+            "destination"
+          ]
+        },
+        {
+          "name": "ValidateDataPackage",
+          "params": [
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "AddMetadata",
+          "params": [
+            "dataPackage",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AddTypeInformation",
+          "params": [
+            "dataPackage",
+            "typeInfo"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Visualization",
+      "ops": [
+        {
+          "name": "CreateVisualization",
+          "params": [
+            "dataPackage",
+            "visualizationType"
+          ]
+        },
+        {
+          "name": "SaveVisualization",
+          "params": [
+            "visualization",
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "EmbedVisualization",
+          "params": [
+            "visualization",
+            "site"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Integration",
+      "ops": [
+        {
+          "name": "IntegrateWithPowerBI",
+          "params": [
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "IntegrateWithExcel",
+          "params": [
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "IntegrateWithSPSS",
+          "params": [
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "IntegrateWithCKAN",
+          "params": [
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "IntegrateWithZenodo",
+          "params": [
+            "dataPackage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataQuality",
+      "ops": [
+        {
+          "name": "CheckDataValidity",
+          "params": [
+            "dataPackage"
+          ]
+        },
+        {
+          "name": "ValidateData",
+          "params": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataManagement",
+      "ops": [
+        {
+          "name": "AddReferenceData",
+          "params": [
+            "dataset",
+            "referenceData"
+          ]
+        },
+        {
+          "name": "MapGeographicData",
+          "params": [
+            "dataset",
+            "geographicData"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DataPackageManagement",
+      "callee": "Visualization"
+    },
+    {
+      "caller": "DataPackageManagement",
+      "callee": "Integration"
+    },
+    {
+      "caller": "DataQuality",
+      "callee": "DataPackageManagement"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "DataPackageManagement"
+    },
+    {
+      "caller": "MetadataManagement",
+      "callee": "DataPackageManagement"
+    }
+  ]
+}

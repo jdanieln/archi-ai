@@ -1,0 +1,177 @@
+{
+  "microservices": [
+    {
+      "name": "DatasetManagement",
+      "ops": [
+        {
+          "name": "EditDataset",
+          "params": [
+            "datasetId",
+            "data"
+          ]
+        },
+        {
+          "name": "DeleteDataset",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "HideDataset",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ViewAllDatasets",
+          "params": []
+        },
+        {
+          "name": "UpdateDatasetAutomatically",
+          "params": [
+            "datasetId",
+            "sourceFiles"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportService",
+      "ops": [
+        {
+          "name": "ImportDataExcel",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "ImportDataJSON",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "ImportDataGoogleSpreadsheet",
+          "params": [
+            "spreadsheetId"
+          ]
+        },
+        {
+          "name": "ImportDataFiscalDataPackage",
+          "params": [
+            "descriptorFile"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationService",
+      "ops": [
+        {
+          "name": "GetVisualizationState",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "DownloadCSV",
+          "params": [
+            "visualizationId"
+          ]
+        },
+        {
+          "name": "DownloadImage",
+          "params": [
+            "visualizationId"
+          ]
+        },
+        {
+          "name": "ShareViewState",
+          "params": [
+            "visualizationId",
+            "platform"
+          ]
+        },
+        {
+          "name": "CustomizeVisualizationColors",
+          "params": [
+            "visualizationId",
+            "colors"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "SetUsername",
+          "params": [
+            "userId",
+            "username"
+          ]
+        },
+        {
+          "name": "CheckUserRole",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "APIService",
+      "ops": [
+        {
+          "name": "GetBorderingRegions",
+          "params": [
+            "regionId"
+          ]
+        },
+        {
+          "name": "RequestPolygons",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "GetCSVOutput",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "NormalizeMeasures",
+          "params": [
+            "measure",
+            "context"
+          ]
+        },
+        {
+          "name": "StoreVisualizationState",
+          "params": [
+            "state"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DatasetManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "ImportService",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "APIService"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "APIService"
+    }
+  ]
+}

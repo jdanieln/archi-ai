@@ -1,0 +1,217 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "username"
+          ]
+        },
+        {
+          "name": "AuthenticateLDAP",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "AuthenticateLocal",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "AssignRole",
+          "params": [
+            "userId",
+            "role"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResourceManagement",
+      "ops": [
+        {
+          "name": "ImportEAD",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "ImportCSV",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "ImportMARCXML",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "CreateResource",
+          "params": [
+            "resourceData"
+          ]
+        },
+        {
+          "name": "EditResource",
+          "params": [
+            "resourceId",
+            "resourceData"
+          ]
+        },
+        {
+          "name": "ExportEAD",
+          "params": [
+            "resourceId"
+          ]
+        },
+        {
+          "name": "CreateAgent",
+          "params": [
+            "agentData"
+          ]
+        },
+        {
+          "name": "EditAgent",
+          "params": [
+            "agentId",
+            "agentData"
+          ]
+        },
+        {
+          "name": "CreateAccession",
+          "params": [
+            "accessionData"
+          ]
+        },
+        {
+          "name": "EditAccession",
+          "params": [
+            "accessionId",
+            "accessionData"
+          ]
+        },
+        {
+          "name": "ManageDigitalObjects",
+          "params": [
+            "digitalObjectData"
+          ]
+        },
+        {
+          "name": "AssociateSubject",
+          "params": [
+            "resourceId",
+            "subjectId"
+          ]
+        },
+        {
+          "name": "AddNotes",
+          "params": [
+            "recordId",
+            "notes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "userId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Configuration",
+      "ops": [
+        {
+          "name": "ConfigureHelpCenter",
+          "params": [
+            "url",
+            "topicMappings"
+          ]
+        },
+        {
+          "name": "LoadEnumValues",
+          "params": [
+            "enumType"
+          ]
+        },
+        {
+          "name": "BulkUpdateEnumValue",
+          "params": [
+            "oldValue",
+            "newValue"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataMigration",
+      "ops": [
+        {
+          "name": "StoreSourceRecordIds",
+          "params": [
+            "recordIds"
+          ]
+        },
+        {
+          "name": "ValidateMigrationIntegrity",
+          "params": [
+            "migrationData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "ops": [
+        {
+          "name": "SearchRecords",
+          "params": [
+            "query"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "ResourceManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Configuration",
+      "callee": "Notification"
+    }
+  ]
+}

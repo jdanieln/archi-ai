@@ -1,0 +1,209 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "UpdateProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        },
+        {
+          "name": "SetProfilePrivacy",
+          "params": [
+            "userId",
+            "isPrivate"
+          ]
+        },
+        {
+          "name": "SendEmail",
+          "params": [
+            "fromUserId",
+            "toUserId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CertificationManagement",
+      "ops": [
+        {
+          "name": "ApplyForCertification",
+          "params": [
+            "userId",
+            "certificationType"
+          ]
+        },
+        {
+          "name": "ApproveApplication",
+          "params": [
+            "applicationId",
+            "isApproved"
+          ]
+        },
+        {
+          "name": "SetAnnualFee",
+          "params": [
+            "memberType",
+            "amount"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CourseManagement",
+      "ops": [
+        {
+          "name": "CreateCourse",
+          "params": [
+            "trainerId",
+            "courseData"
+          ]
+        },
+        {
+          "name": "UpdateCourse",
+          "params": [
+            "courseId",
+            "courseData"
+          ]
+        },
+        {
+          "name": "DeleteCourse",
+          "params": [
+            "courseId"
+          ]
+        },
+        {
+          "name": "ListCourses",
+          "params": [
+            "filterCriteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentManagement",
+      "ops": [
+        {
+          "name": "AddArticle",
+          "params": [
+            "editorId",
+            "articleData"
+          ]
+        },
+        {
+          "name": "EditArticle",
+          "params": [
+            "articleId",
+            "articleData"
+          ]
+        },
+        {
+          "name": "SetArticleVisibility",
+          "params": [
+            "articleId",
+            "isPublic"
+          ]
+        },
+        {
+          "name": "PostComment",
+          "params": [
+            "articleId",
+            "userId",
+            "comment"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JobManagement",
+      "ops": [
+        {
+          "name": "PostJobAd",
+          "params": [
+            "recruiterId",
+            "jobData"
+          ]
+        },
+        {
+          "name": "ApproveJobAd",
+          "params": [
+            "jobAdId",
+            "isApproved"
+          ]
+        },
+        {
+          "name": "EditJobAd",
+          "params": [
+            "jobAdId",
+            "jobData"
+          ]
+        },
+        {
+          "name": "DeleteJobAd",
+          "params": [
+            "jobAdId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendEmailReminder",
+          "params": [
+            "userId",
+            "reminderType"
+          ]
+        },
+        {
+          "name": "NotifyTrainerSurveyResults",
+          "params": [
+            "trainerId",
+            "resultsData"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "CertificationManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "CourseManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "ContentManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "JobManagement",
+      "callee": "Notification"
+    }
+  ]
+}

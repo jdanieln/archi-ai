@@ -1,0 +1,218 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "CreateCustomerPortalAccount",
+          "params": [
+            "username",
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ApplicationManagement",
+      "ops": [
+        {
+          "name": "SubmitApplication",
+          "params": [
+            "applicantId",
+            "applicationData"
+          ]
+        },
+        {
+          "name": "SubmitSupportingDocumentation",
+          "params": [
+            "applicationId",
+            "documents"
+          ]
+        },
+        {
+          "name": "PayFee",
+          "params": [
+            "applicationId",
+            "paymentDetails"
+          ]
+        },
+        {
+          "name": "CheckApplicationStatus",
+          "params": [
+            "applicationId"
+          ]
+        },
+        {
+          "name": "ModifyApplication",
+          "params": [
+            "applicationId",
+            "modifiedData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InspectionManagement",
+      "ops": [
+        {
+          "name": "CreateInspection",
+          "params": [
+            "inspectionDetails"
+          ]
+        },
+        {
+          "name": "ConductInspection",
+          "params": [
+            "inspectionId",
+            "results"
+          ]
+        },
+        {
+          "name": "RequestInspection",
+          "params": [
+            "customerId",
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "recipientId",
+            "message"
+          ]
+        },
+        {
+          "name": "NotifyGeospatialChange",
+          "params": [
+            "changeDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DocumentManagement",
+      "ops": [
+        {
+          "name": "SendCitationsAndFines",
+          "params": [
+            "recipientId",
+            "citationDetails"
+          ]
+        },
+        {
+          "name": "RecordInternalNote",
+          "params": [
+            "applicationId",
+            "note"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanManagement",
+      "ops": [
+        {
+          "name": "ConductPlanReviewMeeting",
+          "params": [
+            "meetingDetails"
+          ]
+        },
+        {
+          "name": "ReviewPlans",
+          "params": [
+            "plansData"
+          ]
+        },
+        {
+          "name": "TrackPlanReviewCompletion",
+          "params": [
+            "applicationId"
+          ]
+        },
+        {
+          "name": "AssignPlansForReview",
+          "params": [
+            "plans",
+            "reviewerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StaffManagement",
+      "ops": [
+        {
+          "name": "PerformCompletenessReview",
+          "params": [
+            "applicationId"
+          ]
+        },
+        {
+          "name": "AssignApplicationForReview",
+          "params": [
+            "applicationId",
+            "reviewerId"
+          ]
+        },
+        {
+          "name": "ManageHearingCalendars",
+          "params": [
+            "calendarDetails"
+          ]
+        },
+        {
+          "name": "CaptureHearingDecision",
+          "params": [
+            "hearingId",
+            "decision"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "ApplicationManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "InspectionManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "DocumentManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "PlanManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "StaffManagement",
+      "callee": "Notification"
+    }
+  ]
+}

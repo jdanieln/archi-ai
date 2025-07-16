@@ -1,0 +1,133 @@
+{
+  "microservices": [
+    {
+      "name": "DataManagement",
+      "ops": [
+        {
+          "name": "RecordMetadata",
+          "params": [
+            "projectId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "ImportMetadata",
+          "params": [
+            "projectId",
+            "metadataTool"
+          ]
+        },
+        {
+          "name": "PlanDataStorage",
+          "params": [
+            "projectId",
+            "dataTypes"
+          ]
+        },
+        {
+          "name": "DocumentRights",
+          "params": [
+            "projectId",
+            "rights"
+          ]
+        },
+        {
+          "name": "PlanAnonymization",
+          "params": [
+            "projectId",
+            "anonymizationStrategy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SecurityManagement",
+      "ops": [
+        {
+          "name": "CheckSecurityRequirements",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "EvaluateDataSensitivity",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "EnsureCompliance",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RepositoryManagement",
+      "ops": [
+        {
+          "name": "CheckProvenance",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "StoreData",
+          "params": [
+            "projectId",
+            "data"
+          ]
+        },
+        {
+          "name": "ManageMetadata",
+          "params": [
+            "projectId",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reporting",
+      "ops": [
+        {
+          "name": "GenerateUsageReport",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GenerateCostReport",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GenerateResponsibilityReport",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DataManagement",
+      "callee": "SecurityManagement"
+    },
+    {
+      "caller": "DataManagement",
+      "callee": "RepositoryManagement"
+    },
+    {
+      "caller": "Reporting",
+      "callee": "DataManagement"
+    },
+    {
+      "caller": "Reporting",
+      "callee": "RepositoryManagement"
+    }
+  ]
+}

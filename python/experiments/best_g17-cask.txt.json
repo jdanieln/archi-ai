@@ -1,0 +1,122 @@
+{
+  "microservices": [
+    {
+      "name": "DatasetManagement",
+      "ops": [
+        {
+          "name": "CreateDatasetType",
+          "params": [
+            "typeName",
+            "code"
+          ]
+        },
+        {
+          "name": "DeployDatasetType",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "UpgradeDatasetType",
+          "params": [
+            "typeName",
+            "newVersion"
+          ]
+        },
+        {
+          "name": "CreateDatasetInstance",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "ListDatasetInstances",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AppDeployment",
+      "ops": [
+        {
+          "name": "DeployApp",
+          "params": [
+            "appName",
+            "version"
+          ]
+        },
+        {
+          "name": "RedeployApp",
+          "params": [
+            "appName",
+            "version"
+          ]
+        },
+        {
+          "name": "CreateAppArtifact",
+          "params": [
+            "appName",
+            "artifact"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PipelineManagement",
+      "ops": [
+        {
+          "name": "CreatePipeline",
+          "params": [
+            "pipelineName",
+            "datasetInstances"
+          ]
+        },
+        {
+          "name": "UpgradePipeline",
+          "params": [
+            "pipelineId",
+            "newVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "AppDeployment",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "DatasetManagement",
+      "callee": "UserManagement"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileManagement",
+      "ops": [
+        {
+          "name": "UploadFile",
+          "params": [
+            "file",
+            "userId"
+          ]
+        },
+        {
+          "name": "ValidateFile",
+          "params": [
+            "fileId",
+            "userId"
+          ]
+        },
+        {
+          "name": "DownloadFile",
+          "params": [
+            "fileId",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataProcessing",
+      "ops": [
+        {
+          "name": "ProcessDeletions",
+          "params": [
+            "deletionDate"
+          ]
+        },
+        {
+          "name": "GenerateD1File",
+          "params": [
+            "fpdsData"
+          ]
+        },
+        {
+          "name": "LoadHistoricalData",
+          "params": [
+            "dataType",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserTesting",
+      "ops": [
+        {
+          "name": "ScheduleTesting",
+          "params": [
+            "testDate",
+            "testers"
+          ]
+        },
+        {
+          "name": "ReportTestingResults",
+          "params": [
+            "results",
+            "agencies"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Validation",
+      "ops": [
+        {
+          "name": "ValidateSubmission",
+          "params": [
+            "submissionData"
+          ]
+        },
+        {
+          "name": "UpdateValidationRules",
+          "params": [
+            "rules"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "userId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AgencyManagement",
+      "ops": [
+        {
+          "name": "SubmitAgencyData",
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "GetAgencySubmissions",
+          "params": [
+            "agencyId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "FileManagement",
+      "callee": "DataProcessing"
+    },
+    {
+      "caller": "DataProcessing",
+      "callee": "Validation"
+    },
+    {
+      "caller": "UserTesting",
+      "callee": "Notification"
+    },
+    {
+      "caller": "AgencyManagement",
+      "callee": "Validation"
+    }
+  ]
+}
