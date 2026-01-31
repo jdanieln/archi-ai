@@ -1,7 +1,3 @@
-Claro, aquí tienes una propuesta completa para el archivo `README.md` del proyecto `archi-ai`. Está basada en el análisis del código y la estructura del repositorio.
-
------
-
 # archi-ai
 
 `archi-ai` es un proyecto innovador que aprovecha la inteligencia artificial para diseñar arquitecturas de microservicios a partir de historias de usuario. Utiliza un enfoque de computación evolutiva para generar y optimizar las arquitecturas, y emplea validación formal con el asistente de pruebas Lean para garantizar su correctitud.
