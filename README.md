@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-# archi-ai
-
-`archi-ai` es un proyecto innovador que aprovecha la inteligencia artificial para diseñar arquitecturas de microservicios a partir de historias de usuario. Utiliza un enfoque de computación evolutiva para generar y optimizar las arquitecturas, y emplea validación formal con el asistente de pruebas Lean para garantizar su correctitud.
-=======
 # ArchiGenMS (Research Project)
 
 **Repository Name**: `archi-ai`
 
 ArchiGenMS es un proyecto de investigación que aprovecha la inteligencia artificial y la computación evolutiva para diseñar arquitecturas de microservicios automáticamente a partir de historias de usuario. El sistema utiliza **Lean 4** para la validación formal de las arquitecturas generadas, asegurando su corrección y calidad estructural.
->>>>>>> cca30bf (docs: Update README to reflect ArchiGenMS research project)
 
 ## ✨ Características Principales
 
