@@ -1,60 +1,59 @@
+<<<<<<< HEAD
 # archi-ai
 
 `archi-ai` es un proyecto innovador que aprovecha la inteligencia artificial para diseñar arquitecturas de microservicios a partir de historias de usuario. Utiliza un enfoque de computación evolutiva para generar y optimizar las arquitecturas, y emplea validación formal con el asistente de pruebas Lean para garantizar su correctitud.
+=======
+# ArchiGenMS (Research Project)
+
+**Repository Name**: `archi-ai`
+
+ArchiGenMS es un proyecto de investigación que aprovecha la inteligencia artificial y la computación evolutiva para diseñar arquitecturas de microservicios automáticamente a partir de historias de usuario. El sistema utiliza **Lean 4** para la validación formal de las arquitecturas generadas, asegurando su corrección y calidad estructural.
+>>>>>>> cca30bf (docs: Update README to reflect ArchiGenMS research project)
 
 ## ✨ Características Principales
 
-* **Diseño Automatizado de Arquitecturas**: Genera arquitecturas de microservicios de forma automática a partir de un conjunto de historias de usuario.
-* **Enfoque Evolutivo**: Utiliza algoritmos evolutivos para explorar el espacio de soluciones y encontrar arquitecturas óptimas.
-* **Integración con Modelos de Lenguaje**: Emplea modelos de lenguaje de OpenAI para interpretar las historias de usuario y asistir en la generación de la arquitectura.
-* **Validación Formal**: Integra el asistente de pruebas Lean para validar formalmente los modelos de microservicios generados, asegurando su coherencia y robustez.
-* **Análisis de Métricas**: Calcula diversas métricas de calidad de software como el acoplamiento y la cohesión (LCOM) para evaluar las arquitecturas generadas.
+* **Diseño Automatizado de Arquitecturas**: Genera arquitecturas de microservicios a partir de historias de usuario en lenguaje natural.
+* **Enfoque Evolutivo**: Implementa un algoritmo genético que explora el espacio de soluciones para encontrar diseños óptimos, guiado por métricas de calidad de software.
+* **Integración con LLMs**: Utiliza modelos de lenguaje (como GPT-4o-mini) para interpretar requisitos y proponer candidatos iniciales y mutaciones.
+* **Validación Formal**: Integra el asistente de pruebas **Lean 4** para validar matemáticamente la estructura y calcular métricas precisas (LCOM, SGM, Acoplamiento).
 
 ## 🛠️ Tecnologías Utilizadas
 
 * **Lenguaje Principal**: Python 3.x
-* **Computación Evolutiva y Análisis**:
-    * `numpy`
-    * `networkx`
-    * `nltk`
-* **Inteligencia Artificial**:
-    * `openai`
-* **Validación Formal**:
-    * [Lean 4](https://leanprover.github.io/)
-* **Herramientas de Desarrollo**:
-    * `pytest` para pruebas.
-    * `flake8` para linting.
-    * `mypy` para chequeo de tipos estáticos.
-    * `python-dotenv` para la gestión de variables de entorno.
-* **CI/CD**:
-    * GitHub Actions
+* **Validación Formal**: [Lean 4](https://leanprover.github.io/)
+* **Inteligencia Artificial**: OpenAI API (`gpt-4o-mini`)
+* **Librerías Clave**:
+    * `numpy`, `networkx`, `nltk` (Análisis y Evolución)
+    * `python-dotenv` (Gestión de configuración)
 
 ## 📂 Estructura del Proyecto
 
 ```
 archi-ai/
-├── .github/
-│   └── workflows/          # Workflows de Integración Continua para GitHub Actions
-├── data/                   # Conjuntos de datos con historias de usuario (.txt)
+├── data/
+│   └── user-stories-datasets/  # Conjuntos de datos con historias de usuario (.txt)
 ├── python/
-│   ├── experiments/        # Resultados de los experimentos (JSON y CSV)
-│   ├── formal/             # Código de Lean para la validación formal
-│   ├── src/                # Código fuente del pipeline evolutivo en Python
-│   │   └── runner.py       # Punto de entrada para ejecutar los experimentos
-│   ├── requirements.txt    # Dependencias de Python
-│   └── ...
-├── .gitignore
+│   ├── experiments/            # Resultados: mejores arquitecturas (JSON) y métricas (CSV)
+│   ├── formal/                 # Código Lean 4 para validación y métricas
+│   │   ├── src/
+│   │   │   ├── ValidateGenotype.lean
+│   │   │   └── ServiceMetrics.lean
+│   │   └── lakefile.lean       # Configuración del proyecto Lean
+│   ├── src/
+│   │   └── alpha_pipeline/     # Lógica del algoritmo evolutivo
+│   │       └── runner.py       # Script principal de ejecución
+│   └── requirements.txt        # Dependencias de Python
+├── .env                        # Variables de entorno (API Keys)
 └── README.md
 ```
 
 ## 🚀 Cómo Empezar
 
-Sigue estos pasos para configurar el entorno y ejecutar el proyecto.
-
 ### Prerrequisitos
 
-* Python 3.9 o superior
-* [elan](https://www.google.com/search?q=https://leanprover.github.io/lean4/doc/setup.html), el gestor de toolchains de Lean.
+1.  **Python 3.9+**
+2.  **Lean 4**: Instalado vía [elan](https://github.com/leanprover/elan).
+3.  **OpenAI API Key**: Necesaria para el funcionamiento del LLM.
 
 ### Instalación
 
@@ -66,21 +65,15 @@ Sigue estos pasos para configurar el entorno y ejecutar el proyecto.
     ```
 
 2.  **Configura el entorno de Python:**
-    Se recomienda usar un entorno virtual.
 
     ```bash
     python -m venv venv
     source venv/bin/activate  # En Windows: venv\Scripts\activate
-    ```
-
-3.  **Instala las dependencias de Python:**
-
-    ```bash
     pip install -r python/requirements.txt
     ```
 
-4.  **Configura el toolchain de Lean:**
-    Navega al directorio de Lean y `elan` se encargará de instalar la versión correcta especificada en `lean-toolchain`.
+3.  **Compila el proyecto Lean:**
+    Es necesario compilar el validador formal antes de ejecutar el pipeline.
 
     ```bash
     cd python/formal
@@ -88,44 +81,28 @@ Sigue estos pasos para configurar el entorno y ejecutar el proyecto.
     cd ../..
     ```
 
-5.  **Configura tus variables de entorno:**
-    Crea un archivo `.env` en el directorio raíz del proyecto y añade tu clave de API de OpenAI.
+4.  **Configura las variables de entorno:**
+    Crea un archivo `.env` en la raíz del proyecto:
 
-    ```
+    ```bash
     OPENAI_API_KEY='tu_clave_de_api_aqui'
     ```
 
 ## 🏃‍♂️ Cómo Usarlo
 
-Para ejecutar el pipeline evolutivo y generar una arquitectura de microservicios a partir de un conjunto de historias de usuario, utiliza el script `runner.py`.
+Para ejecutar el pipeline evolutivo y generar una arquitectura para un conjunto de historias de usuario específico:
 
 ```bash
-python python/src/runner.py --story_file data/g02-federalspending.txt
+python python/src/alpha_pipeline/runner.py
 ```
+*Nota: Actualmente el script `runner.py` procesa automáticamente todos los archivos `.txt` en `data/user-stories-datasets`. Puedes modificar el `main` en `runner.py` si deseas ejecutar uno específico.*
 
-* El argumento `--story_file` especifica el archivo de historias de usuario a utilizar.
-* Los resultados, incluyendo la mejor arquitectura en formato JSON y las métricas de la ejecución, se guardarán en la carpeta `python/experiments`.
-
-## ⚙️ Workflows de CI/CD
-
-El proyecto utiliza GitHub Actions para la automatización:
-
-* **`lean_action_ci.yml`**: Se activa con cada `push` o `pull request`. Construye y prueba el código de Lean para asegurar que la lógica de validación formal es correcta.
-* **`update.yml`**: Permite la actualización manual o programada de las dependencias de Lean.
-* **`create-release.yml`**: Automatiza la creación de un nuevo *release* en GitHub cuando la versión del `lean-toolchain` es actualizada.
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si deseas colaborar, por favor sigue estos pasos:
-
-1.  Haz un *fork* del repositorio.
-2.  Crea una nueva rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
-3.  Haz tus cambios y haz *commit* (`git commit -am 'Añade nueva funcionalidad'`).
-4.  Haz *push* a tu rama (`git push origin feature/nueva-funcionalidad`).
-5.  Crea un nuevo *Pull Request*.
+### Resultados
+Los resultados se guardan en `python/experiments`:
+* **`results.csv`**: Métricas detalladas de todos los individuos y generaciones.
+* **`best_*.json`**: La mejor arquitectura encontrada para cada dataset.
+* **`program_db.jsonl`**: Registro histórico de todas las soluciones generadas.
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
-
------
+Este proyecto es parte de una investigación académica. Consulta el archivo `LICENSE` para más detalles.
