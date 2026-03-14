@@ -1,0 +1,282 @@
+{
+  "microservices": [
+    {
+      "name": "SearchDiscoveryService",
+      "ops": [
+        {
+          "name": "SearchByFingerprint",
+          "params": [
+            "audioData"
+          ]
+        },
+        {
+          "name": "SearchByMetadata",
+          "params": [
+            "tags"
+          ]
+        },
+        {
+          "name": "SearchByLocation",
+          "params": [
+            "geoCoordinates"
+          ]
+        },
+        {
+          "name": "SearchBySpeech",
+          "params": [
+            "speechAudio"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecommendationService",
+      "ops": [
+        {
+          "name": "RecommendByProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "RecommendByContext",
+          "params": [
+            "contextData",
+            "location"
+          ]
+        },
+        {
+          "name": "RecommendSimilarContent",
+          "params": [
+            "mediaId"
+          ]
+        },
+        {
+          "name": "RecommendProjects",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentAnalysisService",
+      "ops": [
+        {
+          "name": "IdentifyEntities",
+          "params": [
+            "mediaId"
+          ]
+        },
+        {
+          "name": "AnalyzeQuality",
+          "params": [
+            "mediaId"
+          ]
+        },
+        {
+          "name": "FilterInappropriateContent",
+          "params": [
+            "mediaId"
+          ]
+        },
+        {
+          "name": "CheckCopyright",
+          "params": [
+            "mediaId"
+          ]
+        },
+        {
+          "name": "DetectSimilarity",
+          "params": [
+            "mediaId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoProcessingService",
+      "ops": [
+        {
+          "name": "SegmentVideo",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "GenerateThumbnails",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "ExtractTopics",
+          "params": [
+            "segmentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ScientificImageAnalysis",
+      "ops": [
+        {
+          "name": "PreclassifySubject",
+          "params": [
+            "imageId",
+            "projectType"
+          ]
+        },
+        {
+          "name": "DetectEmptyImages",
+          "params": [
+            "imageId",
+            "projectType"
+          ]
+        },
+        {
+          "name": "FilterArtefacts",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "DetectFeatures",
+          "params": [
+            "imageId",
+            "featureTypes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ScientificMediaAnalysis",
+      "ops": [
+        {
+          "name": "AnalyzeVideoMotion",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "DetectVideoEvents",
+          "params": [
+            "videoId",
+            "eventType"
+          ]
+        },
+        {
+          "name": "ProcessAudioNoise",
+          "params": [
+            "audioId"
+          ]
+        },
+        {
+          "name": "GroupAudioPatterns",
+          "params": [
+            "audioId",
+            "patternType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VolunteerManagement",
+      "ops": [
+        {
+          "name": "IdentifyVolunteerType",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "CalculateClassificationWeight",
+          "params": [
+            "userId",
+            "classificationId"
+          ]
+        },
+        {
+          "name": "EvaluateComment",
+          "params": [
+            "commentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VolunteerInteraction",
+      "ops": [
+        {
+          "name": "DetermineInterruption",
+          "params": [
+            "userId",
+            "context"
+          ]
+        },
+        {
+          "name": "DetermineEducation",
+          "params": [
+            "userId",
+            "context"
+          ]
+        },
+        {
+          "name": "TriggerBotAction",
+          "params": [
+            "context",
+            "actionType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataManagement",
+      "ops": [
+        {
+          "name": "ManageTags",
+          "params": [
+            "mediaId",
+            "tags"
+          ]
+        },
+        {
+          "name": "SummarizeArticles",
+          "params": [
+            "articleIds"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "SearchDiscoveryService",
+      "callee": "ContentAnalysisService"
+    },
+    {
+      "caller": "SearchDiscoveryService",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "RecommendationService",
+      "callee": "ContentAnalysisService"
+    },
+    {
+      "caller": "RecommendationService",
+      "callee": "VolunteerManagement"
+    },
+    {
+      "caller": "VolunteerInteraction",
+      "callee": "VolunteerManagement"
+    },
+    {
+      "caller": "ScientificImageAnalysis",
+      "callee": "ContentAnalysisService"
+    },
+    {
+      "caller": "VideoProcessingService",
+      "callee": "MetadataManagement"
+    }
+  ]
+}

@@ -1,0 +1,849 @@
+{
+  "microservices": [
+    {
+      "name": "Auth",
+      "ops": [
+        {
+          "name": "SignUpWithEmail",
+          "params": [
+            "email",
+            "password",
+            "name"
+          ]
+        },
+        {
+          "name": "SignUpWithOAuth",
+          "params": [
+            "provider",
+            "oauthToken"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "emailOrUsername",
+            "password"
+          ]
+        },
+        {
+          "name": "InviteUserByEmail",
+          "params": [
+            "email",
+            "inviterId",
+            "role",
+            "publisherId"
+          ]
+        },
+        {
+          "name": "AcceptInvitation",
+          "params": [
+            "invitationToken",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserProfile",
+      "ops": [
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateUserProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        },
+        {
+          "name": "GetUserActivityStats",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PublisherDirectory",
+      "ops": [
+        {
+          "name": "CreatePublisher",
+          "params": [
+            "ownerUserId",
+            "name",
+            "slug"
+          ]
+        },
+        {
+          "name": "GetPublisherProfile",
+          "params": [
+            "publisherId"
+          ]
+        },
+        {
+          "name": "UpdatePublisherProfile",
+          "params": [
+            "publisherId",
+            "profileData"
+          ]
+        },
+        {
+          "name": "ListPublishers",
+          "params": [
+            "query",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchPublisherPackages",
+          "params": [
+            "publisherId",
+            "query",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OrganizationMembership",
+      "ops": [
+        {
+          "name": "InviteExistingUserToPublisher",
+          "params": [
+            "publisherId",
+            "userId",
+            "role"
+          ]
+        },
+        {
+          "name": "InviteUserByEmailToPublisher",
+          "params": [
+            "publisherId",
+            "email",
+            "role"
+          ]
+        },
+        {
+          "name": "RemoveMemberFromPublisher",
+          "params": [
+            "publisherId",
+            "memberUserId"
+          ]
+        },
+        {
+          "name": "ListPublisherMembers",
+          "params": [
+            "publisherId"
+          ]
+        },
+        {
+          "name": "SetMemberRole",
+          "params": [
+            "publisherId",
+            "memberUserId",
+            "role"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Onboarding",
+      "ops": [
+        {
+          "name": "GetPostSignupChecklist",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "MarkOnboardingStepComplete",
+          "params": [
+            "userId",
+            "stepId"
+          ]
+        },
+        {
+          "name": "GetQuickExamplePackages",
+          "params": [
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataPackageRegistry",
+      "ops": [
+        {
+          "name": "CreatePackage",
+          "params": [
+            "publisherId",
+            "descriptor",
+            "visibility"
+          ]
+        },
+        {
+          "name": "ImportPackage",
+          "params": [
+            "publisherId",
+            "sourceUrl",
+            "descriptor",
+            "visibility"
+          ]
+        },
+        {
+          "name": "UpdatePackage",
+          "params": [
+            "packageId",
+            "descriptor"
+          ]
+        },
+        {
+          "name": "SetPackageVisibility",
+          "params": [
+            "packageId",
+            "visibility",
+            "allowedUserIds"
+          ]
+        },
+        {
+          "name": "GetPackage",
+          "params": [
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PublicationLifecycle",
+      "ops": [
+        {
+          "name": "PublishPackage",
+          "params": [
+            "packageId",
+            "visibility",
+            "audience"
+          ]
+        },
+        {
+          "name": "UnpublishPackage",
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "DeletePackage",
+          "params": [
+            "packageId",
+            "hardDelete"
+          ]
+        },
+        {
+          "name": "RestorePackage",
+          "params": [
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataValidation",
+      "ops": [
+        {
+          "name": "ValidatePackageDescriptor",
+          "params": [
+            "descriptor"
+          ]
+        },
+        {
+          "name": "ValidatePackageOnPublish",
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "GetValidationReport",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataStorage",
+      "ops": [
+        {
+          "name": "CacheRemoteResources",
+          "params": [
+            "packageId",
+            "resourceUrls"
+          ]
+        },
+        {
+          "name": "GetResource",
+          "params": [
+            "packageId",
+            "version",
+            "resourceName"
+          ]
+        },
+        {
+          "name": "GeneratePackageArchive",
+          "params": [
+            "packageId",
+            "version",
+            "format"
+          ]
+        },
+        {
+          "name": "GenerateSQLiteBundle",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PackagePreview",
+      "ops": [
+        {
+          "name": "GeneratePreviewFromDescriptor",
+          "params": [
+            "descriptor"
+          ]
+        },
+        {
+          "name": "GeneratePreviewForPackage",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        },
+        {
+          "name": "PreviewViewsFromCli",
+          "params": [
+            "descriptor",
+            "viewConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchAndDiscovery",
+      "ops": [
+        {
+          "name": "SearchPackages",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchPackagesByDescription",
+          "params": [
+            "keywords",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ListExamplePackages",
+          "params": [
+            "audienceType",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "BrowsePublishers",
+          "params": [
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DownloadService",
+      "ops": [
+        {
+          "name": "DownloadPackageBundle",
+          "params": [
+            "packageId",
+            "version",
+            "format"
+          ]
+        },
+        {
+          "name": "DownloadAsSQLite",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        },
+        {
+          "name": "DownloadResource",
+          "params": [
+            "packageId",
+            "version",
+            "resourceName"
+          ]
+        },
+        {
+          "name": "UpdateLocalCopy",
+          "params": [
+            "packageId",
+            "currentVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VersioningAndTagging",
+      "ops": [
+        {
+          "name": "TagPackageVersion",
+          "params": [
+            "packageId",
+            "tagName",
+            "version"
+          ]
+        },
+        {
+          "name": "OverwriteTag",
+          "params": [
+            "packageId",
+            "tagName",
+            "version",
+            "force"
+          ]
+        },
+        {
+          "name": "ListPackageVersions",
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "GetPackageVersion",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        },
+        {
+          "name": "GetSchemaDiff",
+          "params": [
+            "packageId",
+            "fromVersion",
+            "toVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PackageTemporalInfo",
+      "ops": [
+        {
+          "name": "GetPackageAgeInfo",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        },
+        {
+          "name": "GetVersionActivitySummary",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SubscribeToPackageChanges",
+          "params": [
+            "userId",
+            "packageId"
+          ]
+        },
+        {
+          "name": "UnsubscribeFromPackageChanges",
+          "params": [
+            "userId",
+            "packageId"
+          ]
+        },
+        {
+          "name": "NotifyPackageUpdated",
+          "params": [
+            "packageId",
+            "oldVersion",
+            "newVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ActivityAndAnalytics",
+      "ops": [
+        {
+          "name": "GetSiteActivityStats",
+          "params": []
+        },
+        {
+          "name": "GetPackageDownloadStats",
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "RecordApiUsage",
+          "params": [
+            "userId",
+            "endpoint",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "RecordDownload",
+          "params": [
+            "packageId",
+            "version",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BillingAndPlans",
+      "ops": [
+        {
+          "name": "ListPricingPlans",
+          "params": []
+        },
+        {
+          "name": "GetPricingPlan",
+          "params": [
+            "planId"
+          ]
+        },
+        {
+          "name": "SubscribePublisherToPlan",
+          "params": [
+            "publisherId",
+            "planId",
+            "paymentMethodId"
+          ]
+        },
+        {
+          "name": "GetPublisherSubscription",
+          "params": [
+            "publisherId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SiteConfig",
+      "ops": [
+        {
+          "name": "GetSiteConfig",
+          "params": []
+        },
+        {
+          "name": "UpdateSiteConfig",
+          "params": [
+            "adminUserId",
+            "config"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CliIntegration",
+      "ops": [
+        {
+          "name": "ConfigureClient",
+          "params": [
+            "userId",
+            "apiKey",
+            "endpoint"
+          ]
+        },
+        {
+          "name": "CliPublishPackage",
+          "params": [
+            "userId",
+            "descriptorPath",
+            "publisherId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "CliUpdatePackage",
+          "params": [
+            "userId",
+            "packageId",
+            "descriptorPath"
+          ]
+        },
+        {
+          "name": "CliUnpublishPackage",
+          "params": [
+            "userId",
+            "packageId"
+          ]
+        },
+        {
+          "name": "CliRestorePackage",
+          "params": [
+            "userId",
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LanguageBindings",
+      "ops": [
+        {
+          "name": "GetPackageApiDescriptor",
+          "params": [
+            "packageId",
+            "version",
+            "language"
+          ]
+        },
+        {
+          "name": "GetNodeLibMetadata",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        },
+        {
+          "name": "GetRBindingInstructions",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DependencyManagement",
+      "ops": [
+        {
+          "name": "ResolvePackageDependencies",
+          "params": [
+            "requirementsFile"
+          ]
+        },
+        {
+          "name": "LockPackageVersions",
+          "params": [
+            "requirementsFile"
+          ]
+        },
+        {
+          "name": "ListInstalledPackageVersions",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "InstallPackageVersion",
+          "params": [
+            "projectId",
+            "packageId",
+            "version"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "Auth",
+      "callee": "UserProfile"
+    },
+    {
+      "caller": "Auth",
+      "callee": "OrganizationMembership"
+    },
+    {
+      "caller": "Auth",
+      "callee": "PublisherDirectory"
+    },
+    {
+      "caller": "PublisherDirectory",
+      "callee": "OrganizationMembership"
+    },
+    {
+      "caller": "PublisherDirectory",
+      "callee": "BillingAndPlans"
+    },
+    {
+      "caller": "OrganizationMembership",
+      "callee": "UserProfile"
+    },
+    {
+      "caller": "Onboarding",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "Onboarding",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "DataPackageRegistry",
+      "callee": "DataValidation"
+    },
+    {
+      "caller": "DataPackageRegistry",
+      "callee": "DataStorage"
+    },
+    {
+      "caller": "DataPackageRegistry",
+      "callee": "VersioningAndTagging"
+    },
+    {
+      "caller": "DataPackageRegistry",
+      "callee": "ActivityAndAnalytics"
+    },
+    {
+      "caller": "PublicationLifecycle",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "PublicationLifecycle",
+      "callee": "DataValidation"
+    },
+    {
+      "caller": "PublicationLifecycle",
+      "callee": "VersioningAndTagging"
+    },
+    {
+      "caller": "PublicationLifecycle",
+      "callee": "Notification"
+    },
+    {
+      "caller": "DataValidation",
+      "callee": "DataStorage"
+    },
+    {
+      "caller": "PackagePreview",
+      "callee": "DataStorage"
+    },
+    {
+      "caller": "PackagePreview",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "SearchAndDiscovery",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "SearchAndDiscovery",
+      "callee": "PublisherDirectory"
+    },
+    {
+      "caller": "DownloadService",
+      "callee": "DataStorage"
+    },
+    {
+      "caller": "DownloadService",
+      "callee": "ActivityAndAnalytics"
+    },
+    {
+      "caller": "DownloadService",
+      "callee": "VersioningAndTagging"
+    },
+    {
+      "caller": "VersioningAndTagging",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "VersioningAndTagging",
+      "callee": "PackageTemporalInfo"
+    },
+    {
+      "caller": "Notification",
+      "callee": "VersioningAndTagging"
+    },
+    {
+      "caller": "Notification",
+      "callee": "UserProfile"
+    },
+    {
+      "caller": "ActivityAndAnalytics",
+      "callee": "DownloadService"
+    },
+    {
+      "caller": "BillingAndPlans",
+      "callee": "PublisherDirectory"
+    },
+    {
+      "caller": "BillingAndPlans",
+      "callee": "SiteConfig"
+    },
+    {
+      "caller": "CliIntegration",
+      "callee": "Auth"
+    },
+    {
+      "caller": "CliIntegration",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "CliIntegration",
+      "callee": "PublicationLifecycle"
+    },
+    {
+      "caller": "CliIntegration",
+      "callee": "PackagePreview"
+    },
+    {
+      "caller": "LanguageBindings",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "LanguageBindings",
+      "callee": "DataStorage"
+    },
+    {
+      "caller": "LanguageBindings",
+      "callee": "VersioningAndTagging"
+    },
+    {
+      "caller": "DependencyManagement",
+      "callee": "LanguageBindings"
+    },
+    {
+      "caller": "DependencyManagement",
+      "callee": "DataPackageRegistry"
+    },
+    {
+      "caller": "DependencyManagement",
+      "callee": "VersioningAndTagging"
+    },
+    {
+      "caller": "PackageTemporalInfo",
+      "callee": "ActivityAndAnalytics"
+    }
+  ]
+}

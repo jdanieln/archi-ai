@@ -1,0 +1,330 @@
+{
+  "microservices": [
+    {
+      "name": "IdentityService",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "name",
+            "email",
+            "password",
+            "username"
+          ]
+        },
+        {
+          "name": "AuthenticateUser",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "RequestPasswordReset",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "DeleteAccount",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserProfileService",
+      "ops": [
+        {
+          "name": "UpdateProfile",
+          "params": [
+            "userId",
+            "details"
+          ]
+        },
+        {
+          "name": "SetTimezone",
+          "params": [
+            "userId",
+            "timezone"
+          ]
+        },
+        {
+          "name": "UploadThumbnail",
+          "params": [
+            "userId",
+            "photoData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GameManagementService",
+      "ops": [
+        {
+          "name": "CreateGame",
+          "params": [
+            "moderatorId",
+            "name",
+            "description"
+          ]
+        },
+        {
+          "name": "DeleteGame",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "BrowseGames",
+          "params": [
+            "moderatorId"
+          ]
+        },
+        {
+          "name": "ConfigureScale",
+          "params": [
+            "gameId",
+            "scaleType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GameParticipationService",
+      "ops": [
+        {
+          "name": "GenerateInviteUrl",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "JoinGame",
+          "params": [
+            "gameId",
+            "participantName"
+          ]
+        },
+        {
+          "name": "GetParticipants",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemManagementService",
+      "ops": [
+        {
+          "name": "AddItem",
+          "params": [
+            "gameId",
+            "itemText"
+          ]
+        },
+        {
+          "name": "EditItem",
+          "params": [
+            "itemId",
+            "itemText"
+          ]
+        },
+        {
+          "name": "DeleteItem",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetItems",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemImportService",
+      "ops": [
+        {
+          "name": "ImportSpreadsheet",
+          "params": [
+            "gameId",
+            "spreadsheetData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RoundManagementService",
+      "ops": [
+        {
+          "name": "StartRound",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "ShowAllEstimates",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "AcceptAverageEstimate",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "SetAgreedEstimate",
+          "params": [
+            "roundId",
+            "estimateValue"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EstimationService",
+      "ops": [
+        {
+          "name": "SubmitEstimate",
+          "params": [
+            "roundId",
+            "participantId",
+            "value"
+          ]
+        },
+        {
+          "name": "ChangeEstimate",
+          "params": [
+            "roundId",
+            "participantId",
+            "value"
+          ]
+        },
+        {
+          "name": "GetRoundEstimates",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "GetPriorEstimates",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TimerService",
+      "ops": [
+        {
+          "name": "StartTimer",
+          "params": [
+            "roundId",
+            "duration"
+          ]
+        },
+        {
+          "name": "ResetTimer",
+          "params": [
+            "roundId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TranscriptService",
+      "ops": [
+        {
+          "name": "GetTranscript",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "ExportTranscriptHtml",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "ExportTranscriptCsv",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsService",
+      "ops": [
+        {
+          "name": "StoreAnonymizedResults",
+          "params": [
+            "gameData"
+          ]
+        },
+        {
+          "name": "GetUsageMetrics",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "SendEmail",
+          "params": [
+            "email",
+            "subject",
+            "body"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "IdentityService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "ItemImportService",
+      "callee": "ItemManagementService"
+    },
+    {
+      "caller": "RoundManagementService",
+      "callee": "EstimationService"
+    },
+    {
+      "caller": "EstimationService",
+      "callee": "TimerService"
+    },
+    {
+      "caller": "TranscriptService",
+      "callee": "ItemManagementService"
+    },
+    {
+      "caller": "TranscriptService",
+      "callee": "EstimationService"
+    },
+    {
+      "caller": "AnalyticsService",
+      "callee": "GameManagementService"
+    },
+    {
+      "caller": "AnalyticsService",
+      "callee": "EstimationService"
+    }
+  ]
+}

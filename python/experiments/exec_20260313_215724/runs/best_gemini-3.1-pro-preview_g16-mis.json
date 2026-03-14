@@ -1,0 +1,651 @@
+{
+  "microservices": [
+    {
+      "name": "DataLifecycleManagement",
+      "ops": [
+        {
+          "name": "SetExpirationDate",
+          "params": [
+            "itemId",
+            "expirationDate",
+            "actionType"
+          ]
+        },
+        {
+          "name": "GetScheduledDeletions",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FinancialTracking",
+      "ops": [
+        {
+          "name": "SetFinancialContact",
+          "params": [
+            "itemId",
+            "contactDetails"
+          ]
+        },
+        {
+          "name": "GetFinancialContact",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetStorageByContact",
+          "params": [
+            "contactId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollectionManagement",
+      "ops": [
+        {
+          "name": "MapItem",
+          "params": [
+            "itemId",
+            "targetCollectionId"
+          ]
+        },
+        {
+          "name": "MoveItem",
+          "params": [
+            "itemId",
+            "sourceCollectionId",
+            "targetCollectionId"
+          ]
+        },
+        {
+          "name": "GetCollectionStats",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "ops": [
+        {
+          "name": "SearchItems",
+          "params": [
+            "query",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "IndexMetadata",
+          "params": [
+            "itemId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "ReindexRepository",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "Audit",
+      "ops": [
+        {
+          "name": "LogEvent",
+          "params": [
+            "itemId",
+            "action",
+            "userId",
+            "comment"
+          ]
+        },
+        {
+          "name": "GenerateAuditReport",
+          "params": [
+            "startDate",
+            "endDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReplicationManagement",
+      "ops": [
+        {
+          "name": "SetReplicationPolicy",
+          "params": [
+            "collectionId",
+            "policyDetails"
+          ]
+        },
+        {
+          "name": "ConfigureReplication",
+          "params": [
+            "collectionId",
+            "settings"
+          ]
+        },
+        {
+          "name": "QueueForReplication",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetReplicationStatus",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EncryptionService",
+      "ops": [
+        {
+          "name": "EncryptCollection",
+          "params": [
+            "collectionId",
+            "encryptionKey"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EmbargoManagement",
+      "ops": [
+        {
+          "name": "LiftEmbargo",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "SetEmbargo",
+          "params": [
+            "itemId",
+            "embargoDate"
+          ]
+        },
+        {
+          "name": "GetEmbargoStatus",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "UpdateEmbargoDate",
+          "params": [
+            "itemId",
+            "newDate"
+          ]
+        },
+        {
+          "name": "ProcessExpiredEmbargoes",
+          "params": [
+            "currentDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntegrationService",
+      "ops": [
+        {
+          "name": "SyncWithSymplectic",
+          "params": [
+            "payload"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControl",
+      "ops": [
+        {
+          "name": "EvaluateAccess",
+          "params": [
+            "itemId",
+            "userId"
+          ]
+        },
+        {
+          "name": "SetPermissions",
+          "params": [
+            "itemId",
+            "permissions"
+          ]
+        },
+        {
+          "name": "ApplyDefaultPermissions",
+          "params": [
+            "collectionId",
+            "userIds"
+          ]
+        },
+        {
+          "name": "GrantPrivilege",
+          "params": [
+            "userId",
+            "privilegeType"
+          ]
+        },
+        {
+          "name": "AssignGroupPermissions",
+          "params": [
+            "groupId",
+            "permissions"
+          ]
+        },
+        {
+          "name": "SetIPRestriction",
+          "params": [
+            "collectionId",
+            "ipRange"
+          ]
+        },
+        {
+          "name": "BatchUpdatePermissions",
+          "params": [
+            "itemIds",
+            "permissions"
+          ]
+        },
+        {
+          "name": "EvaluateIPWhitelist",
+          "params": [
+            "ipAddress"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IngestManagement",
+      "ops": [
+        {
+          "name": "CreateDepositForm",
+          "params": [
+            "collectionId",
+            "formDefinition"
+          ]
+        },
+        {
+          "name": "SubmitDeposit",
+          "params": [
+            "itemData",
+            "licenseAccepted"
+          ]
+        },
+        {
+          "name": "SetDepositWindow",
+          "params": [
+            "collectionId",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "SetSubmissionWindow",
+          "params": [
+            "classId",
+            "startDate",
+            "endDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LicenseManagement",
+      "ops": [
+        {
+          "name": "GetLicenses",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "RecordLicense",
+          "params": [
+            "itemId",
+            "licenseId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BatchIngest",
+      "ops": [
+        {
+          "name": "ProcessBatch",
+          "params": [
+            "batchData"
+          ]
+        },
+        {
+          "name": "SubmitBatch",
+          "params": [
+            "metadata",
+            "files"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GroupManagement",
+      "ops": [
+        {
+          "name": "UpdateDepositGroup",
+          "params": [
+            "collectionId",
+            "userIds"
+          ]
+        },
+        {
+          "name": "UpdateGroupMember",
+          "params": [
+            "groupId",
+            "userId",
+            "action"
+          ]
+        },
+        {
+          "name": "CreateGroup",
+          "params": [
+            "groupName",
+            "userIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuthorityControl",
+      "ops": [
+        {
+          "name": "NormalizeAuthor",
+          "params": [
+            "authorName",
+            "identifier"
+          ]
+        },
+        {
+          "name": "AssignAuthorIdentifier",
+          "params": [
+            "authorId",
+            "identifier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OAI_PMH_Service",
+      "ops": [
+        {
+          "name": "GetRecords",
+          "params": [
+            "metadataPrefix",
+            "set"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reporting",
+      "ops": [
+        {
+          "name": "GenerateStorageReport",
+          "params": [
+            "timePeriod"
+          ]
+        },
+        {
+          "name": "GetEmbargoSummary",
+          "params": [
+            "itemType"
+          ]
+        },
+        {
+          "name": "GenerateReport",
+          "params": [
+            "reportParams"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "GetUserStats",
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "ToggleSuperuser",
+          "params": [
+            "userId",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "ScheduleSystemMessage",
+          "params": [
+            "message",
+            "startTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "SendAccessRequest",
+          "params": [
+            "itemId",
+            "userId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SystemMonitoring",
+      "ops": [
+        {
+          "name": "GetRecentErrors",
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "GetSLAStatus",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "ops": [
+        {
+          "name": "GetReplicationSummary",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetCollectionStats",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetRecentSubmissions",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetSubmissionStatus",
+          "params": [
+            "classId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LinkedDataService",
+      "ops": [
+        {
+          "name": "GetLinkedData",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IdentifierService",
+      "ops": [
+        {
+          "name": "UpdateDOI",
+          "params": [
+            "itemId",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "ops": [
+        {
+          "name": "GetRefererStats",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationService",
+      "ops": [
+        {
+          "name": "ValidateFiles",
+          "params": [
+            "fileIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DocumentService",
+      "ops": [
+        {
+          "name": "GetDocumentation",
+          "params": [
+            "topic"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VersioningService",
+      "ops": [
+        {
+          "name": "GetVersions",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "RestoreVersion",
+          "params": [
+            "itemId",
+            "versionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataManagement",
+      "ops": [
+        {
+          "name": "UpdateMetadata",
+          "params": [
+            "itemId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "ExportRecord",
+          "params": [
+            "itemId",
+            "format"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "Reporting",
+      "callee": "FinancialTracking"
+    },
+    {
+      "caller": "Reporting",
+      "callee": "EmbargoManagement"
+    },
+    {
+      "caller": "Dashboard",
+      "callee": "ReplicationManagement"
+    },
+    {
+      "caller": "Dashboard",
+      "callee": "CollectionManagement"
+    },
+    {
+      "caller": "BatchIngest",
+      "callee": "EmbargoManagement"
+    },
+    {
+      "caller": "BatchIngest",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "IngestManagement",
+      "callee": "LicenseManagement"
+    },
+    {
+      "caller": "IngestManagement",
+      "callee": "ValidationService"
+    },
+    {
+      "caller": "EmbargoManagement",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "Search",
+      "callee": "EmbargoManagement"
+    },
+    {
+      "caller": "ReplicationManagement",
+      "callee": "EncryptionService"
+    },
+    {
+      "caller": "IdentifierService",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "GroupManagement",
+      "callee": "AccessControl"
+    }
+  ]
+}

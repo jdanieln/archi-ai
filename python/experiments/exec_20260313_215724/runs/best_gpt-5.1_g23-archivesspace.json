@@ -1,0 +1,817 @@
+{
+  "microservices": [
+    {
+      "name": "IdentityAccess",
+      "ops": [
+        {
+          "name": "LoginLocal",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "LoginLDAP",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "Authenticate",
+          "params": [
+            "token"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserAccounts",
+      "ops": [
+        {
+          "name": "CreateUser",
+          "params": [
+            "adminId",
+            "username",
+            "email",
+            "password",
+            "roles"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "adminId",
+            "userId",
+            "newPassword"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RolePermissionManagement",
+      "ops": [
+        {
+          "name": "AssignUserRoleForRepository",
+          "params": [
+            "adminId",
+            "userId",
+            "repositoryId",
+            "role"
+          ]
+        },
+        {
+          "name": "DeclareRepositoryManagerRole",
+          "params": [
+            "sysAdminId",
+            "userId",
+            "repositoryId"
+          ]
+        },
+        {
+          "name": "AssignUsersToAdvancedDataEntry",
+          "params": [
+            "adminId",
+            "userIds",
+            "repositoryId",
+            "permissions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RepositoryCatalog",
+      "ops": [
+        {
+          "name": "CreateRepository",
+          "params": [
+            "adminId",
+            "name",
+            "code",
+            "properties"
+          ]
+        },
+        {
+          "name": "AddRepositoryProperties",
+          "params": [
+            "adminId",
+            "repositoryId",
+            "properties"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnumRegistry",
+      "ops": [
+        {
+          "name": "GetEnumList",
+          "params": [
+            "enumType"
+          ]
+        },
+        {
+          "name": "LoadEnumValuesFromDatabase",
+          "params": [
+            "enumType"
+          ]
+        },
+        {
+          "name": "UpdateEnumValue",
+          "params": [
+            "enumType",
+            "oldValue",
+            "newValue"
+          ]
+        },
+        {
+          "name": "BulkUpdateEnumValue",
+          "params": [
+            "enumType",
+            "fromValue",
+            "toValue"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HelpCenter",
+      "ops": [
+        {
+          "name": "ConfigureHelpCenter",
+          "params": [
+            "adminId",
+            "baseUrl",
+            "topicMappings"
+          ]
+        },
+        {
+          "name": "GetContextualHelpLinks",
+          "params": [
+            "userId",
+            "context"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ConfigManagement",
+      "ops": [
+        {
+          "name": "LoadExternalConfig",
+          "params": [
+            "configPath"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DemoDatabaseAdmin",
+      "ops": [
+        {
+          "name": "ConfigureDemoDatabaseLocation",
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "BackupDemoDatabase",
+          "params": [
+            "path",
+            "backupLocation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MigrationTracking",
+      "ops": [
+        {
+          "name": "StoreSourceRecordId",
+          "params": [
+            "aspaceRecordId",
+            "sourceSystem",
+            "sourceRecordId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportEAD",
+      "ops": [
+        {
+          "name": "UploadEADForImport",
+          "params": [
+            "userId",
+            "repositoryId",
+            "file",
+            "sourceSystem"
+          ]
+        },
+        {
+          "name": "ImportEADFromArchon",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        },
+        {
+          "name": "ImportEADFromAT",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        },
+        {
+          "name": "ImportEADData",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportMARCXML",
+      "ops": [
+        {
+          "name": "ImportResourcesFromMARCXML",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        },
+        {
+          "name": "ImportAgentsAndSubjectsFromMARCXML",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportCSV",
+      "ops": [
+        {
+          "name": "ImportAccessionsFromCSV",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportEACCPF",
+      "ops": [
+        {
+          "name": "ImportAgentsFromEACCPF",
+          "params": [
+            "repositoryId",
+            "file"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CustomImporters",
+      "ops": [
+        {
+          "name": "RegisterCustomImporter",
+          "params": [
+            "developerId",
+            "name",
+            "config"
+          ]
+        },
+        {
+          "name": "RunCustomImporter",
+          "params": [
+            "importerId",
+            "input"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExportEAD",
+      "ops": [
+        {
+          "name": "ExportDescriptionAsEAD",
+          "params": [
+            "resourceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExportEACCPF",
+      "ops": [
+        {
+          "name": "ExportAgentsAsEACCPF",
+          "params": [
+            "agentIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportErrorReporting",
+      "ops": [
+        {
+          "name": "ReportImportError",
+          "params": [
+            "importJobId",
+            "errorMessage",
+            "details"
+          ]
+        },
+        {
+          "name": "GetImportErrors",
+          "params": [
+            "importJobId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchRepository",
+          "params": [
+            "repositoryId",
+            "query",
+            "recordTypes",
+            "filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResourceManagement",
+      "ops": [
+        {
+          "name": "CreateResource",
+          "params": [
+            "repositoryId",
+            "data"
+          ]
+        },
+        {
+          "name": "UpdateResource",
+          "params": [
+            "resourceId",
+            "data"
+          ]
+        },
+        {
+          "name": "DeleteResource",
+          "params": [
+            "resourceId"
+          ]
+        },
+        {
+          "name": "CreateOrEditResourceRecord",
+          "params": [
+            "resourceId",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FindingAidService",
+      "ops": [
+        {
+          "name": "ViewFindingAid",
+          "params": [
+            "resourceId"
+          ]
+        },
+        {
+          "name": "AddAdministrativeDataToResource",
+          "params": [
+            "resourceId",
+            "adminData"
+          ]
+        },
+        {
+          "name": "AssignLevelOfDescription",
+          "params": [
+            "resourceOrComponentId",
+            "level",
+            "otherLevel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResourceStructure",
+      "ops": [
+        {
+          "name": "AssignComponentUniqueIdentifier",
+          "params": [
+            "resourceComponentId",
+            "identifier"
+          ]
+        },
+        {
+          "name": "RearrangeResourceHierarchyByDragDrop",
+          "params": [
+            "resourceId",
+            "sourceComponentId",
+            "targetComponentId",
+            "position"
+          ]
+        },
+        {
+          "name": "RearrangeResourceHierarchyByKeyboard",
+          "params": [
+            "resourceId",
+            "componentId",
+            "direction"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessionManagement",
+      "ops": [
+        {
+          "name": "DisplayDatesAndExtents",
+          "params": [
+            "accessionId"
+          ]
+        },
+        {
+          "name": "ViewAccessionWithDatesAndExtents",
+          "params": [
+            "accessionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DigitalObjectManagement",
+      "ops": [
+        {
+          "name": "ManageDigitalObject",
+          "params": [
+            "digitalObjectId",
+            "data"
+          ]
+        },
+        {
+          "name": "RearrangeDigitalObjectHierarchyByKeyboard",
+          "params": [
+            "digitalObjectId",
+            "componentId",
+            "direction"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollectionManagement",
+      "ops": [
+        {
+          "name": "CreateOrEditCollectionManagementSubrecord",
+          "params": [
+            "recordId",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EventManagement",
+      "ops": [
+        {
+          "name": "CreateOrEditEvent",
+          "params": [
+            "eventId",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RightsManagement",
+      "ops": [
+        {
+          "name": "CreateOrEditRightsStatement",
+          "params": [
+            "rightsId",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AgentRegistry",
+      "ops": [
+        {
+          "name": "CreateOrEditAgent",
+          "params": [
+            "agentId",
+            "data"
+          ]
+        },
+        {
+          "name": "SetAgentRoleForRecord",
+          "params": [
+            "agentId",
+            "recordId",
+            "roleType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NameSourceManagement",
+      "ops": [
+        {
+          "name": "SpecifyNameFormSource",
+          "params": [
+            "agentId",
+            "nameFormId",
+            "sourceId"
+          ]
+        },
+        {
+          "name": "AddOrEditSource",
+          "params": [
+            "sourceId",
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SubjectRegistry",
+      "ops": [
+        {
+          "name": "AssociateSubjectWithResource",
+          "params": [
+            "subjectId",
+            "resourceId"
+          ]
+        },
+        {
+          "name": "AssociateStandardIdentifierWithSubject",
+          "params": [
+            "subjectId",
+            "identifier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InstanceContainerManagement",
+      "ops": [
+        {
+          "name": "AssociateInstanceWithResourceComponent",
+          "params": [
+            "instanceId",
+            "resourceOrComponentId"
+          ]
+        },
+        {
+          "name": "AssociateInstanceWithContainer",
+          "params": [
+            "instanceId",
+            "containerId"
+          ]
+        },
+        {
+          "name": "AssignLocationToContainer",
+          "params": [
+            "containerId",
+            "locationId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotesService",
+      "ops": [
+        {
+          "name": "AddNotesToRecord",
+          "params": [
+            "recordId",
+            "notes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ConcurrencyControl",
+      "ops": [
+        {
+          "name": "CheckForConflictingEdits",
+          "params": [
+            "recordId",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RoleBasedAccess",
+      "ops": [
+        {
+          "name": "CreateBasicArchivalDescription",
+          "params": [
+            "repositoryId",
+            "data"
+          ]
+        },
+        {
+          "name": "UpdateBasicArchivalDescription",
+          "params": [
+            "recordId",
+            "data"
+          ]
+        },
+        {
+          "name": "RepositoryManagerCRUDArchivalDescriptions",
+          "params": [
+            "repositoryId",
+            "data"
+          ]
+        },
+        {
+          "name": "RepositoryManagerCRUDAnyRecords",
+          "params": [
+            "repositoryId",
+            "data"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "IdentityAccess",
+      "callee": "UserAccounts"
+    },
+    {
+      "caller": "RolePermissionManagement",
+      "callee": "UserAccounts"
+    },
+    {
+      "caller": "RolePermissionManagement",
+      "callee": "RepositoryCatalog"
+    },
+    {
+      "caller": "HelpCenter",
+      "callee": "ConfigManagement"
+    },
+    {
+      "caller": "DemoDatabaseAdmin",
+      "callee": "ConfigManagement"
+    },
+    {
+      "caller": "EnumRegistry",
+      "callee": "RepositoryCatalog"
+    },
+    {
+      "caller": "ImportEAD",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "ImportEAD",
+      "callee": "AccessionManagement"
+    },
+    {
+      "caller": "ImportMARCXML",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "ImportMARCXML",
+      "callee": "AgentRegistry"
+    },
+    {
+      "caller": "ImportMARCXML",
+      "callee": "SubjectRegistry"
+    },
+    {
+      "caller": "ImportCSV",
+      "callee": "AccessionManagement"
+    },
+    {
+      "caller": "ImportEACCPF",
+      "callee": "AgentRegistry"
+    },
+    {
+      "caller": "CustomImporters",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "CustomImporters",
+      "callee": "AccessionManagement"
+    },
+    {
+      "caller": "CustomImporters",
+      "callee": "AgentRegistry"
+    },
+    {
+      "caller": "CustomImporters",
+      "callee": "SubjectRegistry"
+    },
+    {
+      "caller": "ExportEAD",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "ExportEACCPF",
+      "callee": "AgentRegistry"
+    },
+    {
+      "caller": "ImportErrorReporting",
+      "callee": "ImportEAD"
+    },
+    {
+      "caller": "ImportErrorReporting",
+      "callee": "ImportMARCXML"
+    },
+    {
+      "caller": "ImportErrorReporting",
+      "callee": "ImportCSV"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "AccessionManagement"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "DigitalObjectManagement"
+    },
+    {
+      "caller": "ResourceManagement",
+      "callee": "AgentRegistry"
+    },
+    {
+      "caller": "ResourceManagement",
+      "callee": "SubjectRegistry"
+    },
+    {
+      "caller": "ResourceManagement",
+      "callee": "InstanceContainerManagement"
+    },
+    {
+      "caller": "FindingAidService",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "FindingAidService",
+      "callee": "SubjectRegistry"
+    },
+    {
+      "caller": "ResourceStructure",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "AccessionManagement",
+      "callee": "AgentRegistry"
+    },
+    {
+      "caller": "AccessionManagement",
+      "callee": "SubjectRegistry"
+    },
+    {
+      "caller": "DigitalObjectManagement",
+      "callee": "InstanceContainerManagement"
+    },
+    {
+      "caller": "InstanceContainerManagement",
+      "callee": "RepositoryCatalog"
+    },
+    {
+      "caller": "RoleBasedAccess",
+      "callee": "IdentityAccess"
+    },
+    {
+      "caller": "RoleBasedAccess",
+      "callee": "UserAccounts"
+    },
+    {
+      "caller": "RoleBasedAccess",
+      "callee": "RepositoryCatalog"
+    },
+    {
+      "caller": "ConcurrencyControl",
+      "callee": "ResourceManagement"
+    },
+    {
+      "caller": "ConcurrencyControl",
+      "callee": "AccessionManagement"
+    }
+  ]
+}

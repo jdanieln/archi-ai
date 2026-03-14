@@ -1,0 +1,722 @@
+{
+  "microservices": [
+    {
+      "name": "MusicDiscovery",
+      "ops": [
+        {
+          "name": "SearchByFingerprint",
+          "params": [
+            "audioSample",
+            "userId",
+            "limit"
+          ]
+        },
+        {
+          "name": "SearchByUserProfile",
+          "params": [
+            "userId",
+            "limit"
+          ]
+        },
+        {
+          "name": "SearchBySimilarUsers",
+          "params": [
+            "userId",
+            "limit"
+          ]
+        },
+        {
+          "name": "SearchSimilarToVideo",
+          "params": [
+            "videoId",
+            "contentType",
+            "limit"
+          ]
+        },
+        {
+          "name": "SearchByMetadataAndTags",
+          "params": [
+            "query",
+            "tags",
+            "genres",
+            "limit"
+          ]
+        },
+        {
+          "name": "SearchBySpeechTranscript",
+          "params": [
+            "transcriptQuery",
+            "language",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserRecommendation",
+      "ops": [
+        {
+          "name": "RecommendFromSimilarProfiles",
+          "params": [
+            "userId",
+            "limit"
+          ]
+        },
+        {
+          "name": "RecommendFromLocalNewsEvents",
+          "params": [
+            "userId",
+            "location",
+            "limit"
+          ]
+        },
+        {
+          "name": "RecommendFromImage",
+          "params": [
+            "userId",
+            "imageFile",
+            "limit"
+          ]
+        },
+        {
+          "name": "RecommendByGeoLocation",
+          "params": [
+            "userId",
+            "latitude",
+            "longitude",
+            "radiusKm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VolunteerRecommendation",
+      "ops": [
+        {
+          "name": "RecommendProjectsToVolunteer",
+          "params": [
+            "volunteerId",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoIngestion",
+      "ops": [
+        {
+          "name": "UploadTaggedVideo",
+          "params": [
+            "userId",
+            "videoFile",
+            "tags",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoSegmentation",
+      "ops": [
+        {
+          "name": "GetThumbnailSequences",
+          "params": [
+            "videoId",
+            "segmentLength",
+            "resolution"
+          ]
+        },
+        {
+          "name": "GetVideoSegmentation",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "UpdateVideoSegmentation",
+          "params": [
+            "videoId",
+            "segments",
+            "adminId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoSegmentSimilarity",
+      "ops": [
+        {
+          "name": "GetSimilarVideoSegments",
+          "params": [
+            "videoId",
+            "segmentId",
+            "limit"
+          ]
+        },
+        {
+          "name": "GetPerceptuallySimilarSegments",
+          "params": [
+            "videoId",
+            "segmentId",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualEntityRecognition",
+      "ops": [
+        {
+          "name": "IdentifyPersonsInVideo",
+          "params": [
+            "videoId",
+            "segmentId"
+          ]
+        },
+        {
+          "name": "IdentifyProductsInVideo",
+          "params": [
+            "videoId",
+            "segmentId"
+          ]
+        },
+        {
+          "name": "IdentifyBroadcasterLogosInVideo",
+          "params": [
+            "videoId",
+            "segmentId"
+          ]
+        },
+        {
+          "name": "IdentifyBrandsInVideo",
+          "params": [
+            "videoId",
+            "segmentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImageEntityAndLinking",
+      "ops": [
+        {
+          "name": "IdentifyEntitiesInImage",
+          "params": [
+            "imageFile",
+            "entityTypes"
+          ]
+        },
+        {
+          "name": "FindVideosRelatedToImage",
+          "params": [
+            "imageFile",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GeoContentDiscovery",
+      "ops": [
+        {
+          "name": "GetContentByGeoArea",
+          "params": [
+            "latitude",
+            "longitude",
+            "radiusKm",
+            "contentTypes"
+          ]
+        },
+        {
+          "name": "GetPointsOfInterestWithVideos",
+          "params": [
+            "latitude",
+            "longitude",
+            "radiusKm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SpeechRecognitionIndex",
+      "ops": [
+        {
+          "name": "TranscribeAndIndex",
+          "params": [
+            "audioFile",
+            "language",
+            "contentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SpeechSearch",
+      "ops": [
+        {
+          "name": "SearchByASR",
+          "params": [
+            "query",
+            "language",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NewsContentAnnotation",
+      "ops": [
+        {
+          "name": "AnnotateNewsSegments",
+          "params": [
+            "videoId",
+            "segmentsAnnotations",
+            "adminId"
+          ]
+        },
+        {
+          "name": "ExtractTopicPerSegment",
+          "params": [
+            "videoId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ArticleSummarization",
+      "ops": [
+        {
+          "name": "GetArticleSummary",
+          "params": [
+            "articleId",
+            "length"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentQualityAssessment",
+      "ops": [
+        {
+          "name": "FilterAndRankByAVQuality",
+          "params": [
+            "contentIds",
+            "limit"
+          ]
+        },
+        {
+          "name": "AssessAudioEditing",
+          "params": [
+            "audioFile"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentSafety",
+      "ops": [
+        {
+          "name": "PrefilterNudity",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "ValidateCopyrightIngestion",
+          "params": [
+            "contentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentAssetSearch",
+      "ops": [
+        {
+          "name": "SearchByLowLevelAssetInfo",
+          "params": [
+            "features",
+            "thresholds"
+          ]
+        },
+        {
+          "name": "SearchByHighLevelAssetInfo",
+          "params": [
+            "metadata",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZooniverseImageAnalysis",
+      "ops": [
+        {
+          "name": "AssessImageInterestingness",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "DetectScientistPrompt",
+          "params": [
+            "subjectId"
+          ]
+        },
+        {
+          "name": "IdentifyVolunteerType",
+          "params": [
+            "volunteerId"
+          ]
+        },
+        {
+          "name": "GroupSubjectsBySimilarity",
+          "params": [
+            "subjectIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GalaxyZooPreclassification",
+      "ops": [
+        {
+          "name": "PreclassifyGalaxyZooImages",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "PrefilterAstronomyArtefacts",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "DetectMovingAndTransientObjects",
+          "params": [
+            "imageIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SnapshotSerengetiPreclassification",
+      "ops": [
+        {
+          "name": "DetectNoAnimalsSnapshotSerengeti",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "DetectImageSeriesByTimestamp",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "PreclassifyAnimalSpecies",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "PreclassifyAnimalAttributes",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "DetectAnimalNumber",
+          "params": [
+            "imageIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanktonPortalPreclassification",
+      "ops": [
+        {
+          "name": "SegmentPlankton",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "DetectNoPlankton",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "DetectPlanktonSizeOrientation",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "PreclassifyPlanktonSpecies",
+          "params": [
+            "imageIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DisasterAndSatelliteAnalysis",
+      "ops": [
+        {
+          "name": "DetectDisasterFeatures",
+          "params": [
+            "satelliteImageIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZooniverseVideoAnalysis",
+      "ops": [
+        {
+          "name": "AnalyzeWormMotion",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "DetectWormEggLayingTime",
+          "params": [
+            "videoId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZooniverseAudioAnalysis",
+      "ops": [
+        {
+          "name": "DenoiseAudio",
+          "params": [
+            "audioFileId"
+          ]
+        },
+        {
+          "name": "GroupWhaleCalls",
+          "params": [
+            "audioFileIds"
+          ]
+        },
+        {
+          "name": "DetectWhaleCountInAudio",
+          "params": [
+            "audioFileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VolunteerModeling",
+      "ops": [
+        {
+          "name": "AssessVolunteerClassificationWeight",
+          "params": [
+            "volunteerId",
+            "taskId"
+          ]
+        },
+        {
+          "name": "IdentifyVolunteerTypeFromHistory",
+          "params": [
+            "volunteerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VolunteerEngagement",
+      "ops": [
+        {
+          "name": "DetectWhenToInterruptVolunteer",
+          "params": [
+            "volunteerId",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "DecideInterruptContentType",
+          "params": [
+            "volunteerId",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "DetectWhenToEducateVolunteer",
+          "params": [
+            "volunteerId",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "DecideEducationContentType",
+          "params": [
+            "volunteerId",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "SelectEducationContent",
+          "params": [
+            "volunteerId",
+            "sessionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZooniverseConversationAnalysis",
+      "ops": [
+        {
+          "name": "DetectInterestingComment",
+          "params": [
+            "commentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZoonibotOrchestration",
+      "ops": [
+        {
+          "name": "DecideZoonibotShouldComment",
+          "params": [
+            "subjectId"
+          ]
+        },
+        {
+          "name": "DecideZoonibotShouldExplain",
+          "params": [
+            "subjectId"
+          ]
+        },
+        {
+          "name": "GenerateZoonibotMessage",
+          "params": [
+            "volunteerId",
+            "contextId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "MusicDiscovery",
+      "callee": "UserRecommendation"
+    },
+    {
+      "caller": "MusicDiscovery",
+      "callee": "SpeechSearch"
+    },
+    {
+      "caller": "MusicDiscovery",
+      "callee": "SpeechRecognitionIndex"
+    },
+    {
+      "caller": "UserRecommendation",
+      "callee": "GeoContentDiscovery"
+    },
+    {
+      "caller": "UserRecommendation",
+      "callee": "ImageEntityAndLinking"
+    },
+    {
+      "caller": "VideoIngestion",
+      "callee": "VideoSegmentation"
+    },
+    {
+      "caller": "VideoIngestion",
+      "callee": "ContentQualityAssessment"
+    },
+    {
+      "caller": "VideoIngestion",
+      "callee": "ContentSafety"
+    },
+    {
+      "caller": "VideoIngestion",
+      "callee": "ContentAssetSearch"
+    },
+    {
+      "caller": "VideoSegmentation",
+      "callee": "VideoSegmentSimilarity"
+    },
+    {
+      "caller": "VideoSegmentation",
+      "callee": "NewsContentAnnotation"
+    },
+    {
+      "caller": "VisualEntityRecognition",
+      "callee": "NewsContentAnnotation"
+    },
+    {
+      "caller": "ContentQualityAssessment",
+      "callee": "ContentAssetSearch"
+    },
+    {
+      "caller": "ContentSafety",
+      "callee": "ContentAssetSearch"
+    },
+    {
+      "caller": "ZooniverseImageAnalysis",
+      "callee": "VolunteerModeling"
+    },
+    {
+      "caller": "GalaxyZooPreclassification",
+      "callee": "ZooniverseImageAnalysis"
+    },
+    {
+      "caller": "SnapshotSerengetiPreclassification",
+      "callee": "ZooniverseImageAnalysis"
+    },
+    {
+      "caller": "PlanktonPortalPreclassification",
+      "callee": "ZooniverseImageAnalysis"
+    },
+    {
+      "caller": "DisasterAndSatelliteAnalysis",
+      "callee": "ZooniverseImageAnalysis"
+    },
+    {
+      "caller": "ZooniverseVideoAnalysis",
+      "callee": "VolunteerModeling"
+    },
+    {
+      "caller": "ZooniverseAudioAnalysis",
+      "callee": "VolunteerModeling"
+    },
+    {
+      "caller": "VolunteerEngagement",
+      "callee": "VolunteerModeling"
+    },
+    {
+      "caller": "VolunteerEngagement",
+      "callee": "ZooniverseConversationAnalysis"
+    },
+    {
+      "caller": "ZoonibotOrchestration",
+      "callee": "VolunteerModeling"
+    },
+    {
+      "caller": "ZoonibotOrchestration",
+      "callee": "ZooniverseConversationAnalysis"
+    },
+    {
+      "caller": "VolunteerModeling",
+      "callee": "VolunteerEngagement"
+    },
+    {
+      "caller": "VolunteerModeling",
+      "callee": "VolunteerRecommendation"
+    }
+  ]
+}

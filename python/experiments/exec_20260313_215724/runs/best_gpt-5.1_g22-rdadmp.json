@@ -1,0 +1,897 @@
+{
+  "microservices": [
+    {
+      "name": "DMPManagement",
+      "ops": [
+        {
+          "name": "CreateDMP",
+          "params": [
+            "projectId",
+            "creatorId",
+            "templateId"
+          ]
+        },
+        {
+          "name": "UpdateDMP",
+          "params": [
+            "dmpId",
+            "updatedFields"
+          ]
+        },
+        {
+          "name": "GetDMP",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "ListDMPsByProject",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ApproveDMP",
+          "params": [
+            "dmpId",
+            "approverId",
+            "approvalStatus",
+            "comments"
+          ]
+        },
+        {
+          "name": "GetDMPApprovalStatus",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "RecordDMPMetadata",
+          "params": [
+            "dmpId",
+            "ethicsInfo",
+            "creationDate",
+            "lastUpdated",
+            "responsiblePersonId"
+          ]
+        },
+        {
+          "name": "GetDMPHistory",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "LinkDMPToProposal",
+          "params": [
+            "dmpId",
+            "proposalId"
+          ]
+        },
+        {
+          "name": "GetDMPSections",
+          "params": [
+            "dmpId",
+            "sectionTypes"
+          ]
+        },
+        {
+          "name": "PrepopulateDMPFromSystems",
+          "params": [
+            "dmpId",
+            "sourceSystems"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProjectManagement",
+      "ops": [
+        {
+          "name": "CreateProject",
+          "params": [
+            "title",
+            "shortDescription",
+            "piId",
+            "departmentId"
+          ]
+        },
+        {
+          "name": "GetProject",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "RecordFundingInfo",
+          "params": [
+            "projectId",
+            "funderId",
+            "fundingRequirements",
+            "grantNumber"
+          ]
+        },
+        {
+          "name": "GetFundingInfo",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "SetProjectTimeline",
+          "params": [
+            "projectId",
+            "dataCollectionStart",
+            "dataCollectionEnd",
+            "archivingPlannedDate"
+          ]
+        },
+        {
+          "name": "GetProjectTimeline",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "RecordProjectProposalReference",
+          "params": [
+            "projectId",
+            "proposalId",
+            "proposalUrl"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserAndRoleManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "name",
+            "email",
+            "affiliation",
+            "role"
+          ]
+        },
+        {
+          "name": "AssignProjectRole",
+          "params": [
+            "projectId",
+            "userId",
+            "role",
+            "responsibilities"
+          ]
+        },
+        {
+          "name": "GetProjectRoles",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetUsersByDepartmentAndRole",
+          "params": [
+            "departmentId",
+            "roles"
+          ]
+        },
+        {
+          "name": "GetDMPResponsiblePerson",
+          "params": [
+            "dmpId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataDescription",
+      "ops": [
+        {
+          "name": "PlanDataTypes",
+          "params": [
+            "projectId",
+            "dataTypes"
+          ]
+        },
+        {
+          "name": "DescribeDataContent",
+          "params": [
+            "projectId",
+            "datasetId",
+            "contentDescription",
+            "subjectArea",
+            "sensitivityLevel"
+          ]
+        },
+        {
+          "name": "DescribeDataUsage",
+          "params": [
+            "projectId",
+            "usageScenarios"
+          ]
+        },
+        {
+          "name": "DescribeDataDependencies",
+          "params": [
+            "projectId",
+            "datasetId",
+            "dependentOnDatasets"
+          ]
+        },
+        {
+          "name": "DescribeReusabilityRequirements",
+          "params": [
+            "projectId",
+            "datasetId",
+            "requiredInformation"
+          ]
+        },
+        {
+          "name": "DescribeReproducibility",
+          "params": [
+            "projectId",
+            "datasetId",
+            "reproducibilityAssessment"
+          ]
+        },
+        {
+          "name": "GetDataDescriptions",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ExtractDataDescriptionForPublication",
+          "params": [
+            "projectId",
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageAndVolumePlanning",
+      "ops": [
+        {
+          "name": "RecordStoragePlan",
+          "params": [
+            "projectId",
+            "duringProjectLocation",
+            "postProjectLocation"
+          ]
+        },
+        {
+          "name": "EstimateDataVolume",
+          "params": [
+            "projectId",
+            "expectedVolumeByPhase"
+          ]
+        },
+        {
+          "name": "GetStoragePlan",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetVolumeEstimates",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SecurityAndPrivacy",
+      "ops": [
+        {
+          "name": "RecordSecurityRequirements",
+          "params": [
+            "projectId",
+            "datasetId",
+            "securityLevel",
+            "requirements"
+          ]
+        },
+        {
+          "name": "RecordPrivacyRequirements",
+          "params": [
+            "projectId",
+            "datasetId",
+            "privacyConstraints"
+          ]
+        },
+        {
+          "name": "AssessDataSensitivity",
+          "params": [
+            "projectId",
+            "datasetId",
+            "sensitivityClassification"
+          ]
+        },
+        {
+          "name": "GetSecurityProfile",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "PlanAnonymization",
+          "params": [
+            "projectId",
+            "datasetId",
+            "anonymizationStrategy"
+          ]
+        },
+        {
+          "name": "CheckSecurityCompliance",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ListSensitiveProjects",
+          "params": [
+            "sensitivityLevels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LegalAndRightsManagement",
+      "ops": [
+        {
+          "name": "RecordDataOwnership",
+          "params": [
+            "projectId",
+            "datasetId",
+            "ownerEntity",
+            "ownershipDetails"
+          ]
+        },
+        {
+          "name": "RecordLegalStatus",
+          "params": [
+            "projectId",
+            "datasetId",
+            "legalStatus"
+          ]
+        },
+        {
+          "name": "RecordUsageRights",
+          "params": [
+            "projectId",
+            "datasetId",
+            "rightsDescription"
+          ]
+        },
+        {
+          "name": "RecordReuseRights",
+          "params": [
+            "projectId",
+            "datasetId",
+            "reuseConditions"
+          ]
+        },
+        {
+          "name": "RecordThirdPartyAgreements",
+          "params": [
+            "projectId",
+            "agreementId",
+            "datasetId",
+            "agreementDocumentRef"
+          ]
+        },
+        {
+          "name": "RecordLicenceIntent",
+          "params": [
+            "projectId",
+            "datasetId",
+            "licenceType"
+          ]
+        },
+        {
+          "name": "GetRightsSummary",
+          "params": [
+            "projectId",
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataAndCatalogue",
+      "ops": [
+        {
+          "name": "ImportMetadataFromTool",
+          "params": [
+            "projectId",
+            "sourceSystem",
+            "metadataPayload"
+          ]
+        },
+        {
+          "name": "ExtractMetadataPointers",
+          "params": [
+            "dmpId",
+            "externalSystems"
+          ]
+        },
+        {
+          "name": "RegisterDatasetMetadata",
+          "params": [
+            "projectId",
+            "datasetId",
+            "metadataSchema",
+            "metadataRecord"
+          ]
+        },
+        {
+          "name": "AddMultilingualMetadata",
+          "params": [
+            "projectId",
+            "datasetId",
+            "languageCode",
+            "metadataRecord"
+          ]
+        },
+        {
+          "name": "EnsureDetailedMetadata",
+          "params": [
+            "projectId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ExportToInstitutionalCatalogue",
+          "params": [
+            "projectId",
+            "datasetIds",
+            "catalogueId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RepositoryAndArchiving",
+      "ops": [
+        {
+          "name": "PlanRepositorySubmission",
+          "params": [
+            "projectId",
+            "datasetId",
+            "targetRepositoryId",
+            "plannedProvenance",
+            "conservationPeriod"
+          ]
+        },
+        {
+          "name": "GetPlannedProvenance",
+          "params": [
+            "projectId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "RecordArchivingRequirements",
+          "params": [
+            "projectId",
+            "datasetId",
+            "archivingDuration",
+            "validationChecksRequired"
+          ]
+        },
+        {
+          "name": "RecordFileFormats",
+          "params": [
+            "projectId",
+            "datasetId",
+            "formats"
+          ]
+        },
+        {
+          "name": "GetFileFormats",
+          "params": [
+            "projectId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "RecordArchivingTimeEstimate",
+          "params": [
+            "projectId",
+            "datasetId",
+            "timeEstimate"
+          ]
+        },
+        {
+          "name": "GetArchivingTimeEstimate",
+          "params": [
+            "projectId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ListRepositoriesInDMP",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "GetPreservationVolumeEstimate",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ExtractSubmittedDatasets",
+          "params": [
+            "projectId",
+            "externalRepositoryIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ITInfrastructurePlanning",
+      "ops": [
+        {
+          "name": "RecordITResourceRequirements",
+          "params": [
+            "projectId",
+            "computeNeeds",
+            "storageNeeds",
+            "networkNeeds"
+          ]
+        },
+        {
+          "name": "RecordTechnicalServicesNeeded",
+          "params": [
+            "projectId",
+            "servicesList"
+          ]
+        },
+        {
+          "name": "RecordSoftwareAndTechnology",
+          "params": [
+            "projectId",
+            "datasetId",
+            "softwareList"
+          ]
+        },
+        {
+          "name": "GetITRequirements",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CostingAndResources",
+      "ops": [
+        {
+          "name": "RecordDataManagementCosts",
+          "params": [
+            "projectId",
+            "costItems"
+          ]
+        },
+        {
+          "name": "EstimateProjectDataCosts",
+          "params": [
+            "projectId",
+            "resourceRequirements"
+          ]
+        },
+        {
+          "name": "GetCostSectionsByDepartment",
+          "params": [
+            "departmentId"
+          ]
+        },
+        {
+          "name": "GetResourceNeedsSummary",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetFullResourceAndServiceList",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PIDAndPublicationLinking",
+      "ops": [
+        {
+          "name": "RegisterDatasetPID",
+          "params": [
+            "projectId",
+            "datasetId",
+            "pid"
+          ]
+        },
+        {
+          "name": "GetDatasetPIDsByDMP",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "LinkPublicationToDMP",
+          "params": [
+            "publicationId",
+            "dmpId"
+          ]
+        },
+        {
+          "name": "RecordPublicationInCRIS",
+          "params": [
+            "projectId",
+            "publicationMetadata"
+          ]
+        },
+        {
+          "name": "GenerateResearchOutputReport",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ComplianceAndPolicy",
+      "ops": [
+        {
+          "name": "CheckFunderCompliance",
+          "params": [
+            "projectId",
+            "funderPolicies"
+          ]
+        },
+        {
+          "name": "RecordFunderPolicies",
+          "params": [
+            "funderId",
+            "policies"
+          ]
+        },
+        {
+          "name": "VerifyRepositoryAgainstFunderRules",
+          "params": [
+            "projectId",
+            "repositoryId",
+            "funderId"
+          ]
+        },
+        {
+          "name": "CheckSecurityPolicyCompliance",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReportingAndAnalytics",
+      "ops": [
+        {
+          "name": "GenerateDataUsageReport",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GenerateSummaryReportByUnit",
+          "params": [
+            "unitId",
+            "timeRange"
+          ]
+        },
+        {
+          "name": "GenerateSensitiveDataReport",
+          "params": [
+            "timeRange",
+            "sensitivityLevels"
+          ]
+        },
+        {
+          "name": "GenerateCitationAttributionReport",
+          "params": [
+            "institutionId",
+            "timeRange"
+          ]
+        },
+        {
+          "name": "GetDMPUpdateStatus",
+          "params": [
+            "dmpId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessAndSharing",
+      "ops": [
+        {
+          "name": "RecordSharingOptions",
+          "params": [
+            "projectId",
+            "datasetId",
+            "sharingPolicy"
+          ]
+        },
+        {
+          "name": "GetDepartmentDMPSections",
+          "params": [
+            "departmentId",
+            "sectionTypes"
+          ]
+        },
+        {
+          "name": "RecordRolesResponsibilitiesSection",
+          "params": [
+            "projectId",
+            "rolesSection",
+            "responsibilitiesSection"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntegrationAndImport",
+      "ops": [
+        {
+          "name": "ImportAdministrativeProjectInfo",
+          "params": [
+            "projectId",
+            "sourceSystem",
+            "adminData"
+          ]
+        },
+        {
+          "name": "PrepopulateFromInstitutionalSystems",
+          "params": [
+            "dmpId",
+            "systems"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DMPManagement",
+      "callee": "ProjectManagement"
+    },
+    {
+      "caller": "DMPManagement",
+      "callee": "UserAndRoleManagement"
+    },
+    {
+      "caller": "DMPManagement",
+      "callee": "MetadataAndCatalogue"
+    },
+    {
+      "caller": "DMPManagement",
+      "callee": "RepositoryAndArchiving"
+    },
+    {
+      "caller": "DMPManagement",
+      "callee": "CostingAndResources"
+    },
+    {
+      "caller": "DMPManagement",
+      "callee": "ComplianceAndPolicy"
+    },
+    {
+      "caller": "DMPManagement",
+      "callee": "IntegrationAndImport"
+    },
+    {
+      "caller": "ProjectManagement",
+      "callee": "UserAndRoleManagement"
+    },
+    {
+      "caller": "ProjectManagement",
+      "callee": "CostingAndResources"
+    },
+    {
+      "caller": "ProjectManagement",
+      "callee": "ITInfrastructurePlanning"
+    },
+    {
+      "caller": "DataDescription",
+      "callee": "MetadataAndCatalogue"
+    },
+    {
+      "caller": "DataDescription",
+      "callee": "RepositoryAndArchiving"
+    },
+    {
+      "caller": "StorageAndVolumePlanning",
+      "callee": "ITInfrastructurePlanning"
+    },
+    {
+      "caller": "StorageAndVolumePlanning",
+      "callee": "RepositoryAndArchiving"
+    },
+    {
+      "caller": "SecurityAndPrivacy",
+      "callee": "LegalAndRightsManagement"
+    },
+    {
+      "caller": "SecurityAndPrivacy",
+      "callee": "ComplianceAndPolicy"
+    },
+    {
+      "caller": "LegalAndRightsManagement",
+      "callee": "RepositoryAndArchiving"
+    },
+    {
+      "caller": "MetadataAndCatalogue",
+      "callee": "IntegrationAndImport"
+    },
+    {
+      "caller": "RepositoryAndArchiving",
+      "callee": "ITInfrastructurePlanning"
+    },
+    {
+      "caller": "ITInfrastructurePlanning",
+      "callee": "StorageAndVolumePlanning"
+    },
+    {
+      "caller": "CostingAndResources",
+      "callee": "ITInfrastructurePlanning"
+    },
+    {
+      "caller": "CostingAndResources",
+      "callee": "StorageAndVolumePlanning"
+    },
+    {
+      "caller": "PIDAndPublicationLinking",
+      "callee": "MetadataAndCatalogue"
+    },
+    {
+      "caller": "PIDAndPublicationLinking",
+      "callee": "ProjectManagement"
+    },
+    {
+      "caller": "ComplianceAndPolicy",
+      "callee": "ProjectManagement"
+    },
+    {
+      "caller": "ComplianceAndPolicy",
+      "callee": "RepositoryAndArchiving"
+    },
+    {
+      "caller": "ReportingAndAnalytics",
+      "callee": "DMPManagement"
+    },
+    {
+      "caller": "ReportingAndAnalytics",
+      "callee": "SecurityAndPrivacy"
+    },
+    {
+      "caller": "ReportingAndAnalytics",
+      "callee": "PIDAndPublicationLinking"
+    },
+    {
+      "caller": "AccessAndSharing",
+      "callee": "LegalAndRightsManagement"
+    },
+    {
+      "caller": "AccessAndSharing",
+      "callee": "SecurityAndPrivacy"
+    },
+    {
+      "caller": "IntegrationAndImport",
+      "callee": "ProjectManagement"
+    }
+  ]
+}

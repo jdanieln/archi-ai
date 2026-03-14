@@ -1,0 +1,1118 @@
+{
+  "microservices": [
+    {
+      "name": "HostingManagement",
+      "ops": [
+        {
+          "name": "DeployBetaToCloud",
+          "params": [
+            "environmentId",
+            "iterationId",
+            "versionTag"
+          ]
+        },
+        {
+          "name": "SwitchHostingPlan",
+          "params": [
+            "environmentId",
+            "fromPlan",
+            "toPlan"
+          ]
+        },
+        {
+          "name": "GetHostingRequirements",
+          "params": [
+            "environmentId",
+            "complianceLevel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DomainAndATOManagement",
+      "ops": [
+        {
+          "name": "ConfigureSubdomain",
+          "params": [
+            "domain",
+            "subdomain",
+            "targetEnvironmentId"
+          ]
+        },
+        {
+          "name": "GetATODetails",
+          "params": [
+            "domain",
+            "environmentId"
+          ]
+        },
+        {
+          "name": "PlanATORequirements",
+          "params": [
+            "domain",
+            "atoType"
+          ]
+        },
+        {
+          "name": "ScheduleExternalCloudMeeting",
+          "params": [
+            "partnerOrg",
+            "topics",
+            "preferredDates"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BlogAggregatorEvaluation",
+      "ops": [
+        {
+          "name": "EvaluateAggregatorForBeta",
+          "params": [
+            "aggregatorId",
+            "betaRequirements"
+          ]
+        },
+        {
+          "name": "RecommendAlternativeSolution",
+          "params": [
+            "betaRequirements",
+            "constraints"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CMSDecisionSupport",
+      "ops": [
+        {
+          "name": "EvaluateCMSOptions",
+          "params": [
+            "requirements",
+            "constraints"
+          ]
+        },
+        {
+          "name": "NarrowCMSOptions",
+          "params": [
+            "options",
+            "criteria"
+          ]
+        },
+        {
+          "name": "AssessCMSFit",
+          "params": [
+            "cmsId",
+            "requirements"
+          ]
+        },
+        {
+          "name": "GetCMSLessonsAndFeatures",
+          "params": [
+            "workshopId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CMSAdministration",
+      "ops": [
+        {
+          "name": "DefineCMSRoles",
+          "params": [
+            "cmsId",
+            "roleDefinitions"
+          ]
+        },
+        {
+          "name": "AssignRoleToUser",
+          "params": [
+            "cmsId",
+            "userId",
+            "roleId"
+          ]
+        },
+        {
+          "name": "ShadowCMSImplementation",
+          "params": [
+            "employeeId",
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CMSStrategyAndEditorial",
+      "ops": [
+        {
+          "name": "GetCMSStrategyRecommendations",
+          "params": [
+            "cmsId"
+          ]
+        },
+        {
+          "name": "GetEditorialPlanningRecommendations",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetEditorialPlanningImpact",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetHighLevelStrategyRecommendations",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CMSWorkflowReporting",
+      "ops": [
+        {
+          "name": "GetCMSWorkflowReport",
+          "params": [
+            "cmsId",
+            "workflowType"
+          ]
+        },
+        {
+          "name": "GetWebmasterWorkflowReport",
+          "params": [
+            "cmsId",
+            "workflowType"
+          ]
+        },
+        {
+          "name": "GetProjectWorkSummary",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentAuthoring",
+      "ops": [
+        {
+          "name": "AddVideoToArticle",
+          "params": [
+            "articleId",
+            "videoSource",
+            "videoId"
+          ]
+        },
+        {
+          "name": "AddBrightcoveVideo",
+          "params": [
+            "contentId",
+            "brightcoveId"
+          ]
+        },
+        {
+          "name": "IndentContent",
+          "params": [
+            "contentId",
+            "range"
+          ]
+        },
+        {
+          "name": "OutdentContent",
+          "params": [
+            "contentId",
+            "range"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentDiscovery",
+      "ops": [
+        {
+          "name": "FindContent",
+          "params": [
+            "query",
+            "filters",
+            "userId"
+          ]
+        },
+        {
+          "name": "SearchContent",
+          "params": [
+            "query",
+            "filters",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentModeling",
+      "ops": [
+        {
+          "name": "GetContentTypesAndPlan",
+          "params": [
+            "siteId"
+          ]
+        },
+        {
+          "name": "GetContentTypesUnderstanding",
+          "params": [
+            "organizationId"
+          ]
+        },
+        {
+          "name": "GetExternalContentPractices",
+          "params": [
+            "sector"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SocialExperienceDesign",
+      "ops": [
+        {
+          "name": "CreateSocialMediaWireframe",
+          "params": [
+            "pageType",
+            "designerId"
+          ]
+        },
+        {
+          "name": "GetSocialPageFeatureList",
+          "params": [
+            "pageType"
+          ]
+        },
+        {
+          "name": "SetSocialPageDesignDirection",
+          "params": [
+            "pageType",
+            "directionSpec"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualDesignConcepting",
+      "ops": [
+        {
+          "name": "CreateVisualStyleConcepts",
+          "params": [
+            "siteId",
+            "conceptCount"
+          ]
+        },
+        {
+          "name": "CreateMoodboard",
+          "params": [
+            "siteId",
+            "designerId"
+          ]
+        },
+        {
+          "name": "GenerateStyleGuide",
+          "params": [
+            "projectId",
+            "guideTypes"
+          ]
+        },
+        {
+          "name": "GetVisualDesignDirections",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DesignBenchmarking",
+      "ops": [
+        {
+          "name": "GetExternalVisualDesignPractices",
+          "params": [
+            "sector"
+          ]
+        },
+        {
+          "name": "GetVisualDesignComparisons",
+          "params": [
+            "peerOrganizations"
+          ]
+        },
+        {
+          "name": "GetExternalContentPractices",
+          "params": [
+            "sector"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BrandAndDesignEducation",
+      "ops": [
+        {
+          "name": "ExplainBrandGuidelinesProcess",
+          "params": [
+            "organizationId"
+          ]
+        },
+        {
+          "name": "ExplainVisualDesignDevelopment",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ExplainVisualDesignValue",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ExplainUserCenteredContentDesign",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserResearchPlanning",
+      "ops": [
+        {
+          "name": "CreateResearchPlan",
+          "params": [
+            "projectId",
+            "hypotheses"
+          ]
+        },
+        {
+          "name": "DraftResearchPlan",
+          "params": [
+            "projectId",
+            "goals"
+          ]
+        },
+        {
+          "name": "TestResearchPlan",
+          "params": [
+            "planId"
+          ]
+        },
+        {
+          "name": "DevelopInternalWorkflowProtocol",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowCandidateManagement",
+      "ops": [
+        {
+          "name": "CreateWorkflowCandidateList",
+          "params": [
+            "projectId",
+            "priorityCriteria"
+          ]
+        },
+        {
+          "name": "GetPriorityWorkflowCandidates",
+          "params": [
+            "projectId",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TaskScriptManagement",
+      "ops": [
+        {
+          "name": "FinalizeTaskScript",
+          "params": [
+            "scriptId"
+          ]
+        },
+        {
+          "name": "ProvideWIGPrototypeForScript",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserRecruitment",
+      "ops": [
+        {
+          "name": "RecruitParticipants",
+          "params": [
+            "campaignId",
+            "criteria"
+          ]
+        },
+        {
+          "name": "IdentifyInterviewParticipants",
+          "params": [
+            "projectId",
+            "segments"
+          ]
+        },
+        {
+          "name": "CreateRecruitingEmailTemplates",
+          "params": [
+            "projectId",
+            "templateTypes"
+          ]
+        },
+        {
+          "name": "TrackOutreachSuccess",
+          "params": [
+            "campaignId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InterviewScheduling",
+      "ops": [
+        {
+          "name": "ScheduleInterviews",
+          "params": [
+            "hypothesisId",
+            "timeSlots"
+          ]
+        },
+        {
+          "name": "GetInterviewSchedule",
+          "params": [
+            "projectId",
+            "userTypeFilter"
+          ]
+        },
+        {
+          "name": "GetInterviewScheduleForObservers",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "EnsureCorrectObserversInvited",
+          "params": [
+            "interviewId",
+            "observerIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserResearchWorkshops",
+      "ops": [
+        {
+          "name": "ConductUserDefinitionWorkshop",
+          "params": [
+            "projectId",
+            "workshopDate"
+          ]
+        },
+        {
+          "name": "RunFinalCMSWorkshop",
+          "params": [
+            "workshopId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResearchResultsAndReporting",
+      "ops": [
+        {
+          "name": "GetResearchSummary",
+          "params": [
+            "eventId"
+          ]
+        },
+        {
+          "name": "GetMajorFindingsSummary",
+          "params": [
+            "eventId"
+          ]
+        },
+        {
+          "name": "GetResearchResults",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PrototypeManagement",
+      "ops": [
+        {
+          "name": "CreatePrototypeStrategy",
+          "params": [
+            "projectId",
+            "hypotheses"
+          ]
+        },
+        {
+          "name": "GetPrototypePlatform",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "CreateHTMLPrototype",
+          "params": [
+            "projectId",
+            "prototypeSpec"
+          ]
+        },
+        {
+          "name": "ProvideWIGPrototype",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "EvaluatePrototypeAppearanceImpact",
+          "params": [
+            "prototypeId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HypothesisManagement",
+      "ops": [
+        {
+          "name": "GetInitialHypotheses",
+          "params": [
+            "projectId",
+            "count"
+          ]
+        },
+        {
+          "name": "GetFirstHypothesis",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetEarlyHypothesisIndications",
+          "params": [
+            "hypothesisId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WebsiteRecruitment",
+      "ops": [
+        {
+          "name": "SetupWebsiteRecruitmentTest",
+          "params": [
+            "siteId",
+            "pageIds"
+          ]
+        },
+        {
+          "name": "GetRecruitmentFormPreview",
+          "params": [
+            "formId",
+            "samplePageId"
+          ]
+        },
+        {
+          "name": "RegisterPotentialParticipant",
+          "params": [
+            "name",
+            "email",
+            "interests"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecruiterOperations",
+      "ops": [
+        {
+          "name": "VerifyRecruiterStatus",
+          "params": [
+            "siteId",
+            "pageIds"
+          ]
+        },
+        {
+          "name": "DeployRecruiterToPages",
+          "params": [
+            "siteId",
+            "pageIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProjectRoadmapManagement",
+      "ops": [
+        {
+          "name": "UpdateAcquisitionsRoadmap",
+          "params": [
+            "projectId",
+            "roadmapData"
+          ]
+        },
+        {
+          "name": "UpdateProjectRoadmap",
+          "params": [
+            "projectId",
+            "roadmapData"
+          ]
+        },
+        {
+          "name": "GetProjectRoadmap",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MVPAndStrategyManagement",
+      "ops": [
+        {
+          "name": "GetMVPDefinitionForTeam",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetHighLevelProjectTimeline",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetHighLevelStrategy",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowAndHandoffManagement",
+      "ops": [
+        {
+          "name": "UnderstandWorkflowHandOffs",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "DescribeSprintWorkflow",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollaborationAndScheduling",
+      "ops": [
+        {
+          "name": "ScheduleMeeting",
+          "params": [
+            "title",
+            "participants",
+            "time"
+          ]
+        },
+        {
+          "name": "ScheduleRegularCheckins",
+          "params": [
+            "projectId",
+            "frequency"
+          ]
+        },
+        {
+          "name": "GetMeetingSchedule",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetCoworkingSlotsSchedule",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "TrackTimeOffOverlap",
+          "params": [
+            "projectId",
+            "teamMemberIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TimelineAndMilestones",
+      "ops": [
+        {
+          "name": "GetProjectTimeline",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetMidpointCheckinDetails",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetInPersonMeetingLocation",
+          "params": [
+            "meetingId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StakeholderEngagement",
+      "ops": [
+        {
+          "name": "ScheduleInPersonCheckins",
+          "params": [
+            "stakeholderIds",
+            "frequency"
+          ]
+        },
+        {
+          "name": "GetProjectGoalsSummary",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DocumentationRepository",
+      "ops": [
+        {
+          "name": "UploadReport",
+          "params": [
+            "projectId",
+            "fileId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "GetAllProjectDocuments",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetWorkshopSummary",
+          "params": [
+            "workshopId"
+          ]
+        },
+        {
+          "name": "GetEventFindingsSummary",
+          "params": [
+            "eventId"
+          ]
+        },
+        {
+          "name": "GetProjectWorkSummary",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GithubOnboarding",
+      "ops": [
+        {
+          "name": "InviteUserToGithub",
+          "params": [
+            "email",
+            "organization"
+          ]
+        },
+        {
+          "name": "GetGithubUsageGuide",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserSegmentation",
+      "ops": [
+        {
+          "name": "DefineUserSegments",
+          "params": [
+            "projectId",
+            "inputs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecruitmentFormPreview",
+      "ops": [
+        {
+          "name": "ShowRecruitmentFormOnSamplePage",
+          "params": [
+            "formId",
+            "samplePageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KnowledgeSharing",
+      "ops": [
+        {
+          "name": "ExplainGithubUsage",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "ExplainContentDesignValue",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualDesignAdvocacy",
+      "ops": [
+        {
+          "name": "DemonstrateVisualDesignValue",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MeetingInformation",
+      "ops": [
+        {
+          "name": "GetMeetingDetails",
+          "params": [
+            "meetingId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "HostingManagement",
+      "callee": "DomainAndATOManagement"
+    },
+    {
+      "caller": "HostingManagement",
+      "callee": "ProjectRoadmapManagement"
+    },
+    {
+      "caller": "DomainAndATOManagement",
+      "callee": "HostingManagement"
+    },
+    {
+      "caller": "BlogAggregatorEvaluation",
+      "callee": "CMSDecisionSupport"
+    },
+    {
+      "caller": "CMSDecisionSupport",
+      "callee": "ResearchResultsAndReporting"
+    },
+    {
+      "caller": "CMSDecisionSupport",
+      "callee": "ContentModeling"
+    },
+    {
+      "caller": "CMSAdministration",
+      "callee": "CMSDecisionSupport"
+    },
+    {
+      "caller": "CMSStrategyAndEditorial",
+      "callee": "CMSDecisionSupport"
+    },
+    {
+      "caller": "CMSWorkflowReporting",
+      "callee": "UserRecruitment"
+    },
+    {
+      "caller": "ContentAuthoring",
+      "callee": "ContentDiscovery"
+    },
+    {
+      "caller": "ContentAuthoring",
+      "callee": "ContentModeling"
+    },
+    {
+      "caller": "SocialExperienceDesign",
+      "callee": "UserResearchPlanning"
+    },
+    {
+      "caller": "SocialExperienceDesign",
+      "callee": "UserRecruitment"
+    },
+    {
+      "caller": "VisualDesignConcepting",
+      "callee": "DesignBenchmarking"
+    },
+    {
+      "caller": "VisualDesignConcepting",
+      "callee": "DocumentationRepository"
+    },
+    {
+      "caller": "BrandAndDesignEducation",
+      "callee": "VisualDesignConcepting"
+    },
+    {
+      "caller": "BrandAndDesignEducation",
+      "callee": "ContentModeling"
+    },
+    {
+      "caller": "UserResearchPlanning",
+      "callee": "WorkflowCandidateManagement"
+    },
+    {
+      "caller": "UserResearchPlanning",
+      "callee": "UserResearchWorkshops"
+    },
+    {
+      "caller": "UserResearchPlanning",
+      "callee": "HypothesisManagement"
+    },
+    {
+      "caller": "WorkflowCandidateManagement",
+      "callee": "UserResearchPlanning"
+    },
+    {
+      "caller": "TaskScriptManagement",
+      "callee": "PrototypeManagement"
+    },
+    {
+      "caller": "UserRecruitment",
+      "callee": "WebsiteRecruitment"
+    },
+    {
+      "caller": "UserRecruitment",
+      "callee": "CollaborationAndScheduling"
+    },
+    {
+      "caller": "InterviewScheduling",
+      "callee": "TimelineAndMilestones"
+    },
+    {
+      "caller": "InterviewScheduling",
+      "callee": "CollaborationAndScheduling"
+    },
+    {
+      "caller": "UserResearchWorkshops",
+      "callee": "UserSegmentation"
+    },
+    {
+      "caller": "ResearchResultsAndReporting",
+      "callee": "DocumentationRepository"
+    },
+    {
+      "caller": "PrototypeManagement",
+      "callee": "HypothesisManagement"
+    },
+    {
+      "caller": "PrototypeManagement",
+      "callee": "UserResearchPlanning"
+    },
+    {
+      "caller": "PrototypeManagement",
+      "callee": "UserRecruitment"
+    },
+    {
+      "caller": "HypothesisManagement",
+      "callee": "UserResearchPlanning"
+    },
+    {
+      "caller": "WebsiteRecruitment",
+      "callee": "RecruiterOperations"
+    },
+    {
+      "caller": "ProjectRoadmapManagement",
+      "callee": "MVPAndStrategyManagement"
+    },
+    {
+      "caller": "MVPAndStrategyManagement",
+      "callee": "DocumentationRepository"
+    },
+    {
+      "caller": "WorkflowAndHandoffManagement",
+      "callee": "CollaborationAndScheduling"
+    },
+    {
+      "caller": "CollaborationAndScheduling",
+      "callee": "TimelineAndMilestones"
+    },
+    {
+      "caller": "CollaborationAndScheduling",
+      "callee": "MeetingInformation"
+    },
+    {
+      "caller": "TimelineAndMilestones",
+      "callee": "CollaborationAndScheduling"
+    },
+    {
+      "caller": "StakeholderEngagement",
+      "callee": "CollaborationAndScheduling"
+    },
+    {
+      "caller": "DocumentationRepository",
+      "callee": "ResearchResultsAndReporting"
+    },
+    {
+      "caller": "GithubOnboarding",
+      "callee": "CollaborationAndScheduling"
+    },
+    {
+      "caller": "GithubOnboarding",
+      "callee": "KnowledgeSharing"
+    },
+    {
+      "caller": "UserSegmentation",
+      "callee": "UserResearchPlanning"
+    },
+    {
+      "caller": "RecruitmentFormPreview",
+      "callee": "WebsiteRecruitment"
+    },
+    {
+      "caller": "KnowledgeSharing",
+      "callee": "DocumentationRepository"
+    },
+    {
+      "caller": "VisualDesignAdvocacy",
+      "callee": "VisualDesignConcepting"
+    }
+  ]
+}

@@ -1,0 +1,1351 @@
+{
+  "microservices": [
+    {
+      "name": "Auth",
+      "ops": [
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "LoginWithShibboleth",
+          "params": [
+            "shibbolethToken"
+          ]
+        },
+        {
+          "name": "Logout",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "ChangePassword",
+          "params": [
+            "userId",
+            "oldPassword",
+            "newPassword"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "CreatePatronAccount",
+          "params": [
+            "name",
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "CreateAdminAccount",
+          "params": [
+            "name",
+            "email",
+            "role",
+            "permissions"
+          ]
+        },
+        {
+          "name": "DeleteAdminAccount",
+          "params": [
+            "adminId"
+          ]
+        },
+        {
+          "name": "ListAdminAccounts",
+          "params": []
+        },
+        {
+          "name": "SearchAdminAccounts",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateUserEmail",
+          "params": [
+            "userId",
+            "email"
+          ]
+        },
+        {
+          "name": "SearchPatronAccounts",
+          "params": [
+            "query",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ClosePatronAccount",
+          "params": [
+            "patronId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuthorIdentity",
+      "ops": [
+        {
+          "name": "LinkORCID",
+          "params": [
+            "userId",
+            "orcidId"
+          ]
+        },
+        {
+          "name": "LinkResearcherId",
+          "params": [
+            "userId",
+            "researcherId"
+          ]
+        },
+        {
+          "name": "GetAuthorWorks",
+          "params": [
+            "authorId",
+            "sortBy"
+          ]
+        },
+        {
+          "name": "GetAuthorByName",
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "GetCommitteeDissertations",
+          "params": [
+            "facultyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollectionManagement",
+      "ops": [
+        {
+          "name": "CreateCollection",
+          "params": [
+            "ownerId",
+            "title",
+            "description",
+            "visibility",
+            "brandingOptions"
+          ]
+        },
+        {
+          "name": "CreateHighlightedCollection",
+          "params": [
+            "staffId",
+            "title",
+            "description",
+            "subjectArea"
+          ]
+        },
+        {
+          "name": "MoveCollection",
+          "params": [
+            "collectionId",
+            "newParentCollectionId"
+          ]
+        },
+        {
+          "name": "RenameCollection",
+          "params": [
+            "collectionId",
+            "newTitle"
+          ]
+        },
+        {
+          "name": "AliasItemToCollection",
+          "params": [
+            "itemId",
+            "targetCollectionId"
+          ]
+        },
+        {
+          "name": "AssignItemToCollections",
+          "params": [
+            "itemId",
+            "collectionIds"
+          ]
+        },
+        {
+          "name": "SetCollectionBranding",
+          "params": [
+            "collectionId",
+            "brandingOptions"
+          ]
+        },
+        {
+          "name": "SetCollectionSortingPreferences",
+          "params": [
+            "collectionId",
+            "sortField",
+            "sortOrder"
+          ]
+        },
+        {
+          "name": "GetCollectionItems",
+          "params": [
+            "collectionId",
+            "page",
+            "pageSize",
+            "sortField",
+            "sortOrder",
+            "subsetFilter"
+          ]
+        },
+        {
+          "name": "SubscribeToCollection",
+          "params": [
+            "userId",
+            "collectionId",
+            "notificationChannel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemDeposit",
+      "ops": [
+        {
+          "name": "UploadItem",
+          "params": [
+            "uploaderId",
+            "title",
+            "description",
+            "files",
+            "collectionIds",
+            "metadata",
+            "embargoSettings",
+            "license",
+            "documentType"
+          ]
+        },
+        {
+          "name": "UploadItemOnBehalf",
+          "params": [
+            "staffId",
+            "authorId",
+            "title",
+            "description",
+            "files",
+            "collectionIds",
+            "metadata",
+            "embargoSettings",
+            "license",
+            "documentType"
+          ]
+        },
+        {
+          "name": "BatchUploadItems",
+          "params": [
+            "staffId",
+            "items"
+          ]
+        },
+        {
+          "name": "UploadSupplementaryFiles",
+          "params": [
+            "itemId",
+            "files",
+            "assignDois"
+          ]
+        },
+        {
+          "name": "UploadStreamingMedia",
+          "params": [
+            "uploaderId",
+            "title",
+            "mediaFile",
+            "collectionIds",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadLargeFile",
+          "params": [
+            "uploaderId",
+            "file",
+            "itemId"
+          ]
+        },
+        {
+          "name": "AssociateFilesWithWork",
+          "params": [
+            "itemId",
+            "fileIds"
+          ]
+        },
+        {
+          "name": "AssociateDataWithPublication",
+          "params": [
+            "dataItemId",
+            "publicationItemId"
+          ]
+        },
+        {
+          "name": "UploadEmbargoedItem",
+          "params": [
+            "uploaderId",
+            "title",
+            "files",
+            "collectionIds",
+            "metadata",
+            "embargoEndDate"
+          ]
+        },
+        {
+          "name": "UploadEmbargoedDataForDissertation",
+          "params": [
+            "studentId",
+            "dissertationItemId",
+            "dataFiles",
+            "embargoEndDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemVersioning",
+      "ops": [
+        {
+          "name": "UploadNewVersion",
+          "params": [
+            "itemId",
+            "files",
+            "changeDescription"
+          ]
+        },
+        {
+          "name": "UploadRevisedReport",
+          "params": [
+            "reportId",
+            "files",
+            "reason"
+          ]
+        },
+        {
+          "name": "UploadNewReportVersionRetainingOld",
+          "params": [
+            "reportId",
+            "files",
+            "releaseDate"
+          ]
+        },
+        {
+          "name": "ListItemVersions",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetItemVersion",
+          "params": [
+            "itemId",
+            "versionNumber"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemAccessControl",
+      "ops": [
+        {
+          "name": "ApplyEmbargo",
+          "params": [
+            "itemId",
+            "embargoEndDate"
+          ]
+        },
+        {
+          "name": "RemoveEmbargo",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "SetItemVisibility",
+          "params": [
+            "itemId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "UnpublishItem",
+          "params": [
+            "itemId",
+            "reason"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataManagement",
+      "ops": [
+        {
+          "name": "CreateItemMetadata",
+          "params": [
+            "itemId",
+            "title",
+            "description",
+            "authors",
+            "documentType",
+            "status",
+            "fileLocations",
+            "subscribable",
+            "subjectArea",
+            "releaseFrequency",
+            "keywords"
+          ]
+        },
+        {
+          "name": "UpdateItemMetadata",
+          "params": [
+            "itemId",
+            "metadataChanges",
+            "changeReason"
+          ]
+        },
+        {
+          "name": "CreateCustomMetadataField",
+          "params": [
+            "collectionId",
+            "fieldName",
+            "fieldType",
+            "isSearchable"
+          ]
+        },
+        {
+          "name": "AddCustomMetadataToItem",
+          "params": [
+            "itemId",
+            "customMetadata"
+          ]
+        },
+        {
+          "name": "ManageSubjectClassifications",
+          "params": [
+            "classificationSchemeId",
+            "changes"
+          ]
+        },
+        {
+          "name": "ManageRelationshipGroups",
+          "params": [
+            "groupId",
+            "relatedItemIds"
+          ]
+        },
+        {
+          "name": "SetDocumentType",
+          "params": [
+            "itemId",
+            "documentType"
+          ]
+        },
+        {
+          "name": "GetItemMetadata",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "TraceItemRevisors",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "DescribeFileForPreservation",
+          "params": [
+            "fileId",
+            "technicalMetadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchAndDiscovery",
+      "ops": [
+        {
+          "name": "SearchRepository",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize",
+            "sortBy"
+          ]
+        },
+        {
+          "name": "SearchWithinCollection",
+          "params": [
+            "collectionId",
+            "query",
+            "filters",
+            "page",
+            "pageSize",
+            "subsetFilter"
+          ]
+        },
+        {
+          "name": "BrowseByAuthor",
+          "params": [
+            "authorName",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "BrowseBySubject",
+          "params": [
+            "subject",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchReportsByTitleOrKeyword",
+          "params": [
+            "query",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetRelatedItems",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetPreviousNamesAndDateRange",
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "MobileSearch",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetItemDescriptiveMetadata",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetItemMetadataByFile",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "DiscoverThroughExternalDiscovery",
+          "params": [
+            "query",
+            "source"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SubscribeToItemUpdates",
+          "params": [
+            "userId",
+            "itemId",
+            "channel"
+          ]
+        },
+        {
+          "name": "SubscribeToAuthor",
+          "params": [
+            "userId",
+            "authorId",
+            "channel"
+          ]
+        },
+        {
+          "name": "SubscribeToTopic",
+          "params": [
+            "userId",
+            "topic",
+            "channel"
+          ]
+        },
+        {
+          "name": "SubscribeToReportDataset",
+          "params": [
+            "userId",
+            "reportId"
+          ]
+        },
+        {
+          "name": "UnsubscribeFromReportDataset",
+          "params": [
+            "userId",
+            "reportId"
+          ]
+        },
+        {
+          "name": "GetReportSubscribers",
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "NotifyNewItemVersion",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "NotifyItemDownload",
+          "params": [
+            "itemId",
+            "downloaderId"
+          ]
+        },
+        {
+          "name": "SendPeriodicIRReminders",
+          "params": [
+            "recipientIds",
+            "reminderType"
+          ]
+        },
+        {
+          "name": "SendTechSupportResponse",
+          "params": [
+            "ticketId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Licensing",
+      "ops": [
+        {
+          "name": "AssignCCLicenseToItem",
+          "params": [
+            "itemId",
+            "licenseType"
+          ]
+        },
+        {
+          "name": "AssignCCLicenseToFile",
+          "params": [
+            "fileId",
+            "licenseType"
+          ]
+        },
+        {
+          "name": "GetItemReuseRights",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CitationService",
+      "ops": [
+        {
+          "name": "GenerateCitation",
+          "params": [
+            "itemId",
+            "style"
+          ]
+        },
+        {
+          "name": "GenerateDataCitation",
+          "params": [
+            "dataItemId",
+            "style"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UsageAnalytics",
+      "ops": [
+        {
+          "name": "RecordItemView",
+          "params": [
+            "itemId",
+            "userId",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "RecordItemDownload",
+          "params": [
+            "itemId",
+            "userId",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetUsageStatistics",
+          "params": [
+            "scope",
+            "scopeId",
+            "metrics",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "GetAltmetrics",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetFacultyTrackingStats",
+          "params": [
+            "facultyId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "GetAdminTrackingDashboard",
+          "params": [
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReportReleaseCalendar",
+      "ops": [
+        {
+          "name": "GetUpcomingReports",
+          "params": [
+            "dateRange"
+          ]
+        },
+        {
+          "name": "AddFutureReleaseDate",
+          "params": [
+            "reportId",
+            "releaseDate"
+          ]
+        },
+        {
+          "name": "DownloadReleaseCalendar",
+          "params": [
+            "format",
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReportAndDatasetManagement",
+      "ops": [
+        {
+          "name": "MarkReportNotEmailableOrViewable",
+          "params": [
+            "reportId",
+            "reason"
+          ]
+        },
+        {
+          "name": "ManageReportNameChange",
+          "params": [
+            "reportId",
+            "newName",
+            "effectiveDate"
+          ]
+        },
+        {
+          "name": "GetReportVersionHistory",
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "ViewMultipleReportVersions",
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "SetReportSeeAlsoRelations",
+          "params": [
+            "reportId",
+            "relatedReportIds"
+          ]
+        },
+        {
+          "name": "GetRelatedReports",
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "GetReportHistoricalNamesAndDates",
+          "params": [
+            "reportId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExternalIntegration",
+      "ops": [
+        {
+          "name": "SyncWithSymplecticElements",
+          "params": [
+            "facultyId"
+          ]
+        },
+        {
+          "name": "SyncWithActivityInsight",
+          "params": [
+            "facultyId"
+          ]
+        },
+        {
+          "name": "ExposeOAIEndpoint",
+          "params": []
+        },
+        {
+          "name": "GetOAIRecords",
+          "params": [
+            "from",
+            "until",
+            "set",
+            "metadataPrefix"
+          ]
+        },
+        {
+          "name": "HarvestExternalMetadata",
+          "params": [
+            "sourceSystem",
+            "query",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ExposeContentForExternalSystems",
+          "params": [
+            "itemIds",
+            "format"
+          ]
+        },
+        {
+          "name": "ExposeItemsToLibraryDiscovery",
+          "params": [
+            "itemIds"
+          ]
+        },
+        {
+          "name": "ExposeItemsToGoogle",
+          "params": [
+            "itemIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollaborationDiscovery",
+      "ops": [
+        {
+          "name": "FindPotentialCollaborators",
+          "params": [
+            "topic",
+            "filters"
+          ]
+        },
+        {
+          "name": "GetFacultyResearchProfiles",
+          "params": [
+            "topic",
+            "audienceType"
+          ]
+        },
+        {
+          "name": "GetFacultyForProspectiveStudents",
+          "params": [
+            "topic"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "ops": [
+        {
+          "name": "ContactAuthor",
+          "params": [
+            "requesterId",
+            "authorId",
+            "message"
+          ]
+        },
+        {
+          "name": "SubmitSupportTicket",
+          "params": [
+            "userId",
+            "email",
+            "subject",
+            "description"
+          ]
+        },
+        {
+          "name": "GetSupportTicketStatus",
+          "params": [
+            "ticketId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BrandingAndPresentation",
+      "ops": [
+        {
+          "name": "SetRepositoryBranding",
+          "params": [
+            "brandingConfig"
+          ]
+        },
+        {
+          "name": "SetCollectionBranding",
+          "params": [
+            "collectionId",
+            "brandingOptions"
+          ]
+        },
+        {
+          "name": "GetBrandedItemPage",
+          "params": [
+            "itemId",
+            "context"
+          ]
+        },
+        {
+          "name": "GeneratePersistentUrl",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PreservationAndStorage",
+      "ops": [
+        {
+          "name": "StoreRedundantCopies",
+          "params": [
+            "itemId",
+            "files"
+          ]
+        },
+        {
+          "name": "CheckRedundantCopiesIntegrity",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "RestoreFromGoodCopy",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "ExportAssets",
+          "params": [
+            "itemIds",
+            "format"
+          ]
+        },
+        {
+          "name": "ValidateExportedAssets",
+          "params": [
+            "exportId"
+          ]
+        },
+        {
+          "name": "GetAssetIntellectualValue",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "ListAllAssetsAndStatus",
+          "params": [
+            "filters"
+          ]
+        },
+        {
+          "name": "GetPreservationPlan",
+          "params": []
+        },
+        {
+          "name": "GetRepositoryLongevityCommitment",
+          "params": []
+        },
+        {
+          "name": "GetDispositionPlan",
+          "params": []
+        },
+        {
+          "name": "TransferAssetOwnership",
+          "params": [
+            "itemId",
+            "newOwnerId"
+          ]
+        },
+        {
+          "name": "PreserveContentAndMetadata",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "CreateSustainableLink",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecordsManagement",
+      "ops": [
+        {
+          "name": "ScheduleRecordDisposition",
+          "params": [
+            "itemId",
+            "retentionPolicy"
+          ]
+        },
+        {
+          "name": "ExecuteDisposition",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IRWorkflow",
+      "ops": [
+        {
+          "name": "ConfigureWorkflow",
+          "params": [
+            "projectId",
+            "steps",
+            "documentation"
+          ]
+        },
+        {
+          "name": "GetWorkflowTasks",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SendWorkflowReminder",
+          "params": [
+            "userId",
+            "taskId"
+          ]
+        },
+        {
+          "name": "MoveItemToHistoricalCollection",
+          "params": [
+            "itemId",
+            "targetCollectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MapAndVisualization",
+      "ops": [
+        {
+          "name": "CreateInteractiveMapForWork",
+          "params": [
+            "itemId",
+            "geodata"
+          ]
+        },
+        {
+          "name": "GetInteractiveMapForWork",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PortalAndAutoListing",
+      "ops": [
+        {
+          "name": "GetAutoUpdatedListingForSite",
+          "params": [
+            "siteId",
+            "filters"
+          ]
+        },
+        {
+          "name": "ConfigureSiteListingFromRepository",
+          "params": [
+            "siteId",
+            "collectionIds",
+            "filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SubscriptionManagement",
+      "ops": [
+        {
+          "name": "CreateReportSubscription",
+          "params": [
+            "patronId",
+            "reportId"
+          ]
+        },
+        {
+          "name": "CancelReportSubscription",
+          "params": [
+            "patronId",
+            "reportId"
+          ]
+        },
+        {
+          "name": "ListPatronSubscriptions",
+          "params": [
+            "patronId"
+          ]
+        },
+        {
+          "name": "AdminViewPatronSubscriptions",
+          "params": [
+            "patronId"
+          ]
+        },
+        {
+          "name": "AdminChangePatronSubscriptions",
+          "params": [
+            "patronId",
+            "subscriptions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdminAccountManagement",
+      "ops": [
+        {
+          "name": "AdminLogin",
+          "params": [
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "AdminChangePassword",
+          "params": [
+            "adminId",
+            "oldPassword",
+            "newPassword"
+          ]
+        },
+        {
+          "name": "AdminResetPassword",
+          "params": [
+            "adminId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "Auth",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "Auth",
+      "callee": "AdminAccountManagement"
+    },
+    {
+      "caller": "ItemDeposit",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "ItemDeposit",
+      "callee": "PreservationAndStorage"
+    },
+    {
+      "caller": "ItemDeposit",
+      "callee": "Licensing"
+    },
+    {
+      "caller": "ItemDeposit",
+      "callee": "CollectionManagement"
+    },
+    {
+      "caller": "ItemVersioning",
+      "callee": "PreservationAndStorage"
+    },
+    {
+      "caller": "ItemVersioning",
+      "callee": "Notification"
+    },
+    {
+      "caller": "ItemAccessControl",
+      "callee": "PreservationAndStorage"
+    },
+    {
+      "caller": "MetadataManagement",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "MetadataManagement",
+      "callee": "ExternalIntegration"
+    },
+    {
+      "caller": "SearchAndDiscovery",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "SearchAndDiscovery",
+      "callee": "CollectionManagement"
+    },
+    {
+      "caller": "Notification",
+      "callee": "SubscriptionManagement"
+    },
+    {
+      "caller": "Notification",
+      "callee": "UsageAnalytics"
+    },
+    {
+      "caller": "Licensing",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "CitationService",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "UsageAnalytics",
+      "callee": "ItemDeposit"
+    },
+    {
+      "caller": "UsageAnalytics",
+      "callee": "AuthorIdentity"
+    },
+    {
+      "caller": "ReportReleaseCalendar",
+      "callee": "ReportAndDatasetManagement"
+    },
+    {
+      "caller": "ReportAndDatasetManagement",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "ExternalIntegration",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "ExternalIntegration",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "CollaborationDiscovery",
+      "callee": "AuthorIdentity"
+    },
+    {
+      "caller": "CollaborationDiscovery",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "Communication",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "BrandingAndPresentation",
+      "callee": "CollectionManagement"
+    },
+    {
+      "caller": "BrandingAndPresentation",
+      "callee": "PreservationAndStorage"
+    },
+    {
+      "caller": "PreservationAndStorage",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "RecordsManagement",
+      "callee": "PreservationAndStorage"
+    },
+    {
+      "caller": "IRWorkflow",
+      "callee": "ItemDeposit"
+    },
+    {
+      "caller": "IRWorkflow",
+      "callee": "Notification"
+    },
+    {
+      "caller": "MapAndVisualization",
+      "callee": "ItemDeposit"
+    },
+    {
+      "caller": "PortalAndAutoListing",
+      "callee": "CollectionManagement"
+    },
+    {
+      "caller": "PortalAndAutoListing",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "SubscriptionManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "AdminAccountManagement",
+      "callee": "UserManagement"
+    }
+  ]
+}

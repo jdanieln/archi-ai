@@ -1,0 +1,996 @@
+{
+  "microservices": [
+    {
+      "name": "IdentityAccess",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "name",
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "emailOrUsername",
+            "password"
+          ]
+        },
+        {
+          "name": "RequestPasswordReset",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "BlockUserByIp",
+          "params": [
+            "ipAddress",
+            "reason",
+            "blockedByAdminId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControl",
+      "ops": [
+        {
+          "name": "GrantRole",
+          "params": [
+            "adminId",
+            "userId",
+            "role"
+          ]
+        },
+        {
+          "name": "RevokeRole",
+          "params": [
+            "adminId",
+            "userId",
+            "role"
+          ]
+        },
+        {
+          "name": "ValidateAccessRights",
+          "params": [
+            "userId",
+            "resource",
+            "action"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SecurityPrivacy",
+      "ops": [
+        {
+          "name": "EncryptData",
+          "params": [
+            "data",
+            "encryptionContext"
+          ]
+        },
+        {
+          "name": "DecryptData",
+          "params": [
+            "encryptedData",
+            "encryptionContext"
+          ]
+        },
+        {
+          "name": "StorePersonalDataSecurely",
+          "params": [
+            "userId",
+            "personalData"
+          ]
+        },
+        {
+          "name": "GetEncryptionStatus",
+          "params": [
+            "resourceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserProfile",
+      "ops": [
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateUserProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        },
+        {
+          "name": "LinkEmailToProfile",
+          "params": [
+            "userId",
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserActivity",
+      "ops": [
+        {
+          "name": "RecordUserActivity",
+          "params": [
+            "userId",
+            "activityType",
+            "metadata"
+          ]
+        },
+        {
+          "name": "GetUserStats",
+          "params": [
+            "userId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "GetUserTransactionHistory",
+          "params": [
+            "userId",
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZipValidation",
+      "ops": [
+        {
+          "name": "ValidateZipCode",
+          "params": [
+            "zipCode",
+            "countryCode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationFeedback",
+      "ops": [
+        {
+          "name": "GetInvalidZipCodeFeedback",
+          "params": [
+            "zipCode",
+            "countryCode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FacilityDirectory",
+      "ops": [
+        {
+          "name": "SearchFacilitiesByZip",
+          "params": [
+            "zipCode"
+          ]
+        },
+        {
+          "name": "GetFacilityDetails",
+          "params": [
+            "facilityId"
+          ]
+        },
+        {
+          "name": "GetFacilityHours",
+          "params": [
+            "facilityId"
+          ]
+        },
+        {
+          "name": "GetFacilitiesByWasteTypes",
+          "params": [
+            "zipCode",
+            "wasteTypes"
+          ]
+        },
+        {
+          "name": "GetEcoFriendlyFacilities",
+          "params": [
+            "zipCode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PublicInfrastructure",
+      "ops": [
+        {
+          "name": "GetPublicBinsByArea",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        },
+        {
+          "name": "GetSpecialWasteSitesByArea",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        },
+        {
+          "name": "GetAllRecyclingCentersMapData",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FacilityLifecycleAdmin",
+      "ops": [
+        {
+          "name": "AddFacility",
+          "params": [
+            "adminId",
+            "facilityData"
+          ]
+        },
+        {
+          "name": "RemoveFacility",
+          "params": [
+            "adminId",
+            "facilityId"
+          ]
+        },
+        {
+          "name": "OnboardFacility",
+          "params": [
+            "adminId",
+            "facilityData",
+            "representativeData"
+          ]
+        },
+        {
+          "name": "UpdateFacilityInfoByAdmin",
+          "params": [
+            "adminId",
+            "facilityId",
+            "facilityData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FacilityRepresentativePortal",
+      "ops": [
+        {
+          "name": "UpdateOwnFacilityInfo",
+          "params": [
+            "representativeId",
+            "facilityId",
+            "facilityData"
+          ]
+        },
+        {
+          "name": "UpdateAcceptedMaterials",
+          "params": [
+            "representativeId",
+            "facilityId",
+            "materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FacilityEngagementAnalytics",
+      "ops": [
+        {
+          "name": "GetFacilityUserStats",
+          "params": [
+            "facilityId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "GetFacilityUserSchedules",
+          "params": [
+            "facilityId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "ViewFacilityUserStatsForSuperuser",
+          "params": [
+            "superuserId",
+            "facilityId",
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MapIntegration",
+      "ops": [
+        {
+          "name": "GetGoogleMapsUrlForAddress",
+          "params": [
+            "address"
+          ]
+        },
+        {
+          "name": "GetMapMarkersForBins",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        },
+        {
+          "name": "GetMapMarkersForSpecialSites",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        },
+        {
+          "name": "GetMapMarkersForCenters",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Routing",
+      "ops": [
+        {
+          "name": "PlanRoute",
+          "params": [
+            "startLocation",
+            "facilityIds",
+            "timeConstraints"
+          ]
+        },
+        {
+          "name": "GetEmployeeRoutePlan",
+          "params": [
+            "employeeId",
+            "area",
+            "startTime"
+          ]
+        },
+        {
+          "name": "GetUserDropoffRoute",
+          "params": [
+            "userId",
+            "facilityIds",
+            "startLocation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scheduling",
+      "ops": [
+        {
+          "name": "SetFlexiblePickupTime",
+          "params": [
+            "userId",
+            "preferredTimeWindows"
+          ]
+        },
+        {
+          "name": "GetPickupTimeOptions",
+          "params": [
+            "userId",
+            "zipCode"
+          ]
+        },
+        {
+          "name": "UploadWeeklySchedule",
+          "params": [
+            "userId",
+            "scheduleData"
+          ]
+        },
+        {
+          "name": "RecommendFacilitiesBySchedule",
+          "params": [
+            "userId",
+            "zipCode",
+            "wasteTypes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Favorites",
+      "ops": [
+        {
+          "name": "AddFavoriteFacility",
+          "params": [
+            "userId",
+            "facilityId"
+          ]
+        },
+        {
+          "name": "RemoveFavoriteFacility",
+          "params": [
+            "userId",
+            "facilityId"
+          ]
+        },
+        {
+          "name": "ListFavoriteFacilities",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "ops": [
+        {
+          "name": "GetSafeDisposalEventsByArea",
+          "params": [
+            "zipCode",
+            "radiusKm"
+          ]
+        },
+        {
+          "name": "ListCurrentEvents",
+          "params": [
+            "areaFilter",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "CreateEvent",
+          "params": [
+            "adminId",
+            "eventData"
+          ]
+        },
+        {
+          "name": "GetEventDetails",
+          "params": [
+            "eventId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SubscribeEmail",
+          "params": [
+            "email",
+            "subscriptionType",
+            "preferences"
+          ]
+        },
+        {
+          "name": "SendEventNotification",
+          "params": [
+            "emailOrUserId",
+            "eventId"
+          ]
+        },
+        {
+          "name": "SendPasswordResetEmail",
+          "params": [
+            "email",
+            "resetToken"
+          ]
+        },
+        {
+          "name": "SendTemporaryPassword",
+          "params": [
+            "email",
+            "tempPassword"
+          ]
+        },
+        {
+          "name": "SendEmployeeAlert",
+          "params": [
+            "employeeId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rewards",
+      "ops": [
+        {
+          "name": "GetAvailableRewards",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "AssignRewardToUser",
+          "params": [
+            "adminId",
+            "userId",
+            "rewardId",
+            "reason"
+          ]
+        },
+        {
+          "name": "RedeemReward",
+          "params": [
+            "userId",
+            "rewardId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FeedbackSupport",
+      "ops": [
+        {
+          "name": "SubmitUserFeedback",
+          "params": [
+            "userId",
+            "message",
+            "category"
+          ]
+        },
+        {
+          "name": "ListUserFeedback",
+          "params": [
+            "adminId",
+            "status",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ContactAdministrators",
+          "params": [
+            "userId",
+            "subject",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "QnAAndReplies",
+      "ops": [
+        {
+          "name": "AdminReplyToUser",
+          "params": [
+            "adminId",
+            "userId",
+            "threadId",
+            "message"
+          ]
+        },
+        {
+          "name": "SuperuserReplyToUser",
+          "params": [
+            "superuserId",
+            "userId",
+            "threadId",
+            "message"
+          ]
+        },
+        {
+          "name": "FacilityReplyToUser",
+          "params": [
+            "facilityId",
+            "userId",
+            "threadId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "ops": [
+        {
+          "name": "GetUserDocumentation",
+          "params": [
+            "locale",
+            "platform"
+          ]
+        },
+        {
+          "name": "GetDeveloperApiDocs",
+          "params": [
+            "apiVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdminDashboard",
+      "ops": [
+        {
+          "name": "GetSiteStatusDashboard",
+          "params": [
+            "adminId"
+          ]
+        },
+        {
+          "name": "GetUsageStatsAndLocations",
+          "params": [
+            "adminId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "GetDropoffNeighbourhoodStats",
+          "params": [
+            "adminId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "GetUserErrorLogs",
+          "params": [
+            "adminId",
+            "fromDate",
+            "toDate",
+            "severity"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExecutiveAnalytics",
+      "ops": [
+        {
+          "name": "GetCompanyPerformanceData",
+          "params": [
+            "executiveId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "GetCompanyDataForExecutive",
+          "params": [
+            "executiveId",
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HRDirectory",
+      "ops": [
+        {
+          "name": "GetEmployeeDirectory",
+          "params": [
+            "hrEmployeeId",
+            "filters"
+          ]
+        },
+        {
+          "name": "GetEmployeeDetails",
+          "params": [
+            "hrEmployeeId",
+            "employeeId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccountingBilling",
+      "ops": [
+        {
+          "name": "ListActivityFees",
+          "params": [
+            "accountantId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "GenerateBillStatement",
+          "params": [
+            "accountantId",
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CompanyContentManagement",
+      "ops": [
+        {
+          "name": "UploadContent",
+          "params": [
+            "companyId",
+            "contentData"
+          ]
+        },
+        {
+          "name": "DeleteContent",
+          "params": [
+            "companyId",
+            "contentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeveloperApiGateway",
+      "ops": [
+        {
+          "name": "GetPublicApiDefinition",
+          "params": [
+            "apiVersion"
+          ]
+        },
+        {
+          "name": "GetApiAccessToken",
+          "params": [
+            "developerId",
+            "clientId",
+            "clientSecret"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "ops": [
+        {
+          "name": "AdminToFacilityMessage",
+          "params": [
+            "adminId",
+            "facilityId",
+            "subject",
+            "message"
+          ]
+        },
+        {
+          "name": "FacilityToAdminMessage",
+          "params": [
+            "facilityId",
+            "adminId",
+            "subject",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EmployeeNotifications",
+      "ops": [
+        {
+          "name": "SendQuickNotification",
+          "params": [
+            "employeeId",
+            "notificationType",
+            "payload"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SuperuserPortal",
+      "ops": [
+        {
+          "name": "SuperuserUpdateFacilityInfo",
+          "params": [
+            "superuserId",
+            "facilityId",
+            "facilityData"
+          ]
+        },
+        {
+          "name": "ViewFacilityUserStats",
+          "params": [
+            "superuserId",
+            "facilityId",
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "IdentityAccess",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "IdentityAccess",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "UserProfile",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "UserProfile",
+      "callee": "IdentityAccess"
+    },
+    {
+      "caller": "UserActivity",
+      "callee": "UserProfile"
+    },
+    {
+      "caller": "UserActivity",
+      "callee": "Rewards"
+    },
+    {
+      "caller": "FacilityDirectory",
+      "callee": "ZipValidation"
+    },
+    {
+      "caller": "FacilityDirectory",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "ValidationFeedback",
+      "callee": "ZipValidation"
+    },
+    {
+      "caller": "PublicInfrastructure",
+      "callee": "MapIntegration"
+    },
+    {
+      "caller": "FacilityLifecycleAdmin",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "FacilityLifecycleAdmin",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "FacilityRepresentativePortal",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "FacilityEngagementAnalytics",
+      "callee": "UserActivity"
+    },
+    {
+      "caller": "FacilityEngagementAnalytics",
+      "callee": "Scheduling"
+    },
+    {
+      "caller": "MapIntegration",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "Routing",
+      "callee": "MapIntegration"
+    },
+    {
+      "caller": "Routing",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "Scheduling",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "Scheduling",
+      "callee": "Routing"
+    },
+    {
+      "caller": "Favorites",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "Events",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "Events",
+      "callee": "MapIntegration"
+    },
+    {
+      "caller": "Notification",
+      "callee": "Events"
+    },
+    {
+      "caller": "Notification",
+      "callee": "IdentityAccess"
+    },
+    {
+      "caller": "FeedbackSupport",
+      "callee": "UserProfile"
+    },
+    {
+      "caller": "FeedbackSupport",
+      "callee": "Notification"
+    },
+    {
+      "caller": "QnAAndReplies",
+      "callee": "FeedbackSupport"
+    },
+    {
+      "caller": "Documentation",
+      "callee": "CompanyContentManagement"
+    },
+    {
+      "caller": "AdminDashboard",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "AdminDashboard",
+      "callee": "UserActivity"
+    },
+    {
+      "caller": "AdminDashboard",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "ExecutiveAnalytics",
+      "callee": "AdminDashboard"
+    },
+    {
+      "caller": "ExecutiveAnalytics",
+      "callee": "AccountingBilling"
+    },
+    {
+      "caller": "HRDirectory",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "AccountingBilling",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "CompanyContentManagement",
+      "callee": "IdentityAccess"
+    },
+    {
+      "caller": "CompanyContentManagement",
+      "callee": "SecurityPrivacy"
+    },
+    {
+      "caller": "DeveloperApiGateway",
+      "callee": "IdentityAccess"
+    },
+    {
+      "caller": "DeveloperApiGateway",
+      "callee": "Documentation"
+    },
+    {
+      "caller": "Communication",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Communication",
+      "callee": "FacilityDirectory"
+    },
+    {
+      "caller": "EmployeeNotifications",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Rewards",
+      "callee": "UserActivity"
+    }
+  ]
+}

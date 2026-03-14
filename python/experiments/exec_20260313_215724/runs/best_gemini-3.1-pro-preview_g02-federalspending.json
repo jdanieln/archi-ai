@@ -1,0 +1,282 @@
+{
+  "microservices": [
+    {
+      "name": "SubmissionService",
+      "ops": [
+        {
+          "name": "CreateSubmission",
+          "params": [
+            "userId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "UpdatePublishStatus",
+          "params": [
+            "submissionId",
+            "status"
+          ]
+        },
+        {
+          "name": "PublishSubmission",
+          "params": [
+            "submissionId",
+            "idempotencyKey"
+          ]
+        },
+        {
+          "name": "GetSubmissionDashboard",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationService",
+      "ops": [
+        {
+          "name": "ValidateHeaders",
+          "params": [
+            "fileId",
+            "schemaVersion"
+          ]
+        },
+        {
+          "name": "ValidateRecord",
+          "params": [
+            "recordData",
+            "isLoan"
+          ]
+        },
+        {
+          "name": "ValidateDUNS",
+          "params": [
+            "dunsNumber",
+            "actionType",
+            "actionDate"
+          ]
+        },
+        {
+          "name": "ValidateZIPCode",
+          "params": [
+            "zipCode",
+            "allowTruncated"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ErrorHandlingService",
+      "ops": [
+        {
+          "name": "GenerateErrorFile",
+          "params": [
+            "submissionId",
+            "includeFlexFields"
+          ]
+        },
+        {
+          "name": "GetErrorDetails",
+          "params": [
+            "errorCode"
+          ]
+        },
+        {
+          "name": "GetFileLevelErrors",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileManagementService",
+      "ops": [
+        {
+          "name": "UploadFile",
+          "params": [
+            "fileData",
+            "expectedExtension"
+          ]
+        },
+        {
+          "name": "DownloadFile",
+          "params": [
+            "fileId",
+            "userId"
+          ]
+        },
+        {
+          "name": "GetRawAgencyFiles",
+          "params": [
+            "agencyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileGenerationService",
+      "ops": [
+        {
+          "name": "GenerateDFile",
+          "params": [
+            "agencyId",
+            "useCache"
+          ]
+        },
+        {
+          "name": "GenerateD1File",
+          "params": [
+            "agencyId",
+            "syncToken"
+          ]
+        },
+        {
+          "name": "GenerateFileF",
+          "params": [
+            "agencyId",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataIngestionService",
+      "ops": [
+        {
+          "name": "SyncFPDSData",
+          "params": [
+            "syncDate"
+          ]
+        },
+        {
+          "name": "FetchSAMData",
+          "params": [
+            "agencyId"
+          ]
+        },
+        {
+          "name": "LoadHistoricalData",
+          "params": [
+            "sourceType",
+            "filePath"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DerivationService",
+      "ops": [
+        {
+          "name": "DerivePPoPCode",
+          "params": [
+            "ppopCode"
+          ]
+        },
+        {
+          "name": "DeriveOfficeName",
+          "params": [
+            "officeCode"
+          ]
+        },
+        {
+          "name": "DeriveFundingAgencyCode",
+          "params": [
+            "recordId"
+          ]
+        },
+        {
+          "name": "DeriveFREC",
+          "params": [
+            "agencyData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecordManagementService",
+      "ops": [
+        {
+          "name": "ProcessDeletions",
+          "params": [
+            "targetDate"
+          ]
+        },
+        {
+          "name": "UpdateRecord",
+          "params": [
+            "recordId",
+            "updates"
+          ]
+        },
+        {
+          "name": "CheckGTASWindow",
+          "params": [
+            "currentDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControlService",
+      "ops": [
+        {
+          "name": "CheckUserAccess",
+          "params": [
+            "userId",
+            "resourceId"
+          ]
+        },
+        {
+          "name": "GrantReadOnlyAccess",
+          "params": [
+            "userId",
+            "targetApp"
+          ]
+        },
+        {
+          "name": "ResetEnvironmentPermissions",
+          "params": [
+            "environment",
+            "maxRole"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "SubmissionService",
+      "callee": "ValidationService"
+    },
+    {
+      "caller": "SubmissionService",
+      "callee": "DerivationService"
+    },
+    {
+      "caller": "SubmissionService",
+      "callee": "RecordManagementService"
+    },
+    {
+      "caller": "ValidationService",
+      "callee": "ErrorHandlingService"
+    },
+    {
+      "caller": "FileGenerationService",
+      "callee": "DataIngestionService"
+    },
+    {
+      "caller": "FileManagementService",
+      "callee": "ValidationService"
+    },
+    {
+      "caller": "DataIngestionService",
+      "callee": "DerivationService"
+    },
+    {
+      "caller": "FileManagementService",
+      "callee": "AccessControlService"
+    }
+  ]
+}

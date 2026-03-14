@@ -1,0 +1,1625 @@
+{
+  "microservices": [
+    {
+      "name": "SystemInstallation",
+      "ops": [
+        {
+          "name": "InstallNeurohubNode",
+          "params": [
+            "targetHost",
+            "osVersion"
+          ]
+        },
+        {
+          "name": "InstallDependencies",
+          "params": [
+            "targetHost",
+            "osVersion",
+            "packageManager"
+          ]
+        },
+        {
+          "name": "MigrateData",
+          "params": [
+            "sourceVersion",
+            "targetVersion",
+            "migrationPlanId"
+          ]
+        },
+        {
+          "name": "ConfigureNightlyInstallAndTest",
+          "params": [
+            "pipelineId",
+            "schedule",
+            "osImage",
+            "testSuiteId"
+          ]
+        },
+        {
+          "name": "ConfigureBackupProtocol",
+          "params": [
+            "policyId",
+            "schedule",
+            "retentionPolicy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TestAutomation",
+      "ops": [
+        {
+          "name": "RunInstallationHealthCheck",
+          "params": [
+            "installationId"
+          ]
+        },
+        {
+          "name": "RunAcceptanceTests",
+          "params": [
+            "installationId",
+            "testSuiteId"
+          ]
+        },
+        {
+          "name": "RecordAcceptanceTestResults",
+          "params": [
+            "installationId",
+            "testRunId",
+            "results"
+          ]
+        },
+        {
+          "name": "GetAcceptanceTestResults",
+          "params": [
+            "installationId",
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserAndAccessControl",
+      "ops": [
+        {
+          "name": "CreateUser",
+          "params": [
+            "username",
+            "email",
+            "roleIds"
+          ]
+        },
+        {
+          "name": "AssignRole",
+          "params": [
+            "userId",
+            "roleId"
+          ]
+        },
+        {
+          "name": "GrantLabAdminAccess",
+          "params": [
+            "userId",
+            "labId"
+          ]
+        },
+        {
+          "name": "SetObjectSharing",
+          "params": [
+            "objectType",
+            "objectId",
+            "visibility",
+            "userIds",
+            "groupIds"
+          ]
+        },
+        {
+          "name": "SecureRemoteAccess",
+          "params": [
+            "userId",
+            "remoteEndpoint"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Logbook",
+      "ops": [
+        {
+          "name": "CreateLogbook",
+          "params": [
+            "name",
+            "description",
+            "ownerId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "CreateLogbookPage",
+          "params": [
+            "logbookId",
+            "title",
+            "content",
+            "authorId"
+          ]
+        },
+        {
+          "name": "CreateExperimentLogbookPage",
+          "params": [
+            "experimentId",
+            "title",
+            "content",
+            "authorId"
+          ]
+        },
+        {
+          "name": "NavigateLogbooks",
+          "params": [
+            "currentLogbookId",
+            "direction"
+          ]
+        },
+        {
+          "name": "NavigateLogbookPages",
+          "params": [
+            "logbookId",
+            "currentPageId",
+            "direction"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LogbookContentEnhancement",
+      "ops": [
+        {
+          "name": "InsertHtmlContent",
+          "params": [
+            "pageId",
+            "htmlContent"
+          ]
+        },
+        {
+          "name": "InsertGreekSymbols",
+          "params": [
+            "pageId",
+            "symbols"
+          ]
+        },
+        {
+          "name": "DrawHtmlTableInPage",
+          "params": [
+            "pageId",
+            "htmlContent"
+          ]
+        },
+        {
+          "name": "RecordPageCreationProof",
+          "params": [
+            "pageId",
+            "userId",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "ViewPageTimeline",
+          "params": [
+            "pageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LogbookSecurityAndProvenance",
+      "ops": [
+        {
+          "name": "SetPageVisibility",
+          "params": [
+            "pageId",
+            "visibility",
+            "userIds",
+            "groupIds"
+          ]
+        },
+        {
+          "name": "GetPageProvenance",
+          "params": [
+            "pageId"
+          ]
+        },
+        {
+          "name": "ProvePageCreationDate",
+          "params": [
+            "pageId"
+          ]
+        },
+        {
+          "name": "RecordWorkflowExecutionToLogbook",
+          "params": [
+            "workflowExecutionId",
+            "logbookId",
+            "pageId"
+          ]
+        },
+        {
+          "name": "RecordWorkflowPlanToLogbook",
+          "params": [
+            "workflowPlanId",
+            "logbookId",
+            "pageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FormCapture",
+      "ops": [
+        {
+          "name": "RecordPaperFormResponses",
+          "params": [
+            "subjectId",
+            "formId",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileIngest",
+      "ops": [
+        {
+          "name": "UploadFileViaWeb",
+          "params": [
+            "uploaderId",
+            "fileName",
+            "fileSize",
+            "contentType"
+          ]
+        },
+        {
+          "name": "UploadFileViaNetworkDrive",
+          "params": [
+            "uploaderId",
+            "filePath"
+          ]
+        },
+        {
+          "name": "UploadLargeFile",
+          "params": [
+            "uploaderId",
+            "fileName",
+            "fileSize",
+            "contentType"
+          ]
+        },
+        {
+          "name": "BulkUploadDirectory",
+          "params": [
+            "uploaderId",
+            "directoryPath",
+            "source"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileLifecycle",
+      "ops": [
+        {
+          "name": "DownloadFile",
+          "params": [
+            "fileId",
+            "requesterId"
+          ]
+        },
+        {
+          "name": "DownloadMultipleFiles",
+          "params": [
+            "fileIds",
+            "requesterId"
+          ]
+        },
+        {
+          "name": "MoveFiles",
+          "params": [
+            "fileIds",
+            "targetFolderId"
+          ]
+        },
+        {
+          "name": "RestoreDeletedFile",
+          "params": [
+            "fileId",
+            "requesterId"
+          ]
+        },
+        {
+          "name": "RevertFileVersion",
+          "params": [
+            "fileId",
+            "versionId",
+            "requesterId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileIntegrityAndProtection",
+      "ops": [
+        {
+          "name": "MakeFileImmutable",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "ProtectOriginalData",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "EnsureMetadataPreservedOnMove",
+          "params": [
+            "fileId",
+            "sourceFolderId",
+            "targetFolderId"
+          ]
+        },
+        {
+          "name": "StoreWormBehaviourVideo",
+          "params": [
+            "uploaderId",
+            "fileName",
+            "encodingType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Workspace",
+      "ops": [
+        {
+          "name": "AccessWorkspaceViaNetworkDrive",
+          "params": [
+            "userId",
+            "clientHost"
+          ]
+        },
+        {
+          "name": "GetUserWorkspaceFiles",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "ListUnattachedFiles",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "MarkFileAsGoodOrBad",
+          "params": [
+            "fileId",
+            "qualityFlag"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TimelineVisualization",
+      "ops": [
+        {
+          "name": "DisplayFileTimeline",
+          "params": [
+            "fileIds",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "DisplayDataAndImageTimeline",
+          "params": [
+            "fileIds",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "ViewWorkspaceTimeline",
+          "params": [
+            "userId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "DisplayExperimentTimeline",
+          "params": [
+            "experimentId",
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "AlertUnattachedFiles",
+          "params": [
+            "userId",
+            "fileIds"
+          ]
+        },
+        {
+          "name": "NotifyTestResults",
+          "params": [
+            "recipientIds",
+            "testRunId"
+          ]
+        },
+        {
+          "name": "ForwardNewsToMailingList",
+          "params": [
+            "newsItemId",
+            "mailingListAddress"
+          ]
+        },
+        {
+          "name": "NotifyNewPapers",
+          "params": [
+            "groupId",
+            "paperIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SocialIntegration",
+      "ops": [
+        {
+          "name": "PostContentToTwitter",
+          "params": [
+            "userId",
+            "contentId",
+            "tweetText"
+          ]
+        },
+        {
+          "name": "ImportTweetsToNeurohub",
+          "params": [
+            "userId",
+            "sinceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tagging",
+      "ops": [
+        {
+          "name": "AssignTagsToFile",
+          "params": [
+            "fileId",
+            "tagIds"
+          ]
+        },
+        {
+          "name": "AssignControlledVocabularyTags",
+          "params": [
+            "fileId",
+            "vocabularyId",
+            "termIds"
+          ]
+        },
+        {
+          "name": "CreateControlledVocabulary",
+          "params": [
+            "name",
+            "description"
+          ]
+        },
+        {
+          "name": "AddTermToVocabulary",
+          "params": [
+            "vocabularyId",
+            "term",
+            "parentTermId"
+          ]
+        },
+        {
+          "name": "GetControlledVocabulary",
+          "params": [
+            "vocabularyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataSchema",
+      "ops": [
+        {
+          "name": "CreateMetadataSchema",
+          "params": [
+            "schemaName",
+            "fields",
+            "scope"
+          ]
+        },
+        {
+          "name": "RestrictMetadataFieldValues",
+          "params": [
+            "schemaId",
+            "fieldName",
+            "allowedValues"
+          ]
+        },
+        {
+          "name": "CreateStandardMetadataSchema",
+          "params": [
+            "schemaName",
+            "fields"
+          ]
+        },
+        {
+          "name": "CreatePageTemplateWithMetadata",
+          "params": [
+            "name",
+            "fields",
+            "ownerId"
+          ]
+        },
+        {
+          "name": "CreatePageTemplate",
+          "params": [
+            "name",
+            "metadataSchemaId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataAssignment",
+      "ops": [
+        {
+          "name": "AttachDetailedMetadata",
+          "params": [
+            "objectId",
+            "objectType",
+            "metadata"
+          ]
+        },
+        {
+          "name": "ApplyMetadataTemplateOnIngest",
+          "params": [
+            "templateId",
+            "fileIds"
+          ]
+        },
+        {
+          "name": "AssociateMetadataPostBulkUpload",
+          "params": [
+            "uploadBatchId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AssociateGroupMetadata",
+          "params": [
+            "groupId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AutoInsertMetadataOnIngest",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DomainMetadata",
+      "ops": [
+        {
+          "name": "AnnotatePhysiologyImage",
+          "params": [
+            "fileId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AnnotateBehaviourVideo",
+          "params": [
+            "fileId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AnnotateDrugResponseData",
+          "params": [
+            "fileId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "CaptureRunMetadataForFiles",
+          "params": [
+            "runId",
+            "fileIds",
+            "metadata"
+          ]
+        },
+        {
+          "name": "CreateExperimentMetadata",
+          "params": [
+            "experimentId",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "ops": [
+        {
+          "name": "SearchFiles",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "SearchLogbookPages",
+          "params": [
+            "query",
+            "logbookIds",
+            "sectionIds"
+          ]
+        },
+        {
+          "name": "SearchFilesByTypeAndFormat",
+          "params": [
+            "fileTypes",
+            "formats",
+            "filters"
+          ]
+        },
+        {
+          "name": "SearchImagesByMetadata",
+          "params": [
+            "metadataFilters"
+          ]
+        },
+        {
+          "name": "SearchProtocols",
+          "params": [
+            "query",
+            "filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchScopeAndDownload",
+      "ops": [
+        {
+          "name": "LimitSearchToLogbooks",
+          "params": [
+            "query",
+            "logbookIds"
+          ]
+        },
+        {
+          "name": "LimitSearchToSections",
+          "params": [
+            "query",
+            "sectionIds"
+          ]
+        },
+        {
+          "name": "SearchSharedData",
+          "params": [
+            "query",
+            "groupIds",
+            "userIds"
+          ]
+        },
+        {
+          "name": "DownloadFilesFromSearchResults",
+          "params": [
+            "resultIds",
+            "requesterId"
+          ]
+        },
+        {
+          "name": "GetSearchResultsWithProvenance",
+          "params": [
+            "query",
+            "filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LinkingAndProvenance",
+      "ops": [
+        {
+          "name": "CreatePredicatedLinkBetweenFiles",
+          "params": [
+            "sourceFileId",
+            "targetFileId",
+            "predicate"
+          ]
+        },
+        {
+          "name": "FormObjectAssociation",
+          "params": [
+            "sourceObjectId",
+            "sourceType",
+            "targetObjectId",
+            "targetType",
+            "relationType"
+          ]
+        },
+        {
+          "name": "RecordDataProvenance",
+          "params": [
+            "fileId",
+            "provenanceInfo"
+          ]
+        },
+        {
+          "name": "ViewProvenanceForPage",
+          "params": [
+            "pageId"
+          ]
+        },
+        {
+          "name": "ViewProvenanceForFile",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExperimentManagement",
+      "ops": [
+        {
+          "name": "CreateExperiment",
+          "params": [
+            "title",
+            "description",
+            "ownerId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "CreateExperimentalRun",
+          "params": [
+            "experimentId",
+            "runMetadata"
+          ]
+        },
+        {
+          "name": "LinkRunsToExperiment",
+          "params": [
+            "experimentId",
+            "runIds"
+          ]
+        },
+        {
+          "name": "AssociateFilesWithExperiment",
+          "params": [
+            "experimentId",
+            "fileIds"
+          ]
+        },
+        {
+          "name": "CollectDataLibrary",
+          "params": [
+            "libraryId",
+            "fileIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExperimentQualityAndInputs",
+      "ops": [
+        {
+          "name": "IndicateExperimentDataQuality",
+          "params": [
+            "experimentId",
+            "fileId",
+            "qualityFlag"
+          ]
+        },
+        {
+          "name": "RecordExperimentInputs",
+          "params": [
+            "experimentId",
+            "inputFileIds"
+          ]
+        },
+        {
+          "name": "RecordExperimentOutputs",
+          "params": [
+            "experimentId",
+            "outputFileIds"
+          ]
+        },
+        {
+          "name": "RecordExperimentProtocolBeforeFiles",
+          "params": [
+            "experimentId",
+            "protocolMetadata"
+          ]
+        },
+        {
+          "name": "MarkDataGoodOrBad",
+          "params": [
+            "experimentId",
+            "fileId",
+            "qualityFlag"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BackupAndCuration",
+      "ops": [
+        {
+          "name": "RunManagedBackup",
+          "params": [
+            "policyId"
+          ]
+        },
+        {
+          "name": "RestoreFromBackup",
+          "params": [
+            "backupId",
+            "scope"
+          ]
+        },
+        {
+          "name": "ConfigureLongTermCuration",
+          "params": [
+            "datasetId",
+            "curationPolicyId"
+          ]
+        },
+        {
+          "name": "VerifyCurationStatus",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theming",
+      "ops": [
+        {
+          "name": "SetWebInterfaceTheme",
+          "params": [
+            "labId",
+            "themeConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuditAndActivity",
+      "ops": [
+        {
+          "name": "RecordUserActivity",
+          "params": [
+            "userId",
+            "action",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetUserActivityByDateRange",
+          "params": [
+            "userIds",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "GetGroupActivityByDateRange",
+          "params": [
+            "groupId",
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CalendarAndBooking",
+      "ops": [
+        {
+          "name": "ViewGroupCalendar",
+          "params": [
+            "groupId",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "CreateEvent",
+          "params": [
+            "calendarId",
+            "title",
+            "startTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "BookEquipment",
+          "params": [
+            "equipmentId",
+            "startTime",
+            "endTime",
+            "userId"
+          ]
+        },
+        {
+          "name": "SyncWithExternalCalendar",
+          "params": [
+            "calendarId",
+            "externalProvider",
+            "externalCalendarId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InventoryManagement",
+      "ops": [
+        {
+          "name": "ViewInventory",
+          "params": [
+            "labId"
+          ]
+        },
+        {
+          "name": "UpdateInventoryItem",
+          "params": [
+            "itemId",
+            "fields"
+          ]
+        },
+        {
+          "name": "ListEquipmentAndConsumables",
+          "params": [
+            "labId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SpreadsheetCollaboration",
+      "ops": [
+        {
+          "name": "CreateEmbeddedSpreadsheet",
+          "params": [
+            "title",
+            "ownerId"
+          ]
+        },
+        {
+          "name": "EditSpreadsheet",
+          "params": [
+            "spreadsheetId",
+            "changes"
+          ]
+        },
+        {
+          "name": "ShareSpreadsheet",
+          "params": [
+            "spreadsheetId",
+            "userIds",
+            "groupIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FeedbackForms",
+      "ops": [
+        {
+          "name": "CreateFeedbackForm",
+          "params": [
+            "title",
+            "questions",
+            "ownerId"
+          ]
+        },
+        {
+          "name": "SubmitFeedbackForm",
+          "params": [
+            "formId",
+            "respondentId",
+            "answers"
+          ]
+        },
+        {
+          "name": "ViewFeedbackResults",
+          "params": [
+            "formId",
+            "ownerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WormStrainManagement",
+      "ops": [
+        {
+          "name": "CreateWormStrainRecord",
+          "params": [
+            "strainId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UpdateWormStrainRecord",
+          "params": [
+            "strainId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SyncWithWormbase",
+          "params": [
+            "strainId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProtocolManagement",
+      "ops": [
+        {
+          "name": "CreateProtocol",
+          "params": [
+            "title",
+            "content",
+            "authorId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AssignMetadataToProtocolStage",
+          "params": [
+            "protocolId",
+            "stageId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "BranchProtocol",
+          "params": [
+            "protocolId",
+            "newTitle",
+            "authorId"
+          ]
+        },
+        {
+          "name": "ViewProtocolHistory",
+          "params": [
+            "protocolId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProtocolAccess",
+      "ops": [
+        {
+          "name": "SearchProtocols",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "DownloadProtocol",
+          "params": [
+            "protocolId"
+          ]
+        },
+        {
+          "name": "SharePostExperimentWriteup",
+          "params": [
+            "experimentId",
+            "content",
+            "sharedWith"
+          ]
+        },
+        {
+          "name": "ViewExperimentWriteup",
+          "params": [
+            "experimentId"
+          ]
+        },
+        {
+          "name": "ShareExperimentWriteup",
+          "params": [
+            "experimentId",
+            "targetUserIds",
+            "targetGroupIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReferenceManagement",
+      "ops": [
+        {
+          "name": "CreateReference",
+          "params": [
+            "userId",
+            "citation",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UpdateReference",
+          "params": [
+            "referenceId",
+            "fields"
+          ]
+        },
+        {
+          "name": "ListUserReferences",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "ShareReferenceWithGroup",
+          "params": [
+            "referenceId",
+            "groupId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GroupKnowledge",
+      "ops": [
+        {
+          "name": "SharePaperAndNotes",
+          "params": [
+            "paperId",
+            "noteIds",
+            "groupId"
+          ]
+        },
+        {
+          "name": "GetGroupRepository",
+          "params": [
+            "groupId"
+          ]
+        },
+        {
+          "name": "HarvestGroupKnowledge",
+          "params": [
+            "groupId",
+            "juniorResearcherId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MendeleyIntegration",
+      "ops": [
+        {
+          "name": "ExposeGroupRepositoryToMendeley",
+          "params": [
+            "groupId"
+          ]
+        },
+        {
+          "name": "NotifyMendeleyOfNewPapers",
+          "params": [
+            "groupId",
+            "paperIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowExecution",
+      "ops": [
+        {
+          "name": "ExecuteWorkflow",
+          "params": [
+            "workflowId",
+            "inputFileIds"
+          ]
+        },
+        {
+          "name": "RecordWorkflowPlan",
+          "params": [
+            "workflowId",
+            "planDetails"
+          ]
+        },
+        {
+          "name": "RecordWorkflowExecutionHistory",
+          "params": [
+            "workflowExecutionId",
+            "history"
+          ]
+        },
+        {
+          "name": "RecordWorkflowResults",
+          "params": [
+            "workflowExecutionId",
+            "resultFileIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RevisionControl",
+      "ops": [
+        {
+          "name": "CommitFileVersion",
+          "params": [
+            "fileId",
+            "message",
+            "authorId"
+          ]
+        },
+        {
+          "name": "GetFileHistory",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "CheckoutFileVersion",
+          "params": [
+            "fileId",
+            "versionId"
+          ]
+        },
+        {
+          "name": "IntegrateWithExternalVCS",
+          "params": [
+            "repositoryUrl",
+            "credentialsId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Collaboration",
+      "ops": [
+        {
+          "name": "ShareDataWithResearchers",
+          "params": [
+            "fileIds",
+            "userIds",
+            "groupIds"
+          ]
+        },
+        {
+          "name": "LocateSharedData",
+          "params": [
+            "query",
+            "ownerIds"
+          ]
+        },
+        {
+          "name": "ShareWriteupWithGroup",
+          "params": [
+            "writeupId",
+            "groupId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RemoteAccess",
+      "ops": [
+        {
+          "name": "EnableSecureRemoteAccess",
+          "params": [
+            "userId",
+            "remoteEndpoint"
+          ]
+        },
+        {
+          "name": "ValidateRemoteSession",
+          "params": [
+            "sessionId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "SystemInstallation",
+      "callee": "TestAutomation"
+    },
+    {
+      "caller": "SystemInstallation",
+      "callee": "BackupAndCuration"
+    },
+    {
+      "caller": "SystemInstallation",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "TestAutomation",
+      "callee": "Notification"
+    },
+    {
+      "caller": "TestAutomation",
+      "callee": "Logbook"
+    },
+    {
+      "caller": "Logbook",
+      "callee": "LogbookContentEnhancement"
+    },
+    {
+      "caller": "Logbook",
+      "callee": "LogbookSecurityAndProvenance"
+    },
+    {
+      "caller": "Logbook",
+      "callee": "FileIngest"
+    },
+    {
+      "caller": "Logbook",
+      "callee": "MetadataAssignment"
+    },
+    {
+      "caller": "Logbook",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "Logbook",
+      "callee": "TimelineVisualization"
+    },
+    {
+      "caller": "LogbookContentEnhancement",
+      "callee": "AuditAndActivity"
+    },
+    {
+      "caller": "LogbookSecurityAndProvenance",
+      "callee": "LinkingAndProvenance"
+    },
+    {
+      "caller": "FileIngest",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "FileIngest",
+      "callee": "FileIntegrityAndProtection"
+    },
+    {
+      "caller": "FileIngest",
+      "callee": "MetadataAssignment"
+    },
+    {
+      "caller": "FileLifecycle",
+      "callee": "RevisionControl"
+    },
+    {
+      "caller": "FileLifecycle",
+      "callee": "FileIntegrityAndProtection"
+    },
+    {
+      "caller": "FileLifecycle",
+      "callee": "TimelineVisualization"
+    },
+    {
+      "caller": "FileIntegrityAndProtection",
+      "callee": "BackupAndCuration"
+    },
+    {
+      "caller": "Workspace",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Workspace",
+      "callee": "TimelineVisualization"
+    },
+    {
+      "caller": "Notification",
+      "callee": "SocialIntegration"
+    },
+    {
+      "caller": "Tagging",
+      "callee": "MetadataSchema"
+    },
+    {
+      "caller": "Tagging",
+      "callee": "Search"
+    },
+    {
+      "caller": "MetadataSchema",
+      "callee": "MetadataAssignment"
+    },
+    {
+      "caller": "MetadataAssignment",
+      "callee": "DomainMetadata"
+    },
+    {
+      "caller": "MetadataAssignment",
+      "callee": "Search"
+    },
+    {
+      "caller": "DomainMetadata",
+      "callee": "Search"
+    },
+    {
+      "caller": "Search",
+      "callee": "SearchScopeAndDownload"
+    },
+    {
+      "caller": "Search",
+      "callee": "LinkingAndProvenance"
+    },
+    {
+      "caller": "Search",
+      "callee": "ExperimentManagement"
+    },
+    {
+      "caller": "SearchScopeAndDownload",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "SearchScopeAndDownload",
+      "callee": "Logbook"
+    },
+    {
+      "caller": "LinkingAndProvenance",
+      "callee": "ExperimentManagement"
+    },
+    {
+      "caller": "ExperimentManagement",
+      "callee": "ExperimentQualityAndInputs"
+    },
+    {
+      "caller": "ExperimentManagement",
+      "callee": "DomainMetadata"
+    },
+    {
+      "caller": "ExperimentManagement",
+      "callee": "TimelineVisualization"
+    },
+    {
+      "caller": "ExperimentQualityAndInputs",
+      "callee": "LinkingAndProvenance"
+    },
+    {
+      "caller": "BackupAndCuration",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "BackupAndCuration",
+      "callee": "FileIntegrityAndProtection"
+    },
+    {
+      "caller": "UserAndAccessControl",
+      "callee": "Logbook"
+    },
+    {
+      "caller": "UserAndAccessControl",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "UserAndAccessControl",
+      "callee": "Collaboration"
+    },
+    {
+      "caller": "Theming",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "AuditAndActivity",
+      "callee": "Logbook"
+    },
+    {
+      "caller": "AuditAndActivity",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "CalendarAndBooking",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "InventoryManagement",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "SpreadsheetCollaboration",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "FeedbackForms",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "SocialIntegration",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "FormCapture",
+      "callee": "Logbook"
+    },
+    {
+      "caller": "WormStrainManagement",
+      "callee": "DomainMetadata"
+    },
+    {
+      "caller": "ProtocolManagement",
+      "callee": "MetadataAssignment"
+    },
+    {
+      "caller": "ProtocolManagement",
+      "callee": "Logbook"
+    },
+    {
+      "caller": "ProtocolAccess",
+      "callee": "ProtocolManagement"
+    },
+    {
+      "caller": "ReferenceManagement",
+      "callee": "GroupKnowledge"
+    },
+    {
+      "caller": "GroupKnowledge",
+      "callee": "Notification"
+    },
+    {
+      "caller": "RemoteAccess",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "RevisionControl",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "WorkflowExecution",
+      "callee": "FileLifecycle"
+    },
+    {
+      "caller": "WorkflowExecution",
+      "callee": "LogbookSecurityAndProvenance"
+    },
+    {
+      "caller": "WorkflowExecution",
+      "callee": "LinkingAndProvenance"
+    },
+    {
+      "caller": "TimelineVisualization",
+      "callee": "ExperimentManagement"
+    },
+    {
+      "caller": "Collaboration",
+      "callee": "UserAndAccessControl"
+    },
+    {
+      "caller": "Collaboration",
+      "callee": "Notification"
+    },
+    {
+      "caller": "MendeleyIntegration",
+      "callee": "ReferenceManagement"
+    },
+    {
+      "caller": "MendeleyIntegration",
+      "callee": "Notification"
+    }
+  ]
+}

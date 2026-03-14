@@ -1,0 +1,407 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "GetProfiles",
+          "params": []
+        },
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "UpdateProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sponsorship",
+      "ops": [
+        {
+          "name": "GetSponsors",
+          "params": []
+        },
+        {
+          "name": "GetSponsorshipLevels",
+          "params": []
+        },
+        {
+          "name": "CreateSponsorship",
+          "params": [
+            "userId",
+            "levelId",
+            "type"
+          ]
+        },
+        {
+          "name": "AssignSponsorToEvent",
+          "params": [
+            "sponsorId",
+            "eventId",
+            "eventType"
+          ]
+        },
+        {
+          "name": "GetSponsorEvents",
+          "params": [
+            "sponsorId"
+          ]
+        },
+        {
+          "name": "LinkAttendeeToSponsor",
+          "params": [
+            "sponsorId",
+            "attendeeId"
+          ]
+        },
+        {
+          "name": "GetSponsorAttendees",
+          "params": [
+            "sponsorId"
+          ]
+        },
+        {
+          "name": "UpdateSponsorProfile",
+          "params": [
+            "sponsorId",
+            "profileData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Training",
+      "ops": [
+        {
+          "name": "GetTrainings",
+          "params": [
+            "filters"
+          ]
+        },
+        {
+          "name": "GetTrainingDetails",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "EditTraining",
+          "params": [
+            "trainingId",
+            "trainerId",
+            "trainingData"
+          ]
+        },
+        {
+          "name": "RegisterForTraining",
+          "params": [
+            "userId",
+            "trainingId",
+            "acceptTerms"
+          ]
+        },
+        {
+          "name": "CancelTrainingRegistration",
+          "params": [
+            "registrationId"
+          ]
+        },
+        {
+          "name": "GetTrainingAttendees",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "GetUserTrainings",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "AddToWaitlist",
+          "params": [
+            "userId",
+            "trainingId"
+          ]
+        },
+        {
+          "name": "GetRegistrationStatus",
+          "params": [
+            "trainingId",
+            "attendeeId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Venue",
+      "ops": [
+        {
+          "name": "GetVenues",
+          "params": []
+        },
+        {
+          "name": "GetVenueDetails",
+          "params": [
+            "venueId"
+          ]
+        },
+        {
+          "name": "CreateVenue",
+          "params": [
+            "venueData"
+          ]
+        },
+        {
+          "name": "GetMap",
+          "params": [
+            "venueId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Summit",
+      "ops": [
+        {
+          "name": "GetSummits",
+          "params": []
+        },
+        {
+          "name": "GetSummitDetails",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "RegisterForSummit",
+          "params": [
+            "userId",
+            "summitId"
+          ]
+        },
+        {
+          "name": "GetSummitAttendees",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "GetSummitAgenda",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "GetAvailableSeats",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "GetUserSummits",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JobBoard",
+      "ops": [
+        {
+          "name": "GetJobs",
+          "params": []
+        },
+        {
+          "name": "PostJob",
+          "params": [
+            "sponsorId",
+            "jobData"
+          ]
+        },
+        {
+          "name": "GetJobPostingInfo",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "Session",
+      "ops": [
+        {
+          "name": "GetSessions",
+          "params": [
+            "filters"
+          ]
+        },
+        {
+          "name": "GetSessionDetails",
+          "params": [
+            "sessionId"
+          ]
+        },
+        {
+          "name": "SubmitSession",
+          "params": [
+            "userId",
+            "sessionData"
+          ]
+        },
+        {
+          "name": "EditSession",
+          "params": [
+            "sessionId",
+            "userId",
+            "sessionData"
+          ]
+        },
+        {
+          "name": "ApproveSession",
+          "params": [
+            "sessionId"
+          ]
+        },
+        {
+          "name": "BulkApproveSessions",
+          "params": [
+            "sessionIds"
+          ]
+        },
+        {
+          "name": "GetSchedule",
+          "params": []
+        },
+        {
+          "name": "AssignRoomToSession",
+          "params": [
+            "sessionId",
+            "roomId",
+            "timeSlot"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendEmail",
+          "params": [
+            "recipientIds",
+            "subject",
+            "body"
+          ]
+        },
+        {
+          "name": "SubscribeNewsletter",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "SendNotification",
+          "params": [
+            "userId",
+            "message",
+            "type"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "ops": [
+        {
+          "name": "GetBlogPosts",
+          "params": [
+            "tags"
+          ]
+        },
+        {
+          "name": "CreateBlogPost",
+          "params": [
+            "authorId",
+            "postData"
+          ]
+        },
+        {
+          "name": "TagBlogPost",
+          "params": [
+            "postId",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "ops": [
+        {
+          "name": "ProcessPayment",
+          "params": [
+            "userId",
+            "amount",
+            "paymentDetails"
+          ]
+        },
+        {
+          "name": "RefundPayment",
+          "params": [
+            "transactionId",
+            "amount"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "Training",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Summit",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Session",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Sponsorship",
+      "callee": "Payment"
+    },
+    {
+      "caller": "Session",
+      "callee": "Venue"
+    },
+    {
+      "caller": "Training",
+      "callee": "Venue"
+    },
+    {
+      "caller": "Summit",
+      "callee": "Venue"
+    },
+    {
+      "caller": "JobBoard",
+      "callee": "Sponsorship"
+    },
+    {
+      "caller": "Summit",
+      "callee": "Sponsorship"
+    }
+  ]
+}

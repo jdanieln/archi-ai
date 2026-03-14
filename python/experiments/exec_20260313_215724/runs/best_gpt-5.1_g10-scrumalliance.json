@@ -1,0 +1,1028 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "CreateMemberProfile",
+          "params": [
+            "memberId",
+            "name",
+            "email",
+            "role",
+            "bio"
+          ]
+        },
+        {
+          "name": "UpdateMemberProfile",
+          "params": [
+            "memberId",
+            "bio",
+            "semiStructuredFields",
+            "experienceDetails"
+          ]
+        },
+        {
+          "name": "ViewMemberProfile",
+          "params": [
+            "viewerId",
+            "memberId"
+          ]
+        },
+        {
+          "name": "SearchProfiles",
+          "params": [
+            "viewerId",
+            "searchCriteria",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SetProfilePrivacy",
+          "params": [
+            "memberId",
+            "isProfilePrivate"
+          ]
+        },
+        {
+          "name": "SetEmailPrivacy",
+          "params": [
+            "memberId",
+            "isEmailPrivate"
+          ]
+        },
+        {
+          "name": "AdminEditMemberProfile",
+          "params": [
+            "adminId",
+            "memberId",
+            "profileChanges"
+          ]
+        },
+        {
+          "name": "RegisterUser",
+          "params": [
+            "name",
+            "email",
+            "password",
+            "role"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "usernameOrEmail",
+            "password"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "SendPasswordReminder",
+          "params": [
+            "memberId"
+          ]
+        },
+        {
+          "name": "SetTrainerOnlyAccess",
+          "params": [
+            "memberId",
+            "isTrainer"
+          ]
+        },
+        {
+          "name": "ListCertifiedUsers",
+          "params": [
+            "certificationType",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CertificationManagement",
+      "ops": [
+        {
+          "name": "SubmitPractitionerApplication",
+          "params": [
+            "memberId",
+            "applicationData"
+          ]
+        },
+        {
+          "name": "SubmitTrainerApplication",
+          "params": [
+            "memberId",
+            "applicationData"
+          ]
+        },
+        {
+          "name": "AdminReviewApplication",
+          "params": [
+            "adminId",
+            "applicationId",
+            "decision",
+            "comments"
+          ]
+        },
+        {
+          "name": "ChargePractitionerActivationFee",
+          "params": [
+            "memberId",
+            "amount",
+            "paymentMethod"
+          ]
+        },
+        {
+          "name": "ChargeTrainerAnnualFee",
+          "params": [
+            "trainerId",
+            "amount",
+            "paymentMethod"
+          ]
+        },
+        {
+          "name": "SetAnnualFees",
+          "params": [
+            "adminId",
+            "memberFee",
+            "practitionerFee",
+            "trainerFee"
+          ]
+        },
+        {
+          "name": "AddToCertificationRegistry",
+          "params": [
+            "personId",
+            "certificationType",
+            "classId"
+          ]
+        },
+        {
+          "name": "LoadParticipantsFromExcel",
+          "params": [
+            "trainerId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "AdminViewPendingClasses",
+          "params": [
+            "adminId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "AdminApproveClass",
+          "params": [
+            "adminId",
+            "classId",
+            "decision"
+          ]
+        },
+        {
+          "name": "AdminMovePendingToRegistry",
+          "params": [
+            "adminId",
+            "classId",
+            "participantIds"
+          ]
+        },
+        {
+          "name": "SendWelcomeToCSM",
+          "params": [
+            "csmId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "ops": [
+        {
+          "name": "SendMemberEmailViaForm",
+          "params": [
+            "senderId",
+            "recipientMemberId",
+            "subject",
+            "messageBody"
+          ]
+        },
+        {
+          "name": "SendNewsSuggestionToEditor",
+          "params": [
+            "senderId",
+            "subject",
+            "messageBody"
+          ]
+        },
+        {
+          "name": "SendJobSubmittedNotification",
+          "params": [
+            "jobId",
+            "adminIdList"
+          ]
+        },
+        {
+          "name": "SendAdExpiryReminder",
+          "params": [
+            "adId",
+            "advertiserEmail"
+          ]
+        },
+        {
+          "name": "SendSurveyResultsToTrainer",
+          "params": [
+            "trainerId",
+            "surveySummaryId"
+          ]
+        },
+        {
+          "name": "SendTrainerRatingVisibleNotification",
+          "params": [
+            "trainerId"
+          ]
+        },
+        {
+          "name": "SendWelcomeCertificationEmail",
+          "params": [
+            "recipientId",
+            "certificationType"
+          ]
+        },
+        {
+          "name": "SendMembershipRenewalReminder",
+          "params": [
+            "memberId",
+            "renewalLink"
+          ]
+        },
+        {
+          "name": "SendPasswordResetEmail",
+          "params": [
+            "email",
+            "resetLink"
+          ]
+        },
+        {
+          "name": "ConfigureTemplate",
+          "params": [
+            "editorId",
+            "templateType",
+            "templateBody"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NewsManagement",
+      "ops": [
+        {
+          "name": "CreateNewsItem",
+          "params": [
+            "editorId",
+            "title",
+            "body",
+            "priority",
+            "startDate",
+            "oldNewsDate",
+            "stopDate"
+          ]
+        },
+        {
+          "name": "UpdateNewsItem",
+          "params": [
+            "editorId",
+            "newsId",
+            "changes"
+          ]
+        },
+        {
+          "name": "ListCurrentNews",
+          "params": [
+            "visitorId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ListOldNews",
+          "params": [
+            "visitorId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "EmailNewsToEditor",
+          "params": [
+            "senderId",
+            "newsItemId",
+            "comments"
+          ]
+        },
+        {
+          "name": "SubscribeNewsRSS",
+          "params": [
+            "subscriberId",
+            "feedFormat"
+          ]
+        },
+        {
+          "name": "SetNewsPriority",
+          "params": [
+            "editorId",
+            "newsId",
+            "priority"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CourseEventManagement",
+      "ops": [
+        {
+          "name": "CreateCourseOrEvent",
+          "params": [
+            "creatorId",
+            "type",
+            "title",
+            "details",
+            "startDate",
+            "endDate",
+            "location"
+          ]
+        },
+        {
+          "name": "CreateOtherCourseOrEventWithFee",
+          "params": [
+            "trainerId",
+            "title",
+            "details",
+            "listingFee",
+            "paymentMethod"
+          ]
+        },
+        {
+          "name": "CreateOtherCourseOrEventNoFee",
+          "params": [
+            "adminId",
+            "title",
+            "details"
+          ]
+        },
+        {
+          "name": "SetListingFee",
+          "params": [
+            "adminId",
+            "feeAmount"
+          ]
+        },
+        {
+          "name": "UpdateCourseOrEvent",
+          "params": [
+            "editorId",
+            "courseEventId",
+            "changes"
+          ]
+        },
+        {
+          "name": "DeleteCourseOrEvent",
+          "params": [
+            "requesterId",
+            "courseEventId"
+          ]
+        },
+        {
+          "name": "CopyCourseOrEvent",
+          "params": [
+            "trainerId",
+            "courseEventId"
+          ]
+        },
+        {
+          "name": "ConvertCourseToEventOrViceVersa",
+          "params": [
+            "trainerId",
+            "courseEventId",
+            "newType"
+          ]
+        },
+        {
+          "name": "ListUpcomingCertificationCourses",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ListUpcomingOtherCourses",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ListUpcomingEvents",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "AdvancedSearchCoursesAndEvents",
+          "params": [
+            "searchCriteria",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetCourseOrEventDetails",
+          "params": [
+            "courseEventId"
+          ]
+        },
+        {
+          "name": "SubscribeCoursesEventsRSS",
+          "params": [
+            "subscriberId",
+            "feedFormat"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FAQManagement",
+      "ops": [
+        {
+          "name": "CreateFAQ",
+          "params": [
+            "editorId",
+            "question",
+            "answer",
+            "category"
+          ]
+        },
+        {
+          "name": "UpdateFAQ",
+          "params": [
+            "editorId",
+            "faqId",
+            "changes"
+          ]
+        },
+        {
+          "name": "ListFAQs",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchFAQsFullText",
+          "params": [
+            "query",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentRepository",
+      "ops": [
+        {
+          "name": "UploadTrainingMaterial",
+          "params": [
+            "editorId",
+            "fileId",
+            "title",
+            "accessLevel"
+          ]
+        },
+        {
+          "name": "DownloadTrainingMaterial",
+          "params": [
+            "memberId",
+            "materialId"
+          ]
+        },
+        {
+          "name": "UploadPublicResource",
+          "params": [
+            "editorId",
+            "fileId",
+            "title"
+          ]
+        },
+        {
+          "name": "DownloadPublicResource",
+          "params": [
+            "visitorId",
+            "resourceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JobBoard",
+      "ops": [
+        {
+          "name": "ListJobs",
+          "params": [
+            "memberId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "PostJobAd",
+          "params": [
+            "recruiterId",
+            "jobDetails"
+          ]
+        },
+        {
+          "name": "AdminApproveJobAd",
+          "params": [
+            "adminId",
+            "jobId",
+            "decision"
+          ]
+        },
+        {
+          "name": "AdminEditJobAd",
+          "params": [
+            "adminId",
+            "jobId",
+            "changes"
+          ]
+        },
+        {
+          "name": "AdminDeleteJobAd",
+          "params": [
+            "adminId",
+            "jobId"
+          ]
+        },
+        {
+          "name": "AutoExpireJobAds",
+          "params": [
+            "currentDate"
+          ]
+        },
+        {
+          "name": "ExtendJobAd",
+          "params": [
+            "recruiterId",
+            "jobId",
+            "extensionDays"
+          ]
+        },
+        {
+          "name": "SubscribeJobsRSS",
+          "params": [
+            "subscriberId",
+            "feedFormat"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ArticleManagement",
+      "ops": [
+        {
+          "name": "CreateArticle",
+          "params": [
+            "editorId",
+            "title",
+            "body",
+            "teaser",
+            "isOnHomePage",
+            "isMembersOnly",
+            "startDate",
+            "oldArticleDate",
+            "stopDate"
+          ]
+        },
+        {
+          "name": "UpdateArticle",
+          "params": [
+            "editorId",
+            "articleId",
+            "changes"
+          ]
+        },
+        {
+          "name": "ListFrontPageArticles",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetArticleByTeaserLink",
+          "params": [
+            "articleId"
+          ]
+        },
+        {
+          "name": "SetArticleHomePageFlag",
+          "params": [
+            "editorId",
+            "articleId",
+            "isOnHomePage"
+          ]
+        },
+        {
+          "name": "SetArticleVisibility",
+          "params": [
+            "editorId",
+            "articleId",
+            "isMembersOnly"
+          ]
+        },
+        {
+          "name": "SearchArticlesFullText",
+          "params": [
+            "query",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SubscribeArticlesRSS",
+          "params": [
+            "subscriberId",
+            "feedFormat"
+          ]
+        },
+        {
+          "name": "PostArticleComment",
+          "params": [
+            "visitorId",
+            "articleId",
+            "commentBody"
+          ]
+        },
+        {
+          "name": "AttachCertificationBadgeToArticle",
+          "params": [
+            "practitionerId",
+            "articleId",
+            "badgeType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HomePageLayout",
+      "ops": [
+        {
+          "name": "ConfigureAnnouncementsArea",
+          "params": [
+            "editorId",
+            "contentBlocks"
+          ]
+        },
+        {
+          "name": "ConfigureLayoutPositions",
+          "params": [
+            "editorId",
+            "layoutConfig"
+          ]
+        },
+        {
+          "name": "GetHomePageContent",
+          "params": [
+            "visitorId"
+          ]
+        },
+        {
+          "name": "ListMostPopularItems",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ShowUpcomingCoursesHighlight",
+          "params": [
+            "trainerId"
+          ]
+        },
+        {
+          "name": "ShowNewContentIndicators",
+          "params": [
+            "visitorId"
+          ]
+        },
+        {
+          "name": "ShowWhatIsScrumSummary",
+          "params": []
+        },
+        {
+          "name": "ShowWhatIsCSMSummary",
+          "params": []
+        },
+        {
+          "name": "GetHomePageLink",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "SurveyAndRating",
+      "ops": [
+        {
+          "name": "SubmitClassSurvey",
+          "params": [
+            "participantId",
+            "classId",
+            "answers",
+            "submissionToken"
+          ]
+        },
+        {
+          "name": "ValidateSingleSubmission",
+          "params": [
+            "participantId",
+            "classId",
+            "submissionToken"
+          ]
+        },
+        {
+          "name": "CalculateTrainerRating",
+          "params": [
+            "trainerId"
+          ]
+        },
+        {
+          "name": "GetTrainerRating",
+          "params": [
+            "trainerId"
+          ]
+        },
+        {
+          "name": "GetTrainerSurveyResultsSummary",
+          "params": [
+            "trainerId",
+            "classId"
+          ]
+        },
+        {
+          "name": "AdminViewTrainerSurveyStats",
+          "params": [
+            "adminId",
+            "trainerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ScrumInfoContent",
+      "ops": [
+        {
+          "name": "CreateScrumInfoPage",
+          "params": [
+            "editorId",
+            "title",
+            "body"
+          ]
+        },
+        {
+          "name": "UpdateScrumInfoPage",
+          "params": [
+            "editorId",
+            "pageId",
+            "changes"
+          ]
+        },
+        {
+          "name": "GetScrumBasicsSection",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "TrainerOnlyContent",
+      "ops": [
+        {
+          "name": "PostTrainerOnlyInfo",
+          "params": [
+            "editorId",
+            "title",
+            "body"
+          ]
+        },
+        {
+          "name": "ListTrainerOnlyInfo",
+          "params": [
+            "trainerId",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CorporateMembership",
+      "ops": [
+        {
+          "name": "JoinCorporateMembership",
+          "params": [
+            "companyId",
+            "paymentDetails"
+          ]
+        },
+        {
+          "name": "AddSponsorLogo",
+          "params": [
+            "sponsorId",
+            "logoFileId",
+            "targetUrl"
+          ]
+        },
+        {
+          "name": "ListSponsorLogos",
+          "params": [
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetRandomSponsorLogoForHomePage",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "MembershipBilling",
+      "ops": [
+        {
+          "name": "ChargePractitionerFee",
+          "params": [
+            "memberId",
+            "amount",
+            "paymentMethod"
+          ]
+        },
+        {
+          "name": "ChargeTrainerAnnualFee",
+          "params": [
+            "trainerId",
+            "amount",
+            "paymentMethod"
+          ]
+        },
+        {
+          "name": "SetAnnualMembershipFees",
+          "params": [
+            "adminId",
+            "memberFee",
+            "practitionerFee",
+            "trainerFee"
+          ]
+        },
+        {
+          "name": "SendRenewalReminder",
+          "params": [
+            "memberId",
+            "renewalLink"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RSSFeedService",
+      "ops": [
+        {
+          "name": "GenerateNewsFeed",
+          "params": [
+            "format"
+          ]
+        },
+        {
+          "name": "GenerateCoursesEventsFeed",
+          "params": [
+            "format"
+          ]
+        },
+        {
+          "name": "GenerateJobsFeed",
+          "params": [
+            "format"
+          ]
+        },
+        {
+          "name": "GenerateArticlesFeed",
+          "params": [
+            "format"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "CertificationManagement"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "SurveyAndRating"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "CourseEventManagement"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "ArticleManagement"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "Communication"
+    },
+    {
+      "caller": "CertificationManagement",
+      "callee": "Communication"
+    },
+    {
+      "caller": "CertificationManagement",
+      "callee": "MembershipBilling"
+    },
+    {
+      "caller": "CourseEventManagement",
+      "callee": "MembershipBilling"
+    },
+    {
+      "caller": "CourseEventManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "CourseEventManagement",
+      "callee": "SurveyAndRating"
+    },
+    {
+      "caller": "NewsManagement",
+      "callee": "RSSFeedService"
+    },
+    {
+      "caller": "ArticleManagement",
+      "callee": "RSSFeedService"
+    },
+    {
+      "caller": "JobBoard",
+      "callee": "RSSFeedService"
+    },
+    {
+      "caller": "JobBoard",
+      "callee": "Communication"
+    },
+    {
+      "caller": "MembershipBilling",
+      "callee": "Communication"
+    },
+    {
+      "caller": "CorporateMembership",
+      "callee": "MembershipBilling"
+    },
+    {
+      "caller": "CorporateMembership",
+      "callee": "HomePageLayout"
+    },
+    {
+      "caller": "SurveyAndRating",
+      "callee": "Communication"
+    },
+    {
+      "caller": "HomePageLayout",
+      "callee": "NewsManagement"
+    },
+    {
+      "caller": "HomePageLayout",
+      "callee": "ArticleManagement"
+    },
+    {
+      "caller": "HomePageLayout",
+      "callee": "CourseEventManagement"
+    },
+    {
+      "caller": "HomePageLayout",
+      "callee": "ScrumInfoContent"
+    },
+    {
+      "caller": "TrainerOnlyContent",
+      "callee": "UserManagement"
+    }
+  ]
+}

@@ -1,0 +1,2201 @@
+story,gen,ind,model,temp,valid,validation,fitness,time_llm,time_lean,sgm_sd_sum,sgm_max,lcom_avg,coupling_max
+g02-federalspending,1,0,gemini-3.1-pro-preview,0.5,True,,13.886,52.36,2.86,4.649,6.0,0.237,3.0
+g02-federalspending,1,1,gemini-3.1-pro-preview,0.5,True,,15.878,45.95,2.76,3.579,8.0,0.299,4.0
+g02-federalspending,1,2,gemini-3.1-pro-preview,0.5,True,,21.845,45.38,2.88,2.477,17.0,0.368,2.0
+g02-federalspending,1,3,gemini-3.1-pro-preview,0.5,True,,12.850999999999999,40.31,2.76,3.578,6.0,0.273,3.0
+g02-federalspending,1,4,gemini-3.1-pro-preview,0.5,True,,24.752,40.09,2.84,5.349,16.0,0.403,3.0
+g02-federalspending,1,5,gemini-3.1-pro-preview,0.5,True,,11.543,42.99,2.77,2.2,6.0,0.343,3.0
+g02-federalspending,1,6,gemini-3.1-pro-preview,0.5,True,,19.021,51.96,2.7,1.59,15.0,0.431,2.0
+g02-federalspending,1,7,gemini-3.1-pro-preview,0.5,True,,13.18,23.21,5.63,2.918,7.0,0.262,3.0
+g02-federalspending,1,8,gemini-3.1-pro-preview,0.5,True,,23.62,45.76,4.54,5.276,16.0,0.344,2.0
+g02-federalspending,1,9,gemini-3.1-pro-preview,0.5,True,,10.109,37.18,3.74,1.819,5.0,0.29,3.0
+g02-federalspending,2,0,gemini-3.1-pro-preview,0.5,True,,10.109,0.0,0.0,1.819,5.0,0.29,3.0
+g02-federalspending,2,1,gemini-3.1-pro-preview,0.5,True,,11.543,0.0,0.0,2.2,6.0,0.343,3.0
+g02-federalspending,2,2,gemini-3.1-pro-preview,0.5,True,,12.850999999999999,0.0,0.0,3.578,6.0,0.273,3.0
+g02-federalspending,2,3,gemini-3.1-pro-preview,0.5,True,,13.18,0.0,0.0,2.918,7.0,0.262,3.0
+g02-federalspending,2,4,gemini-3.1-pro-preview,0.5,True,,13.886,0.0,0.0,4.649,6.0,0.237,3.0
+g02-federalspending,2,5,gemini-3.1-pro-preview,0.5,True,,12.731,31.13,3.57,3.421,5.0,0.31,4.0
+g02-federalspending,2,6,gemini-3.1-pro-preview,0.5,True,,9.977,26.64,5.85,2.847,4.0,0.13,3.0
+g02-federalspending,2,7,gemini-3.1-pro-preview,0.5,True,,12.919,33.22,2.81,2.594,5.0,0.325,5.0
+g02-federalspending,2,8,gemini-3.1-pro-preview,0.5,True,,12.219,29.6,2.94,3.877,5.0,0.342,3.0
+g02-federalspending,2,9,gemini-3.1-pro-preview,0.5,True,,13.559000000000001,35.0,2.84,4.274,5.0,0.285,4.0
+g02-federalspending,3,0,gemini-3.1-pro-preview,0.5,True,,9.977,0.0,0.0,2.847,4.0,0.13,3.0
+g02-federalspending,3,1,gemini-3.1-pro-preview,0.5,True,,10.109,0.0,0.0,1.819,5.0,0.29,3.0
+g02-federalspending,3,2,gemini-3.1-pro-preview,0.5,True,,11.543,0.0,0.0,2.2,6.0,0.343,3.0
+g02-federalspending,3,3,gemini-3.1-pro-preview,0.5,True,,12.219,0.0,0.0,3.877,5.0,0.342,3.0
+g02-federalspending,3,4,gemini-3.1-pro-preview,0.5,True,,12.731,0.0,0.0,3.421,5.0,0.31,4.0
+g02-federalspending,3,5,gemini-3.1-pro-preview,0.5,True,,12.914,31.02,2.88,3.477,5.0,0.437,4.0
+g02-federalspending,3,6,gemini-3.1-pro-preview,0.5,True,,12.173,30.54,2.82,3.931,5.0,0.242,3.0
+g02-federalspending,3,7,gemini-3.1-pro-preview,0.5,True,,11.649000000000001,30.82,2.8,2.366,5.0,0.283,4.0
+g02-federalspending,3,8,gemini-3.1-pro-preview,0.5,True,,10.068999999999999,27.28,6.12,2.819,4.0,0.25,3.0
+g02-federalspending,3,9,gemini-3.1-pro-preview,0.5,True,,12.426,28.14,2.81,4.2,5.0,0.226,3.0
+g02-federalspending,4,0,gemini-3.1-pro-preview,0.5,True,,9.977,0.0,0.0,2.847,4.0,0.13,3.0
+g02-federalspending,4,1,gemini-3.1-pro-preview,0.5,True,,10.068999999999999,0.0,0.0,2.819,4.0,0.25,3.0
+g02-federalspending,4,2,gemini-3.1-pro-preview,0.5,True,,10.109,0.0,0.0,1.819,5.0,0.29,3.0
+g02-federalspending,4,3,gemini-3.1-pro-preview,0.5,True,,11.543,0.0,0.0,2.2,6.0,0.343,3.0
+g02-federalspending,4,4,gemini-3.1-pro-preview,0.5,True,,11.649000000000001,0.0,0.0,2.366,5.0,0.283,4.0
+g02-federalspending,4,5,gemini-3.1-pro-preview,0.5,True,,12.331,31.7,2.87,3.19,5.0,0.141,4.0
+g02-federalspending,4,6,gemini-3.1-pro-preview,0.5,True,,10.911,21.9,3.0,2.77,5.0,0.141,3.0
+g02-federalspending,4,7,gemini-3.1-pro-preview,0.5,True,,11.437999999999999,27.25,3.8,3.242,5.0,0.196,3.0
+g02-federalspending,4,8,gemini-3.1-pro-preview,0.5,True,,11.399999999999999,21.88,3.44,3.252,4.0,0.148,4.0
+g02-federalspending,4,9,gemini-3.1-pro-preview,0.5,True,,11.609,24.9,2.86,2.376,5.0,0.233,4.0
+g02-federalspending,5,0,gemini-3.1-pro-preview,0.5,True,,9.977,0.0,0.0,2.847,4.0,0.13,3.0
+g02-federalspending,5,1,gemini-3.1-pro-preview,0.5,True,,10.068999999999999,0.0,0.0,2.819,4.0,0.25,3.0
+g02-federalspending,5,2,gemini-3.1-pro-preview,0.5,True,,10.109,0.0,0.0,1.819,5.0,0.29,3.0
+g02-federalspending,5,3,gemini-3.1-pro-preview,0.5,True,,10.911,0.0,0.0,2.77,5.0,0.141,3.0
+g02-federalspending,5,4,gemini-3.1-pro-preview,0.5,True,,11.399999999999999,0.0,0.0,3.252,4.0,0.148,4.0
+g02-federalspending,5,5,gemini-3.1-pro-preview,0.5,True,,10.019,30.72,2.79,2.819,4.0,0.2,3.0
+g02-federalspending,5,6,gemini-3.1-pro-preview,0.5,True,,10.512,33.86,2.84,3.29,4.0,0.222,3.0
+g02-federalspending,5,7,gemini-3.1-pro-preview,0.5,True,,10.49,29.97,2.81,3.29,4.0,0.2,3.0
+g02-federalspending,5,8,gemini-3.1-pro-preview,0.5,True,,9.899999999999999,31.27,2.81,2.752,4.0,0.148,3.0
+g02-federalspending,5,9,gemini-3.1-pro-preview,0.5,True,,10.952,20.99,5.51,2.737,5.0,0.215,3.0
+g02-federalspending,1,0,gpt-5.1,0.5,True,,26.130000000000003,36.2,2.8,13.035,8.0,0.095,5.0
+g02-federalspending,1,1,gpt-5.1,0.5,True,,44.852,32.11,2.71,10.51,22.0,0.342,12.0
+g02-federalspending,1,2,gpt-5.1,0.5,True,,33.035,30.01,2.31,11.628,13.0,0.407,8.0
+g02-federalspending,1,3,gpt-5.1,0.5,True,,32.789,30.88,2.69,6.544,19.0,0.245,7.0
+g02-federalspending,1,4,gpt-5.1,0.5,True,,49.327,28.73,2.85,6.137,30.0,0.19,13.0
+g02-federalspending,1,5,gpt-5.1,0.5,True,,37.06,31.02,5.76,6.908,13.0,0.152,17.0
+g02-federalspending,1,6,gpt-5.1,0.5,True,,76.193,34.21,3.0,7.083,46.0,0.11,23.0
+g02-federalspending,1,7,gpt-5.1,0.5,True,,56.394000000000005,39.0,2.8,7.236,17.0,0.158,32.0
+g02-federalspending,1,8,gpt-5.1,0.5,True,,51.853,33.78,2.85,5.738,38.0,0.115,8.0
+g02-federalspending,1,9,gpt-5.1,0.5,True,,38.019,31.54,2.68,12.641,18.0,0.378,7.0
+g02-federalspending,2,0,gpt-5.1,0.5,True,,26.130000000000003,0.0,0.0,13.035,8.0,0.095,5.0
+g02-federalspending,2,1,gpt-5.1,0.5,True,,32.789,0.0,0.0,6.544,19.0,0.245,7.0
+g02-federalspending,2,2,gpt-5.1,0.5,True,,33.035,0.0,0.0,11.628,13.0,0.407,8.0
+g02-federalspending,2,3,gpt-5.1,0.5,True,,37.06,0.0,0.0,6.908,13.0,0.152,17.0
+g02-federalspending,2,4,gpt-5.1,0.5,True,,38.019,0.0,0.0,12.641,18.0,0.378,7.0
+g02-federalspending,2,5,gpt-5.1,0.5,True,,29.188,33.71,2.75,13.908,5.0,0.28,10.0
+g02-federalspending,2,6,gpt-5.1,0.5,True,,33.153,31.74,2.51,16.835,5.0,0.318,11.0
+g02-federalspending,2,7,gpt-5.1,0.5,True,,31.154,38.55,2.72,13.896,5.0,0.258,12.0
+g02-federalspending,2,8,gpt-5.1,0.5,False,Unknown callee: HistoricalDataLoader,,24.79,2.7,,,,
+g02-federalspending,2,9,gpt-5.1,0.5,False,Unknown caller: UserTestingManagement,,31.81,1.98,,,,
+g02-federalspending,3,0,gpt-5.1,0.5,True,,26.130000000000003,0.0,0.0,13.035,8.0,0.095,5.0
+g02-federalspending,3,1,gpt-5.1,0.5,True,,29.188,0.0,0.0,13.908,5.0,0.28,10.0
+g02-federalspending,3,2,gpt-5.1,0.5,True,,31.154,0.0,0.0,13.896,5.0,0.258,12.0
+g02-federalspending,3,3,gpt-5.1,0.5,True,,32.789,0.0,0.0,6.544,19.0,0.245,7.0
+g02-federalspending,3,4,gpt-5.1,0.5,True,,33.035,0.0,0.0,11.628,13.0,0.407,8.0
+g02-federalspending,3,5,gpt-5.1,0.5,True,,31.913,19.61,2.84,14.641,6.0,0.272,11.0
+g02-federalspending,3,6,gpt-5.1,0.5,True,,31.154,23.68,2.94,13.896,5.0,0.258,12.0
+g02-federalspending,3,7,gpt-5.1,0.5,True,,33.275000000000006,26.56,2.75,16.007,5.0,0.268,12.0
+g02-federalspending,3,8,gpt-5.1,0.5,True,,29.209,25.98,2.74,13.937,5.0,0.272,10.0
+g02-federalspending,3,9,gpt-5.1,0.5,True,,31.965,22.9,1.61,14.72,5.0,0.245,12.0
+g02-federalspending,4,0,gpt-5.1,0.5,True,,26.130000000000003,0.0,0.0,13.035,8.0,0.095,5.0
+g02-federalspending,4,1,gpt-5.1,0.5,True,,29.188,0.0,0.0,13.908,5.0,0.28,10.0
+g02-federalspending,4,2,gpt-5.1,0.5,True,,29.209,0.0,0.0,13.937,5.0,0.272,10.0
+g02-federalspending,4,3,gpt-5.1,0.5,True,,31.154,0.0,0.0,13.896,5.0,0.258,12.0
+g02-federalspending,4,4,gpt-5.1,0.5,True,,31.154,0.0,0.0,13.896,5.0,0.258,12.0
+g02-federalspending,4,5,gpt-5.1,0.5,True,,40.927,30.45,2.73,19.717,8.0,0.21,13.0
+g02-federalspending,4,6,gpt-5.1,0.5,True,,33.495999999999995,37.46,2.13,14.229,5.0,0.267,14.0
+g02-federalspending,4,7,gpt-5.1,0.5,True,,37.117999999999995,36.87,2.82,17.862,5.0,0.256,14.0
+g02-federalspending,4,8,gpt-5.1,0.5,True,,32.728,26.65,6.21,14.453,8.0,0.275,10.0
+g02-federalspending,4,9,gpt-5.1,0.5,True,,29.209,17.93,2.78,13.937,5.0,0.272,10.0
+g02-federalspending,5,0,gpt-5.1,0.5,True,,26.130000000000003,0.0,0.0,13.035,8.0,0.095,5.0
+g02-federalspending,5,1,gpt-5.1,0.5,True,,29.188,0.0,0.0,13.908,5.0,0.28,10.0
+g02-federalspending,5,2,gpt-5.1,0.5,True,,29.209,0.0,0.0,13.937,5.0,0.272,10.0
+g02-federalspending,5,3,gpt-5.1,0.5,True,,29.209,0.0,0.0,13.937,5.0,0.272,10.0
+g02-federalspending,5,4,gpt-5.1,0.5,True,,31.154,0.0,0.0,13.896,5.0,0.258,12.0
+g02-federalspending,5,5,gpt-5.1,0.5,False,Unknown caller: USAspendingIntegration,,23.9,2.31,,,,
+g02-federalspending,5,6,gpt-5.1,0.5,True,,37.068,56.35,2.72,18.844,8.0,0.224,10.0
+g02-federalspending,5,7,gpt-5.1,0.5,False,Unknown caller: D1FileGeneration,,28.78,2.7,,,,
+g02-federalspending,5,8,gpt-5.1,0.5,True,,29.628999999999998,23.25,2.69,14.437,5.0,0.192,10.0
+g02-federalspending,5,9,gpt-5.1,0.5,True,,32.561,28.29,2.68,15.287,5.0,0.274,12.0
+g03-loudoun,1,0,gemini-3.1-pro-preview,0.5,True,,13.584,60.49,2.88,4.463,6.0,0.121,3.0
+g03-loudoun,1,1,gemini-3.1-pro-preview,0.5,True,,12.604,59.05,2.82,3.475,8.0,0.129,1.0
+g03-loudoun,1,2,gemini-3.1-pro-preview,0.5,True,,10.004,43.88,3.22,0.871,6.0,0.133,3.0
+g03-loudoun,1,3,gemini-3.1-pro-preview,0.5,True,,13.071,43.55,3.14,2.959,9.0,0.112,1.0
+g03-loudoun,1,4,gemini-3.1-pro-preview,0.5,True,,11.857999999999999,39.07,2.87,1.623,8.0,0.235,2.0
+g03-loudoun,1,5,gemini-3.1-pro-preview,0.5,True,,12.908,55.22,3.3,2.759,8.0,0.149,2.0
+g03-loudoun,1,6,gemini-3.1-pro-preview,0.5,True,,11.943,76.18,5.83,0.821,8.0,0.122,3.0
+g03-loudoun,1,7,gemini-3.1-pro-preview,0.5,True,,14.125,57.63,3.38,3.003,7.0,0.122,4.0
+g03-loudoun,1,8,gemini-3.1-pro-preview,0.5,True,,13.939,51.77,2.91,2.826,8.0,0.113,3.0
+g03-loudoun,1,9,gemini-3.1-pro-preview,0.5,True,,15.748,53.36,2.74,3.638,9.0,0.11,3.0
+g03-loudoun,2,0,gemini-3.1-pro-preview,0.5,True,,10.004,0.0,0.0,0.871,6.0,0.133,3.0
+g03-loudoun,2,1,gemini-3.1-pro-preview,0.5,True,,11.857999999999999,0.0,0.0,1.623,8.0,0.235,2.0
+g03-loudoun,2,2,gemini-3.1-pro-preview,0.5,True,,11.943,0.0,0.0,0.821,8.0,0.122,3.0
+g03-loudoun,2,3,gemini-3.1-pro-preview,0.5,True,,12.604,0.0,0.0,3.475,8.0,0.129,1.0
+g03-loudoun,2,4,gemini-3.1-pro-preview,0.5,True,,12.908,0.0,0.0,2.759,8.0,0.149,2.0
+g03-loudoun,2,5,gemini-3.1-pro-preview,0.5,True,,10.081,63.84,2.85,2.954,5.0,0.127,2.0
+g03-loudoun,2,6,gemini-3.1-pro-preview,0.5,True,,10.395,44.34,2.84,2.276,5.0,0.119,3.0
+g03-loudoun,2,7,gemini-3.1-pro-preview,0.5,True,,7.522,56.52,3.53,0.4,5.0,0.122,2.0
+g03-loudoun,2,8,gemini-3.1-pro-preview,0.5,True,,10.635,73.11,3.54,3.534,5.0,0.101,2.0
+g03-loudoun,2,9,gemini-3.1-pro-preview,0.5,True,,9.975999999999999,54.25,5.78,1.843,5.0,0.133,3.0
+g03-loudoun,3,0,gemini-3.1-pro-preview,0.5,True,,7.522,0.0,0.0,0.4,5.0,0.122,2.0
+g03-loudoun,3,1,gemini-3.1-pro-preview,0.5,True,,9.975999999999999,0.0,0.0,1.843,5.0,0.133,3.0
+g03-loudoun,3,2,gemini-3.1-pro-preview,0.5,True,,10.004,0.0,0.0,0.871,6.0,0.133,3.0
+g03-loudoun,3,3,gemini-3.1-pro-preview,0.5,True,,10.081,0.0,0.0,2.954,5.0,0.127,2.0
+g03-loudoun,3,4,gemini-3.1-pro-preview,0.5,True,,10.395,0.0,0.0,2.276,5.0,0.119,3.0
+g03-loudoun,3,5,gemini-3.1-pro-preview,0.5,True,,9.001999999999999,37.06,5.92,1.843,5.0,0.159,2.0
+g03-loudoun,3,6,gemini-3.1-pro-preview,0.5,True,,9.971,37.86,2.8,1.843,5.0,0.128,3.0
+g03-loudoun,3,7,gemini-3.1-pro-preview,0.5,True,,7.576,46.78,5.69,0.433,5.0,0.143,2.0
+g03-loudoun,3,8,gemini-3.1-pro-preview,0.5,True,,9.008,46.57,2.75,0.904,5.0,0.104,3.0
+g03-loudoun,3,9,gemini-3.1-pro-preview,0.5,True,,8.56,43.81,2.68,0.4,5.0,0.16,3.0
+g03-loudoun,4,0,gemini-3.1-pro-preview,0.5,True,,7.522,0.0,0.0,0.4,5.0,0.122,2.0
+g03-loudoun,4,1,gemini-3.1-pro-preview,0.5,True,,7.576,0.0,0.0,0.433,5.0,0.143,2.0
+g03-loudoun,4,2,gemini-3.1-pro-preview,0.5,True,,8.56,0.0,0.0,0.4,5.0,0.16,3.0
+g03-loudoun,4,3,gemini-3.1-pro-preview,0.5,True,,9.001999999999999,0.0,0.0,1.843,5.0,0.159,2.0
+g03-loudoun,4,4,gemini-3.1-pro-preview,0.5,True,,9.008,0.0,0.0,0.904,5.0,0.104,3.0
+g03-loudoun,4,5,gemini-3.1-pro-preview,0.5,True,,8.573,56.89,2.67,0.4,5.0,0.173,3.0
+g03-loudoun,4,6,gemini-3.1-pro-preview,0.5,True,,8.56,37.85,2.67,0.4,5.0,0.16,3.0
+g03-loudoun,4,7,gemini-3.1-pro-preview,0.5,True,,7.558,57.69,2.71,0.433,5.0,0.125,2.0
+g03-loudoun,4,8,gemini-3.1-pro-preview,0.5,True,,8.58,37.42,5.39,0.4,5.0,0.18,3.0
+g03-loudoun,4,9,gemini-3.1-pro-preview,0.5,True,,7.573,40.58,2.89,0.4,5.0,0.173,2.0
+g03-loudoun,5,0,gemini-3.1-pro-preview,0.5,True,,7.522,0.0,0.0,0.4,5.0,0.122,2.0
+g03-loudoun,5,1,gemini-3.1-pro-preview,0.5,True,,7.558,0.0,0.0,0.433,5.0,0.125,2.0
+g03-loudoun,5,2,gemini-3.1-pro-preview,0.5,True,,7.573,0.0,0.0,0.4,5.0,0.173,2.0
+g03-loudoun,5,3,gemini-3.1-pro-preview,0.5,True,,7.576,0.0,0.0,0.433,5.0,0.143,2.0
+g03-loudoun,5,4,gemini-3.1-pro-preview,0.5,True,,8.56,0.0,0.0,0.4,5.0,0.16,3.0
+g03-loudoun,5,5,gemini-3.1-pro-preview,0.5,True,,7.547000000000001,38.14,2.84,0.4,5.0,0.147,2.0
+g03-loudoun,5,6,gemini-3.1-pro-preview,0.5,True,,7.573,40.63,2.76,0.4,5.0,0.173,2.0
+g03-loudoun,5,7,gemini-3.1-pro-preview,0.5,True,,7.573,42.06,5.69,0.4,5.0,0.173,2.0
+g03-loudoun,5,8,gemini-3.1-pro-preview,0.5,True,,7.576,47.74,3.03,0.433,5.0,0.143,2.0
+g03-loudoun,5,9,gemini-3.1-pro-preview,0.5,True,,7.573,39.58,2.89,0.4,5.0,0.173,2.0
+g03-loudoun,1,0,gpt-5.1,0.5,True,,41.501000000000005,24.79,2.75,19.312,17.0,0.189,5.0
+g03-loudoun,1,1,gpt-5.1,0.5,True,,29.746,29.56,3.15,16.563,8.0,0.183,5.0
+g03-loudoun,1,2,gpt-5.1,0.5,True,,44.703,32.35,2.62,18.45,14.0,0.253,12.0
+g03-loudoun,1,3,gpt-5.1,0.5,True,,43.741,25.33,2.69,21.476,13.0,0.265,9.0
+g03-loudoun,1,4,gpt-5.1,0.5,True,,50.781,34.26,5.8,21.531,14.0,0.25,15.0
+g03-loudoun,1,5,gpt-5.1,0.5,True,,28.200000000000003,26.14,2.77,12.935,9.0,0.265,6.0
+g03-loudoun,1,6,gpt-5.1,0.5,True,,27.921,26.47,2.14,10.611,10.0,0.31,7.0
+g03-loudoun,1,7,gpt-5.1,0.5,True,,25.412,29.4,2.72,11.161,11.0,0.251,3.0
+g03-loudoun,1,8,gpt-5.1,0.5,True,,50.217,30.75,2.8,19.934,18.0,0.283,12.0
+g03-loudoun,1,9,gpt-5.1,0.5,True,,29.378,24.51,2.72,13.283,11.0,0.095,5.0
+g03-loudoun,2,0,gpt-5.1,0.5,True,,25.412,0.0,0.0,11.161,11.0,0.251,3.0
+g03-loudoun,2,1,gpt-5.1,0.5,True,,27.921,0.0,0.0,10.611,10.0,0.31,7.0
+g03-loudoun,2,2,gpt-5.1,0.5,True,,28.200000000000003,0.0,0.0,12.935,9.0,0.265,6.0
+g03-loudoun,2,3,gpt-5.1,0.5,True,,29.378,0.0,0.0,13.283,11.0,0.095,5.0
+g03-loudoun,2,4,gpt-5.1,0.5,True,,29.746,0.0,0.0,16.563,8.0,0.183,5.0
+g03-loudoun,2,5,gpt-5.1,0.5,True,,38.141999999999996,46.27,2.78,23.945,5.0,0.197,9.0
+g03-loudoun,2,6,gpt-5.1,0.5,True,,29.314999999999998,25.92,2.35,17.08,5.0,0.235,7.0
+g03-loudoun,2,7,gpt-5.1,0.5,True,,39.1,38.55,2.77,21.896,5.0,0.204,12.0
+g03-loudoun,2,8,gpt-5.1,0.5,True,,32.739,28.49,2.68,17.499,7.0,0.24,8.0
+g03-loudoun,2,9,gpt-5.1,0.5,True,,37.355000000000004,36.66,2.77,20.091,5.0,0.264,12.0
+g03-loudoun,3,0,gpt-5.1,0.5,True,,25.412,0.0,0.0,11.161,11.0,0.251,3.0
+g03-loudoun,3,1,gpt-5.1,0.5,True,,27.921,0.0,0.0,10.611,10.0,0.31,7.0
+g03-loudoun,3,2,gpt-5.1,0.5,True,,28.200000000000003,0.0,0.0,12.935,9.0,0.265,6.0
+g03-loudoun,3,3,gpt-5.1,0.5,True,,29.314999999999998,0.0,0.0,17.08,5.0,0.235,7.0
+g03-loudoun,3,4,gpt-5.1,0.5,True,,29.378,0.0,0.0,13.283,11.0,0.095,5.0
+g03-loudoun,3,5,gpt-5.1,0.5,True,,35.092,42.49,2.89,18.971,5.0,0.121,11.0
+g03-loudoun,3,6,gpt-5.1,0.5,True,,33.104,30.16,2.16,15.905,5.0,0.199,12.0
+g03-loudoun,3,7,gpt-5.1,0.5,True,,34.319,27.07,2.72,18.109,7.0,0.21,9.0
+g03-loudoun,3,8,gpt-5.1,0.5,True,,32.582,32.68,2.77,15.347,6.0,0.235,11.0
+g03-loudoun,3,9,gpt-5.1,0.5,True,,32.306,28.34,2.68,16.096,5.0,0.21,11.0
+g03-loudoun,4,0,gpt-5.1,0.5,True,,25.412,0.0,0.0,11.161,11.0,0.251,3.0
+g03-loudoun,4,1,gpt-5.1,0.5,True,,27.921,0.0,0.0,10.611,10.0,0.31,7.0
+g03-loudoun,4,2,gpt-5.1,0.5,True,,28.200000000000003,0.0,0.0,12.935,9.0,0.265,6.0
+g03-loudoun,4,3,gpt-5.1,0.5,True,,29.314999999999998,0.0,0.0,17.08,5.0,0.235,7.0
+g03-loudoun,4,4,gpt-5.1,0.5,True,,29.378,0.0,0.0,13.283,11.0,0.095,5.0
+g03-loudoun,4,5,gpt-5.1,0.5,True,,30.226,29.15,2.49,17.953,5.0,0.273,7.0
+g03-loudoun,4,6,gpt-5.1,0.5,True,,30.151,30.57,2.74,15.881,6.0,0.27,8.0
+g03-loudoun,4,7,gpt-5.1,0.5,True,,43.135000000000005,37.34,2.74,21.952,7.0,0.183,14.0
+g03-loudoun,4,8,gpt-5.1,0.5,True,,31.185,25.61,2.33,14.933,6.0,0.252,10.0
+g03-loudoun,4,9,gpt-5.1,0.5,True,,32.335,17.82,1.97,16.138,6.0,0.197,10.0
+g03-loudoun,5,0,gpt-5.1,0.5,True,,25.412,0.0,0.0,11.161,11.0,0.251,3.0
+g03-loudoun,5,1,gpt-5.1,0.5,True,,27.921,0.0,0.0,10.611,10.0,0.31,7.0
+g03-loudoun,5,2,gpt-5.1,0.5,True,,28.200000000000003,0.0,0.0,12.935,9.0,0.265,6.0
+g03-loudoun,5,3,gpt-5.1,0.5,True,,29.314999999999998,0.0,0.0,17.08,5.0,0.235,7.0
+g03-loudoun,5,4,gpt-5.1,0.5,True,,29.378,0.0,0.0,13.283,11.0,0.095,5.0
+g03-loudoun,5,5,gpt-5.1,0.5,True,,37.436,29.84,2.22,20.188,6.0,0.248,11.0
+g03-loudoun,5,6,gpt-5.1,0.5,True,,29.298,19.34,2.21,17.051,5.0,0.247,7.0
+g03-loudoun,5,7,gpt-5.1,0.5,True,,36.559,23.05,2.72,17.329,7.0,0.23,12.0
+g03-loudoun,5,8,gpt-5.1,0.5,True,,30.5,14.47,2.76,14.223,7.0,0.277,9.0
+g03-loudoun,5,9,gpt-5.1,0.5,True,,31.075,26.68,5.47,14.846,6.0,0.229,10.0
+g04-recycling,1,0,gemini-3.1-pro-preview,0.5,True,,15.857,36.6,3.44,3.755,10.0,0.102,2.0
+g04-recycling,1,1,gemini-3.1-pro-preview,0.5,True,,12.172,38.9,3.3,2.075,9.0,0.097,1.0
+g04-recycling,1,2,gemini-3.1-pro-preview,0.5,True,,16.096,32.37,5.82,3.943,10.0,0.153,2.0
+g04-recycling,1,3,gemini-3.1-pro-preview,0.5,True,,16.914,39.72,3.01,2.773,12.0,0.141,2.0
+g04-recycling,1,4,gemini-3.1-pro-preview,0.5,True,,14.629000000000001,30.33,2.71,5.306,6.0,0.323,3.0
+g04-recycling,1,5,gemini-3.1-pro-preview,0.5,True,,15.174,40.3,2.83,3.024,10.0,0.15,2.0
+g04-recycling,1,6,gemini-3.1-pro-preview,0.5,True,,14.144,23.9,2.75,3.589,8.0,0.555,2.0
+g04-recycling,1,7,gemini-3.1-pro-preview,0.5,True,,12.834000000000001,38.71,2.75,2.688,9.0,0.146,1.0
+g04-recycling,1,8,gemini-3.1-pro-preview,0.5,True,,15.842,33.22,2.78,3.698,10.0,0.144,2.0
+g04-recycling,1,9,gemini-3.1-pro-preview,0.5,True,,18.183,36.41,2.78,5.079,11.0,0.104,2.0
+g04-recycling,2,0,gemini-3.1-pro-preview,0.5,True,,12.172,0.0,0.0,2.075,9.0,0.097,1.0
+g04-recycling,2,1,gemini-3.1-pro-preview,0.5,True,,12.834000000000001,0.0,0.0,2.688,9.0,0.146,1.0
+g04-recycling,2,2,gemini-3.1-pro-preview,0.5,True,,14.144,0.0,0.0,3.589,8.0,0.555,2.0
+g04-recycling,2,3,gemini-3.1-pro-preview,0.5,True,,14.629000000000001,0.0,0.0,5.306,6.0,0.323,3.0
+g04-recycling,2,4,gemini-3.1-pro-preview,0.5,True,,15.174,0.0,0.0,3.024,10.0,0.15,2.0
+g04-recycling,2,5,gemini-3.1-pro-preview,0.5,True,,11.684999999999999,32.82,2.83,4.518,5.0,0.167,2.0
+g04-recycling,2,6,gemini-3.1-pro-preview,0.5,True,,8.794,30.79,2.82,3.742,4.0,0.052,1.0
+g04-recycling,2,7,gemini-3.1-pro-preview,0.5,True,,11.68,34.94,2.85,4.596,5.0,0.084,2.0
+g04-recycling,2,8,gemini-3.1-pro-preview,0.5,True,,9.315999999999999,31.21,2.84,4.139,4.0,0.177,1.0
+g04-recycling,2,9,gemini-3.1-pro-preview,0.5,True,,9.68,34.61,2.74,3.573,4.0,0.107,2.0
+g04-recycling,3,0,gemini-3.1-pro-preview,0.5,True,,8.794,0.0,0.0,3.742,4.0,0.052,1.0
+g04-recycling,3,1,gemini-3.1-pro-preview,0.5,True,,9.315999999999999,0.0,0.0,4.139,4.0,0.177,1.0
+g04-recycling,3,2,gemini-3.1-pro-preview,0.5,True,,9.68,0.0,0.0,3.573,4.0,0.107,2.0
+g04-recycling,3,3,gemini-3.1-pro-preview,0.5,True,,11.68,0.0,0.0,4.596,5.0,0.084,2.0
+g04-recycling,3,4,gemini-3.1-pro-preview,0.5,True,,11.684999999999999,0.0,0.0,4.518,5.0,0.167,2.0
+g04-recycling,3,5,gemini-3.1-pro-preview,0.5,True,,11.674,30.74,2.77,5.576,4.0,0.098,2.0
+g04-recycling,3,6,gemini-3.1-pro-preview,0.5,True,,10.284,36.73,2.73,4.195,4.0,0.089,2.0
+g04-recycling,3,7,gemini-3.1-pro-preview,0.5,True,,9.341000000000001,34.39,2.78,4.186,4.0,0.155,1.0
+g04-recycling,3,8,gemini-3.1-pro-preview,0.5,True,,11.86,42.25,2.8,4.74,5.0,0.12,2.0
+g04-recycling,3,9,gemini-3.1-pro-preview,0.5,True,,12.823,30.69,5.86,5.721,5.0,0.102,2.0
+g04-recycling,4,0,gemini-3.1-pro-preview,0.5,True,,8.794,0.0,0.0,3.742,4.0,0.052,1.0
+g04-recycling,4,1,gemini-3.1-pro-preview,0.5,True,,9.315999999999999,0.0,0.0,4.139,4.0,0.177,1.0
+g04-recycling,4,2,gemini-3.1-pro-preview,0.5,True,,9.341000000000001,0.0,0.0,4.186,4.0,0.155,1.0
+g04-recycling,4,3,gemini-3.1-pro-preview,0.5,True,,9.68,0.0,0.0,3.573,4.0,0.107,2.0
+g04-recycling,4,4,gemini-3.1-pro-preview,0.5,True,,10.284,0.0,0.0,4.195,4.0,0.089,2.0
+g04-recycling,4,5,gemini-3.1-pro-preview,0.5,True,,10.187999999999999,34.98,2.78,4.088,4.0,0.1,2.0
+g04-recycling,4,6,gemini-3.1-pro-preview,0.5,True,,10.66,24.87,2.72,4.493,4.0,0.167,2.0
+g04-recycling,4,7,gemini-3.1-pro-preview,0.5,True,,10.018,35.68,5.72,3.862,4.0,0.156,2.0
+g04-recycling,4,8,gemini-3.1-pro-preview,0.5,True,,11.343,42.5,2.77,5.176,4.0,0.167,2.0
+g04-recycling,4,9,gemini-3.1-pro-preview,0.5,True,,10.850000000000001,29.94,2.73,4.65,4.0,0.2,2.0
+g04-recycling,5,0,gemini-3.1-pro-preview,0.5,True,,8.794,0.0,0.0,3.742,4.0,0.052,1.0
+g04-recycling,5,1,gemini-3.1-pro-preview,0.5,True,,9.315999999999999,0.0,0.0,4.139,4.0,0.177,1.0
+g04-recycling,5,2,gemini-3.1-pro-preview,0.5,True,,9.341000000000001,0.0,0.0,4.186,4.0,0.155,1.0
+g04-recycling,5,3,gemini-3.1-pro-preview,0.5,True,,9.68,0.0,0.0,3.573,4.0,0.107,2.0
+g04-recycling,5,4,gemini-3.1-pro-preview,0.5,True,,10.018,0.0,0.0,3.862,4.0,0.156,2.0
+g04-recycling,5,5,gemini-3.1-pro-preview,0.5,True,,10.662,36.66,2.82,4.464,4.0,0.198,2.0
+g04-recycling,5,6,gemini-3.1-pro-preview,0.5,True,,10.96,31.02,2.81,4.804,4.0,0.156,2.0
+g04-recycling,5,7,gemini-3.1-pro-preview,0.5,True,,10.719999999999999,45.19,2.68,4.531,4.0,0.189,2.0
+g04-recycling,5,8,gemini-3.1-pro-preview,0.5,True,,10.719999999999999,35.19,2.64,4.531,4.0,0.189,2.0
+g04-recycling,5,9,gemini-3.1-pro-preview,0.5,True,,10.850000000000001,25.55,1.59,4.65,4.0,0.2,2.0
+g04-recycling,1,0,gpt-5.1,0.5,True,,23.467,23.39,2.76,8.116,12.0,0.351,3.0
+g04-recycling,1,1,gpt-5.1,0.5,True,,26.115000000000002,26.86,2.45,9.722,12.0,0.393,4.0
+g04-recycling,1,2,gpt-5.1,0.5,True,,28.667,26.79,2.72,11.331,13.0,0.336,4.0
+g04-recycling,1,3,gpt-5.1,0.5,True,,26.500999999999998,25.92,2.74,9.192,12.0,0.309,5.0
+g04-recycling,1,4,gpt-5.1,0.5,True,,28.962,25.95,2.87,9.536,15.0,0.426,4.0
+g04-recycling,1,5,gpt-5.1,0.5,True,,26.926000000000002,26.49,2.77,8.435,15.0,0.491,3.0
+g04-recycling,1,6,gpt-5.1,0.5,True,,26.584,26.01,2.74,8.296,14.0,0.288,4.0
+g04-recycling,1,7,gpt-5.1,0.5,True,,22.521,23.06,4.94,10.342,9.0,0.179,3.0
+g04-recycling,1,8,gpt-5.1,0.5,True,,28.47,26.94,2.77,9.137,14.0,0.333,5.0
+g04-recycling,1,9,gpt-5.1,0.5,True,,24.091,25.17,2.79,9.801,11.0,0.29,3.0
+g04-recycling,2,0,gpt-5.1,0.5,True,,22.521,0.0,0.0,10.342,9.0,0.179,3.0
+g04-recycling,2,1,gpt-5.1,0.5,True,,23.467,0.0,0.0,8.116,12.0,0.351,3.0
+g04-recycling,2,2,gpt-5.1,0.5,True,,24.091,0.0,0.0,9.801,11.0,0.29,3.0
+g04-recycling,2,3,gpt-5.1,0.5,True,,26.115000000000002,0.0,0.0,9.722,12.0,0.393,4.0
+g04-recycling,2,4,gpt-5.1,0.5,True,,26.500999999999998,0.0,0.0,9.192,12.0,0.309,5.0
+g04-recycling,2,5,gpt-5.1,0.5,True,,21.33,28.84,2.87,12.084,5.0,0.246,4.0
+g04-recycling,2,6,gpt-5.1,0.5,True,,20.857,31.0,2.8,11.649,5.0,0.208,4.0
+g04-recycling,2,7,gpt-5.1,0.5,True,,22.997999999999998,27.73,2.7,12.818,6.0,0.18,4.0
+g04-recycling,2,8,gpt-5.1,0.5,True,,20.168,14.46,2.37,10.996,6.0,0.172,3.0
+g04-recycling,2,9,gpt-5.1,0.5,True,,21.047,22.02,2.68,11.839,5.0,0.208,4.0
+g04-recycling,3,0,gpt-5.1,0.5,True,,20.168,0.0,0.0,10.996,6.0,0.172,3.0
+g04-recycling,3,1,gpt-5.1,0.5,True,,20.857,0.0,0.0,11.649,5.0,0.208,4.0
+g04-recycling,3,2,gpt-5.1,0.5,True,,21.047,0.0,0.0,11.839,5.0,0.208,4.0
+g04-recycling,3,3,gpt-5.1,0.5,True,,21.33,0.0,0.0,12.084,5.0,0.246,4.0
+g04-recycling,3,4,gpt-5.1,0.5,True,,22.521,0.0,0.0,10.342,9.0,0.179,3.0
+g04-recycling,3,5,gpt-5.1,0.5,True,,19.728,23.15,2.69,10.584,5.0,0.144,4.0
+g04-recycling,3,6,gpt-5.1,0.5,True,,20.169,18.21,2.68,11.02,6.0,0.149,3.0
+g04-recycling,3,7,gpt-5.1,0.5,True,,22.926000000000002,28.89,2.74,12.746,5.0,0.18,5.0
+g04-recycling,3,8,gpt-5.1,0.5,True,,19.275,25.31,2.73,10.112,5.0,0.163,4.0
+g04-recycling,3,9,gpt-5.1,0.5,True,,21.003,26.95,2.8,11.803,5.0,0.2,4.0
+g04-recycling,4,0,gpt-5.1,0.5,True,,19.275,0.0,0.0,10.112,5.0,0.163,4.0
+g04-recycling,4,1,gpt-5.1,0.5,True,,19.728,0.0,0.0,10.584,5.0,0.144,4.0
+g04-recycling,4,2,gpt-5.1,0.5,True,,20.168,0.0,0.0,10.996,6.0,0.172,3.0
+g04-recycling,4,3,gpt-5.1,0.5,True,,20.169,0.0,0.0,11.02,6.0,0.149,3.0
+g04-recycling,4,4,gpt-5.1,0.5,True,,20.857,0.0,0.0,11.649,5.0,0.208,4.0
+g04-recycling,4,5,gpt-5.1,0.5,True,,20.712,27.53,2.76,10.556,6.0,0.156,4.0
+g04-recycling,4,6,gpt-5.1,0.5,True,,19.698999999999998,24.75,3.23,9.545,5.0,0.154,5.0
+g04-recycling,4,7,gpt-5.1,0.5,True,,19.205,14.51,2.89,10.056,6.0,0.149,3.0
+g04-recycling,4,8,gpt-5.1,0.5,True,,19.238,26.89,2.74,10.084,5.0,0.154,4.0
+g04-recycling,4,9,gpt-5.1,0.5,True,,20.184,28.74,5.7,10.028,6.0,0.156,4.0
+g04-recycling,5,0,gpt-5.1,0.5,True,,19.205,0.0,0.0,10.056,6.0,0.149,3.0
+g04-recycling,5,1,gpt-5.1,0.5,True,,19.238,0.0,0.0,10.084,5.0,0.154,4.0
+g04-recycling,5,2,gpt-5.1,0.5,True,,19.275,0.0,0.0,10.112,5.0,0.163,4.0
+g04-recycling,5,3,gpt-5.1,0.5,True,,19.698999999999998,0.0,0.0,9.545,5.0,0.154,5.0
+g04-recycling,5,4,gpt-5.1,0.5,True,,19.728,0.0,0.0,10.584,5.0,0.144,4.0
+g04-recycling,5,5,gpt-5.1,0.5,True,,19.233,26.21,3.0,10.084,5.0,0.149,4.0
+g04-recycling,5,6,gpt-5.1,0.5,True,,19.261,28.54,2.76,10.112,5.0,0.149,4.0
+g04-recycling,5,7,gpt-5.1,0.5,True,,18.733,25.65,2.91,10.584,5.0,0.149,3.0
+g04-recycling,5,8,gpt-5.1,0.5,True,,20.704,24.22,2.72,10.555,5.0,0.149,5.0
+g04-recycling,5,9,gpt-5.1,0.5,True,,18.233,15.06,2.55,10.084,5.0,0.149,3.0
+g05-openspending,1,0,gemini-3.1-pro-preview,0.5,True,,15.067,44.44,3.4,4.887,8.0,0.18,2.0
+g05-openspending,1,1,gemini-3.1-pro-preview,0.5,True,,11.335,35.88,2.76,3.237,5.0,0.098,3.0
+g05-openspending,1,2,gemini-3.1-pro-preview,0.5,True,,15.472,39.95,2.86,4.272,9.0,0.2,2.0
+g05-openspending,1,3,gemini-3.1-pro-preview,0.5,True,,14.044,37.53,2.76,2.886,8.0,0.158,3.0
+g05-openspending,1,4,gemini-3.1-pro-preview,0.5,True,,14.065000000000001,28.48,2.72,2.624,9.0,0.441,2.0
+g05-openspending,1,5,gemini-3.1-pro-preview,0.5,True,,17.07,34.62,2.75,3.84,11.0,0.23,2.0
+g05-openspending,1,6,gemini-3.1-pro-preview,0.5,True,,16.474,49.89,2.8,5.32,9.0,0.154,2.0
+g05-openspending,1,7,gemini-3.1-pro-preview,0.5,True,,14.548,54.18,2.73,2.361,9.0,0.187,3.0
+g05-openspending,1,8,gemini-3.1-pro-preview,0.5,True,,16.841,35.65,2.77,4.449,10.0,0.392,2.0
+g05-openspending,1,9,gemini-3.1-pro-preview,0.5,True,,14.288,42.51,2.74,4.069,8.0,0.219,2.0
+g05-openspending,2,0,gemini-3.1-pro-preview,0.5,True,,11.335,0.0,0.0,3.237,5.0,0.098,3.0
+g05-openspending,2,1,gemini-3.1-pro-preview,0.5,True,,14.044,0.0,0.0,2.886,8.0,0.158,3.0
+g05-openspending,2,2,gemini-3.1-pro-preview,0.5,True,,14.065000000000001,0.0,0.0,2.624,9.0,0.441,2.0
+g05-openspending,2,3,gemini-3.1-pro-preview,0.5,True,,14.288,0.0,0.0,4.069,8.0,0.219,2.0
+g05-openspending,2,4,gemini-3.1-pro-preview,0.5,True,,14.548,0.0,0.0,2.361,9.0,0.187,3.0
+g05-openspending,2,5,gemini-3.1-pro-preview,0.5,True,,11.41,47.28,5.78,2.199,5.0,0.211,4.0
+g05-openspending,2,6,gemini-3.1-pro-preview,0.5,True,,13.025,40.87,2.73,3.814,5.0,0.211,4.0
+g05-openspending,2,7,gemini-3.1-pro-preview,0.5,True,,13.631,30.61,2.92,6.511,4.0,0.12,3.0
+g05-openspending,2,8,gemini-3.1-pro-preview,0.5,True,,11.896,36.1,2.73,3.69,5.0,0.206,3.0
+g05-openspending,2,9,gemini-3.1-pro-preview,0.5,True,,10.344,36.23,2.71,3.219,5.0,0.125,2.0
+g05-openspending,3,0,gemini-3.1-pro-preview,0.5,True,,10.344,0.0,0.0,3.219,5.0,0.125,2.0
+g05-openspending,3,1,gemini-3.1-pro-preview,0.5,True,,11.335,0.0,0.0,3.237,5.0,0.098,3.0
+g05-openspending,3,2,gemini-3.1-pro-preview,0.5,True,,11.41,0.0,0.0,2.199,5.0,0.211,4.0
+g05-openspending,3,3,gemini-3.1-pro-preview,0.5,True,,11.896,0.0,0.0,3.69,5.0,0.206,3.0
+g05-openspending,3,4,gemini-3.1-pro-preview,0.5,True,,13.025,0.0,0.0,3.814,5.0,0.211,4.0
+g05-openspending,3,5,gemini-3.1-pro-preview,0.5,True,,11.749,31.55,2.99,3.557,5.0,0.192,3.0
+g05-openspending,3,6,gemini-3.1-pro-preview,0.5,True,,11.873000000000001,41.65,5.78,3.623,5.0,0.25,3.0
+g05-openspending,3,7,gemini-3.1-pro-preview,0.5,True,,12.805,31.84,2.92,3.713,5.0,0.092,4.0
+g05-openspending,3,8,gemini-3.1-pro-preview,0.5,True,,13.448,38.15,2.92,4.346,5.0,0.102,4.0
+g05-openspending,3,9,gemini-3.1-pro-preview,0.5,True,,12.719000000000001,42.01,2.67,4.623,5.0,0.096,3.0
+g05-openspending,4,0,gemini-3.1-pro-preview,0.5,True,,10.344,0.0,0.0,3.219,5.0,0.125,2.0
+g05-openspending,4,1,gemini-3.1-pro-preview,0.5,True,,11.335,0.0,0.0,3.237,5.0,0.098,3.0
+g05-openspending,4,2,gemini-3.1-pro-preview,0.5,True,,11.41,0.0,0.0,2.199,5.0,0.211,4.0
+g05-openspending,4,3,gemini-3.1-pro-preview,0.5,True,,11.749,0.0,0.0,3.557,5.0,0.192,3.0
+g05-openspending,4,4,gemini-3.1-pro-preview,0.5,True,,11.873000000000001,0.0,0.0,3.623,5.0,0.25,3.0
+g05-openspending,4,5,gemini-3.1-pro-preview,0.5,True,,13.484,27.93,2.73,5.317,5.0,0.167,3.0
+g05-openspending,4,6,gemini-3.1-pro-preview,0.5,True,,11.453,32.2,2.85,3.347,5.0,0.106,3.0
+g05-openspending,4,7,gemini-3.1-pro-preview,0.5,True,,13.238,36.39,3.17,4.19,5.0,0.048,4.0
+g05-openspending,4,8,gemini-3.1-pro-preview,0.5,True,,13.784,41.08,3.02,5.642,5.0,0.142,3.0
+g05-openspending,4,9,gemini-3.1-pro-preview,0.5,True,,11.915,37.98,2.95,3.719,5.0,0.196,3.0
+g05-openspending,5,0,gemini-3.1-pro-preview,0.5,True,,10.344,0.0,0.0,3.219,5.0,0.125,2.0
+g05-openspending,5,1,gemini-3.1-pro-preview,0.5,True,,11.335,0.0,0.0,3.237,5.0,0.098,3.0
+g05-openspending,5,2,gemini-3.1-pro-preview,0.5,True,,11.41,0.0,0.0,2.199,5.0,0.211,4.0
+g05-openspending,5,3,gemini-3.1-pro-preview,0.5,True,,11.453,0.0,0.0,3.347,5.0,0.106,3.0
+g05-openspending,5,4,gemini-3.1-pro-preview,0.5,True,,11.749,0.0,0.0,3.557,5.0,0.192,3.0
+g05-openspending,5,5,gemini-3.1-pro-preview,0.5,True,,13.117,32.9,3.45,4.913,5.0,0.204,3.0
+g05-openspending,5,6,gemini-3.1-pro-preview,0.5,True,,13.306999999999999,31.53,2.86,4.209,5.0,0.098,4.0
+g05-openspending,5,7,gemini-3.1-pro-preview,0.5,True,,12.463000000000001,30.9,2.88,4.309,5.0,0.154,3.0
+g05-openspending,5,8,gemini-3.1-pro-preview,0.5,True,,10.928,46.94,3.43,3.776,5.0,0.152,2.0
+g05-openspending,5,9,gemini-3.1-pro-preview,0.5,True,,12.022,32.87,2.8,3.814,5.0,0.208,3.0
+g05-openspending,1,0,gpt-5.1,0.5,True,,24.759999999999998,18.58,2.75,8.421,10.0,0.339,6.0
+g05-openspending,1,1,gpt-5.1,0.5,True,,26.365000000000002,20.24,2.84,10.086,10.0,0.279,6.0
+g05-openspending,1,2,gpt-5.1,0.5,True,,29.389,19.98,2.73,10.141,13.0,0.248,6.0
+g05-openspending,1,3,gpt-5.1,0.5,True,,25.133,15.86,2.79,6.78,11.0,0.353,7.0
+g05-openspending,1,4,gpt-5.1,0.5,True,,25.429000000000002,18.86,2.78,10.178,9.0,0.251,6.0
+g05-openspending,1,5,gpt-5.1,0.5,True,,26.392000000000003,20.2,2.14,8.057,11.0,0.335,7.0
+g05-openspending,1,6,gpt-5.1,0.5,True,,24.448,24.63,2.81,9.263,10.0,0.185,5.0
+g05-openspending,1,7,gpt-5.1,0.5,True,,26.564,18.94,2.91,11.307,9.0,0.257,6.0
+g05-openspending,1,8,gpt-5.1,0.5,True,,25.805,20.52,2.39,9.408,10.0,0.397,6.0
+g05-openspending,1,9,gpt-5.1,0.5,True,,26.042,24.13,3.14,8.681,11.0,0.361,6.0
+g05-openspending,2,0,gpt-5.1,0.5,True,,24.448,0.0,0.0,9.263,10.0,0.185,5.0
+g05-openspending,2,1,gpt-5.1,0.5,True,,24.759999999999998,0.0,0.0,8.421,10.0,0.339,6.0
+g05-openspending,2,2,gpt-5.1,0.5,True,,25.133,0.0,0.0,6.78,11.0,0.353,7.0
+g05-openspending,2,3,gpt-5.1,0.5,True,,25.429000000000002,0.0,0.0,10.178,9.0,0.251,6.0
+g05-openspending,2,4,gpt-5.1,0.5,True,,25.805,0.0,0.0,9.408,10.0,0.397,6.0
+g05-openspending,2,5,gpt-5.1,0.5,True,,21.15,23.85,5.83,11.962,5.0,0.188,4.0
+g05-openspending,2,6,gpt-5.1,0.5,True,,26.157,21.63,2.84,15.004,5.0,0.153,6.0
+g05-openspending,2,7,gpt-5.1,0.5,True,,25.063,19.99,2.74,13.931,5.0,0.132,6.0
+g05-openspending,2,8,gpt-5.1,0.5,True,,22.293,18.64,2.86,11.116,5.0,0.177,6.0
+g05-openspending,2,9,gpt-5.1,0.5,True,,22.619,25.41,2.76,13.37,5.0,0.249,4.0
+g05-openspending,3,0,gpt-5.1,0.5,True,,21.15,0.0,0.0,11.962,5.0,0.188,4.0
+g05-openspending,3,1,gpt-5.1,0.5,True,,22.293,0.0,0.0,11.116,5.0,0.177,6.0
+g05-openspending,3,2,gpt-5.1,0.5,True,,22.619,0.0,0.0,13.37,5.0,0.249,4.0
+g05-openspending,3,3,gpt-5.1,0.5,True,,24.448,0.0,0.0,9.263,10.0,0.185,5.0
+g05-openspending,3,4,gpt-5.1,0.5,True,,24.759999999999998,0.0,0.0,8.421,10.0,0.339,6.0
+g05-openspending,3,5,gpt-5.1,0.5,True,,24.425,29.26,2.84,15.265,5.0,0.16,4.0
+g05-openspending,3,6,gpt-5.1,0.5,True,,22.631999999999998,13.77,2.68,13.424,5.0,0.208,4.0
+g05-openspending,3,7,gpt-5.1,0.5,True,,24.029,16.22,2.86,13.809,5.0,0.22,5.0
+g05-openspending,3,8,gpt-5.1,0.5,True,,23.161,22.69,3.19,13.947,5.0,0.214,4.0
+g05-openspending,3,9,gpt-5.1,0.5,True,,23.942999999999998,11.71,2.64,13.754,5.0,0.189,5.0
+g05-openspending,4,0,gpt-5.1,0.5,True,,21.15,0.0,0.0,11.962,5.0,0.188,4.0
+g05-openspending,4,1,gpt-5.1,0.5,True,,22.293,0.0,0.0,11.116,5.0,0.177,6.0
+g05-openspending,4,2,gpt-5.1,0.5,True,,22.619,0.0,0.0,13.37,5.0,0.249,4.0
+g05-openspending,4,3,gpt-5.1,0.5,True,,22.631999999999998,0.0,0.0,13.424,5.0,0.208,4.0
+g05-openspending,4,4,gpt-5.1,0.5,True,,23.161,0.0,0.0,13.947,5.0,0.214,4.0
+g05-openspending,4,5,gpt-5.1,0.5,True,,22.942,16.28,2.81,13.761,5.0,0.181,4.0
+g05-openspending,4,6,gpt-5.1,0.5,True,,24.69,36.52,2.84,14.537,5.0,0.153,5.0
+g05-openspending,4,7,gpt-5.1,0.5,True,,22.631999999999998,20.21,2.76,13.424,5.0,0.208,4.0
+g05-openspending,4,8,gpt-5.1,0.5,True,,24.615000000000002,24.4,2.85,14.428,5.0,0.187,5.0
+g05-openspending,4,9,gpt-5.1,0.5,True,,23.181,29.88,2.83,13.936,5.0,0.245,4.0
+g05-openspending,5,0,gpt-5.1,0.5,True,,21.15,0.0,0.0,11.962,5.0,0.188,4.0
+g05-openspending,5,1,gpt-5.1,0.5,True,,22.293,0.0,0.0,11.116,5.0,0.177,6.0
+g05-openspending,5,2,gpt-5.1,0.5,True,,22.619,0.0,0.0,13.37,5.0,0.249,4.0
+g05-openspending,5,3,gpt-5.1,0.5,True,,22.631999999999998,0.0,0.0,13.424,5.0,0.208,4.0
+g05-openspending,5,4,gpt-5.1,0.5,True,,22.631999999999998,0.0,0.0,13.424,5.0,0.208,4.0
+g05-openspending,5,5,gpt-5.1,0.5,True,,23.704,24.11,2.75,14.512,5.0,0.192,4.0
+g05-openspending,5,6,gpt-5.1,0.5,True,,21.624,12.4,2.78,12.443,5.0,0.181,4.0
+g05-openspending,5,7,gpt-5.1,0.5,True,,24.689999999999998,24.6,2.76,13.517,5.0,0.173,6.0
+g05-openspending,5,8,gpt-5.1,0.5,True,,25.034,28.34,2.95,13.834,5.0,0.2,6.0
+g05-openspending,5,9,gpt-5.1,0.5,True,,24.841,13.43,2.72,14.611,5.0,0.23,5.0
+g08-frictionless,1,0,gemini-3.1-pro-preview,0.5,True,,8.573,27.7,2.82,1.49,5.0,0.083,2.0
+g08-frictionless,1,1,gemini-3.1-pro-preview,0.5,True,,11.916,27.47,3.24,2.583,7.0,0.333,2.0
+g08-frictionless,1,2,gemini-3.1-pro-preview,0.5,True,,8.997,24.52,5.82,2.886,4.0,0.111,2.0
+g08-frictionless,1,3,gemini-3.1-pro-preview,0.5,True,,10.849,24.93,5.78,2.682,6.0,0.167,2.0
+g08-frictionless,1,4,gemini-3.1-pro-preview,0.5,True,,8.504000000000001,28.93,2.9,1.471,4.0,0.033,3.0
+g08-frictionless,1,5,gemini-3.1-pro-preview,0.5,True,,7.526,26.11,3.1,1.443,4.0,0.083,2.0
+g08-frictionless,1,6,gemini-3.1-pro-preview,0.5,True,,11.028,27.74,3.12,2.767,6.0,0.261,2.0
+g08-frictionless,1,7,gemini-3.1-pro-preview,0.5,True,,8.594999999999999,31.26,3.08,1.5,5.0,0.095,2.0
+g08-frictionless,1,8,gemini-3.1-pro-preview,0.5,True,,9.184,26.64,3.25,2.121,5.0,0.063,2.0
+g08-frictionless,1,9,gemini-3.1-pro-preview,0.5,True,,9.466000000000001,23.05,3.24,2.276,5.0,0.19,2.0
+g08-frictionless,2,0,gemini-3.1-pro-preview,0.5,True,,7.526,0.0,0.0,1.443,4.0,0.083,2.0
+g08-frictionless,2,1,gemini-3.1-pro-preview,0.5,True,,8.504000000000001,0.0,0.0,1.471,4.0,0.033,3.0
+g08-frictionless,2,2,gemini-3.1-pro-preview,0.5,True,,8.573,0.0,0.0,1.49,5.0,0.083,2.0
+g08-frictionless,2,3,gemini-3.1-pro-preview,0.5,True,,8.594999999999999,0.0,0.0,1.5,5.0,0.095,2.0
+g08-frictionless,2,4,gemini-3.1-pro-preview,0.5,True,,8.997,0.0,0.0,2.886,4.0,0.111,2.0
+g08-frictionless,2,5,gemini-3.1-pro-preview,0.5,True,,8.488,19.27,2.85,2.414,4.0,0.074,2.0
+g08-frictionless,2,6,gemini-3.1-pro-preview,0.5,True,,9.008,29.64,3.68,1.971,4.0,0.037,3.0
+g08-frictionless,2,7,gemini-3.1-pro-preview,0.5,True,,10.96,25.57,3.32,2.856,5.0,0.104,3.0
+g08-frictionless,2,8,gemini-3.1-pro-preview,0.5,True,,7.667,29.65,3.14,1.5,4.0,0.167,2.0
+g08-frictionless,2,9,gemini-3.1-pro-preview,0.5,True,,9.117,24.8,2.57,1.971,4.0,0.146,3.0
+g08-frictionless,3,0,gemini-3.1-pro-preview,0.5,True,,7.526,0.0,0.0,1.443,4.0,0.083,2.0
+g08-frictionless,3,1,gemini-3.1-pro-preview,0.5,True,,7.667,0.0,0.0,1.5,4.0,0.167,2.0
+g08-frictionless,3,2,gemini-3.1-pro-preview,0.5,True,,8.488,0.0,0.0,2.414,4.0,0.074,2.0
+g08-frictionless,3,3,gemini-3.1-pro-preview,0.5,True,,8.504000000000001,0.0,0.0,1.471,4.0,0.033,3.0
+g08-frictionless,3,4,gemini-3.1-pro-preview,0.5,True,,8.573,0.0,0.0,1.49,5.0,0.083,2.0
+g08-frictionless,3,5,gemini-3.1-pro-preview,0.5,True,,8.46,30.32,2.78,2.386,4.0,0.074,2.0
+g08-frictionless,3,6,gemini-3.1-pro-preview,0.5,True,,8.46,24.0,5.75,2.386,4.0,0.074,2.0
+g08-frictionless,3,7,gemini-3.1-pro-preview,0.5,True,,8.46,27.02,2.71,2.386,4.0,0.074,2.0
+g08-frictionless,3,8,gemini-3.1-pro-preview,0.5,True,,8.46,33.08,5.89,2.386,4.0,0.074,2.0
+g08-frictionless,3,9,gemini-3.1-pro-preview,0.5,True,,8.46,27.36,2.89,2.386,4.0,0.074,2.0
+g08-frictionless,4,0,gemini-3.1-pro-preview,0.5,True,,7.526,0.0,0.0,1.443,4.0,0.083,2.0
+g08-frictionless,4,1,gemini-3.1-pro-preview,0.5,True,,7.667,0.0,0.0,1.5,4.0,0.167,2.0
+g08-frictionless,4,2,gemini-3.1-pro-preview,0.5,True,,8.46,0.0,0.0,2.386,4.0,0.074,2.0
+g08-frictionless,4,3,gemini-3.1-pro-preview,0.5,True,,8.46,0.0,0.0,2.386,4.0,0.074,2.0
+g08-frictionless,4,4,gemini-3.1-pro-preview,0.5,True,,8.46,0.0,0.0,2.386,4.0,0.074,2.0
+g08-frictionless,4,5,gemini-3.1-pro-preview,0.5,True,,8.943,21.31,3.56,2.876,4.0,0.067,2.0
+g08-frictionless,4,6,gemini-3.1-pro-preview,0.5,True,,8.45,21.42,3.29,2.376,4.0,0.074,2.0
+g08-frictionless,4,7,gemini-3.1-pro-preview,0.5,True,,8.46,21.07,3.19,2.386,4.0,0.074,2.0
+g08-frictionless,4,8,gemini-3.1-pro-preview,0.5,True,,8.46,22.62,3.13,2.386,4.0,0.074,2.0
+g08-frictionless,4,9,gemini-3.1-pro-preview,0.5,True,,8.504,24.22,2.87,2.337,4.0,0.167,2.0
+g08-frictionless,5,0,gemini-3.1-pro-preview,0.5,True,,7.526,0.0,0.0,1.443,4.0,0.083,2.0
+g08-frictionless,5,1,gemini-3.1-pro-preview,0.5,True,,7.667,0.0,0.0,1.5,4.0,0.167,2.0
+g08-frictionless,5,2,gemini-3.1-pro-preview,0.5,True,,8.45,0.0,0.0,2.376,4.0,0.074,2.0
+g08-frictionless,5,3,gemini-3.1-pro-preview,0.5,True,,8.46,0.0,0.0,2.386,4.0,0.074,2.0
+g08-frictionless,5,4,gemini-3.1-pro-preview,0.5,True,,8.46,0.0,0.0,2.386,4.0,0.074,2.0
+g08-frictionless,5,5,gemini-3.1-pro-preview,0.5,True,,8.947,31.89,2.8,2.847,4.0,0.1,2.0
+g08-frictionless,5,6,gemini-3.1-pro-preview,0.5,True,,8.865,23.78,2.69,2.809,4.0,0.056,2.0
+g08-frictionless,5,7,gemini-3.1-pro-preview,0.5,True,,8.865,33.32,5.82,2.809,4.0,0.056,2.0
+g08-frictionless,5,8,gemini-3.1-pro-preview,0.5,True,,9.870999999999999,33.52,2.79,2.827,5.0,0.044,2.0
+g08-frictionless,5,9,gemini-3.1-pro-preview,0.5,True,,8.386,27.73,2.87,2.386,4.0,0.0,2.0
+g08-frictionless,1,0,gpt-5.1,0.5,True,,22.05,16.69,2.96,2.826,16.0,0.224,3.0
+g08-frictionless,1,1,gpt-5.1,0.5,True,,22.178,25.67,3.19,5.178,14.0,0.0,3.0
+g08-frictionless,1,2,gpt-5.1,0.5,True,,22.918,17.02,3.23,2.87,16.0,0.048,4.0
+g08-frictionless,1,3,gpt-5.1,0.5,True,,15.084,17.15,3.04,4.99,7.0,0.094,3.0
+g08-frictionless,1,4,gpt-5.1,0.5,True,,24.954,27.95,3.27,3.751,17.0,0.203,4.0
+g08-frictionless,1,5,gpt-5.1,0.5,True,,21.188,19.2,2.83,2.069,16.0,0.119,3.0
+g08-frictionless,1,6,gpt-5.1,0.5,True,,23.533,21.56,2.85,3.427,16.0,0.106,4.0
+g08-frictionless,1,7,gpt-5.1,0.5,True,,16.461,16.99,2.71,3.333,11.0,0.128,2.0
+g08-frictionless,1,8,gpt-5.1,0.5,True,,27.657,21.6,2.99,3.535,19.0,0.122,5.0
+g08-frictionless,1,9,gpt-5.1,0.5,True,,22.356,17.71,2.77,4.086,15.0,0.27,3.0
+g08-frictionless,2,0,gpt-5.1,0.5,True,,15.084,0.0,0.0,4.99,7.0,0.094,3.0
+g08-frictionless,2,1,gpt-5.1,0.5,True,,16.461,0.0,0.0,3.333,11.0,0.128,2.0
+g08-frictionless,2,2,gpt-5.1,0.5,True,,21.188,0.0,0.0,2.069,16.0,0.119,3.0
+g08-frictionless,2,3,gpt-5.1,0.5,True,,22.05,0.0,0.0,2.826,16.0,0.224,3.0
+g08-frictionless,2,4,gpt-5.1,0.5,True,,22.178,0.0,0.0,5.178,14.0,0.0,3.0
+g08-frictionless,2,5,gpt-5.1,0.5,True,,16.0,25.42,2.79,7.0,5.0,0.0,4.0
+g08-frictionless,2,6,gpt-5.1,0.5,True,,15.507,28.85,2.97,7.507,5.0,0.0,3.0
+g08-frictionless,2,7,gpt-5.1,0.5,True,,15.919,26.2,2.75,7.849,6.0,0.07,2.0
+g08-frictionless,2,8,gpt-5.1,0.5,True,,14.44,24.59,2.91,4.334,6.0,0.106,4.0
+g08-frictionless,2,9,gpt-5.1,0.5,True,,13.006,17.04,3.01,2.927,8.0,0.079,2.0
+g08-frictionless,3,0,gpt-5.1,0.5,True,,13.006,0.0,0.0,2.927,8.0,0.079,2.0
+g08-frictionless,3,1,gpt-5.1,0.5,True,,14.44,0.0,0.0,4.334,6.0,0.106,4.0
+g08-frictionless,3,2,gpt-5.1,0.5,True,,15.084,0.0,0.0,4.99,7.0,0.094,3.0
+g08-frictionless,3,3,gpt-5.1,0.5,True,,15.507,0.0,0.0,7.507,5.0,0.0,3.0
+g08-frictionless,3,4,gpt-5.1,0.5,True,,15.919,0.0,0.0,7.849,6.0,0.07,2.0
+g08-frictionless,3,5,gpt-5.1,0.5,True,,14.953,28.63,3.48,6.897,6.0,0.056,2.0
+g08-frictionless,3,6,gpt-5.1,0.5,True,,12.52,24.5,2.7,4.433,5.0,0.087,3.0
+g08-frictionless,3,7,gpt-5.1,0.5,True,,14.530000000000001,17.71,5.97,4.429,6.0,0.101,4.0
+g08-frictionless,3,8,gpt-5.1,0.5,True,,14.097999999999999,29.63,2.8,4.005,6.0,0.093,4.0
+g08-frictionless,3,9,gpt-5.1,0.5,True,,15.126999999999999,25.67,5.83,5.018,6.0,0.109,4.0
+g08-frictionless,4,0,gpt-5.1,0.5,True,,12.52,0.0,0.0,4.433,5.0,0.087,3.0
+g08-frictionless,4,1,gpt-5.1,0.5,True,,13.006,0.0,0.0,2.927,8.0,0.079,2.0
+g08-frictionless,4,2,gpt-5.1,0.5,True,,14.097999999999999,0.0,0.0,4.005,6.0,0.093,4.0
+g08-frictionless,4,3,gpt-5.1,0.5,True,,14.44,0.0,0.0,4.334,6.0,0.106,4.0
+g08-frictionless,4,4,gpt-5.1,0.5,True,,14.530000000000001,0.0,0.0,4.429,6.0,0.101,4.0
+g08-frictionless,4,5,gpt-5.1,0.5,True,,13.52,13.64,5.85,4.433,6.0,0.087,3.0
+g08-frictionless,4,6,gpt-5.1,0.5,True,,14.134,25.43,2.83,4.057,6.0,0.077,4.0
+g08-frictionless,4,7,gpt-5.1,0.5,True,,13.52,16.63,2.81,4.433,6.0,0.087,3.0
+g08-frictionless,4,8,gpt-5.1,0.5,True,,14.564,25.6,2.93,4.471,6.0,0.093,4.0
+g08-frictionless,4,9,gpt-5.1,0.5,True,,13.530000000000001,16.9,3.11,4.433,6.0,0.097,3.0
+g08-frictionless,5,0,gpt-5.1,0.5,True,,12.52,0.0,0.0,4.433,5.0,0.087,3.0
+g08-frictionless,5,1,gpt-5.1,0.5,True,,13.006,0.0,0.0,2.927,8.0,0.079,2.0
+g08-frictionless,5,2,gpt-5.1,0.5,True,,13.52,0.0,0.0,4.433,6.0,0.087,3.0
+g08-frictionless,5,3,gpt-5.1,0.5,True,,13.52,0.0,0.0,4.433,6.0,0.087,3.0
+g08-frictionless,5,4,gpt-5.1,0.5,True,,13.530000000000001,0.0,0.0,4.433,6.0,0.097,3.0
+g08-frictionless,5,5,gpt-5.1,0.5,True,,13.516,17.37,3.4,4.433,6.0,0.083,3.0
+g08-frictionless,5,6,gpt-5.1,0.5,True,,13.530000000000001,15.58,2.81,4.433,6.0,0.097,3.0
+g08-frictionless,5,7,gpt-5.1,0.5,True,,13.52,25.77,2.89,4.433,6.0,0.087,3.0
+g08-frictionless,5,8,gpt-5.1,0.5,True,,14.044,13.68,2.51,4.933,6.0,0.111,3.0
+g08-frictionless,5,9,gpt-5.1,0.5,True,,13.809,28.41,2.87,4.685,6.0,0.124,3.0
+g10-scrumalliance,1,0,gemini-3.1-pro-preview,0.5,True,,18.169999999999998,31.21,2.99,7.81,8.0,0.36,2.0
+g10-scrumalliance,1,1,gemini-3.1-pro-preview,0.5,True,,21.158,39.42,2.81,6.616,11.0,0.542,3.0
+g10-scrumalliance,1,2,gemini-3.1-pro-preview,0.5,True,,18.811999999999998,33.81,2.8,4.193,11.0,0.619,3.0
+g10-scrumalliance,1,3,gemini-3.1-pro-preview,0.5,True,,18.766,45.08,2.84,9.44,7.0,0.326,2.0
+g10-scrumalliance,1,4,gemini-3.1-pro-preview,0.5,True,,22.288,39.13,2.75,5.74,14.0,0.548,2.0
+g10-scrumalliance,1,5,gemini-3.1-pro-preview,0.5,True,,18.654,34.5,2.76,7.225,9.0,0.429,2.0
+g10-scrumalliance,1,6,gemini-3.1-pro-preview,0.5,True,,18.213,38.31,2.73,8.661,6.0,0.552,3.0
+g10-scrumalliance,1,7,gemini-3.1-pro-preview,0.5,True,,19.083,44.8,2.79,6.606,10.0,0.477,2.0
+g10-scrumalliance,1,8,gemini-3.1-pro-preview,0.5,True,,18.418,43.38,3.06,8.952,7.0,0.466,2.0
+g10-scrumalliance,1,9,gemini-3.1-pro-preview,0.5,True,,19.248,36.54,2.79,8.848,8.0,0.4,2.0
+g10-scrumalliance,2,0,gemini-3.1-pro-preview,0.5,True,,18.169999999999998,0.0,0.0,7.81,8.0,0.36,2.0
+g10-scrumalliance,2,1,gemini-3.1-pro-preview,0.5,True,,18.213,0.0,0.0,8.661,6.0,0.552,3.0
+g10-scrumalliance,2,2,gemini-3.1-pro-preview,0.5,True,,18.418,0.0,0.0,8.952,7.0,0.466,2.0
+g10-scrumalliance,2,3,gemini-3.1-pro-preview,0.5,True,,18.654,0.0,0.0,7.225,9.0,0.429,2.0
+g10-scrumalliance,2,4,gemini-3.1-pro-preview,0.5,True,,18.766,0.0,0.0,9.44,7.0,0.326,2.0
+g10-scrumalliance,2,5,gemini-3.1-pro-preview,0.5,True,,17.212,40.94,2.7,7.881,5.0,0.331,4.0
+g10-scrumalliance,2,6,gemini-3.1-pro-preview,0.5,True,,17.298000000000002,39.62,2.96,7.875,5.0,0.423,4.0
+g10-scrumalliance,2,7,gemini-3.1-pro-preview,0.5,True,,15.277000000000001,61.17,2.74,7.984,5.0,0.293,2.0
+g10-scrumalliance,2,8,gemini-3.1-pro-preview,0.5,True,,16.016,38.29,2.8,8.58,5.0,0.436,2.0
+g10-scrumalliance,2,9,gemini-3.1-pro-preview,0.5,True,,17.743,46.37,2.44,8.443,5.0,0.3,4.0
+g10-scrumalliance,3,0,gemini-3.1-pro-preview,0.5,True,,15.277000000000001,0.0,0.0,7.984,5.0,0.293,2.0
+g10-scrumalliance,3,1,gemini-3.1-pro-preview,0.5,True,,16.016,0.0,0.0,8.58,5.0,0.436,2.0
+g10-scrumalliance,3,2,gemini-3.1-pro-preview,0.5,True,,17.212,0.0,0.0,7.881,5.0,0.331,4.0
+g10-scrumalliance,3,3,gemini-3.1-pro-preview,0.5,True,,17.298000000000002,0.0,0.0,7.875,5.0,0.423,4.0
+g10-scrumalliance,3,4,gemini-3.1-pro-preview,0.5,True,,17.743,0.0,0.0,8.443,5.0,0.3,4.0
+g10-scrumalliance,3,5,gemini-3.1-pro-preview,0.5,True,,16.333,34.42,2.52,8.035,4.0,0.298,4.0
+g10-scrumalliance,3,6,gemini-3.1-pro-preview,0.5,True,,15.791,40.03,2.85,7.458,4.0,0.333,4.0
+g10-scrumalliance,3,7,gemini-3.1-pro-preview,0.5,True,,18.218,78.94,3.43,9.94,4.0,0.278,4.0
+g10-scrumalliance,3,8,gemini-3.1-pro-preview,0.5,True,,18.11,40.36,2.84,8.81,5.0,0.3,4.0
+g10-scrumalliance,3,9,gemini-3.1-pro-preview,0.5,True,,17.13,36.22,2.95,7.886,5.0,0.244,4.0
+g10-scrumalliance,4,0,gemini-3.1-pro-preview,0.5,True,,15.277000000000001,0.0,0.0,7.984,5.0,0.293,2.0
+g10-scrumalliance,4,1,gemini-3.1-pro-preview,0.5,True,,15.791,0.0,0.0,7.458,4.0,0.333,4.0
+g10-scrumalliance,4,2,gemini-3.1-pro-preview,0.5,True,,16.016,0.0,0.0,8.58,5.0,0.436,2.0
+g10-scrumalliance,4,3,gemini-3.1-pro-preview,0.5,True,,16.333,0.0,0.0,8.035,4.0,0.298,4.0
+g10-scrumalliance,4,4,gemini-3.1-pro-preview,0.5,True,,17.13,0.0,0.0,7.886,5.0,0.244,4.0
+g10-scrumalliance,4,5,gemini-3.1-pro-preview,0.5,True,,17.942,42.45,5.81,8.625,5.0,0.317,4.0
+g10-scrumalliance,4,6,gemini-3.1-pro-preview,0.5,True,,17.627,37.2,2.82,9.16,4.0,0.467,4.0
+g10-scrumalliance,4,7,gemini-3.1-pro-preview,0.5,True,,16.714,37.99,2.73,8.401,4.0,0.313,4.0
+g10-scrumalliance,4,8,gemini-3.1-pro-preview,0.5,True,,17.012999999999998,43.0,2.76,7.575,5.0,0.438,4.0
+g10-scrumalliance,4,9,gemini-3.1-pro-preview,0.5,True,,16.395,55.36,3.47,8.039,4.0,0.356,4.0
+g10-scrumalliance,5,0,gemini-3.1-pro-preview,0.5,True,,15.277000000000001,0.0,0.0,7.984,5.0,0.293,2.0
+g10-scrumalliance,5,1,gemini-3.1-pro-preview,0.5,True,,15.791,0.0,0.0,7.458,4.0,0.333,4.0
+g10-scrumalliance,5,2,gemini-3.1-pro-preview,0.5,True,,16.016,0.0,0.0,8.58,5.0,0.436,2.0
+g10-scrumalliance,5,3,gemini-3.1-pro-preview,0.5,True,,16.333,0.0,0.0,8.035,4.0,0.298,4.0
+g10-scrumalliance,5,4,gemini-3.1-pro-preview,0.5,True,,16.395,0.0,0.0,8.039,4.0,0.356,4.0
+g10-scrumalliance,5,5,gemini-3.1-pro-preview,0.5,True,,17.188000000000002,48.42,3.31,8.855,4.0,0.333,4.0
+g10-scrumalliance,5,6,gemini-3.1-pro-preview,0.5,True,,16.817,42.99,2.76,8.384,4.0,0.433,4.0
+g10-scrumalliance,5,7,gemini-3.1-pro-preview,0.5,True,,17.649,43.25,2.45,9.316,4.0,0.333,4.0
+g10-scrumalliance,5,8,gemini-3.1-pro-preview,0.5,True,,16.767,41.33,2.89,8.523,4.0,0.244,4.0
+g10-scrumalliance,5,9,gemini-3.1-pro-preview,0.5,True,,18.442,31.85,5.84,8.978,5.0,0.464,4.0
+g10-scrumalliance,1,0,gpt-5.1,0.5,True,,39.19,45.51,2.92,19.652,13.0,0.538,6.0
+g10-scrumalliance,1,1,gpt-5.1,0.5,True,,39.086,46.78,2.83,20.549,14.0,0.537,4.0
+g10-scrumalliance,1,2,gpt-5.1,0.5,True,,42.378,47.49,2.84,18.913,14.0,0.465,9.0
+g10-scrumalliance,1,3,gpt-5.1,0.5,True,,41.735,45.12,1.72,20.411,17.0,0.324,4.0
+g10-scrumalliance,1,4,gpt-5.1,0.5,True,,36.537,47.19,2.08,15.97,15.0,0.567,5.0
+g10-scrumalliance,1,5,gpt-5.1,0.5,True,,46.925,43.21,2.76,15.451,27.0,0.474,4.0
+g10-scrumalliance,1,6,gpt-5.1,0.5,True,,40.760000000000005,43.15,2.88,22.356,14.0,0.404,4.0
+g10-scrumalliance,1,7,gpt-5.1,0.5,False,Unknown callee: Notification,,46.62,2.82,,,,
+g10-scrumalliance,1,8,gpt-5.1,0.5,True,,37.97,50.79,2.86,18.561,14.0,0.409,5.0
+g10-scrumalliance,1,9,gpt-5.1,0.5,True,,34.732,44.04,2.36,15.149,14.0,0.583,5.0
+g10-scrumalliance,2,0,gpt-5.1,0.5,True,,34.732,0.0,0.0,15.149,14.0,0.583,5.0
+g10-scrumalliance,2,1,gpt-5.1,0.5,True,,36.537,0.0,0.0,15.97,15.0,0.567,5.0
+g10-scrumalliance,2,2,gpt-5.1,0.5,True,,37.97,0.0,0.0,18.561,14.0,0.409,5.0
+g10-scrumalliance,2,3,gpt-5.1,0.5,True,,39.086,0.0,0.0,20.549,14.0,0.537,4.0
+g10-scrumalliance,2,4,gpt-5.1,0.5,True,,39.19,0.0,0.0,19.652,13.0,0.538,6.0
+g10-scrumalliance,2,5,gpt-5.1,0.5,True,,36.347,24.57,2.79,26.026,5.0,0.321,5.0
+g10-scrumalliance,2,6,gpt-5.1,0.5,True,,41.428,50.24,2.81,28.171,7.0,0.257,6.0
+g10-scrumalliance,2,7,gpt-5.1,0.5,True,,39.195,24.52,3.79,25.875,7.0,0.32,6.0
+g10-scrumalliance,2,8,gpt-5.1,0.5,True,,38.976,29.12,3.25,21.624,12.0,0.352,5.0
+g10-scrumalliance,2,9,gpt-5.1,0.5,True,,41.284,60.08,3.59,27.99,7.0,0.294,6.0
+g10-scrumalliance,3,0,gpt-5.1,0.5,True,,34.732,0.0,0.0,15.149,14.0,0.583,5.0
+g10-scrumalliance,3,1,gpt-5.1,0.5,True,,36.347,0.0,0.0,26.026,5.0,0.321,5.0
+g10-scrumalliance,3,2,gpt-5.1,0.5,True,,36.537,0.0,0.0,15.97,15.0,0.567,5.0
+g10-scrumalliance,3,3,gpt-5.1,0.5,True,,37.97,0.0,0.0,18.561,14.0,0.409,5.0
+g10-scrumalliance,3,4,gpt-5.1,0.5,True,,38.976,0.0,0.0,21.624,12.0,0.352,5.0
+g10-scrumalliance,3,5,gpt-5.1,0.5,False,Unknown caller: UserManagement,,37.22,3.23,,,,
+g10-scrumalliance,3,6,gpt-5.1,0.5,True,,37.515,40.35,2.87,26.221,6.0,0.294,5.0
+g10-scrumalliance,3,7,gpt-5.1,0.5,True,,35.393,53.2,2.74,25.077,5.0,0.316,5.0
+g10-scrumalliance,3,8,gpt-5.1,0.5,True,,36.347,28.0,2.69,26.026,5.0,0.321,5.0
+g10-scrumalliance,3,9,gpt-5.1,0.5,True,,35.757,36.17,5.91,25.436,5.0,0.321,5.0
+g10-scrumalliance,4,0,gpt-5.1,0.5,True,,34.732,0.0,0.0,15.149,14.0,0.583,5.0
+g10-scrumalliance,4,1,gpt-5.1,0.5,True,,35.393,0.0,0.0,25.077,5.0,0.316,5.0
+g10-scrumalliance,4,2,gpt-5.1,0.5,True,,35.757,0.0,0.0,25.436,5.0,0.321,5.0
+g10-scrumalliance,4,3,gpt-5.1,0.5,True,,36.347,0.0,0.0,26.026,5.0,0.321,5.0
+g10-scrumalliance,4,4,gpt-5.1,0.5,True,,36.347,0.0,0.0,26.026,5.0,0.321,5.0
+g10-scrumalliance,4,5,gpt-5.1,0.5,True,,35.809,44.67,2.88,25.488,5.0,0.321,5.0
+g10-scrumalliance,4,6,gpt-5.1,0.5,True,,35.757,51.71,2.75,25.436,5.0,0.321,5.0
+g10-scrumalliance,4,7,gpt-5.1,0.5,True,,35.393,30.77,2.63,25.077,5.0,0.316,5.0
+g10-scrumalliance,4,8,gpt-5.1,0.5,True,,35.340999999999994,29.69,2.32,25.025,5.0,0.316,5.0
+g10-scrumalliance,4,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,27.6,0.0,,,,
+g10-scrumalliance,5,0,gpt-5.1,0.5,True,,34.732,0.0,0.0,15.149,14.0,0.583,5.0
+g10-scrumalliance,5,1,gpt-5.1,0.5,True,,35.340999999999994,0.0,0.0,25.025,5.0,0.316,5.0
+g10-scrumalliance,5,2,gpt-5.1,0.5,True,,35.393,0.0,0.0,25.077,5.0,0.316,5.0
+g10-scrumalliance,5,3,gpt-5.1,0.5,True,,35.393,0.0,0.0,25.077,5.0,0.316,5.0
+g10-scrumalliance,5,4,gpt-5.1,0.5,True,,35.757,0.0,0.0,25.436,5.0,0.321,5.0
+g10-scrumalliance,5,5,gpt-5.1,0.5,True,,35.393,35.14,2.86,25.077,5.0,0.316,5.0
+g10-scrumalliance,5,6,gpt-5.1,0.5,True,,35.393,50.56,2.83,25.077,5.0,0.316,5.0
+g10-scrumalliance,5,7,gpt-5.1,0.5,True,,35.393,59.72,2.9,25.077,5.0,0.316,5.0
+g10-scrumalliance,5,8,gpt-5.1,0.5,True,,36.715,31.73,3.03,25.398,6.0,0.317,5.0
+g10-scrumalliance,5,9,gpt-5.1,0.5,True,,35.393,48.69,2.98,25.077,5.0,0.316,5.0
+g11-nsf,1,0,gemini-3.1-pro-preview,0.5,True,,6.631,20.86,1.99,0.471,5.0,0.16,1.0
+g11-nsf,1,1,gemini-3.1-pro-preview,0.5,True,,10.383,29.08,2.91,4.112,4.0,0.271,2.0
+g11-nsf,1,2,gemini-3.1-pro-preview,0.5,True,,10.191,42.36,2.24,3.672,5.0,0.519,1.0
+g11-nsf,1,3,gemini-3.1-pro-preview,0.5,True,,8.279,28.35,5.94,2.112,4.0,0.167,2.0
+g11-nsf,1,4,gemini-3.1-pro-preview,0.5,True,,8.84,34.15,2.86,3.721,4.0,0.119,1.0
+g11-nsf,1,5,gemini-3.1-pro-preview,0.5,True,,9.383,19.89,2.35,3.136,5.0,0.247,1.0
+g11-nsf,1,6,gemini-3.1-pro-preview,0.5,True,,8.12,28.82,2.59,2.759,4.0,0.361,1.0
+g11-nsf,1,7,gemini-3.1-pro-preview,0.5,True,,13.306999999999999,43.94,2.87,5.879,5.0,0.428,2.0
+g11-nsf,1,8,gemini-3.1-pro-preview,0.5,True,,6.922000000000001,17.62,2.41,1.366,4.0,0.556,1.0
+g11-nsf,1,9,gemini-3.1-pro-preview,0.5,True,,11.291,26.61,2.83,3.811,5.0,0.48,2.0
+g11-nsf,2,0,gemini-3.1-pro-preview,0.5,True,,6.631,0.0,0.0,0.471,5.0,0.16,1.0
+g11-nsf,2,1,gemini-3.1-pro-preview,0.5,True,,6.922000000000001,0.0,0.0,1.366,4.0,0.556,1.0
+g11-nsf,2,2,gemini-3.1-pro-preview,0.5,True,,8.12,0.0,0.0,2.759,4.0,0.361,1.0
+g11-nsf,2,3,gemini-3.1-pro-preview,0.5,True,,8.279,0.0,0.0,2.112,4.0,0.167,2.0
+g11-nsf,2,4,gemini-3.1-pro-preview,0.5,True,,8.84,0.0,0.0,3.721,4.0,0.119,1.0
+g11-nsf,2,5,gemini-3.1-pro-preview,0.5,True,,7.182,21.34,2.12,1.876,4.0,0.306,1.0
+g11-nsf,2,6,gemini-3.1-pro-preview,0.5,True,,7.763,23.78,2.21,2.319,4.0,0.444,1.0
+g11-nsf,2,7,gemini-3.1-pro-preview,0.5,True,,8.076,18.09,5.63,2.886,4.0,0.19,1.0
+g11-nsf,2,8,gemini-3.1-pro-preview,0.5,True,,9.559000000000001,25.0,5.91,3.202,4.0,0.357,2.0
+g11-nsf,2,9,gemini-3.1-pro-preview,0.5,True,,6.7,15.39,2.09,2.414,3.0,0.286,1.0
+g11-nsf,3,0,gemini-3.1-pro-preview,0.5,True,,6.631,0.0,0.0,0.471,5.0,0.16,1.0
+g11-nsf,3,1,gemini-3.1-pro-preview,0.5,True,,6.7,0.0,0.0,2.414,3.0,0.286,1.0
+g11-nsf,3,2,gemini-3.1-pro-preview,0.5,True,,6.922000000000001,0.0,0.0,1.366,4.0,0.556,1.0
+g11-nsf,3,3,gemini-3.1-pro-preview,0.5,True,,7.182,0.0,0.0,1.876,4.0,0.306,1.0
+g11-nsf,3,4,gemini-3.1-pro-preview,0.5,True,,7.763,0.0,0.0,2.319,4.0,0.444,1.0
+g11-nsf,3,5,gemini-3.1-pro-preview,0.5,True,,8.643,22.6,5.21,3.357,3.0,0.286,2.0
+g11-nsf,3,6,gemini-3.1-pro-preview,0.5,True,,8.09,24.67,2.69,2.828,4.0,0.262,1.0
+g11-nsf,3,7,gemini-3.1-pro-preview,0.5,True,,8.171,16.36,2.23,2.79,4.0,0.381,1.0
+g11-nsf,3,8,gemini-3.1-pro-preview,0.5,True,,7.954000000000001,22.06,5.83,2.692,4.0,0.262,1.0
+g11-nsf,3,9,gemini-3.1-pro-preview,0.5,True,,6.757,23.16,2.73,1.376,4.0,0.381,1.0
+g11-nsf,4,0,gemini-3.1-pro-preview,0.5,True,,6.631,0.0,0.0,0.471,5.0,0.16,1.0
+g11-nsf,4,1,gemini-3.1-pro-preview,0.5,True,,6.7,0.0,0.0,2.414,3.0,0.286,1.0
+g11-nsf,4,2,gemini-3.1-pro-preview,0.5,True,,6.757,0.0,0.0,1.376,4.0,0.381,1.0
+g11-nsf,4,3,gemini-3.1-pro-preview,0.5,True,,6.922000000000001,0.0,0.0,1.366,4.0,0.556,1.0
+g11-nsf,4,4,gemini-3.1-pro-preview,0.5,True,,7.182,0.0,0.0,1.876,4.0,0.306,1.0
+g11-nsf,4,5,gemini-3.1-pro-preview,0.5,True,,7.228,22.99,2.81,1.847,4.0,0.381,1.0
+g11-nsf,4,6,gemini-3.1-pro-preview,0.5,True,,6.824,16.75,2.87,1.443,4.0,0.381,1.0
+g11-nsf,4,7,gemini-3.1-pro-preview,0.5,True,,8.161,26.86,2.76,2.828,3.0,0.333,2.0
+g11-nsf,4,8,gemini-3.1-pro-preview,0.5,True,,7.906000000000001,29.8,2.94,2.554,4.0,0.352,1.0
+g11-nsf,4,9,gemini-3.1-pro-preview,0.5,True,,7.6049999999999995,23.49,5.97,2.319,4.0,0.286,1.0
+g11-nsf,5,0,gemini-3.1-pro-preview,0.5,True,,6.631,0.0,0.0,0.471,5.0,0.16,1.0
+g11-nsf,5,1,gemini-3.1-pro-preview,0.5,True,,6.7,0.0,0.0,2.414,3.0,0.286,1.0
+g11-nsf,5,2,gemini-3.1-pro-preview,0.5,True,,6.757,0.0,0.0,1.376,4.0,0.381,1.0
+g11-nsf,5,3,gemini-3.1-pro-preview,0.5,True,,6.824,0.0,0.0,1.443,4.0,0.381,1.0
+g11-nsf,5,4,gemini-3.1-pro-preview,0.5,True,,6.922000000000001,0.0,0.0,1.366,4.0,0.556,1.0
+g11-nsf,5,5,gemini-3.1-pro-preview,0.5,True,,7.747,30.89,2.77,2.414,4.0,0.333,1.0
+g11-nsf,5,6,gemini-3.1-pro-preview,0.5,True,,7.19,22.52,2.47,1.809,4.0,0.381,1.0
+g11-nsf,5,7,gemini-3.1-pro-preview,0.5,True,,7.256,25.0,5.92,1.943,4.0,0.313,1.0
+g11-nsf,5,8,gemini-3.1-pro-preview,0.5,True,,7.876,23.89,2.23,2.495,4.0,0.381,1.0
+g11-nsf,5,9,gemini-3.1-pro-preview,0.5,True,,7.19,22.6,2.94,1.809,4.0,0.381,1.0
+g11-nsf,1,0,gpt-5.1,0.5,True,,27.58,25.26,2.64,8.149,14.0,0.431,5.0
+g11-nsf,1,1,gpt-5.1,0.5,True,,27.231,30.15,2.8,6.818,16.0,0.413,4.0
+g11-nsf,1,2,gpt-5.1,0.5,True,,19.954,35.09,2.94,4.647,12.0,0.307,3.0
+g11-nsf,1,3,gpt-5.1,0.5,True,,26.483,47.45,2.87,9.044,14.0,0.439,3.0
+g11-nsf,1,4,gpt-5.1,0.5,True,,23.863999999999997,29.71,2.83,7.414,13.0,0.45,3.0
+g11-nsf,1,5,gpt-5.1,0.5,True,,25.426000000000002,20.74,5.15,6.943,15.0,0.483,3.0
+g11-nsf,1,6,gpt-5.1,0.5,True,,25.498,23.51,2.85,6.19,15.0,0.308,4.0
+g11-nsf,1,7,gpt-5.1,0.5,True,,24.933,27.97,2.53,7.615,14.0,0.318,3.0
+g11-nsf,1,8,gpt-5.1,0.5,True,,22.826,29.61,2.9,6.433,11.0,0.393,5.0
+g11-nsf,1,9,gpt-5.1,0.5,True,,22.806,27.57,2.81,5.37,13.0,0.436,4.0
+g11-nsf,2,0,gpt-5.1,0.5,True,,19.954,0.0,0.0,4.647,12.0,0.307,3.0
+g11-nsf,2,1,gpt-5.1,0.5,True,,22.806,0.0,0.0,5.37,13.0,0.436,4.0
+g11-nsf,2,2,gpt-5.1,0.5,True,,22.826,0.0,0.0,6.433,11.0,0.393,5.0
+g11-nsf,2,3,gpt-5.1,0.5,True,,23.863999999999997,0.0,0.0,7.414,13.0,0.45,3.0
+g11-nsf,2,4,gpt-5.1,0.5,True,,24.933,0.0,0.0,7.615,14.0,0.318,3.0
+g11-nsf,2,5,gpt-5.1,0.5,True,,19.914,22.17,2.78,8.478,7.0,0.436,4.0
+g11-nsf,2,6,gpt-5.1,0.5,True,,19.521,34.88,2.98,10.194,5.0,0.327,4.0
+g11-nsf,2,7,gpt-5.1,0.5,True,,19.451,20.85,2.39,10.242,6.0,0.209,3.0
+g11-nsf,2,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,34.87,0.0,,,,
+g11-nsf,2,9,gpt-5.1,0.5,True,,18.848,22.25,2.74,7.374,6.0,0.474,5.0
+g11-nsf,3,0,gpt-5.1,0.5,True,,18.848,0.0,0.0,7.374,6.0,0.474,5.0
+g11-nsf,3,1,gpt-5.1,0.5,True,,19.451,0.0,0.0,10.242,6.0,0.209,3.0
+g11-nsf,3,2,gpt-5.1,0.5,True,,19.521,0.0,0.0,10.194,5.0,0.327,4.0
+g11-nsf,3,3,gpt-5.1,0.5,True,,19.914,0.0,0.0,8.478,7.0,0.436,4.0
+g11-nsf,3,4,gpt-5.1,0.5,True,,19.954,0.0,0.0,4.647,12.0,0.307,3.0
+g11-nsf,3,5,gpt-5.1,0.5,True,,19.677,33.78,2.89,10.387,5.0,0.29,4.0
+g11-nsf,3,6,gpt-5.1,0.5,True,,18.361,23.57,2.08,10.109,5.0,0.252,3.0
+g11-nsf,3,7,gpt-5.1,0.5,True,,19.326,37.43,2.82,10.004,5.0,0.322,4.0
+g11-nsf,3,8,gpt-5.1,0.5,True,,19.073,22.58,1.46,9.751,5.0,0.322,4.0
+g11-nsf,3,9,gpt-5.1,0.5,True,,19.667,23.17,2.83,10.321,5.0,0.346,4.0
+g11-nsf,4,0,gpt-5.1,0.5,True,,18.361,0.0,0.0,10.109,5.0,0.252,3.0
+g11-nsf,4,1,gpt-5.1,0.5,True,,18.848,0.0,0.0,7.374,6.0,0.474,5.0
+g11-nsf,4,2,gpt-5.1,0.5,True,,19.073,0.0,0.0,9.751,5.0,0.322,4.0
+g11-nsf,4,3,gpt-5.1,0.5,True,,19.326,0.0,0.0,10.004,5.0,0.322,4.0
+g11-nsf,4,4,gpt-5.1,0.5,True,,19.451,0.0,0.0,10.242,6.0,0.209,3.0
+g11-nsf,4,5,gpt-5.1,0.5,True,,18.444000000000003,31.06,2.83,10.194,5.0,0.25,3.0
+g11-nsf,4,6,gpt-5.1,0.5,True,,18.385,26.36,2.89,10.137,5.0,0.248,3.0
+g11-nsf,4,7,gpt-5.1,0.5,True,,20.058,25.53,2.83,9.783,5.0,0.275,5.0
+g11-nsf,4,8,gpt-5.1,0.5,True,,19.387,30.57,2.86,10.07,5.0,0.317,4.0
+g11-nsf,4,9,gpt-5.1,0.5,True,,18.439,44.51,2.76,10.194,5.0,0.245,3.0
+g11-nsf,5,0,gpt-5.1,0.5,True,,18.361,0.0,0.0,10.109,5.0,0.252,3.0
+g11-nsf,5,1,gpt-5.1,0.5,True,,18.385,0.0,0.0,10.137,5.0,0.248,3.0
+g11-nsf,5,2,gpt-5.1,0.5,True,,18.439,0.0,0.0,10.194,5.0,0.245,3.0
+g11-nsf,5,3,gpt-5.1,0.5,True,,18.444000000000003,0.0,0.0,10.194,5.0,0.25,3.0
+g11-nsf,5,4,gpt-5.1,0.5,True,,18.848,0.0,0.0,7.374,6.0,0.474,5.0
+g11-nsf,5,5,gpt-5.1,0.5,True,,18.331,28.74,2.87,10.042,5.0,0.289,3.0
+g11-nsf,5,6,gpt-5.1,0.5,True,,21.822,38.45,2.71,12.574,5.0,0.248,4.0
+g11-nsf,5,7,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,31.42,0.0,,,,
+g11-nsf,5,8,gpt-5.1,0.5,True,,18.381,23.48,2.85,10.137,5.0,0.244,3.0
+g11-nsf,5,9,gpt-5.1,0.5,True,,18.292,23.46,2.76,10.003,5.0,0.289,3.0
+g12-camperplus,1,0,gemini-3.1-pro-preview,0.5,True,,15.786999999999999,30.83,1.79,4.417,9.0,0.37,2.0
+g12-camperplus,1,1,gemini-3.1-pro-preview,0.5,True,,18.661,32.44,2.8,5.268,10.0,0.393,3.0
+g12-camperplus,1,2,gemini-3.1-pro-preview,0.5,True,,18.245,33.26,5.87,5.937,9.0,0.308,3.0
+g12-camperplus,1,3,gemini-3.1-pro-preview,0.5,True,,16.422,32.57,2.7,5.062,8.0,0.36,3.0
+g12-camperplus,1,4,gemini-3.1-pro-preview,0.5,True,,18.1,52.76,2.65,4.739,10.0,0.361,3.0
+g12-camperplus,1,5,gemini-3.1-pro-preview,0.5,True,,15.573,36.63,2.84,5.088,8.0,0.485,2.0
+g12-camperplus,1,6,gemini-3.1-pro-preview,0.5,True,,15.704999999999998,41.64,2.85,5.335,8.0,0.37,2.0
+g12-camperplus,1,7,gemini-3.1-pro-preview,0.5,True,,16.938,33.81,2.13,5.546,8.0,0.392,3.0
+g12-camperplus,1,8,gemini-3.1-pro-preview,0.5,True,,16.598,33.73,5.87,5.11,9.0,0.488,2.0
+g12-camperplus,1,9,gemini-3.1-pro-preview,0.5,True,,17.064,37.86,2.8,5.754,8.0,0.31,3.0
+g12-camperplus,2,0,gemini-3.1-pro-preview,0.5,True,,15.573,0.0,0.0,5.088,8.0,0.485,2.0
+g12-camperplus,2,1,gemini-3.1-pro-preview,0.5,True,,15.704999999999998,0.0,0.0,5.335,8.0,0.37,2.0
+g12-camperplus,2,2,gemini-3.1-pro-preview,0.5,True,,15.786999999999999,0.0,0.0,4.417,9.0,0.37,2.0
+g12-camperplus,2,3,gemini-3.1-pro-preview,0.5,True,,16.422,0.0,0.0,5.062,8.0,0.36,3.0
+g12-camperplus,2,4,gemini-3.1-pro-preview,0.5,True,,16.598,0.0,0.0,5.11,9.0,0.488,2.0
+g12-camperplus,2,5,gemini-3.1-pro-preview,0.5,True,,12.732,36.3,1.55,5.361,5.0,0.371,2.0
+g12-camperplus,2,6,gemini-3.1-pro-preview,0.5,True,,13.100999999999999,43.65,2.79,5.734,5.0,0.367,2.0
+g12-camperplus,2,7,gemini-3.1-pro-preview,0.5,True,,12.506,34.15,2.82,5.212,5.0,0.294,2.0
+g12-camperplus,2,8,gemini-3.1-pro-preview,0.5,True,,13.486,42.17,2.91,6.115,5.0,0.371,2.0
+g12-camperplus,2,9,gemini-3.1-pro-preview,0.5,True,,13.869,42.08,5.81,6.414,5.0,0.455,2.0
+g12-camperplus,3,0,gemini-3.1-pro-preview,0.5,True,,12.506,0.0,0.0,5.212,5.0,0.294,2.0
+g12-camperplus,3,1,gemini-3.1-pro-preview,0.5,True,,12.732,0.0,0.0,5.361,5.0,0.371,2.0
+g12-camperplus,3,2,gemini-3.1-pro-preview,0.5,True,,13.100999999999999,0.0,0.0,5.734,5.0,0.367,2.0
+g12-camperplus,3,3,gemini-3.1-pro-preview,0.5,True,,13.486,0.0,0.0,6.115,5.0,0.371,2.0
+g12-camperplus,3,4,gemini-3.1-pro-preview,0.5,True,,13.869,0.0,0.0,6.414,5.0,0.455,2.0
+g12-camperplus,3,5,gemini-3.1-pro-preview,0.5,True,,15.393,51.68,2.45,8.018,5.0,0.375,2.0
+g12-camperplus,3,6,gemini-3.1-pro-preview,0.5,True,,13.395,53.23,2.88,6.01,5.0,0.385,2.0
+g12-camperplus,3,7,gemini-3.1-pro-preview,0.5,True,,14.08,34.42,3.02,7.727,4.0,0.353,2.0
+g12-camperplus,3,8,gemini-3.1-pro-preview,0.5,True,,11.824,44.7,3.38,5.491,4.0,0.333,2.0
+g12-camperplus,3,9,gemini-3.1-pro-preview,0.5,True,,13.96,45.48,3.02,6.585,5.0,0.375,2.0
+g12-camperplus,4,0,gemini-3.1-pro-preview,0.5,True,,11.824,0.0,0.0,5.491,4.0,0.333,2.0
+g12-camperplus,4,1,gemini-3.1-pro-preview,0.5,True,,12.506,0.0,0.0,5.212,5.0,0.294,2.0
+g12-camperplus,4,2,gemini-3.1-pro-preview,0.5,True,,12.732,0.0,0.0,5.361,5.0,0.371,2.0
+g12-camperplus,4,3,gemini-3.1-pro-preview,0.5,True,,13.100999999999999,0.0,0.0,5.734,5.0,0.367,2.0
+g12-camperplus,4,4,gemini-3.1-pro-preview,0.5,True,,13.395,0.0,0.0,6.01,5.0,0.385,2.0
+g12-camperplus,4,5,gemini-3.1-pro-preview,0.5,True,,11.36,29.82,2.86,4.982,4.0,0.378,2.0
+g12-camperplus,4,6,gemini-3.1-pro-preview,0.5,True,,12.81,53.19,5.83,5.458,5.0,0.352,2.0
+g12-camperplus,4,7,gemini-3.1-pro-preview,0.5,True,,11.824,43.45,2.87,5.491,4.0,0.333,2.0
+g12-camperplus,4,8,gemini-3.1-pro-preview,0.5,True,,13.815999999999999,39.85,3.26,5.458,5.0,0.358,3.0
+g12-camperplus,4,9,gemini-3.1-pro-preview,0.5,True,,12.524000000000001,36.76,2.87,6.237,4.0,0.287,2.0
+g12-camperplus,5,0,gemini-3.1-pro-preview,0.5,True,,11.36,0.0,0.0,4.982,4.0,0.378,2.0
+g12-camperplus,5,1,gemini-3.1-pro-preview,0.5,True,,11.824,0.0,0.0,5.491,4.0,0.333,2.0
+g12-camperplus,5,2,gemini-3.1-pro-preview,0.5,True,,11.824,0.0,0.0,5.491,4.0,0.333,2.0
+g12-camperplus,5,3,gemini-3.1-pro-preview,0.5,True,,12.506,0.0,0.0,5.212,5.0,0.294,2.0
+g12-camperplus,5,4,gemini-3.1-pro-preview,0.5,True,,12.524000000000001,0.0,0.0,6.237,4.0,0.287,2.0
+g12-camperplus,5,5,gemini-3.1-pro-preview,0.5,True,,12.769,38.09,2.9,6.491,4.0,0.278,2.0
+g12-camperplus,5,6,gemini-3.1-pro-preview,0.5,True,,12.81,46.39,3.11,5.458,5.0,0.352,2.0
+g12-camperplus,5,7,gemini-3.1-pro-preview,0.5,True,,12.421,43.38,2.78,5.058,4.0,0.363,3.0
+g12-camperplus,5,8,gemini-3.1-pro-preview,0.5,True,,12.421,37.96,2.97,6.058,4.0,0.363,2.0
+g12-camperplus,5,9,gemini-3.1-pro-preview,0.5,True,,13.81,54.01,2.7,5.458,5.0,0.352,3.0
+g12-camperplus,1,0,gpt-5.1,0.5,True,,31.167,26.43,2.88,12.925,13.0,0.242,5.0
+g12-camperplus,1,1,gpt-5.1,0.5,True,,29.465,39.4,2.47,15.199,9.0,0.266,5.0
+g12-camperplus,1,2,gpt-5.1,0.5,True,,42.317,42.8,2.81,25.898,12.0,0.419,4.0
+g12-camperplus,1,3,gpt-5.1,0.5,True,,31.358000000000004,26.89,2.15,17.109,11.0,0.249,3.0
+g12-camperplus,1,4,gpt-5.1,0.5,True,,43.19,31.68,2.77,27.867,8.0,0.323,7.0
+g12-camperplus,1,5,gpt-5.1,0.5,True,,29.911,37.3,3.01,16.562,10.0,0.349,3.0
+g12-camperplus,1,6,gpt-5.1,0.5,True,,32.708,43.17,2.84,15.483,12.0,0.225,5.0
+g12-camperplus,1,7,gpt-5.1,0.5,True,,29.93,37.63,2.83,15.708,11.0,0.222,3.0
+g12-camperplus,1,8,gpt-5.1,0.5,True,,25.932000000000002,29.53,2.86,12.704,9.0,0.228,4.0
+g12-camperplus,1,9,gpt-5.1,0.5,True,,26.506999999999998,33.62,2.9,13.158,10.0,0.349,3.0
+g12-camperplus,2,0,gpt-5.1,0.5,True,,25.932000000000002,0.0,0.0,12.704,9.0,0.228,4.0
+g12-camperplus,2,1,gpt-5.1,0.5,True,,26.506999999999998,0.0,0.0,13.158,10.0,0.349,3.0
+g12-camperplus,2,2,gpt-5.1,0.5,True,,29.465,0.0,0.0,15.199,9.0,0.266,5.0
+g12-camperplus,2,3,gpt-5.1,0.5,True,,29.911,0.0,0.0,16.562,10.0,0.349,3.0
+g12-camperplus,2,4,gpt-5.1,0.5,True,,29.93,0.0,0.0,15.708,11.0,0.222,3.0
+g12-camperplus,2,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,42.17,0.0,,,,
+g12-camperplus,2,6,gpt-5.1,0.5,True,,30.823,39.59,2.79,21.627,5.0,0.196,4.0
+g12-camperplus,2,7,gpt-5.1,0.5,True,,32.016,36.55,2.88,21.819,5.0,0.197,5.0
+g12-camperplus,2,8,gpt-5.1,0.5,True,,32.91,87.44,2.78,23.616,5.0,0.294,4.0
+g12-camperplus,2,9,gpt-5.1,0.5,True,,29.83,49.03,2.82,19.572,5.0,0.258,5.0
+g12-camperplus,3,0,gpt-5.1,0.5,True,,25.932000000000002,0.0,0.0,12.704,9.0,0.228,4.0
+g12-camperplus,3,1,gpt-5.1,0.5,True,,26.506999999999998,0.0,0.0,13.158,10.0,0.349,3.0
+g12-camperplus,3,2,gpt-5.1,0.5,True,,29.465,0.0,0.0,15.199,9.0,0.266,5.0
+g12-camperplus,3,3,gpt-5.1,0.5,True,,29.83,0.0,0.0,19.572,5.0,0.258,5.0
+g12-camperplus,3,4,gpt-5.1,0.5,True,,29.911,0.0,0.0,16.562,10.0,0.349,3.0
+g12-camperplus,3,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,48.29,0.0,,,,
+g12-camperplus,3,6,gpt-5.1,0.5,True,,30.385,41.63,2.83,21.126,5.0,0.259,4.0
+g12-camperplus,3,7,gpt-5.1,0.5,True,,33.448,41.82,2.9,22.206,5.0,0.242,6.0
+g12-camperplus,3,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,58.26,0.0,,,,
+g12-camperplus,3,9,gpt-5.1,0.5,True,,29.985,41.51,2.86,20.723,5.0,0.262,4.0
+g12-camperplus,4,0,gpt-5.1,0.5,True,,25.932000000000002,0.0,0.0,12.704,9.0,0.228,4.0
+g12-camperplus,4,1,gpt-5.1,0.5,True,,26.506999999999998,0.0,0.0,13.158,10.0,0.349,3.0
+g12-camperplus,4,2,gpt-5.1,0.5,True,,29.465,0.0,0.0,15.199,9.0,0.266,5.0
+g12-camperplus,4,3,gpt-5.1,0.5,True,,29.83,0.0,0.0,19.572,5.0,0.258,5.0
+g12-camperplus,4,4,gpt-5.1,0.5,True,,29.911,0.0,0.0,16.562,10.0,0.349,3.0
+g12-camperplus,4,5,gpt-5.1,0.5,True,,28.817,65.97,2.8,19.595,5.0,0.222,4.0
+g12-camperplus,4,6,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,62.47,0.0,,,,
+g12-camperplus,4,7,gpt-5.1,0.5,True,,29.892,40.36,4.8,20.643,5.0,0.249,4.0
+g12-camperplus,4,8,gpt-5.1,0.5,True,,31.136,39.12,2.96,20.907,5.0,0.229,5.0
+g12-camperplus,4,9,gpt-5.1,0.5,True,,29.533,62.11,2.79,19.27,5.0,0.263,5.0
+g12-camperplus,5,0,gpt-5.1,0.5,True,,25.932000000000002,0.0,0.0,12.704,9.0,0.228,4.0
+g12-camperplus,5,1,gpt-5.1,0.5,True,,26.506999999999998,0.0,0.0,13.158,10.0,0.349,3.0
+g12-camperplus,5,2,gpt-5.1,0.5,True,,28.817,0.0,0.0,19.595,5.0,0.222,4.0
+g12-camperplus,5,3,gpt-5.1,0.5,True,,29.465,0.0,0.0,15.199,9.0,0.266,5.0
+g12-camperplus,5,4,gpt-5.1,0.5,True,,29.533,0.0,0.0,19.27,5.0,0.263,5.0
+g12-camperplus,5,5,gpt-5.1,0.5,True,,28.719,63.16,2.91,19.511,5.0,0.208,4.0
+g12-camperplus,5,6,gpt-5.1,0.5,True,,30.599,76.76,2.85,21.39,5.0,0.209,4.0
+g12-camperplus,5,7,gpt-5.1,0.5,True,,29.688000000000002,57.37,2.86,19.478,5.0,0.21,5.0
+g12-camperplus,5,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,99.11,0.0,,,,
+g12-camperplus,5,9,gpt-5.1,0.5,True,,29.718,62.17,3.22,19.511,5.0,0.207,5.0
+g13-planningpoker,1,0,gemini-3.1-pro-preview,0.5,True,,16.71,31.33,2.93,4.464,10.0,0.246,2.0
+g13-planningpoker,1,1,gemini-3.1-pro-preview,0.5,True,,15.045,52.4,2.93,3.757,9.0,0.288,2.0
+g13-planningpoker,1,2,gemini-3.1-pro-preview,0.5,True,,18.327,31.36,2.79,4.062,11.0,0.265,3.0
+g13-planningpoker,1,3,gemini-3.1-pro-preview,0.5,True,,14.844,30.34,2.87,3.442,8.0,0.402,3.0
+g13-planningpoker,1,4,gemini-3.1-pro-preview,0.5,True,,14.248999999999999,31.75,2.95,2.944,8.0,0.305,3.0
+g13-planningpoker,1,5,gemini-3.1-pro-preview,0.5,True,,14.632,29.33,2.82,3.379,9.0,0.253,2.0
+g13-planningpoker,1,6,gemini-3.1-pro-preview,0.5,True,,16.250999999999998,39.88,2.75,3.978,9.0,0.273,3.0
+g13-planningpoker,1,7,gemini-3.1-pro-preview,0.5,True,,14.153,27.19,5.88,3.923,8.0,0.23,2.0
+g13-planningpoker,1,8,gemini-3.1-pro-preview,0.5,True,,15.665,28.98,5.84,3.344,10.0,0.321,2.0
+g13-planningpoker,1,9,gemini-3.1-pro-preview,0.5,True,,17.125,31.73,2.79,4.932,9.0,0.193,3.0
+g13-planningpoker,2,0,gemini-3.1-pro-preview,0.5,True,,14.153,0.0,0.0,3.923,8.0,0.23,2.0
+g13-planningpoker,2,1,gemini-3.1-pro-preview,0.5,True,,14.248999999999999,0.0,0.0,2.944,8.0,0.305,3.0
+g13-planningpoker,2,2,gemini-3.1-pro-preview,0.5,True,,14.632,0.0,0.0,3.379,9.0,0.253,2.0
+g13-planningpoker,2,3,gemini-3.1-pro-preview,0.5,True,,14.844,0.0,0.0,3.442,8.0,0.402,3.0
+g13-planningpoker,2,4,gemini-3.1-pro-preview,0.5,True,,15.045,0.0,0.0,3.757,9.0,0.288,2.0
+g13-planningpoker,2,5,gemini-3.1-pro-preview,0.5,True,,13.854,29.84,2.76,5.636,5.0,0.218,3.0
+g13-planningpoker,2,6,gemini-3.1-pro-preview,0.5,True,,14.001,30.31,2.97,5.731,5.0,0.27,3.0
+g13-planningpoker,2,7,gemini-3.1-pro-preview,0.5,True,,12.973,33.61,2.59,5.751,5.0,0.222,2.0
+g13-planningpoker,2,8,gemini-3.1-pro-preview,0.5,True,,13.710999999999999,34.71,2.23,5.411,5.0,0.3,3.0
+g13-planningpoker,2,9,gemini-3.1-pro-preview,0.5,True,,12.587,34.29,2.82,5.329,5.0,0.258,2.0
+g13-planningpoker,3,0,gemini-3.1-pro-preview,0.5,True,,12.587,0.0,0.0,5.329,5.0,0.258,2.0
+g13-planningpoker,3,1,gemini-3.1-pro-preview,0.5,True,,12.973,0.0,0.0,5.751,5.0,0.222,2.0
+g13-planningpoker,3,2,gemini-3.1-pro-preview,0.5,True,,13.710999999999999,0.0,0.0,5.411,5.0,0.3,3.0
+g13-planningpoker,3,3,gemini-3.1-pro-preview,0.5,True,,13.854,0.0,0.0,5.636,5.0,0.218,3.0
+g13-planningpoker,3,4,gemini-3.1-pro-preview,0.5,True,,14.001,0.0,0.0,5.731,5.0,0.27,3.0
+g13-planningpoker,3,5,gemini-3.1-pro-preview,0.5,True,,14.427,36.19,2.79,6.194,5.0,0.233,3.0
+g13-planningpoker,3,6,gemini-3.1-pro-preview,0.5,True,,14.647,27.96,2.86,6.468,4.0,0.179,4.0
+g13-planningpoker,3,7,gemini-3.1-pro-preview,0.5,True,,13.567,36.76,2.76,5.354,5.0,0.213,3.0
+g13-planningpoker,3,8,gemini-3.1-pro-preview,0.5,True,,13.004999999999999,39.14,2.54,5.826,4.0,0.179,3.0
+g13-planningpoker,3,9,gemini-3.1-pro-preview,0.5,True,,12.59,34.15,2.78,5.354,4.0,0.236,3.0
+g13-planningpoker,4,0,gemini-3.1-pro-preview,0.5,True,,12.587,0.0,0.0,5.329,5.0,0.258,2.0
+g13-planningpoker,4,1,gemini-3.1-pro-preview,0.5,True,,12.59,0.0,0.0,5.354,4.0,0.236,3.0
+g13-planningpoker,4,2,gemini-3.1-pro-preview,0.5,True,,12.973,0.0,0.0,5.751,5.0,0.222,2.0
+g13-planningpoker,4,3,gemini-3.1-pro-preview,0.5,True,,13.004999999999999,0.0,0.0,5.826,4.0,0.179,3.0
+g13-planningpoker,4,4,gemini-3.1-pro-preview,0.5,True,,13.567,0.0,0.0,5.354,5.0,0.213,3.0
+g13-planningpoker,4,5,gemini-3.1-pro-preview,0.5,True,,11.59,24.93,2.73,5.354,4.0,0.236,2.0
+g13-planningpoker,4,6,gemini-3.1-pro-preview,0.5,True,,14.618,36.81,5.6,6.41,5.0,0.208,3.0
+g13-planningpoker,4,7,gemini-3.1-pro-preview,0.5,True,,12.59,40.52,2.9,5.354,4.0,0.236,3.0
+g13-planningpoker,4,8,gemini-3.1-pro-preview,0.5,True,,14.062999999999999,39.98,2.5,5.891,5.0,0.172,3.0
+g13-planningpoker,4,9,gemini-3.1-pro-preview,0.5,True,,13.633,35.49,2.84,5.391,5.0,0.242,3.0
+g13-planningpoker,5,0,gemini-3.1-pro-preview,0.5,True,,11.59,0.0,0.0,5.354,4.0,0.236,2.0
+g13-planningpoker,5,1,gemini-3.1-pro-preview,0.5,True,,12.587,0.0,0.0,5.329,5.0,0.258,2.0
+g13-planningpoker,5,2,gemini-3.1-pro-preview,0.5,True,,12.59,0.0,0.0,5.354,4.0,0.236,3.0
+g13-planningpoker,5,3,gemini-3.1-pro-preview,0.5,True,,12.59,0.0,0.0,5.354,4.0,0.236,3.0
+g13-planningpoker,5,4,gemini-3.1-pro-preview,0.5,True,,12.973,0.0,0.0,5.751,5.0,0.222,2.0
+g13-planningpoker,5,5,gemini-3.1-pro-preview,0.5,True,,12.59,28.24,2.78,5.354,4.0,0.236,3.0
+g13-planningpoker,5,6,gemini-3.1-pro-preview,0.5,True,,13.648,42.55,2.92,5.42,5.0,0.228,3.0
+g13-planningpoker,5,7,gemini-3.1-pro-preview,0.5,True,,12.761,36.81,5.96,5.525,4.0,0.236,3.0
+g13-planningpoker,5,8,gemini-3.1-pro-preview,0.5,True,,12.59,28.91,5.93,5.354,4.0,0.236,3.0
+g13-planningpoker,5,9,gemini-3.1-pro-preview,0.5,True,,13.027999999999999,31.89,3.01,5.797,4.0,0.231,3.0
+g13-planningpoker,1,0,gpt-5.1,0.5,True,,23.761000000000003,22.73,2.88,9.406,10.0,0.355,4.0
+g13-planningpoker,1,1,gpt-5.1,0.5,True,,22.411,20.85,2.25,7.972,9.0,0.439,5.0
+g13-planningpoker,1,2,gpt-5.1,0.5,True,,27.363,17.44,3.34,8.127,11.0,0.236,8.0
+g13-planningpoker,1,3,gpt-5.1,0.5,True,,21.832,20.35,3.35,8.622,8.0,0.21,5.0
+g13-planningpoker,1,4,gpt-5.1,0.5,True,,24.605,28.24,2.14,10.409,9.0,0.196,5.0
+g13-planningpoker,1,5,gpt-5.1,0.5,True,,27.415,18.87,2.78,9.176,13.0,0.239,5.0
+g13-planningpoker,1,6,gpt-5.1,0.5,True,,23.488,20.06,1.44,10.28,8.0,0.208,5.0
+g13-planningpoker,1,7,gpt-5.1,0.5,True,,22.237000000000002,24.73,2.33,9.038,9.0,0.199,4.0
+g13-planningpoker,1,8,gpt-5.1,0.5,True,,24.462,20.29,2.74,9.26,10.0,0.202,5.0
+g13-planningpoker,1,9,gpt-5.1,0.5,True,,22.323999999999998,20.37,2.81,7.173,10.0,0.151,5.0
+g13-planningpoker,2,0,gpt-5.1,0.5,True,,21.832,0.0,0.0,8.622,8.0,0.21,5.0
+g13-planningpoker,2,1,gpt-5.1,0.5,True,,22.237000000000002,0.0,0.0,9.038,9.0,0.199,4.0
+g13-planningpoker,2,2,gpt-5.1,0.5,True,,22.323999999999998,0.0,0.0,7.173,10.0,0.151,5.0
+g13-planningpoker,2,3,gpt-5.1,0.5,True,,22.411,0.0,0.0,7.972,9.0,0.439,5.0
+g13-planningpoker,2,4,gpt-5.1,0.5,True,,23.488,0.0,0.0,10.28,8.0,0.208,5.0
+g13-planningpoker,2,5,gpt-5.1,0.5,True,,23.706,26.82,2.48,12.541,5.0,0.165,6.0
+g13-planningpoker,2,6,gpt-5.1,0.5,True,,23.371,26.92,2.0,13.167,5.0,0.204,5.0
+g13-planningpoker,2,7,gpt-5.1,0.5,True,,25.225,28.03,5.81,12.013,5.0,0.212,8.0
+g13-planningpoker,2,8,gpt-5.1,0.5,True,,31.723,25.81,2.76,13.598,5.0,0.125,13.0
+g13-planningpoker,2,9,gpt-5.1,0.5,True,,23.733,27.18,2.76,12.55,5.0,0.183,6.0
+g13-planningpoker,3,0,gpt-5.1,0.5,True,,21.832,0.0,0.0,8.622,8.0,0.21,5.0
+g13-planningpoker,3,1,gpt-5.1,0.5,True,,22.237000000000002,0.0,0.0,9.038,9.0,0.199,4.0
+g13-planningpoker,3,2,gpt-5.1,0.5,True,,22.323999999999998,0.0,0.0,7.173,10.0,0.151,5.0
+g13-planningpoker,3,3,gpt-5.1,0.5,True,,22.411,0.0,0.0,7.972,9.0,0.439,5.0
+g13-planningpoker,3,4,gpt-5.1,0.5,True,,23.371,0.0,0.0,13.167,5.0,0.204,5.0
+g13-planningpoker,3,5,gpt-5.1,0.5,True,,25.956,24.29,2.78,11.807,5.0,0.149,9.0
+g13-planningpoker,3,6,gpt-5.1,0.5,True,,27.192999999999998,29.99,2.72,13.01,5.0,0.183,9.0
+g13-planningpoker,3,7,gpt-5.1,0.5,True,,24.023,33.96,2.78,12.863,5.0,0.16,6.0
+g13-planningpoker,3,8,gpt-5.1,0.5,True,,24.879,24.99,2.57,12.721,6.0,0.158,6.0
+g13-planningpoker,3,9,gpt-5.1,0.5,True,,24.358,24.65,5.97,12.18,5.0,0.178,7.0
+g13-planningpoker,4,0,gpt-5.1,0.5,True,,21.832,0.0,0.0,8.622,8.0,0.21,5.0
+g13-planningpoker,4,1,gpt-5.1,0.5,True,,22.237000000000002,0.0,0.0,9.038,9.0,0.199,4.0
+g13-planningpoker,4,2,gpt-5.1,0.5,True,,22.323999999999998,0.0,0.0,7.173,10.0,0.151,5.0
+g13-planningpoker,4,3,gpt-5.1,0.5,True,,22.411,0.0,0.0,7.972,9.0,0.439,5.0
+g13-planningpoker,4,4,gpt-5.1,0.5,True,,23.371,0.0,0.0,13.167,5.0,0.204,5.0
+g13-planningpoker,4,5,gpt-5.1,0.5,True,,23.361,28.03,5.85,13.157,5.0,0.204,5.0
+g13-planningpoker,4,6,gpt-5.1,0.5,True,,25.286,22.42,2.25,12.175,5.0,0.111,8.0
+g13-planningpoker,4,7,gpt-5.1,0.5,True,,26.663000000000004,40.47,2.84,16.388,5.0,0.275,5.0
+g13-planningpoker,4,8,gpt-5.1,0.5,True,,23.371,24.58,2.75,13.167,5.0,0.204,5.0
+g13-planningpoker,4,9,gpt-5.1,0.5,True,,32.731,25.34,2.02,12.566,6.0,0.165,14.0
+g13-planningpoker,5,0,gpt-5.1,0.5,True,,21.832,0.0,0.0,8.622,8.0,0.21,5.0
+g13-planningpoker,5,1,gpt-5.1,0.5,True,,22.237000000000002,0.0,0.0,9.038,9.0,0.199,4.0
+g13-planningpoker,5,2,gpt-5.1,0.5,True,,22.323999999999998,0.0,0.0,7.173,10.0,0.151,5.0
+g13-planningpoker,5,3,gpt-5.1,0.5,True,,22.411,0.0,0.0,7.972,9.0,0.439,5.0
+g13-planningpoker,5,4,gpt-5.1,0.5,True,,23.361,0.0,0.0,13.157,5.0,0.204,5.0
+g13-planningpoker,5,5,gpt-5.1,0.5,True,,33.979,28.72,2.89,15.692,5.0,0.287,13.0
+g13-planningpoker,5,6,gpt-5.1,0.5,True,,22.709,27.02,2.14,12.542,5.0,0.167,5.0
+g13-planningpoker,5,7,gpt-5.1,0.5,True,,25.005,24.92,3.19,12.799,6.0,0.206,6.0
+g13-planningpoker,5,8,gpt-5.1,0.5,True,,23.249000000000002,23.28,2.55,13.053,5.0,0.196,5.0
+g13-planningpoker,5,9,gpt-5.1,0.5,True,,29.619,29.78,2.86,13.4,6.0,0.219,10.0
+g14-datahub,1,0,gemini-3.1-pro-preview,0.5,True,,20.733,37.0,2.73,5.409,11.0,0.324,4.0
+g14-datahub,1,1,gemini-3.1-pro-preview,0.5,True,,20.832,28.58,5.89,5.464,9.0,0.368,6.0
+g14-datahub,1,2,gemini-3.1-pro-preview,0.5,True,,19.942,48.49,2.85,4.847,11.0,0.095,4.0
+g14-datahub,1,3,gemini-3.1-pro-preview,0.5,True,,21.018,29.86,3.73,4.701,12.0,0.317,4.0
+g14-datahub,1,4,gemini-3.1-pro-preview,0.5,True,,22.049,45.39,2.87,4.863,12.0,0.186,5.0
+g14-datahub,1,5,gemini-3.1-pro-preview,0.5,True,,18.278,43.27,5.88,5.002,9.0,0.276,4.0
+g14-datahub,1,6,gemini-3.1-pro-preview,0.5,True,,19.836,34.22,2.77,4.662,11.0,0.174,4.0
+g14-datahub,1,7,gemini-3.1-pro-preview,0.5,True,,17.819,32.24,2.79,4.636,9.0,0.183,4.0
+g14-datahub,1,8,gemini-3.1-pro-preview,0.5,True,,20.699,47.62,2.83,4.363,11.0,0.336,5.0
+g14-datahub,1,9,gemini-3.1-pro-preview,0.5,True,,17.444,29.9,5.87,5.212,7.0,0.232,5.0
+g14-datahub,2,0,gemini-3.1-pro-preview,0.5,True,,17.444,0.0,0.0,5.212,7.0,0.232,5.0
+g14-datahub,2,1,gemini-3.1-pro-preview,0.5,True,,17.819,0.0,0.0,4.636,9.0,0.183,4.0
+g14-datahub,2,2,gemini-3.1-pro-preview,0.5,True,,18.278,0.0,0.0,5.002,9.0,0.276,4.0
+g14-datahub,2,3,gemini-3.1-pro-preview,0.5,True,,19.836,0.0,0.0,4.662,11.0,0.174,4.0
+g14-datahub,2,4,gemini-3.1-pro-preview,0.5,True,,19.942,0.0,0.0,4.847,11.0,0.095,4.0
+g14-datahub,2,5,gemini-3.1-pro-preview,0.5,True,,14.899999999999999,34.65,2.81,5.661,5.0,0.239,4.0
+g14-datahub,2,6,gemini-3.1-pro-preview,0.5,True,,14.984,41.45,2.82,4.745,5.0,0.239,5.0
+g14-datahub,2,7,gemini-3.1-pro-preview,0.5,True,,15.896,34.67,2.35,5.69,5.0,0.206,5.0
+g14-datahub,2,8,gemini-3.1-pro-preview,0.5,True,,14.955,31.64,2.82,5.761,5.0,0.194,4.0
+g14-datahub,2,9,gemini-3.1-pro-preview,0.5,True,,14.702,32.85,2.77,5.402,5.0,0.3,4.0
+g14-datahub,3,0,gemini-3.1-pro-preview,0.5,True,,14.702,0.0,0.0,5.402,5.0,0.3,4.0
+g14-datahub,3,1,gemini-3.1-pro-preview,0.5,True,,14.899999999999999,0.0,0.0,5.661,5.0,0.239,4.0
+g14-datahub,3,2,gemini-3.1-pro-preview,0.5,True,,14.955,0.0,0.0,5.761,5.0,0.194,4.0
+g14-datahub,3,3,gemini-3.1-pro-preview,0.5,True,,14.984,0.0,0.0,4.745,5.0,0.239,5.0
+g14-datahub,3,4,gemini-3.1-pro-preview,0.5,True,,15.896,0.0,0.0,5.69,5.0,0.206,5.0
+g14-datahub,3,5,gemini-3.1-pro-preview,0.5,True,,14.963999999999999,30.36,2.54,5.717,5.0,0.247,4.0
+g14-datahub,3,6,gemini-3.1-pro-preview,0.5,True,,15.667,42.84,2.76,5.473,5.0,0.194,5.0
+g14-datahub,3,7,gemini-3.1-pro-preview,0.5,True,,14.466000000000001,34.89,2.8,5.178,5.0,0.288,4.0
+g14-datahub,3,8,gemini-3.1-pro-preview,0.5,True,,15.041,36.26,2.22,5.864,5.0,0.177,4.0
+g14-datahub,3,9,gemini-3.1-pro-preview,0.5,True,,13.18,27.9,2.69,5.949,4.0,0.231,3.0
+g14-datahub,4,0,gemini-3.1-pro-preview,0.5,True,,13.18,0.0,0.0,5.949,4.0,0.231,3.0
+g14-datahub,4,1,gemini-3.1-pro-preview,0.5,True,,14.466000000000001,0.0,0.0,5.178,5.0,0.288,4.0
+g14-datahub,4,2,gemini-3.1-pro-preview,0.5,True,,14.702,0.0,0.0,5.402,5.0,0.3,4.0
+g14-datahub,4,3,gemini-3.1-pro-preview,0.5,True,,14.899999999999999,0.0,0.0,5.661,5.0,0.239,4.0
+g14-datahub,4,4,gemini-3.1-pro-preview,0.5,True,,14.955,0.0,0.0,5.761,5.0,0.194,4.0
+g14-datahub,4,5,gemini-3.1-pro-preview,0.5,True,,14.907,32.58,2.92,5.574,5.0,0.333,4.0
+g14-datahub,4,6,gemini-3.1-pro-preview,0.5,True,,13.949000000000002,31.31,2.92,5.682,5.0,0.267,3.0
+g14-datahub,4,7,gemini-3.1-pro-preview,0.5,True,,14.028,28.93,5.87,5.75,4.0,0.278,4.0
+g14-datahub,4,8,gemini-3.1-pro-preview,0.5,True,,14.506,25.28,5.93,6.25,4.0,0.256,4.0
+g14-datahub,4,9,gemini-3.1-pro-preview,0.5,True,,14.584,31.79,2.77,6.353,4.0,0.231,4.0
+g14-datahub,5,0,gemini-3.1-pro-preview,0.5,True,,13.18,0.0,0.0,5.949,4.0,0.231,3.0
+g14-datahub,5,1,gemini-3.1-pro-preview,0.5,True,,13.949000000000002,0.0,0.0,5.682,5.0,0.267,3.0
+g14-datahub,5,2,gemini-3.1-pro-preview,0.5,True,,14.028,0.0,0.0,5.75,4.0,0.278,4.0
+g14-datahub,5,3,gemini-3.1-pro-preview,0.5,True,,14.466000000000001,0.0,0.0,5.178,5.0,0.288,4.0
+g14-datahub,5,4,gemini-3.1-pro-preview,0.5,True,,14.506,0.0,0.0,6.25,4.0,0.256,4.0
+g14-datahub,5,5,gemini-3.1-pro-preview,0.5,True,,14.506,32.72,2.06,6.25,4.0,0.256,4.0
+g14-datahub,5,6,gemini-3.1-pro-preview,0.5,True,,14.028,30.09,2.81,5.75,4.0,0.278,4.0
+g14-datahub,5,7,gemini-3.1-pro-preview,0.5,True,,14.506,48.55,2.86,6.25,4.0,0.256,4.0
+g14-datahub,5,8,gemini-3.1-pro-preview,0.5,True,,14.949000000000002,35.16,5.7,5.682,5.0,0.267,4.0
+g14-datahub,5,9,gemini-3.1-pro-preview,0.5,True,,14.028,25.89,2.71,5.75,4.0,0.278,4.0
+g14-datahub,1,0,gpt-5.1,0.5,True,,28.804000000000002,26.73,2.58,10.471,12.0,0.333,6.0
+g14-datahub,1,1,gpt-5.1,0.5,True,,35.796,27.81,2.72,15.493,14.0,0.303,6.0
+g14-datahub,1,2,gpt-5.1,0.5,True,,34.908,31.61,2.39,14.515,14.0,0.393,6.0
+g14-datahub,1,3,gpt-5.1,0.5,True,,26.862000000000002,21.57,2.96,9.417,11.0,0.445,6.0
+g14-datahub,1,4,gpt-5.1,0.5,True,,29.648,31.24,2.95,13.379,11.0,0.269,5.0
+g14-datahub,1,5,gpt-5.1,0.5,True,,30.548000000000002,26.56,2.85,9.158,15.0,0.39,6.0
+g14-datahub,1,6,gpt-5.1,0.5,True,,34.44,35.12,2.81,12.04,17.0,0.4,5.0
+g14-datahub,1,7,gpt-5.1,0.5,True,,33.959,28.77,2.81,10.607,18.0,0.352,5.0
+g14-datahub,1,8,gpt-5.1,0.5,True,,31.357,34.27,5.91,10.96,15.0,0.397,5.0
+g14-datahub,1,9,gpt-5.1,0.5,True,,32.693,35.34,5.85,10.207,16.0,0.486,6.0
+g14-datahub,2,0,gpt-5.1,0.5,True,,26.862000000000002,0.0,0.0,9.417,11.0,0.445,6.0
+g14-datahub,2,1,gpt-5.1,0.5,True,,28.804000000000002,0.0,0.0,10.471,12.0,0.333,6.0
+g14-datahub,2,2,gpt-5.1,0.5,True,,29.648,0.0,0.0,13.379,11.0,0.269,5.0
+g14-datahub,2,3,gpt-5.1,0.5,True,,30.548000000000002,0.0,0.0,9.158,15.0,0.39,6.0
+g14-datahub,2,4,gpt-5.1,0.5,True,,31.357,0.0,0.0,10.96,15.0,0.397,5.0
+g14-datahub,2,5,gpt-5.1,0.5,True,,24.555,17.8,2.71,12.203,5.0,0.352,7.0
+g14-datahub,2,6,gpt-5.1,0.5,True,,24.02,39.9,3.11,14.753,5.0,0.267,4.0
+g14-datahub,2,7,gpt-5.1,0.5,True,,26.137,34.72,2.9,14.861,6.0,0.276,5.0
+g14-datahub,2,8,gpt-5.1,0.5,True,,27.069,30.33,5.91,16.72,5.0,0.349,5.0
+g14-datahub,2,9,gpt-5.1,0.5,True,,24.652,28.21,2.55,15.368,5.0,0.284,4.0
+g14-datahub,3,0,gpt-5.1,0.5,True,,24.02,0.0,0.0,14.753,5.0,0.267,4.0
+g14-datahub,3,1,gpt-5.1,0.5,True,,24.555,0.0,0.0,12.203,5.0,0.352,7.0
+g14-datahub,3,2,gpt-5.1,0.5,True,,24.652,0.0,0.0,15.368,5.0,0.284,4.0
+g14-datahub,3,3,gpt-5.1,0.5,True,,26.137,0.0,0.0,14.861,6.0,0.276,5.0
+g14-datahub,3,4,gpt-5.1,0.5,True,,26.862000000000002,0.0,0.0,9.417,11.0,0.445,6.0
+g14-datahub,3,5,gpt-5.1,0.5,True,,27.222,21.19,2.83,14.881,6.0,0.341,6.0
+g14-datahub,3,6,gpt-5.1,0.5,True,,25.012999999999998,35.43,2.93,13.7,5.0,0.313,6.0
+g14-datahub,3,7,gpt-5.1,0.5,True,,24.881,26.86,5.84,14.549,5.0,0.332,5.0
+g14-datahub,3,8,gpt-5.1,0.5,True,,26.730999999999998,26.14,2.89,16.444,5.0,0.287,5.0
+g14-datahub,3,9,gpt-5.1,0.5,True,,27.521,35.02,2.97,16.186,5.0,0.335,6.0
+g14-datahub,4,0,gpt-5.1,0.5,True,,24.02,0.0,0.0,14.753,5.0,0.267,4.0
+g14-datahub,4,1,gpt-5.1,0.5,True,,24.555,0.0,0.0,12.203,5.0,0.352,7.0
+g14-datahub,4,2,gpt-5.1,0.5,True,,24.652,0.0,0.0,15.368,5.0,0.284,4.0
+g14-datahub,4,3,gpt-5.1,0.5,True,,24.881,0.0,0.0,14.549,5.0,0.332,5.0
+g14-datahub,4,4,gpt-5.1,0.5,True,,25.012999999999998,0.0,0.0,13.7,5.0,0.313,6.0
+g14-datahub,4,5,gpt-5.1,0.5,True,,25.012999999999998,25.98,5.85,13.7,5.0,0.313,6.0
+g14-datahub,4,6,gpt-5.1,0.5,True,,26.057000000000002,21.13,2.84,15.705,5.0,0.352,5.0
+g14-datahub,4,7,gpt-5.1,0.5,True,,25.012999999999998,15.71,5.95,13.7,5.0,0.313,6.0
+g14-datahub,4,8,gpt-5.1,0.5,True,,25.012999999999998,32.32,2.85,13.7,5.0,0.313,6.0
+g14-datahub,4,9,gpt-5.1,0.5,True,,24.595,34.19,2.76,13.257,5.0,0.338,6.0
+g14-datahub,5,0,gpt-5.1,0.5,True,,24.02,0.0,0.0,14.753,5.0,0.267,4.0
+g14-datahub,5,1,gpt-5.1,0.5,True,,24.555,0.0,0.0,12.203,5.0,0.352,7.0
+g14-datahub,5,2,gpt-5.1,0.5,True,,24.595,0.0,0.0,13.257,5.0,0.338,6.0
+g14-datahub,5,3,gpt-5.1,0.5,True,,24.652,0.0,0.0,15.368,5.0,0.284,4.0
+g14-datahub,5,4,gpt-5.1,0.5,True,,24.881,0.0,0.0,14.549,5.0,0.332,5.0
+g14-datahub,5,5,gpt-5.1,0.5,True,,24.595,20.3,1.95,13.257,5.0,0.338,6.0
+g14-datahub,5,6,gpt-5.1,0.5,True,,24.595,18.21,2.71,13.257,5.0,0.338,6.0
+g14-datahub,5,7,gpt-5.1,0.5,True,,25.043,37.64,2.81,13.69,5.0,0.353,6.0
+g14-datahub,5,8,gpt-5.1,0.5,True,,24.881,26.78,2.78,14.549,5.0,0.332,5.0
+g14-datahub,5,9,gpt-5.1,0.5,True,,24.595,29.26,2.92,13.257,5.0,0.338,6.0
+g16-mis,1,0,gemini-3.1-pro-preview,0.5,True,,21.25,48.1,2.94,11.047,7.0,0.203,3.0
+g16-mis,1,1,gemini-3.1-pro-preview,0.5,True,,24.229,48.62,2.81,10.061,11.0,0.168,3.0
+g16-mis,1,2,gemini-3.1-pro-preview,0.5,True,,19.482,49.81,2.98,9.327,8.0,0.155,2.0
+g16-mis,1,3,gemini-3.1-pro-preview,0.5,True,,24.189999999999998,50.47,5.88,16.087,6.0,0.103,2.0
+g16-mis,1,4,gemini-3.1-pro-preview,0.5,True,,28.822,51.64,2.87,13.655,12.0,0.167,3.0
+g16-mis,1,5,gemini-3.1-pro-preview,0.5,True,,23.614,66.59,2.84,12.404,8.0,0.21,3.0
+g16-mis,1,6,gemini-3.1-pro-preview,0.5,True,,19.653,54.9,2.6,10.467,6.0,0.186,3.0
+g16-mis,1,7,gemini-3.1-pro-preview,0.5,True,,21.398,53.18,2.87,10.138,8.0,0.26,3.0
+g16-mis,1,8,gemini-3.1-pro-preview,0.5,True,,24.840000000000003,48.52,2.98,11.694,10.0,0.146,3.0
+g16-mis,1,9,gemini-3.1-pro-preview,0.5,True,,19.854,33.93,2.87,9.518,6.0,0.336,4.0
+g16-mis,2,0,gemini-3.1-pro-preview,0.5,True,,19.482,0.0,0.0,9.327,8.0,0.155,2.0
+g16-mis,2,1,gemini-3.1-pro-preview,0.5,True,,19.653,0.0,0.0,10.467,6.0,0.186,3.0
+g16-mis,2,2,gemini-3.1-pro-preview,0.5,True,,19.854,0.0,0.0,9.518,6.0,0.336,4.0
+g16-mis,2,3,gemini-3.1-pro-preview,0.5,True,,21.25,0.0,0.0,11.047,7.0,0.203,3.0
+g16-mis,2,4,gemini-3.1-pro-preview,0.5,True,,21.398,0.0,0.0,10.138,8.0,0.26,3.0
+g16-mis,2,5,gemini-3.1-pro-preview,0.5,True,,22.864,41.37,2.89,13.666,5.0,0.198,4.0
+g16-mis,2,6,gemini-3.1-pro-preview,0.5,True,,19.748,55.26,5.84,11.678,5.0,0.07,3.0
+g16-mis,2,7,gemini-3.1-pro-preview,0.5,True,,25.182000000000002,68.49,5.83,14.984,5.0,0.198,5.0
+g16-mis,2,8,gemini-3.1-pro-preview,0.5,True,,21.408,52.37,2.75,12.28,5.0,0.128,4.0
+g16-mis,2,9,gemini-3.1-pro-preview,0.5,True,,19.603,57.18,5.76,11.473,5.0,0.13,3.0
+g16-mis,3,0,gemini-3.1-pro-preview,0.5,True,,19.482,0.0,0.0,9.327,8.0,0.155,2.0
+g16-mis,3,1,gemini-3.1-pro-preview,0.5,True,,19.603,0.0,0.0,11.473,5.0,0.13,3.0
+g16-mis,3,2,gemini-3.1-pro-preview,0.5,True,,19.653,0.0,0.0,10.467,6.0,0.186,3.0
+g16-mis,3,3,gemini-3.1-pro-preview,0.5,True,,19.748,0.0,0.0,11.678,5.0,0.07,3.0
+g16-mis,3,4,gemini-3.1-pro-preview,0.5,True,,19.854,0.0,0.0,9.518,6.0,0.336,4.0
+g16-mis,3,5,gemini-3.1-pro-preview,0.5,True,,22.208,42.08,2.95,13.009,5.0,0.199,4.0
+g16-mis,3,6,gemini-3.1-pro-preview,0.5,True,,21.365000000000002,65.28,2.8,13.252,5.0,0.113,3.0
+g16-mis,3,7,gemini-3.1-pro-preview,0.5,True,,20.909,40.82,4.72,12.747,5.0,0.162,3.0
+g16-mis,3,8,gemini-3.1-pro-preview,0.5,True,,21.38,42.91,2.72,12.28,5.0,0.1,4.0
+g16-mis,3,9,gemini-3.1-pro-preview,0.5,True,,22.19,36.34,6.43,13.021,5.0,0.169,4.0
+g16-mis,4,0,gemini-3.1-pro-preview,0.5,True,,19.482,0.0,0.0,9.327,8.0,0.155,2.0
+g16-mis,4,1,gemini-3.1-pro-preview,0.5,True,,19.603,0.0,0.0,11.473,5.0,0.13,3.0
+g16-mis,4,2,gemini-3.1-pro-preview,0.5,True,,19.653,0.0,0.0,10.467,6.0,0.186,3.0
+g16-mis,4,3,gemini-3.1-pro-preview,0.5,True,,19.748,0.0,0.0,11.678,5.0,0.07,3.0
+g16-mis,4,4,gemini-3.1-pro-preview,0.5,True,,19.854,0.0,0.0,9.518,6.0,0.336,4.0
+g16-mis,4,5,gemini-3.1-pro-preview,0.5,True,,21.988,51.41,2.82,13.894,5.0,0.094,3.0
+g16-mis,4,6,gemini-3.1-pro-preview,0.5,True,,20.169999999999998,43.33,5.92,12.04,5.0,0.13,3.0
+g16-mis,4,7,gemini-3.1-pro-preview,0.5,True,,19.694,39.53,2.83,10.511,5.0,0.183,4.0
+g16-mis,4,8,gemini-3.1-pro-preview,0.5,True,,21.455000000000002,46.3,5.82,11.335,5.0,0.12,5.0
+g16-mis,4,9,gemini-3.1-pro-preview,0.5,True,,21.876,44.85,2.84,13.737,5.0,0.139,3.0
+g16-mis,5,0,gemini-3.1-pro-preview,0.5,True,,19.482,0.0,0.0,9.327,8.0,0.155,2.0
+g16-mis,5,1,gemini-3.1-pro-preview,0.5,True,,19.603,0.0,0.0,11.473,5.0,0.13,3.0
+g16-mis,5,2,gemini-3.1-pro-preview,0.5,True,,19.653,0.0,0.0,10.467,6.0,0.186,3.0
+g16-mis,5,3,gemini-3.1-pro-preview,0.5,True,,19.694,0.0,0.0,10.511,5.0,0.183,4.0
+g16-mis,5,4,gemini-3.1-pro-preview,0.5,True,,19.748,0.0,0.0,11.678,5.0,0.07,3.0
+g16-mis,5,5,gemini-3.1-pro-preview,0.5,True,,20.323,37.05,2.88,12.154,5.0,0.169,3.0
+g16-mis,5,6,gemini-3.1-pro-preview,0.5,True,,20.889,36.7,5.38,12.785,5.0,0.104,3.0
+g16-mis,5,7,gemini-3.1-pro-preview,0.5,True,,21.275,49.0,2.95,13.154,5.0,0.121,3.0
+g16-mis,5,8,gemini-3.1-pro-preview,0.5,True,,21.553,44.13,2.76,13.432,5.0,0.121,3.0
+g16-mis,5,9,gemini-3.1-pro-preview,0.5,True,,22.243000000000002,49.78,2.81,14.095,5.0,0.148,3.0
+g16-mis,1,0,gpt-5.1,0.5,True,,45.442,51.38,2.85,21.9,18.0,0.542,5.0
+g16-mis,1,1,gpt-5.1,0.5,True,,44.413,50.7,2.79,23.113,12.0,0.3,9.0
+g16-mis,1,2,gpt-5.1,0.5,True,,37.466,43.9,5.86,21.244,11.0,0.222,5.0
+g16-mis,1,3,gpt-5.1,0.5,True,,32.722,48.7,2.56,22.545,7.0,0.177,3.0
+g16-mis,1,4,gpt-5.1,0.5,True,,47.85,34.18,2.55,22.465,19.0,0.385,6.0
+g16-mis,1,5,gpt-5.1,0.5,True,,40.432,42.18,2.86,18.183,17.0,0.249,5.0
+g16-mis,1,6,gpt-5.1,0.5,True,,31.354,31.4,2.93,20.01,8.0,0.344,3.0
+g16-mis,1,7,gpt-5.1,0.5,True,,37.736,40.98,2.54,23.516,10.0,0.22,4.0
+g16-mis,1,8,gpt-5.1,0.5,True,,39.956,34.98,2.86,21.576,12.0,0.38,6.0
+g16-mis,1,9,gpt-5.1,0.5,True,,37.013000000000005,60.37,2.83,24.763,8.0,0.25,4.0
+g16-mis,2,0,gpt-5.1,0.5,True,,31.354,0.0,0.0,20.01,8.0,0.344,3.0
+g16-mis,2,1,gpt-5.1,0.5,True,,32.722,0.0,0.0,22.545,7.0,0.177,3.0
+g16-mis,2,2,gpt-5.1,0.5,True,,37.013000000000005,0.0,0.0,24.763,8.0,0.25,4.0
+g16-mis,2,3,gpt-5.1,0.5,True,,37.466,0.0,0.0,21.244,11.0,0.222,5.0
+g16-mis,2,4,gpt-5.1,0.5,True,,37.736,0.0,0.0,23.516,10.0,0.22,4.0
+g16-mis,2,5,gpt-5.1,0.5,True,,40.806,42.23,2.77,28.521,8.0,0.285,4.0
+g16-mis,2,6,gpt-5.1,0.5,True,,42.621,32.75,2.67,30.359,7.0,0.262,5.0
+g16-mis,2,7,gpt-5.1,0.5,True,,41.769000000000005,27.73,2.77,28.478,8.0,0.291,5.0
+g16-mis,2,8,gpt-5.1,0.5,True,,38.463,49.03,2.76,25.316,7.0,0.147,6.0
+g16-mis,2,9,gpt-5.1,0.5,True,,43.143,49.28,3.06,29.972,8.0,0.171,5.0
+g16-mis,3,0,gpt-5.1,0.5,True,,31.354,0.0,0.0,20.01,8.0,0.344,3.0
+g16-mis,3,1,gpt-5.1,0.5,True,,32.722,0.0,0.0,22.545,7.0,0.177,3.0
+g16-mis,3,2,gpt-5.1,0.5,True,,37.013000000000005,0.0,0.0,24.763,8.0,0.25,4.0
+g16-mis,3,3,gpt-5.1,0.5,True,,37.466,0.0,0.0,21.244,11.0,0.222,5.0
+g16-mis,3,4,gpt-5.1,0.5,True,,37.736,0.0,0.0,23.516,10.0,0.22,4.0
+g16-mis,3,5,gpt-5.1,0.5,True,,40.126999999999995,31.86,1.96,27.857,8.0,0.27,4.0
+g16-mis,3,6,gpt-5.1,0.5,True,,40.195,26.69,2.81,27.919,8.0,0.276,4.0
+g16-mis,3,7,gpt-5.1,0.5,True,,37.381,25.06,2.32,25.152,8.0,0.229,4.0
+g16-mis,3,8,gpt-5.1,0.5,True,,41.837,23.45,2.78,28.587,8.0,0.25,5.0
+g16-mis,3,9,gpt-5.1,0.5,True,,40.581,82.07,2.87,32.505,5.0,0.076,3.0
+g16-mis,4,0,gpt-5.1,0.5,True,,31.354,0.0,0.0,20.01,8.0,0.344,3.0
+g16-mis,4,1,gpt-5.1,0.5,True,,32.722,0.0,0.0,22.545,7.0,0.177,3.0
+g16-mis,4,2,gpt-5.1,0.5,True,,37.013000000000005,0.0,0.0,24.763,8.0,0.25,4.0
+g16-mis,4,3,gpt-5.1,0.5,True,,37.381,0.0,0.0,25.152,8.0,0.229,4.0
+g16-mis,4,4,gpt-5.1,0.5,True,,37.466,0.0,0.0,21.244,11.0,0.222,5.0
+g16-mis,4,5,gpt-5.1,0.5,True,,42.525999999999996,27.9,2.71,29.261,8.0,0.265,5.0
+g16-mis,4,6,gpt-5.1,0.5,True,,39.221,33.13,2.8,25.97,8.0,0.251,5.0
+g16-mis,4,7,gpt-5.1,0.5,True,,38.128,31.26,2.81,25.961,8.0,0.167,4.0
+g16-mis,4,8,gpt-5.1,0.5,True,,40.976,26.83,2.11,28.697,8.0,0.279,4.0
+g16-mis,4,9,gpt-5.1,0.5,True,,37.961,48.31,2.93,25.788,8.0,0.173,4.0
+g16-mis,5,0,gpt-5.1,0.5,True,,31.354,0.0,0.0,20.01,8.0,0.344,3.0
+g16-mis,5,1,gpt-5.1,0.5,True,,32.722,0.0,0.0,22.545,7.0,0.177,3.0
+g16-mis,5,2,gpt-5.1,0.5,True,,37.013000000000005,0.0,0.0,24.763,8.0,0.25,4.0
+g16-mis,5,3,gpt-5.1,0.5,True,,37.381,0.0,0.0,25.152,8.0,0.229,4.0
+g16-mis,5,4,gpt-5.1,0.5,True,,37.466,0.0,0.0,21.244,11.0,0.222,5.0
+g16-mis,5,5,gpt-5.1,0.5,True,,36.455,51.12,2.88,25.185,7.0,0.27,4.0
+g16-mis,5,6,gpt-5.1,0.5,True,,38.524,39.52,2.72,26.298,8.0,0.226,4.0
+g16-mis,5,7,gpt-5.1,0.5,True,,39.03,65.95,2.97,25.798,8.0,0.232,5.0
+g16-mis,5,8,gpt-5.1,0.5,True,,40.073,35.94,2.78,28.827,6.0,0.246,5.0
+g16-mis,5,9,gpt-5.1,0.5,True,,41.538,29.39,2.73,28.293,8.0,0.245,5.0
+g17-cask,1,0,gemini-3.1-pro-preview,0.5,True,,16.561999999999998,25.6,2.77,2.456,12.0,0.106,2.0
+g17-cask,1,1,gemini-3.1-pro-preview,0.5,True,,15.015,23.92,2.82,3.949,9.0,0.066,2.0
+g17-cask,1,2,gemini-3.1-pro-preview,0.5,True,,13.940999999999999,31.28,4.81,2.835,9.0,0.106,2.0
+g17-cask,1,3,gemini-3.1-pro-preview,0.5,True,,12.484,22.31,2.81,2.421,8.0,0.063,2.0
+g17-cask,1,4,gemini-3.1-pro-preview,0.5,True,,13.689,23.73,2.94,2.573,9.0,0.116,2.0
+g17-cask,1,5,gemini-3.1-pro-preview,0.5,True,,16.733,29.98,5.96,2.648,13.0,0.085,1.0
+g17-cask,1,6,gemini-3.1-pro-preview,0.5,True,,15.929,23.81,2.5,3.702,9.0,0.227,3.0
+g17-cask,1,7,gemini-3.1-pro-preview,0.5,True,,12.894,21.06,2.76,2.831,8.0,0.063,2.0
+g17-cask,1,8,gemini-3.1-pro-preview,0.5,True,,16.404,18.12,5.48,2.271,12.0,0.133,2.0
+g17-cask,1,9,gemini-3.1-pro-preview,0.5,True,,15.076,24.1,2.86,2.938,10.0,0.138,2.0
+g17-cask,2,0,gemini-3.1-pro-preview,0.5,True,,12.484,0.0,0.0,2.421,8.0,0.063,2.0
+g17-cask,2,1,gemini-3.1-pro-preview,0.5,True,,12.894,0.0,0.0,2.831,8.0,0.063,2.0
+g17-cask,2,2,gemini-3.1-pro-preview,0.5,True,,13.689,0.0,0.0,2.573,9.0,0.116,2.0
+g17-cask,2,3,gemini-3.1-pro-preview,0.5,True,,13.940999999999999,0.0,0.0,2.835,9.0,0.106,2.0
+g17-cask,2,4,gemini-3.1-pro-preview,0.5,True,,15.015,0.0,0.0,3.949,9.0,0.066,2.0
+g17-cask,2,5,gemini-3.1-pro-preview,0.5,True,,11.562000000000001,26.56,2.8,3.481,5.0,0.081,3.0
+g17-cask,2,6,gemini-3.1-pro-preview,0.5,True,,11.082,27.86,5.88,3.987,4.0,0.095,3.0
+g17-cask,2,7,gemini-3.1-pro-preview,0.5,True,,12.008,51.32,2.98,3.912,5.0,0.096,3.0
+g17-cask,2,8,gemini-3.1-pro-preview,0.5,True,,10.944,26.82,2.43,2.863,5.0,0.081,3.0
+g17-cask,2,9,gemini-3.1-pro-preview,0.5,True,,11.164,26.86,5.84,4.018,4.0,0.146,3.0
+g17-cask,3,0,gemini-3.1-pro-preview,0.5,True,,10.944,0.0,0.0,2.863,5.0,0.081,3.0
+g17-cask,3,1,gemini-3.1-pro-preview,0.5,True,,11.082,0.0,0.0,3.987,4.0,0.095,3.0
+g17-cask,3,2,gemini-3.1-pro-preview,0.5,True,,11.164,0.0,0.0,4.018,4.0,0.146,3.0
+g17-cask,3,3,gemini-3.1-pro-preview,0.5,True,,11.562000000000001,0.0,0.0,3.481,5.0,0.081,3.0
+g17-cask,3,4,gemini-3.1-pro-preview,0.5,True,,12.008,0.0,0.0,3.912,5.0,0.096,3.0
+g17-cask,3,5,gemini-3.1-pro-preview,0.5,True,,11.622,20.98,2.82,4.518,4.0,0.104,3.0
+g17-cask,3,6,gemini-3.1-pro-preview,0.5,True,,10.806000000000001,30.43,5.95,3.723,4.0,0.083,3.0
+g17-cask,3,7,gemini-3.1-pro-preview,0.5,True,,11.179,40.21,2.85,4.054,4.0,0.125,3.0
+g17-cask,3,8,gemini-3.1-pro-preview,0.5,True,,11.027000000000001,35.53,5.88,2.944,5.0,0.083,3.0
+g17-cask,3,9,gemini-3.1-pro-preview,0.5,True,,13.07,31.04,2.75,5.987,4.0,0.083,3.0
+g17-cask,4,0,gemini-3.1-pro-preview,0.5,True,,10.806000000000001,0.0,0.0,3.723,4.0,0.083,3.0
+g17-cask,4,1,gemini-3.1-pro-preview,0.5,True,,10.944,0.0,0.0,2.863,5.0,0.081,3.0
+g17-cask,4,2,gemini-3.1-pro-preview,0.5,True,,11.027000000000001,0.0,0.0,2.944,5.0,0.083,3.0
+g17-cask,4,3,gemini-3.1-pro-preview,0.5,True,,11.082,0.0,0.0,3.987,4.0,0.095,3.0
+g17-cask,4,4,gemini-3.1-pro-preview,0.5,True,,11.164,0.0,0.0,4.018,4.0,0.146,3.0
+g17-cask,4,5,gemini-3.1-pro-preview,0.5,True,,11.027000000000001,40.34,2.8,2.944,5.0,0.083,3.0
+g17-cask,4,6,gemini-3.1-pro-preview,0.5,True,,10.959,30.21,5.86,2.863,5.0,0.096,3.0
+g17-cask,4,7,gemini-3.1-pro-preview,0.5,True,,11.154,26.49,2.77,4.091,4.0,0.063,3.0
+g17-cask,4,8,gemini-3.1-pro-preview,0.5,True,,11.527000000000001,24.87,2.82,3.444,5.0,0.083,3.0
+g17-cask,4,9,gemini-3.1-pro-preview,0.5,True,,11.007,30.66,2.96,2.944,5.0,0.063,3.0
+g17-cask,5,0,gemini-3.1-pro-preview,0.5,True,,10.806000000000001,0.0,0.0,3.723,4.0,0.083,3.0
+g17-cask,5,1,gemini-3.1-pro-preview,0.5,True,,10.944,0.0,0.0,2.863,5.0,0.081,3.0
+g17-cask,5,2,gemini-3.1-pro-preview,0.5,True,,10.959,0.0,0.0,2.863,5.0,0.096,3.0
+g17-cask,5,3,gemini-3.1-pro-preview,0.5,True,,11.007,0.0,0.0,2.944,5.0,0.063,3.0
+g17-cask,5,4,gemini-3.1-pro-preview,0.5,True,,11.027000000000001,0.0,0.0,2.944,5.0,0.083,3.0
+g17-cask,5,5,gemini-3.1-pro-preview,0.5,True,,10.959,27.94,2.77,2.863,5.0,0.096,3.0
+g17-cask,5,6,gemini-3.1-pro-preview,0.5,True,,10.959,27.12,2.93,2.863,5.0,0.096,3.0
+g17-cask,5,7,gemini-3.1-pro-preview,0.5,True,,11.868,30.1,1.72,3.764,5.0,0.104,3.0
+g17-cask,5,8,gemini-3.1-pro-preview,0.5,True,,11.233,26.61,2.97,3.17,5.0,0.063,3.0
+g17-cask,5,9,gemini-3.1-pro-preview,0.5,True,,11.868,30.48,2.85,3.764,5.0,0.104,3.0
+g17-cask,1,0,gpt-5.1,0.5,True,,32.881,39.13,2.89,10.76,15.0,0.121,7.0
+g17-cask,1,1,gpt-5.1,0.5,True,,45.7,48.14,5.91,17.486,20.0,0.214,8.0
+g17-cask,1,2,gpt-5.1,0.5,True,,41.906,41.79,2.84,15.748,19.0,0.158,7.0
+g17-cask,1,3,gpt-5.1,0.5,True,,40.034,39.86,2.79,9.979,22.0,0.055,8.0
+g17-cask,1,4,gpt-5.1,0.5,True,,39.504000000000005,34.67,2.84,16.393,16.0,0.111,7.0
+g17-cask,1,5,gpt-5.1,0.5,True,,29.053,36.14,2.94,12.925,10.0,0.128,6.0
+g17-cask,1,6,gpt-5.1,0.5,True,,41.485,35.28,3.1,17.427,17.0,0.058,7.0
+g17-cask,1,7,gpt-5.1,0.5,True,,36.771,35.06,3.4,12.68,18.0,0.091,6.0
+g17-cask,1,8,gpt-5.1,0.5,True,,41.503,33.11,2.96,13.145,21.0,0.358,7.0
+g17-cask,1,9,gpt-5.1,0.5,True,,33.427,37.57,2.64,10.349,17.0,0.078,6.0
+g17-cask,2,0,gpt-5.1,0.5,True,,29.053,0.0,0.0,12.925,10.0,0.128,6.0
+g17-cask,2,1,gpt-5.1,0.5,True,,32.881,0.0,0.0,10.76,15.0,0.121,7.0
+g17-cask,2,2,gpt-5.1,0.5,True,,33.427,0.0,0.0,10.349,17.0,0.078,6.0
+g17-cask,2,3,gpt-5.1,0.5,True,,36.771,0.0,0.0,12.68,18.0,0.091,6.0
+g17-cask,2,4,gpt-5.1,0.5,True,,39.504000000000005,0.0,0.0,16.393,16.0,0.111,7.0
+g17-cask,2,5,gpt-5.1,0.5,True,,35.717,45.3,2.81,21.588,5.0,0.129,9.0
+g17-cask,2,6,gpt-5.1,0.5,True,,35.098,52.54,2.87,21.913,5.0,0.185,8.0
+g17-cask,2,7,gpt-5.1,0.5,True,,32.705,43.22,2.78,20.574,5.0,0.131,7.0
+g17-cask,2,8,gpt-5.1,0.5,True,,34.632999999999996,42.71,2.81,22.448,5.0,0.185,7.0
+g17-cask,2,9,gpt-5.1,0.5,True,,31.46,65.05,2.84,19.355,5.0,0.105,7.0
+g17-cask,3,0,gpt-5.1,0.5,True,,29.053,0.0,0.0,12.925,10.0,0.128,6.0
+g17-cask,3,1,gpt-5.1,0.5,True,,31.46,0.0,0.0,19.355,5.0,0.105,7.0
+g17-cask,3,2,gpt-5.1,0.5,True,,32.705,0.0,0.0,20.574,5.0,0.131,7.0
+g17-cask,3,3,gpt-5.1,0.5,True,,32.881,0.0,0.0,10.76,15.0,0.121,7.0
+g17-cask,3,4,gpt-5.1,0.5,True,,33.427,0.0,0.0,10.349,17.0,0.078,6.0
+g17-cask,3,5,gpt-5.1,0.5,True,,35.216,40.37,2.86,22.065,5.0,0.151,8.0
+g17-cask,3,6,gpt-5.1,0.5,True,,35.219,31.82,5.95,22.093,5.0,0.126,8.0
+g17-cask,3,7,gpt-5.1,0.5,True,,34.971000000000004,32.58,2.89,21.82,5.0,0.151,8.0
+g17-cask,3,8,gpt-5.1,0.5,True,,36.41,38.43,2.5,23.27,5.0,0.14,8.0
+g17-cask,3,9,gpt-5.1,0.5,True,,34.391000000000005,31.4,2.87,21.26,5.0,0.131,8.0
+g17-cask,4,0,gpt-5.1,0.5,True,,29.053,0.0,0.0,12.925,10.0,0.128,6.0
+g17-cask,4,1,gpt-5.1,0.5,True,,31.46,0.0,0.0,19.355,5.0,0.105,7.0
+g17-cask,4,2,gpt-5.1,0.5,True,,32.705,0.0,0.0,20.574,5.0,0.131,7.0
+g17-cask,4,3,gpt-5.1,0.5,True,,32.881,0.0,0.0,10.76,15.0,0.121,7.0
+g17-cask,4,4,gpt-5.1,0.5,True,,33.427,0.0,0.0,10.349,17.0,0.078,6.0
+g17-cask,4,5,gpt-5.1,0.5,True,,35.655,44.2,2.97,22.515,5.0,0.14,8.0
+g17-cask,4,6,gpt-5.1,0.5,True,,34.396,34.67,2.83,21.27,5.0,0.126,8.0
+g17-cask,4,7,gpt-5.1,0.5,True,,34.198,32.26,2.88,21.041,5.0,0.157,8.0
+g17-cask,4,8,gpt-5.1,0.5,True,,35.287,38.46,2.06,22.147,5.0,0.14,8.0
+g17-cask,4,9,gpt-5.1,0.5,True,,37.275999999999996,27.88,1.78,24.14,5.0,0.136,8.0
+g17-cask,5,0,gpt-5.1,0.5,True,,29.053,0.0,0.0,12.925,10.0,0.128,6.0
+g17-cask,5,1,gpt-5.1,0.5,True,,31.46,0.0,0.0,19.355,5.0,0.105,7.0
+g17-cask,5,2,gpt-5.1,0.5,True,,32.705,0.0,0.0,20.574,5.0,0.131,7.0
+g17-cask,5,3,gpt-5.1,0.5,True,,32.881,0.0,0.0,10.76,15.0,0.121,7.0
+g17-cask,5,4,gpt-5.1,0.5,True,,33.427,0.0,0.0,10.349,17.0,0.078,6.0
+g17-cask,5,5,gpt-5.1,0.5,True,,35.973,42.87,2.85,22.856,5.0,0.117,8.0
+g17-cask,5,6,gpt-5.1,0.5,True,,33.86,24.03,2.77,21.703,5.0,0.157,7.0
+g17-cask,5,7,gpt-5.1,0.5,True,,34.763000000000005,39.86,3.14,22.646,5.0,0.117,7.0
+g17-cask,5,8,gpt-5.1,0.5,True,,36.515,44.34,2.96,23.394,5.0,0.121,8.0
+g17-cask,5,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,13.29,0.0,,,,
+g18-neurohub,1,0,gemini-3.1-pro-preview,0.5,True,,16.978,42.89,2.9,3.579,11.0,0.399,2.0
+g18-neurohub,1,1,gemini-3.1-pro-preview,0.5,True,,17.406,36.34,5.23,3.77,10.0,0.636,3.0
+g18-neurohub,1,2,gemini-3.1-pro-preview,0.5,True,,17.678,37.38,5.9,4.059,10.0,0.619,3.0
+g18-neurohub,1,3,gemini-3.1-pro-preview,0.5,True,,17.284,43.52,2.93,3.865,11.0,0.419,2.0
+g18-neurohub,1,4,gemini-3.1-pro-preview,0.5,True,,17.877,31.62,5.81,4.348,11.0,0.529,2.0
+g18-neurohub,1,5,gemini-3.1-pro-preview,0.5,True,,20.031,51.22,2.88,4.425,12.0,0.606,3.0
+g18-neurohub,1,6,gemini-3.1-pro-preview,0.5,True,,17.923000000000002,42.02,2.47,4.359,10.0,0.564,3.0
+g18-neurohub,1,7,gemini-3.1-pro-preview,0.5,True,,22.57,42.19,2.84,6.192,12.0,0.378,4.0
+g18-neurohub,1,8,gemini-3.1-pro-preview,0.5,True,,16.698,34.31,2.76,4.357,10.0,0.341,2.0
+g18-neurohub,1,9,gemini-3.1-pro-preview,0.5,True,,18.892,54.66,2.75,5.532,11.0,0.36,2.0
+g18-neurohub,2,0,gemini-3.1-pro-preview,0.5,True,,16.698,0.0,0.0,4.357,10.0,0.341,2.0
+g18-neurohub,2,1,gemini-3.1-pro-preview,0.5,True,,16.978,0.0,0.0,3.579,11.0,0.399,2.0
+g18-neurohub,2,2,gemini-3.1-pro-preview,0.5,True,,17.284,0.0,0.0,3.865,11.0,0.419,2.0
+g18-neurohub,2,3,gemini-3.1-pro-preview,0.5,True,,17.406,0.0,0.0,3.77,10.0,0.636,3.0
+g18-neurohub,2,4,gemini-3.1-pro-preview,0.5,True,,17.678,0.0,0.0,4.059,10.0,0.619,3.0
+g18-neurohub,2,5,gemini-3.1-pro-preview,0.5,True,,13.699,47.97,2.87,5.385,5.0,0.314,3.0
+g18-neurohub,2,6,gemini-3.1-pro-preview,0.5,True,,13.280000000000001,32.13,2.58,5.032,5.0,0.248,3.0
+g18-neurohub,2,7,gemini-3.1-pro-preview,0.5,True,,13.861,33.52,5.79,4.532,5.0,0.329,4.0
+g18-neurohub,2,8,gemini-3.1-pro-preview,0.5,True,,13.89,48.14,2.36,5.703,5.0,0.187,3.0
+g18-neurohub,2,9,gemini-3.1-pro-preview,0.5,True,,12.743,62.86,3.19,5.46,5.0,0.283,2.0
+g18-neurohub,3,0,gemini-3.1-pro-preview,0.5,True,,12.743,0.0,0.0,5.46,5.0,0.283,2.0
+g18-neurohub,3,1,gemini-3.1-pro-preview,0.5,True,,13.280000000000001,0.0,0.0,5.032,5.0,0.248,3.0
+g18-neurohub,3,2,gemini-3.1-pro-preview,0.5,True,,13.699,0.0,0.0,5.385,5.0,0.314,3.0
+g18-neurohub,3,3,gemini-3.1-pro-preview,0.5,True,,13.861,0.0,0.0,4.532,5.0,0.329,4.0
+g18-neurohub,3,4,gemini-3.1-pro-preview,0.5,True,,13.89,0.0,0.0,5.703,5.0,0.187,3.0
+g18-neurohub,3,5,gemini-3.1-pro-preview,0.5,True,,12.705,34.61,3.11,5.452,5.0,0.253,2.0
+g18-neurohub,3,6,gemini-3.1-pro-preview,0.5,True,,12.799,36.09,2.81,5.49,5.0,0.309,2.0
+g18-neurohub,3,7,gemini-3.1-pro-preview,0.5,True,,14.189,43.27,5.95,4.88,5.0,0.309,4.0
+g18-neurohub,3,8,gemini-3.1-pro-preview,0.5,True,,14.440999999999999,40.88,2.85,6.154,5.0,0.287,3.0
+g18-neurohub,3,9,gemini-3.1-pro-preview,0.5,True,,12.822,49.35,2.72,5.597,4.0,0.225,3.0
+g18-neurohub,4,0,gemini-3.1-pro-preview,0.5,True,,12.705,0.0,0.0,5.452,5.0,0.253,2.0
+g18-neurohub,4,1,gemini-3.1-pro-preview,0.5,True,,12.743,0.0,0.0,5.46,5.0,0.283,2.0
+g18-neurohub,4,2,gemini-3.1-pro-preview,0.5,True,,12.799,0.0,0.0,5.49,5.0,0.309,2.0
+g18-neurohub,4,3,gemini-3.1-pro-preview,0.5,True,,12.822,0.0,0.0,5.597,4.0,0.225,3.0
+g18-neurohub,4,4,gemini-3.1-pro-preview,0.5,True,,13.280000000000001,0.0,0.0,5.032,5.0,0.248,3.0
+g18-neurohub,4,5,gemini-3.1-pro-preview,0.5,True,,14.384,49.27,5.84,5.047,5.0,0.337,4.0
+g18-neurohub,4,6,gemini-3.1-pro-preview,0.5,True,,13.828,41.52,2.84,5.557,5.0,0.271,3.0
+g18-neurohub,4,7,gemini-3.1-pro-preview,0.5,True,,12.806000000000001,37.12,2.77,5.519,5.0,0.287,2.0
+g18-neurohub,4,8,gemini-3.1-pro-preview,0.5,True,,12.213000000000001,30.75,0.85,6.03,4.0,0.183,2.0
+g18-neurohub,4,9,gemini-3.1-pro-preview,0.5,True,,14.16,64.94,2.57,5.919,5.0,0.241,3.0
+g18-neurohub,5,0,gemini-3.1-pro-preview,0.5,True,,12.213000000000001,0.0,0.0,6.03,4.0,0.183,2.0
+g18-neurohub,5,1,gemini-3.1-pro-preview,0.5,True,,12.705,0.0,0.0,5.452,5.0,0.253,2.0
+g18-neurohub,5,2,gemini-3.1-pro-preview,0.5,True,,12.743,0.0,0.0,5.46,5.0,0.283,2.0
+g18-neurohub,5,3,gemini-3.1-pro-preview,0.5,True,,12.799,0.0,0.0,5.49,5.0,0.309,2.0
+g18-neurohub,5,4,gemini-3.1-pro-preview,0.5,True,,12.806000000000001,0.0,0.0,5.519,5.0,0.287,2.0
+g18-neurohub,5,5,gemini-3.1-pro-preview,0.5,True,,13.182,35.93,2.79,5.952,5.0,0.23,2.0
+g18-neurohub,5,6,gemini-3.1-pro-preview,0.5,True,,14.221,56.34,2.79,6.019,5.0,0.202,3.0
+g18-neurohub,5,7,gemini-3.1-pro-preview,0.5,True,,13.664000000000001,48.15,2.78,6.538,5.0,0.126,2.0
+g18-neurohub,5,8,gemini-3.1-pro-preview,0.5,True,,13.251000000000001,33.77,3.02,6.057,5.0,0.194,2.0
+g18-neurohub,5,9,gemini-3.1-pro-preview,0.5,True,,14.175,46.07,2.78,5.852,5.0,0.323,3.0
+g18-neurohub,1,0,gpt-5.1,0.5,True,,40.813,46.31,3.3,11.409,24.0,0.404,5.0
+g18-neurohub,1,1,gpt-5.1,0.5,False,Unknown caller: ReleaseEngineerClient,,73.91,3.11,,,,
+g18-neurohub,1,2,gpt-5.1,0.5,True,,50.856,60.0,2.77,17.317,27.0,0.539,6.0
+g18-neurohub,1,3,gpt-5.1,0.5,False,Unknown callee: Notification,,43.81,2.87,,,,
+g18-neurohub,1,4,gpt-5.1,0.5,True,,36.622,52.09,2.9,14.216,18.0,0.406,4.0
+g18-neurohub,1,5,gpt-5.1,0.5,False,Unknown callee: Notification,,57.2,2.89,,,,
+g18-neurohub,1,6,gpt-5.1,0.5,True,,40.226,70.67,2.8,15.763,19.0,0.463,5.0
+g18-neurohub,1,7,gpt-5.1,0.5,True,,44.493,46.64,3.0,21.079,19.0,0.414,4.0
+g18-neurohub,1,8,gpt-5.1,0.5,True,,39.984,50.04,2.81,13.532,22.0,0.452,4.0
+g18-neurohub,1,9,gpt-5.1,0.5,True,,45.662,56.04,2.73,16.146,25.0,0.516,4.0
+g18-neurohub,2,0,gpt-5.1,0.5,True,,36.622,0.0,0.0,14.216,18.0,0.406,4.0
+g18-neurohub,2,1,gpt-5.1,0.5,True,,39.984,0.0,0.0,13.532,22.0,0.452,4.0
+g18-neurohub,2,2,gpt-5.1,0.5,True,,40.226,0.0,0.0,15.763,19.0,0.463,5.0
+g18-neurohub,2,3,gpt-5.1,0.5,True,,40.813,0.0,0.0,11.409,24.0,0.404,5.0
+g18-neurohub,2,4,gpt-5.1,0.5,True,,44.493,0.0,0.0,21.079,19.0,0.414,4.0
+g18-neurohub,2,5,gpt-5.1,0.5,False,Unknown callee: Visualization,,47.45,2.89,,,,
+g18-neurohub,2,6,gpt-5.1,0.5,True,,35.692,102.67,2.88,25.299,5.0,0.393,5.0
+g18-neurohub,2,7,gpt-5.1,0.5,True,,40.513,43.14,2.86,31.08,5.0,0.433,4.0
+g18-neurohub,2,8,gpt-5.1,0.5,True,,34.974000000000004,41.97,2.89,23.616,5.0,0.358,6.0
+g18-neurohub,2,9,gpt-5.1,0.5,True,,36.586,72.82,2.97,23.313,5.0,0.273,8.0
+g18-neurohub,3,0,gpt-5.1,0.5,True,,34.974000000000004,0.0,0.0,23.616,5.0,0.358,6.0
+g18-neurohub,3,1,gpt-5.1,0.5,True,,35.692,0.0,0.0,25.299,5.0,0.393,5.0
+g18-neurohub,3,2,gpt-5.1,0.5,True,,36.586,0.0,0.0,23.313,5.0,0.273,8.0
+g18-neurohub,3,3,gpt-5.1,0.5,True,,36.622,0.0,0.0,14.216,18.0,0.406,4.0
+g18-neurohub,3,4,gpt-5.1,0.5,True,,39.984,0.0,0.0,13.532,22.0,0.452,4.0
+g18-neurohub,3,5,gpt-5.1,0.5,True,,38.867999999999995,46.01,2.83,28.548,5.0,0.32,5.0
+g18-neurohub,3,6,gpt-5.1,0.5,True,,40.676,45.26,2.84,27.414,5.0,0.262,8.0
+g18-neurohub,3,7,gpt-5.1,0.5,True,,37.269,65.38,2.92,25.032,5.0,0.237,7.0
+g18-neurohub,3,8,gpt-5.1,0.5,True,,38.483000000000004,52.04,2.69,28.129,5.0,0.354,5.0
+g18-neurohub,3,9,gpt-5.1,0.5,True,,42.123,59.03,2.71,28.91,5.0,0.213,8.0
+g18-neurohub,4,0,gpt-5.1,0.5,True,,34.974000000000004,0.0,0.0,23.616,5.0,0.358,6.0
+g18-neurohub,4,1,gpt-5.1,0.5,True,,35.692,0.0,0.0,25.299,5.0,0.393,5.0
+g18-neurohub,4,2,gpt-5.1,0.5,True,,36.586,0.0,0.0,23.313,5.0,0.273,8.0
+g18-neurohub,4,3,gpt-5.1,0.5,True,,36.622,0.0,0.0,14.216,18.0,0.406,4.0
+g18-neurohub,4,4,gpt-5.1,0.5,True,,37.269,0.0,0.0,25.032,5.0,0.237,7.0
+g18-neurohub,4,5,gpt-5.1,0.5,True,,43.992000000000004,57.58,2.67,30.754,5.0,0.238,8.0
+g18-neurohub,4,6,gpt-5.1,0.5,True,,37.202,39.81,2.86,24.931,5.0,0.271,7.0
+g18-neurohub,4,7,gpt-5.1,0.5,True,,39.05,48.83,2.72,27.681,5.0,0.369,6.0
+g18-neurohub,4,8,gpt-5.1,0.5,True,,40.354,42.43,2.01,28.004,5.0,0.35,7.0
+g18-neurohub,4,9,gpt-5.1,0.5,True,,39.888,53.49,1.58,26.645,5.0,0.243,8.0
+g18-neurohub,5,0,gpt-5.1,0.5,True,,34.974000000000004,0.0,0.0,23.616,5.0,0.358,6.0
+g18-neurohub,5,1,gpt-5.1,0.5,True,,35.692,0.0,0.0,25.299,5.0,0.393,5.0
+g18-neurohub,5,2,gpt-5.1,0.5,True,,36.586,0.0,0.0,23.313,5.0,0.273,8.0
+g18-neurohub,5,3,gpt-5.1,0.5,True,,36.622,0.0,0.0,14.216,18.0,0.406,4.0
+g18-neurohub,5,4,gpt-5.1,0.5,True,,37.202,0.0,0.0,24.931,5.0,0.271,7.0
+g18-neurohub,5,5,gpt-5.1,0.5,True,,42.606,66.81,2.9,29.371,5.0,0.235,8.0
+g18-neurohub,5,6,gpt-5.1,0.5,True,,42.39,63.93,5.84,30.064,5.0,0.326,7.0
+g18-neurohub,5,7,gpt-5.1,0.5,True,,39.744,61.32,2.9,27.452,5.0,0.292,7.0
+g18-neurohub,5,8,gpt-5.1,0.5,True,,41.514,100.81,3.06,29.172,5.0,0.342,7.0
+g18-neurohub,5,9,gpt-5.1,0.5,True,,41.013,68.32,3.23,26.73,5.0,0.283,9.0
+g19-alfred,1,0,gemini-3.1-pro-preview,0.5,True,,17.84,39.12,2.89,7.663,5.0,0.177,5.0
+g19-alfred,1,1,gemini-3.1-pro-preview,0.5,True,,15.059000000000001,39.55,2.99,6.014,5.0,0.045,4.0
+g19-alfred,1,2,gemini-3.1-pro-preview,0.5,True,,12.202,34.38,5.8,5.164,4.0,0.038,3.0
+g19-alfred,1,3,gemini-3.1-pro-preview,0.5,True,,15.224,35.28,2.57,7.168,4.0,0.056,4.0
+g19-alfred,1,4,gemini-3.1-pro-preview,0.5,True,,13.258,34.12,5.87,4.076,5.0,0.182,4.0
+g19-alfred,1,5,gemini-3.1-pro-preview,0.5,True,,10.766,28.71,2.87,4.721,4.0,0.045,2.0
+g19-alfred,1,6,gemini-3.1-pro-preview,0.5,True,,10.469000000000001,40.69,2.68,5.319,4.0,0.15,1.0
+g19-alfred,1,7,gemini-3.1-pro-preview,0.5,True,,13.905000000000001,42.41,2.49,5.796,5.0,0.109,3.0
+g19-alfred,1,8,gemini-3.1-pro-preview,0.5,True,,12.222000000000001,33.43,2.79,6.0,4.0,0.222,2.0
+g19-alfred,1,9,gemini-3.1-pro-preview,0.5,True,,13.633,39.64,2.15,5.497,4.0,0.136,4.0
+g19-alfred,2,0,gemini-3.1-pro-preview,0.5,True,,10.469000000000001,0.0,0.0,5.319,4.0,0.15,1.0
+g19-alfred,2,1,gemini-3.1-pro-preview,0.5,True,,10.766,0.0,0.0,4.721,4.0,0.045,2.0
+g19-alfred,2,2,gemini-3.1-pro-preview,0.5,True,,12.202,0.0,0.0,5.164,4.0,0.038,3.0
+g19-alfred,2,3,gemini-3.1-pro-preview,0.5,True,,12.222000000000001,0.0,0.0,6.0,4.0,0.222,2.0
+g19-alfred,2,4,gemini-3.1-pro-preview,0.5,True,,13.258,0.0,0.0,4.076,5.0,0.182,4.0
+g19-alfred,2,5,gemini-3.1-pro-preview,0.5,True,,12.241,32.92,2.88,5.164,4.0,0.077,3.0
+g19-alfred,2,6,gemini-3.1-pro-preview,0.5,True,,11.73,37.03,2.74,4.692,4.0,0.038,3.0
+g19-alfred,2,7,gemini-3.1-pro-preview,0.5,True,,9.459,33.83,5.8,3.376,4.0,0.083,2.0
+g19-alfred,2,8,gemini-3.1-pro-preview,0.5,True,,12.311,29.86,5.76,5.192,4.0,0.119,3.0
+g19-alfred,2,9,gemini-3.1-pro-preview,0.5,True,,12.79,31.07,2.76,4.609,4.0,0.181,4.0
+g19-alfred,3,0,gemini-3.1-pro-preview,0.5,True,,9.459,0.0,0.0,3.376,4.0,0.083,2.0
+g19-alfred,3,1,gemini-3.1-pro-preview,0.5,True,,10.469000000000001,0.0,0.0,5.319,4.0,0.15,1.0
+g19-alfred,3,2,gemini-3.1-pro-preview,0.5,True,,10.766,0.0,0.0,4.721,4.0,0.045,2.0
+g19-alfred,3,3,gemini-3.1-pro-preview,0.5,True,,11.73,0.0,0.0,4.692,4.0,0.038,3.0
+g19-alfred,3,4,gemini-3.1-pro-preview,0.5,True,,12.202,0.0,0.0,5.164,4.0,0.038,3.0
+g19-alfred,3,5,gemini-3.1-pro-preview,0.5,True,,10.661000000000001,31.35,2.26,4.597,4.0,0.064,2.0
+g19-alfred,3,6,gemini-3.1-pro-preview,0.5,True,,11.443999999999999,29.52,2.86,5.156,4.0,0.288,2.0
+g19-alfred,3,7,gemini-3.1-pro-preview,0.5,True,,11.809999999999999,31.11,1.51,5.616,4.0,0.194,2.0
+g19-alfred,3,8,gemini-3.1-pro-preview,0.5,True,,9.842,31.74,2.84,3.759,4.0,0.083,2.0
+g19-alfred,3,9,gemini-3.1-pro-preview,0.5,True,,10.782,37.13,2.26,3.692,4.0,0.09,3.0
+g19-alfred,4,0,gemini-3.1-pro-preview,0.5,True,,9.459,0.0,0.0,3.376,4.0,0.083,2.0
+g19-alfred,4,1,gemini-3.1-pro-preview,0.5,True,,9.842,0.0,0.0,3.759,4.0,0.083,2.0
+g19-alfred,4,2,gemini-3.1-pro-preview,0.5,True,,10.469000000000001,0.0,0.0,5.319,4.0,0.15,1.0
+g19-alfred,4,3,gemini-3.1-pro-preview,0.5,True,,10.661000000000001,0.0,0.0,4.597,4.0,0.064,2.0
+g19-alfred,4,4,gemini-3.1-pro-preview,0.5,True,,10.766,0.0,0.0,4.721,4.0,0.045,2.0
+g19-alfred,4,5,gemini-3.1-pro-preview,0.5,True,,9.02,25.59,5.82,2.943,4.0,0.077,2.0
+g19-alfred,4,6,gemini-3.1-pro-preview,0.5,True,,9.491,41.67,2.87,3.414,4.0,0.077,2.0
+g19-alfred,4,7,gemini-3.1-pro-preview,0.5,True,,10.83,40.84,2.94,4.702,4.0,0.128,2.0
+g19-alfred,4,8,gemini-3.1-pro-preview,0.5,True,,10.886,31.26,1.58,4.809,4.0,0.077,2.0
+g19-alfred,4,9,gemini-3.1-pro-preview,0.5,True,,9.026,31.79,3.51,2.943,4.0,0.083,2.0
+g19-alfred,5,0,gemini-3.1-pro-preview,0.5,True,,9.02,0.0,0.0,2.943,4.0,0.077,2.0
+g19-alfred,5,1,gemini-3.1-pro-preview,0.5,True,,9.026,0.0,0.0,2.943,4.0,0.083,2.0
+g19-alfred,5,2,gemini-3.1-pro-preview,0.5,True,,9.459,0.0,0.0,3.376,4.0,0.083,2.0
+g19-alfred,5,3,gemini-3.1-pro-preview,0.5,True,,9.491,0.0,0.0,3.414,4.0,0.077,2.0
+g19-alfred,5,4,gemini-3.1-pro-preview,0.5,True,,9.842,0.0,0.0,3.759,4.0,0.083,2.0
+g19-alfred,5,5,gemini-3.1-pro-preview,0.5,True,,10.385,46.85,2.84,4.29,4.0,0.095,2.0
+g19-alfred,5,6,gemini-3.1-pro-preview,0.5,True,,10.52,33.17,2.81,3.443,4.0,0.077,3.0
+g19-alfred,5,7,gemini-3.1-pro-preview,0.5,True,,9.981,37.36,2.82,3.914,4.0,0.067,2.0
+g19-alfred,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g19-alfred,5,9,gemini-3.1-pro-preview,0.5,True,,10.453,39.84,5.88,4.376,4.0,0.077,2.0
+g19-alfred,1,0,gpt-5.1,0.5,True,,32.949,46.85,2.93,15.81,13.0,0.139,4.0
+g19-alfred,1,1,gpt-5.1,0.5,False,Unknown callee: ContactManagement,,55.46,2.88,,,,
+g19-alfred,1,2,gpt-5.1,0.5,True,,41.674,46.7,2.68,20.537,18.0,0.137,3.0
+g19-alfred,1,3,gpt-5.1,0.5,True,,41.769999999999996,61.15,2.65,20.651,13.0,0.119,8.0
+g19-alfred,1,4,gpt-5.1,0.5,True,,44.521,73.4,2.75,24.413,16.0,0.108,4.0
+g19-alfred,1,5,gpt-5.1,0.5,True,,33.224000000000004,69.94,2.85,15.175,15.0,0.049,3.0
+g19-alfred,1,6,gpt-5.1,0.5,True,,41.662,68.73,2.72,19.544,19.0,0.118,3.0
+g19-alfred,1,7,gpt-5.1,0.5,True,,40.785,82.22,2.96,17.676,18.0,0.109,5.0
+g19-alfred,1,8,gpt-5.1,0.5,True,,38.662,58.77,2.92,19.542,14.0,0.12,5.0
+g19-alfred,1,9,gpt-5.1,0.5,True,,37.488,60.58,2.89,18.433,16.0,0.055,3.0
+g19-alfred,2,0,gpt-5.1,0.5,True,,32.949,0.0,0.0,15.81,13.0,0.139,4.0
+g19-alfred,2,1,gpt-5.1,0.5,True,,33.224000000000004,0.0,0.0,15.175,15.0,0.049,3.0
+g19-alfred,2,2,gpt-5.1,0.5,True,,37.488,0.0,0.0,18.433,16.0,0.055,3.0
+g19-alfred,2,3,gpt-5.1,0.5,True,,38.662,0.0,0.0,19.542,14.0,0.12,5.0
+g19-alfred,2,4,gpt-5.1,0.5,True,,40.785,0.0,0.0,17.676,18.0,0.109,5.0
+g19-alfred,2,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,97.65,0.0,,,,
+g19-alfred,2,6,gpt-5.1,0.5,True,,35.741,68.77,3.48,26.692,5.0,0.049,4.0
+g19-alfred,2,7,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,56.8,0.0,,,,
+g19-alfred,2,8,gpt-5.1,0.5,True,,35.04,43.0,2.86,22.998,8.0,0.042,4.0
+g19-alfred,2,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,106.76,0.0,,,,
+g19-alfred,3,0,gpt-5.1,0.5,True,,32.949,0.0,0.0,15.81,13.0,0.139,4.0
+g19-alfred,3,1,gpt-5.1,0.5,True,,33.224000000000004,0.0,0.0,15.175,15.0,0.049,3.0
+g19-alfred,3,2,gpt-5.1,0.5,True,,35.04,0.0,0.0,22.998,8.0,0.042,4.0
+g19-alfred,3,3,gpt-5.1,0.5,True,,35.741,0.0,0.0,26.692,5.0,0.049,4.0
+g19-alfred,3,4,gpt-5.1,0.5,True,,37.488,0.0,0.0,18.433,16.0,0.055,3.0
+g19-alfred,3,5,gpt-5.1,0.5,True,,35.827,44.02,3.19,23.786,8.0,0.041,4.0
+g19-alfred,3,6,gpt-5.1,0.5,True,,35.04,29.7,2.68,22.998,8.0,0.042,4.0
+g19-alfred,3,7,gpt-5.1,0.5,True,,36.335,36.35,2.82,24.294,8.0,0.041,4.0
+g19-alfred,3,8,gpt-5.1,0.5,True,,35.04,40.04,2.97,22.998,8.0,0.042,4.0
+g19-alfred,3,9,gpt-5.1,0.5,True,,35.04,42.38,2.65,22.998,8.0,0.042,4.0
+g19-alfred,4,0,gpt-5.1,0.5,True,,32.949,0.0,0.0,15.81,13.0,0.139,4.0
+g19-alfred,4,1,gpt-5.1,0.5,True,,33.224000000000004,0.0,0.0,15.175,15.0,0.049,3.0
+g19-alfred,4,2,gpt-5.1,0.5,True,,35.04,0.0,0.0,22.998,8.0,0.042,4.0
+g19-alfred,4,3,gpt-5.1,0.5,True,,35.04,0.0,0.0,22.998,8.0,0.042,4.0
+g19-alfred,4,4,gpt-5.1,0.5,True,,35.04,0.0,0.0,22.998,8.0,0.042,4.0
+g19-alfred,4,5,gpt-5.1,0.5,True,,35.04,38.98,2.9,22.998,8.0,0.042,4.0
+g19-alfred,4,6,gpt-5.1,0.5,True,,35.04,41.18,2.91,22.998,8.0,0.042,4.0
+g19-alfred,4,7,gpt-5.1,0.5,True,,35.04,33.56,2.82,22.998,8.0,0.042,4.0
+g19-alfred,4,8,gpt-5.1,0.5,True,,35.04,52.62,2.92,22.998,8.0,0.042,4.0
+g19-alfred,4,9,gpt-5.1,0.5,True,,34.607,49.14,2.87,22.565,8.0,0.042,4.0
+g19-alfred,5,0,gpt-5.1,0.5,True,,32.949,0.0,0.0,15.81,13.0,0.139,4.0
+g19-alfred,5,1,gpt-5.1,0.5,True,,33.224000000000004,0.0,0.0,15.175,15.0,0.049,3.0
+g19-alfred,5,2,gpt-5.1,0.5,True,,34.607,0.0,0.0,22.565,8.0,0.042,4.0
+g19-alfred,5,3,gpt-5.1,0.5,True,,35.04,0.0,0.0,22.998,8.0,0.042,4.0
+g19-alfred,5,4,gpt-5.1,0.5,True,,35.04,0.0,0.0,22.998,8.0,0.042,4.0
+g19-alfred,5,5,gpt-5.1,0.5,True,,35.01,38.69,2.91,22.971,8.0,0.039,4.0
+g19-alfred,5,6,gpt-5.1,0.5,True,,34.607,53.44,2.8,22.565,8.0,0.042,4.0
+g19-alfred,5,7,gpt-5.1,0.5,True,,34.492000000000004,55.69,2.86,22.452,8.0,0.04,4.0
+g19-alfred,5,8,gpt-5.1,0.5,False,Unknown caller: HealthAndVitalFallback,,81.18,2.78,,,,
+g19-alfred,5,9,gpt-5.1,0.5,True,,34.607,76.49,2.91,22.565,8.0,0.042,4.0
+g21-badcamp,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.48,0.0,,,,
+g21-badcamp,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g21-badcamp,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.2,0.0,,,,
+g21-badcamp,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g21-badcamp,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g21-badcamp,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g21-badcamp,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g21-badcamp,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g21-badcamp,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g21-badcamp,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g21-badcamp,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g21-badcamp,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g21-badcamp,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g21-badcamp,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g21-badcamp,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g21-badcamp,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,4,3,gemini-3.1-pro-preview,0.5,True,,20.396,41.1,3.04,8.006,9.0,0.39,3.0
+g21-badcamp,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.28,0.0,,,,
+g21-badcamp,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g21-badcamp,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g21-badcamp,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g21-badcamp,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g21-badcamp,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g21-badcamp,5,0,gemini-3.1-pro-preview,0.5,True,,20.396,0.0,0.0,8.006,9.0,0.39,3.0
+g21-badcamp,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g21-badcamp,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g21-badcamp,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g21-badcamp,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g21-badcamp,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g21-badcamp,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g21-badcamp,1,0,gpt-5.1,0.5,True,,33.691,46.88,3.48,12.055,16.0,0.636,5.0
+g21-badcamp,1,1,gpt-5.1,0.5,True,,27.472,33.69,3.43,12.024,11.0,0.448,4.0
+g21-badcamp,1,2,gpt-5.1,0.5,True,,26.281,23.32,5.88,10.849,11.0,0.432,4.0
+g21-badcamp,1,3,gpt-5.1,0.5,True,,32.051,43.45,2.78,10.52,13.0,0.531,8.0
+g21-badcamp,1,4,gpt-5.1,0.5,True,,29.523000000000003,20.21,2.72,10.069,12.0,0.454,7.0
+g21-badcamp,1,5,gpt-5.1,0.5,True,,28.435000000000002,21.13,1.21,14.016,11.0,0.419,3.0
+g21-badcamp,1,6,gpt-5.1,0.5,True,,28.857,22.14,2.77,12.362,10.0,0.495,6.0
+g21-badcamp,1,7,gpt-5.1,0.5,True,,29.158,24.93,2.72,15.63,10.0,0.528,3.0
+g21-badcamp,1,8,gpt-5.1,0.5,True,,26.255,24.98,2.44,9.761,13.0,0.494,3.0
+g21-badcamp,1,9,gpt-5.1,0.5,True,,32.009,19.54,1.93,13.478,15.0,0.531,3.0
+g21-badcamp,2,0,gpt-5.1,0.5,True,,26.255,0.0,0.0,9.761,13.0,0.494,3.0
+g21-badcamp,2,1,gpt-5.1,0.5,True,,26.281,0.0,0.0,10.849,11.0,0.432,4.0
+g21-badcamp,2,2,gpt-5.1,0.5,True,,27.472,0.0,0.0,12.024,11.0,0.448,4.0
+g21-badcamp,2,3,gpt-5.1,0.5,True,,28.435000000000002,0.0,0.0,14.016,11.0,0.419,3.0
+g21-badcamp,2,4,gpt-5.1,0.5,True,,28.857,0.0,0.0,12.362,10.0,0.495,6.0
+g21-badcamp,2,5,gpt-5.1,0.5,True,,26.778000000000002,33.27,2.66,17.417,5.0,0.361,4.0
+g21-badcamp,2,6,gpt-5.1,0.5,True,,28.647000000000002,26.54,2.9,19.315,5.0,0.332,4.0
+g21-badcamp,2,7,gpt-5.1,0.5,True,,32.589,44.64,5.94,23.36,5.0,0.229,4.0
+g21-badcamp,2,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,42.03,0.0,,,,
+g21-badcamp,2,9,gpt-5.1,0.5,True,,30.749000000000002,37.17,2.84,20.472,5.0,0.277,5.0
+g21-badcamp,3,0,gpt-5.1,0.5,True,,26.255,0.0,0.0,9.761,13.0,0.494,3.0
+g21-badcamp,3,1,gpt-5.1,0.5,True,,26.281,0.0,0.0,10.849,11.0,0.432,4.0
+g21-badcamp,3,2,gpt-5.1,0.5,True,,26.778000000000002,0.0,0.0,17.417,5.0,0.361,4.0
+g21-badcamp,3,3,gpt-5.1,0.5,True,,27.472,0.0,0.0,12.024,11.0,0.448,4.0
+g21-badcamp,3,4,gpt-5.1,0.5,True,,28.435000000000002,0.0,0.0,14.016,11.0,0.419,3.0
+g21-badcamp,3,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,25.42,0.0,,,,
+g21-badcamp,3,6,gpt-5.1,0.5,True,,26.713,29.53,2.82,17.393,5.0,0.32,4.0
+g21-badcamp,3,7,gpt-5.1,0.5,True,,26.806,27.24,2.78,17.445,5.0,0.361,4.0
+g21-badcamp,3,8,gpt-5.1,0.5,True,,29.025000000000002,29.02,1.96,18.699,6.0,0.326,4.0
+g21-badcamp,3,9,gpt-5.1,0.5,True,,26.821,22.58,2.8,17.452,5.0,0.369,4.0
+g21-badcamp,4,0,gpt-5.1,0.5,True,,26.255,0.0,0.0,9.761,13.0,0.494,3.0
+g21-badcamp,4,1,gpt-5.1,0.5,True,,26.281,0.0,0.0,10.849,11.0,0.432,4.0
+g21-badcamp,4,2,gpt-5.1,0.5,True,,26.713,0.0,0.0,17.393,5.0,0.32,4.0
+g21-badcamp,4,3,gpt-5.1,0.5,True,,26.778000000000002,0.0,0.0,17.417,5.0,0.361,4.0
+g21-badcamp,4,4,gpt-5.1,0.5,True,,26.806,0.0,0.0,17.445,5.0,0.361,4.0
+g21-badcamp,4,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,17.94,0.0,,,,
+g21-badcamp,4,6,gpt-5.1,0.5,True,,26.699,24.42,2.96,17.385,5.0,0.314,4.0
+g21-badcamp,4,7,gpt-5.1,0.5,True,,26.673000000000002,70.57,3.04,17.352,5.0,0.321,4.0
+g21-badcamp,4,8,gpt-5.1,0.5,True,,26.641,47.69,3.06,17.328,5.0,0.313,4.0
+g21-badcamp,4,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,17.88,0.0,,,,
+g21-badcamp,5,0,gpt-5.1,0.5,True,,26.255,0.0,0.0,9.761,13.0,0.494,3.0
+g21-badcamp,5,1,gpt-5.1,0.5,True,,26.281,0.0,0.0,10.849,11.0,0.432,4.0
+g21-badcamp,5,2,gpt-5.1,0.5,True,,26.641,0.0,0.0,17.328,5.0,0.313,4.0
+g21-badcamp,5,3,gpt-5.1,0.5,True,,26.673000000000002,0.0,0.0,17.352,5.0,0.321,4.0
+g21-badcamp,5,4,gpt-5.1,0.5,True,,26.699,0.0,0.0,17.385,5.0,0.314,4.0
+g21-badcamp,5,5,gpt-5.1,0.5,True,,27.098,30.18,2.74,17.788,5.0,0.31,4.0
+g21-badcamp,5,6,gpt-5.1,0.5,True,,26.641,26.56,2.81,17.328,5.0,0.313,4.0
+g21-badcamp,5,7,gpt-5.1,0.5,True,,26.564,46.58,2.75,17.254,5.0,0.31,4.0
+g21-badcamp,5,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,20.32,0.0,,,,
+g21-badcamp,5,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,22.12,0.0,,,,
+g22-rdadmp,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.53,0.0,,,,
+g22-rdadmp,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g22-rdadmp,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g22-rdadmp,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g22-rdadmp,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g22-rdadmp,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g22-rdadmp,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g22-rdadmp,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g22-rdadmp,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.24,0.0,,,,
+g22-rdadmp,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g22-rdadmp,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.68,0.0,,,,
+g22-rdadmp,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,5,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g22-rdadmp,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g22-rdadmp,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g22-rdadmp,1,0,gpt-5.1,0.5,True,,44.013,31.47,2.79,10.592,20.0,0.421,13.0
+g22-rdadmp,1,1,gpt-5.1,0.5,True,,47.32,32.57,2.78,18.94,12.0,0.38,16.0
+g22-rdadmp,1,2,gpt-5.1,0.5,True,,41.576,47.92,2.87,10.395,19.0,0.181,12.0
+g22-rdadmp,1,3,gpt-5.1,0.5,True,,42.67,40.21,2.83,11.45,14.0,0.22,17.0
+g22-rdadmp,1,4,gpt-5.1,0.5,True,,40.611,31.98,2.25,7.292,24.0,0.319,9.0
+g22-rdadmp,1,5,gpt-5.1,0.5,True,,32.615,28.74,2.99,14.307,11.0,0.308,7.0
+g22-rdadmp,1,6,gpt-5.1,0.5,True,,36.621,41.37,2.76,11.307,15.0,0.314,10.0
+g22-rdadmp,1,7,gpt-5.1,0.5,True,,41.465,36.26,2.85,13.085,16.0,0.38,12.0
+g22-rdadmp,1,8,gpt-5.1,0.5,True,,42.85,43.24,2.75,10.693,19.0,0.157,13.0
+g22-rdadmp,1,9,gpt-5.1,0.5,True,,38.351,36.53,2.93,11.061,16.0,0.29,11.0
+g22-rdadmp,2,0,gpt-5.1,0.5,True,,32.615,0.0,0.0,14.307,11.0,0.308,7.0
+g22-rdadmp,2,1,gpt-5.1,0.5,True,,36.621,0.0,0.0,11.307,15.0,0.314,10.0
+g22-rdadmp,2,2,gpt-5.1,0.5,True,,38.351,0.0,0.0,11.061,16.0,0.29,11.0
+g22-rdadmp,2,3,gpt-5.1,0.5,True,,40.611,0.0,0.0,7.292,24.0,0.319,9.0
+g22-rdadmp,2,4,gpt-5.1,0.5,True,,41.465,0.0,0.0,13.085,16.0,0.38,12.0
+g22-rdadmp,2,5,gpt-5.1,0.5,True,,49.522999999999996,38.93,2.64,29.255,6.0,0.268,14.0
+g22-rdadmp,2,6,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,57.87,0.0,,,,
+g22-rdadmp,2,7,gpt-5.1,0.5,True,,42.79,48.45,2.99,29.521,5.0,0.269,8.0
+g22-rdadmp,2,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,48.95,0.0,,,,
+g22-rdadmp,2,9,gpt-5.1,0.5,True,,59.552,68.33,2.96,38.381,5.0,0.171,16.0
+g22-rdadmp,3,0,gpt-5.1,0.5,True,,32.615,0.0,0.0,14.307,11.0,0.308,7.0
+g22-rdadmp,3,1,gpt-5.1,0.5,True,,36.621,0.0,0.0,11.307,15.0,0.314,10.0
+g22-rdadmp,3,2,gpt-5.1,0.5,True,,38.351,0.0,0.0,11.061,16.0,0.29,11.0
+g22-rdadmp,3,3,gpt-5.1,0.5,True,,40.611,0.0,0.0,7.292,24.0,0.319,9.0
+g22-rdadmp,3,4,gpt-5.1,0.5,True,,41.465,0.0,0.0,13.085,16.0,0.38,12.0
+g22-rdadmp,3,5,gpt-5.1,0.5,True,,48.794,67.4,2.81,26.528,5.0,0.266,17.0
+g22-rdadmp,3,6,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,57.88,0.0,,,,
+g22-rdadmp,3,7,gpt-5.1,0.5,True,,57.13,49.39,3.06,32.898,5.0,0.232,19.0
+g22-rdadmp,3,8,gpt-5.1,0.5,True,,55.473,48.48,2.95,35.187,5.0,0.286,15.0
+g22-rdadmp,3,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,53.16,0.0,,,,
+g22-rdadmp,4,0,gpt-5.1,0.5,True,,32.615,0.0,0.0,14.307,11.0,0.308,7.0
+g22-rdadmp,4,1,gpt-5.1,0.5,True,,36.621,0.0,0.0,11.307,15.0,0.314,10.0
+g22-rdadmp,4,2,gpt-5.1,0.5,True,,38.351,0.0,0.0,11.061,16.0,0.29,11.0
+g22-rdadmp,4,3,gpt-5.1,0.5,True,,40.611,0.0,0.0,7.292,24.0,0.319,9.0
+g22-rdadmp,4,4,gpt-5.1,0.5,True,,41.465,0.0,0.0,13.085,16.0,0.38,12.0
+g22-rdadmp,4,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,53.65,0.0,,,,
+g22-rdadmp,4,6,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,46.95,0.0,,,,
+g22-rdadmp,4,7,gpt-5.1,0.5,True,,60.36,38.19,2.79,37.122,6.0,0.238,17.0
+g22-rdadmp,4,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,94.86,0.0,,,,
+g22-rdadmp,4,9,gpt-5.1,0.5,False,Unknown callee: ReportingAndAnalytics,,74.9,2.76,,,,
+g22-rdadmp,5,0,gpt-5.1,0.5,True,,32.615,0.0,0.0,14.307,11.0,0.308,7.0
+g22-rdadmp,5,1,gpt-5.1,0.5,True,,36.621,0.0,0.0,11.307,15.0,0.314,10.0
+g22-rdadmp,5,2,gpt-5.1,0.5,True,,38.351,0.0,0.0,11.061,16.0,0.29,11.0
+g22-rdadmp,5,3,gpt-5.1,0.5,True,,40.611,0.0,0.0,7.292,24.0,0.319,9.0
+g22-rdadmp,5,4,gpt-5.1,0.5,True,,41.465,0.0,0.0,13.085,16.0,0.38,12.0
+g22-rdadmp,5,5,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,59.06,0.0,,,,
+g22-rdadmp,5,6,gpt-5.1,0.5,True,,58.379000000000005,33.71,3.06,35.151,6.0,0.228,17.0
+g22-rdadmp,5,7,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,65.15,0.0,,,,
+g22-rdadmp,5,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,50.9,0.0,,,,
+g22-rdadmp,5,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,56.3,0.0,,,,
+g23-archivesspace,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.38,0.0,,,,
+g23-archivesspace,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g23-archivesspace,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g23-archivesspace,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g23-archivesspace,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g23-archivesspace,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g23-archivesspace,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g23-archivesspace,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g23-archivesspace,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g23-archivesspace,5,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g23-archivesspace,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g23-archivesspace,1,0,gpt-5.1,0.5,True,,42.235,24.81,3.33,8.914,28.0,0.321,5.0
+g23-archivesspace,1,1,gpt-5.1,0.5,True,,27.926000000000002,19.5,3.06,6.722,13.0,0.204,8.0
+g23-archivesspace,1,2,gpt-5.1,0.5,True,,45.467,30.16,5.93,9.107,28.0,0.36,8.0
+g23-archivesspace,1,3,gpt-5.1,0.5,True,,29.148,27.69,2.2,8.013,12.0,0.135,9.0
+g23-archivesspace,1,4,gpt-5.1,0.5,True,,20.762999999999998,38.46,2.87,5.68,11.0,0.083,4.0
+g23-archivesspace,1,5,gpt-5.1,0.5,True,,37.884,25.3,2.91,5.445,27.0,0.439,5.0
+g23-archivesspace,1,6,gpt-5.1,0.5,True,,30.519,25.29,2.9,6.068,18.0,0.451,6.0
+g23-archivesspace,1,7,gpt-5.1,0.5,True,,42.327,31.44,5.83,7.917,28.0,0.41,6.0
+g23-archivesspace,1,8,gpt-5.1,0.5,True,,33.545,33.12,2.89,11.299,11.0,0.246,11.0
+g23-archivesspace,1,9,gpt-5.1,0.5,True,,35.324,30.79,1.78,10.189,12.0,0.135,13.0
+g23-archivesspace,2,0,gpt-5.1,0.5,True,,20.762999999999998,0.0,0.0,5.68,11.0,0.083,4.0
+g23-archivesspace,2,1,gpt-5.1,0.5,True,,27.926000000000002,0.0,0.0,6.722,13.0,0.204,8.0
+g23-archivesspace,2,2,gpt-5.1,0.5,True,,29.148,0.0,0.0,8.013,12.0,0.135,9.0
+g23-archivesspace,2,3,gpt-5.1,0.5,True,,30.519,0.0,0.0,6.068,18.0,0.451,6.0
+g23-archivesspace,2,4,gpt-5.1,0.5,True,,33.545,0.0,0.0,11.299,11.0,0.246,11.0
+g23-archivesspace,2,5,gpt-5.1,0.5,True,,29.705000000000002,25.27,2.91,17.533,5.0,0.172,7.0
+g23-archivesspace,2,6,gpt-5.1,0.5,True,,24.878,29.51,2.86,12.817,4.0,0.061,8.0
+g23-archivesspace,2,7,gpt-5.1,0.5,True,,26.997,26.35,2.5,14.907,5.0,0.09,7.0
+g23-archivesspace,2,8,gpt-5.1,0.5,True,,18.451,30.32,1.92,10.375,4.0,0.076,4.0
+g23-archivesspace,2,9,gpt-5.1,0.5,True,,25.769,46.52,2.82,12.654,4.0,0.115,9.0
+g23-archivesspace,3,0,gpt-5.1,0.5,True,,18.451,0.0,0.0,10.375,4.0,0.076,4.0
+g23-archivesspace,3,1,gpt-5.1,0.5,True,,20.762999999999998,0.0,0.0,5.68,11.0,0.083,4.0
+g23-archivesspace,3,2,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,3,3,gpt-5.1,0.5,True,,25.769,0.0,0.0,12.654,4.0,0.115,9.0
+g23-archivesspace,3,4,gpt-5.1,0.5,True,,26.997,0.0,0.0,14.907,5.0,0.09,7.0
+g23-archivesspace,3,5,gpt-5.1,0.5,True,,24.878,59.31,2.78,12.817,4.0,0.061,8.0
+g23-archivesspace,3,6,gpt-5.1,0.5,True,,28.733999999999998,27.04,2.8,14.636,4.0,0.098,10.0
+g23-archivesspace,3,7,gpt-5.1,0.5,True,,24.878,42.25,2.89,12.817,4.0,0.061,8.0
+g23-archivesspace,3,8,gpt-5.1,0.5,True,,26.01,42.17,2.97,13.922,4.0,0.088,8.0
+g23-archivesspace,3,9,gpt-5.1,0.5,True,,26.766,27.26,2.94,15.674,5.0,0.092,6.0
+g23-archivesspace,4,0,gpt-5.1,0.5,True,,18.451,0.0,0.0,10.375,4.0,0.076,4.0
+g23-archivesspace,4,1,gpt-5.1,0.5,True,,20.762999999999998,0.0,0.0,5.68,11.0,0.083,4.0
+g23-archivesspace,4,2,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,4,3,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,4,4,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,4,5,gpt-5.1,0.5,True,,24.878,40.38,2.92,12.817,4.0,0.061,8.0
+g23-archivesspace,4,6,gpt-5.1,0.5,True,,25.177,16.87,1.44,13.116,4.0,0.061,8.0
+g23-archivesspace,4,7,gpt-5.1,0.5,True,,24.982,23.13,2.8,12.926,4.0,0.056,8.0
+g23-archivesspace,4,8,gpt-5.1,0.5,True,,24.878,60.83,2.79,12.817,4.0,0.061,8.0
+g23-archivesspace,4,9,gpt-5.1,0.5,True,,25.323,45.02,2.66,13.247,4.0,0.076,8.0
+g23-archivesspace,5,0,gpt-5.1,0.5,True,,18.451,0.0,0.0,10.375,4.0,0.076,4.0
+g23-archivesspace,5,1,gpt-5.1,0.5,True,,20.762999999999998,0.0,0.0,5.68,11.0,0.083,4.0
+g23-archivesspace,5,2,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,5,3,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,5,4,gpt-5.1,0.5,True,,24.878,0.0,0.0,12.817,4.0,0.061,8.0
+g23-archivesspace,5,5,gpt-5.1,0.5,True,,24.869,40.01,2.92,12.788,4.0,0.081,8.0
+g23-archivesspace,5,6,gpt-5.1,0.5,True,,24.878,35.28,2.81,12.817,4.0,0.061,8.0
+g23-archivesspace,5,7,gpt-5.1,0.5,True,,24.878,33.01,2.94,12.817,4.0,0.061,8.0
+g23-archivesspace,5,8,gpt-5.1,0.5,True,,25.917,24.53,2.76,12.858,5.0,0.059,8.0
+g23-archivesspace,5,9,gpt-5.1,0.5,True,,24.878,18.87,2.39,12.817,4.0,0.061,8.0
+g24-unibath,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.37,0.0,,,,
+g24-unibath,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g24-unibath,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g24-unibath,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g24-unibath,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g24-unibath,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g24-unibath,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g24-unibath,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g24-unibath,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g24-unibath,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g24-unibath,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g24-unibath,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g24-unibath,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g24-unibath,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,5,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g24-unibath,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g24-unibath,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g24-unibath,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.12,0.0,,,,
+g24-unibath,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.12,0.0,,,,
+g24-unibath,1,0,gpt-5.1,0.5,True,,32.853,30.94,3.01,10.602,13.0,0.251,9.0
+g24-unibath,1,1,gpt-5.1,0.5,True,,32.858000000000004,28.83,3.16,11.435,15.0,0.423,6.0
+g24-unibath,1,2,gpt-5.1,0.5,True,,30.094,40.45,3.05,7.836,15.0,0.258,7.0
+g24-unibath,1,3,gpt-5.1,0.5,True,,37.867999999999995,40.98,5.78,11.369,17.0,0.499,9.0
+g24-unibath,1,4,gpt-5.1,0.5,True,,35.408,27.59,2.75,9.951,17.0,0.457,8.0
+g24-unibath,1,5,gpt-5.1,0.5,True,,41.632,39.64,2.71,13.362,19.0,0.27,9.0
+g24-unibath,1,6,gpt-5.1,0.5,True,,33.827,56.04,2.55,8.516,18.0,0.311,7.0
+g24-unibath,1,7,gpt-5.1,0.5,True,,36.692,43.81,2.85,12.527,13.0,0.165,11.0
+g24-unibath,1,8,gpt-5.1,0.5,True,,36.447,51.73,2.8,12.02,14.0,0.427,10.0
+g24-unibath,1,9,gpt-5.1,0.5,True,,33.079,41.77,2.99,11.873,13.0,0.206,8.0
+g24-unibath,2,0,gpt-5.1,0.5,True,,30.094,0.0,0.0,7.836,15.0,0.258,7.0
+g24-unibath,2,1,gpt-5.1,0.5,True,,32.853,0.0,0.0,10.602,13.0,0.251,9.0
+g24-unibath,2,2,gpt-5.1,0.5,True,,32.858000000000004,0.0,0.0,11.435,15.0,0.423,6.0
+g24-unibath,2,3,gpt-5.1,0.5,True,,33.079,0.0,0.0,11.873,13.0,0.206,8.0
+g24-unibath,2,4,gpt-5.1,0.5,True,,33.827,0.0,0.0,8.516,18.0,0.311,7.0
+g24-unibath,2,5,gpt-5.1,0.5,False,Self-call: DownloadAndAccessLogging,,68.92,2.77,,,,
+g24-unibath,2,6,gpt-5.1,0.5,True,,40.992000000000004,53.62,2.86,22.687,5.0,0.305,13.0
+g24-unibath,2,7,gpt-5.1,0.5,True,,43.573,61.08,3.38,25.357,5.0,0.216,13.0
+g24-unibath,2,8,gpt-5.1,0.5,True,,42.634,69.88,2.83,26.423,5.0,0.211,11.0
+g24-unibath,2,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,47.71,0.0,,,,
+g24-unibath,3,0,gpt-5.1,0.5,True,,30.094,0.0,0.0,7.836,15.0,0.258,7.0
+g24-unibath,3,1,gpt-5.1,0.5,True,,32.853,0.0,0.0,10.602,13.0,0.251,9.0
+g24-unibath,3,2,gpt-5.1,0.5,True,,32.858000000000004,0.0,0.0,11.435,15.0,0.423,6.0
+g24-unibath,3,3,gpt-5.1,0.5,True,,33.079,0.0,0.0,11.873,13.0,0.206,8.0
+g24-unibath,3,4,gpt-5.1,0.5,True,,33.827,0.0,0.0,8.516,18.0,0.311,7.0
+g24-unibath,3,5,gpt-5.1,0.5,False,Self-call: AuthIdentity,,38.94,2.88,,,,
+g24-unibath,3,6,gpt-5.1,0.5,True,,48.674,54.13,2.82,24.436,5.0,0.238,19.0
+g24-unibath,3,7,gpt-5.1,0.5,True,,36.614,30.37,1.23,25.383,5.0,0.231,6.0
+g24-unibath,3,8,gpt-5.1,0.5,True,,35.134,40.89,2.83,19.857,5.0,0.277,10.0
+g24-unibath,3,9,gpt-5.1,0.5,True,,36.655,50.2,3.78,18.465,5.0,0.19,13.0
+g24-unibath,4,0,gpt-5.1,0.5,True,,30.094,0.0,0.0,7.836,15.0,0.258,7.0
+g24-unibath,4,1,gpt-5.1,0.5,True,,32.853,0.0,0.0,10.602,13.0,0.251,9.0
+g24-unibath,4,2,gpt-5.1,0.5,True,,32.858000000000004,0.0,0.0,11.435,15.0,0.423,6.0
+g24-unibath,4,3,gpt-5.1,0.5,True,,33.079,0.0,0.0,11.873,13.0,0.206,8.0
+g24-unibath,4,4,gpt-5.1,0.5,True,,33.827,0.0,0.0,8.516,18.0,0.311,7.0
+g24-unibath,4,5,gpt-5.1,0.5,True,,38.82,46.53,2.97,23.58,5.0,0.24,10.0
+g24-unibath,4,6,gpt-5.1,0.5,True,,33.444,42.67,2.94,19.163,5.0,0.281,9.0
+g24-unibath,4,7,gpt-5.1,0.5,True,,32.783,40.88,2.83,18.538,5.0,0.245,9.0
+g24-unibath,4,8,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,50.2,0.0,,,,
+g24-unibath,4,9,gpt-5.1,0.5,True,,38.305,29.14,3.45,21.12,5.0,0.185,12.0
+g24-unibath,5,0,gpt-5.1,0.5,True,,30.094,0.0,0.0,7.836,15.0,0.258,7.0
+g24-unibath,5,1,gpt-5.1,0.5,True,,32.783,0.0,0.0,18.538,5.0,0.245,9.0
+g24-unibath,5,2,gpt-5.1,0.5,True,,32.853,0.0,0.0,10.602,13.0,0.251,9.0
+g24-unibath,5,3,gpt-5.1,0.5,True,,32.858000000000004,0.0,0.0,11.435,15.0,0.423,6.0
+g24-unibath,5,4,gpt-5.1,0.5,True,,33.079,0.0,0.0,11.873,13.0,0.206,8.0
+g24-unibath,5,5,gpt-5.1,0.5,True,,32.938,38.56,2.74,18.695,5.0,0.243,9.0
+g24-unibath,5,6,gpt-5.1,0.5,True,,33.997,53.47,2.74,19.727,5.0,0.27,9.0
+g24-unibath,5,7,gpt-5.1,0.5,True,,32.797,70.21,2.78,18.538,5.0,0.259,9.0
+g24-unibath,5,8,gpt-5.1,0.5,True,,32.783,42.65,2.78,18.538,5.0,0.245,9.0
+g24-unibath,5,9,gpt-5.1,0.5,True,,33.43,48.14,2.94,18.189,5.0,0.241,10.0
+g25-duraspace,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.37,0.0,,,,
+g25-duraspace,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.23,0.0,,,,
+g25-duraspace,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.27,0.0,,,,
+g25-duraspace,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g25-duraspace,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.21,0.0,,,,
+g25-duraspace,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g25-duraspace,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g25-duraspace,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.21,0.0,,,,
+g25-duraspace,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g25-duraspace,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g25-duraspace,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g25-duraspace,5,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g25-duraspace,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g25-duraspace,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g25-duraspace,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g25-duraspace,1,0,gpt-5.1,0.5,True,,40.787,44.81,2.87,9.567,24.0,0.22,7.0
+g25-duraspace,1,1,gpt-5.1,0.5,True,,46.509,40.2,2.93,16.289,19.0,0.22,11.0
+g25-duraspace,1,2,gpt-5.1,0.5,True,,57.97,63.37,2.82,14.695,31.0,0.275,12.0
+g25-duraspace,1,3,gpt-5.1,0.5,True,,60.675,70.88,2.79,20.354,26.0,0.321,14.0
+g25-duraspace,1,4,gpt-5.1,0.5,True,,54.541000000000004,57.64,2.76,15.185,28.0,0.356,11.0
+g25-duraspace,1,5,gpt-5.1,0.5,True,,61.748000000000005,55.94,5.77,18.443,27.0,0.305,16.0
+g25-duraspace,1,6,gpt-5.1,0.5,True,,74.118,56.3,2.68,19.798,40.0,0.32,14.0
+g25-duraspace,1,7,gpt-5.1,0.5,True,,56.921,57.17,2.74,22.806,23.0,0.115,11.0
+g25-duraspace,1,8,gpt-5.1,0.5,True,,60.637,77.37,2.83,16.307,30.0,0.33,14.0
+g25-duraspace,1,9,gpt-5.1,0.5,True,,53.207,44.98,2.78,17.829,24.0,0.378,11.0
+g25-duraspace,2,0,gpt-5.1,0.5,True,,40.787,0.0,0.0,9.567,24.0,0.22,7.0
+g25-duraspace,2,1,gpt-5.1,0.5,True,,46.509,0.0,0.0,16.289,19.0,0.22,11.0
+g25-duraspace,2,2,gpt-5.1,0.5,True,,53.207,0.0,0.0,17.829,24.0,0.378,11.0
+g25-duraspace,2,3,gpt-5.1,0.5,True,,54.541000000000004,0.0,0.0,15.185,28.0,0.356,11.0
+g25-duraspace,2,4,gpt-5.1,0.5,True,,56.921,0.0,0.0,22.806,23.0,0.115,11.0
+g25-duraspace,2,5,gpt-5.1,0.5,True,,44.434,33.43,2.99,29.261,7.0,0.173,8.0
+g25-duraspace,2,6,gpt-5.1,0.5,True,,42.691,37.97,2.84,29.467,5.0,0.224,8.0
+g25-duraspace,2,7,gpt-5.1,0.5,True,,37.419,27.96,2.76,27.22,5.0,0.199,5.0
+g25-duraspace,2,8,gpt-5.1,0.5,True,,41.419,31.23,2.81,23.183,8.0,0.236,10.0
+g25-duraspace,2,9,gpt-5.1,0.5,True,,59.943,48.68,2.85,25.806,22.0,0.137,12.0
+g25-duraspace,3,0,gpt-5.1,0.5,True,,37.419,0.0,0.0,27.22,5.0,0.199,5.0
+g25-duraspace,3,1,gpt-5.1,0.5,True,,40.787,0.0,0.0,9.567,24.0,0.22,7.0
+g25-duraspace,3,2,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,3,3,gpt-5.1,0.5,True,,42.691,0.0,0.0,29.467,5.0,0.224,8.0
+g25-duraspace,3,4,gpt-5.1,0.5,True,,44.434,0.0,0.0,29.261,7.0,0.173,8.0
+g25-duraspace,3,5,gpt-5.1,0.5,True,,41.419,24.16,5.2,23.183,8.0,0.236,10.0
+g25-duraspace,3,6,gpt-5.1,0.5,True,,44.061,38.48,2.94,29.88,5.0,0.181,9.0
+g25-duraspace,3,7,gpt-5.1,0.5,True,,46.833,31.78,5.83,26.579,10.0,0.254,10.0
+g25-duraspace,3,8,gpt-5.1,0.5,True,,41.419,30.63,2.1,23.183,8.0,0.236,10.0
+g25-duraspace,3,9,gpt-5.1,0.5,True,,44.353,43.67,2.77,29.169,5.0,0.184,10.0
+g25-duraspace,4,0,gpt-5.1,0.5,True,,37.419,0.0,0.0,27.22,5.0,0.199,5.0
+g25-duraspace,4,1,gpt-5.1,0.5,True,,40.787,0.0,0.0,9.567,24.0,0.22,7.0
+g25-duraspace,4,2,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,4,3,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,4,4,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,4,5,gpt-5.1,0.5,True,,41.419,25.04,2.95,23.183,8.0,0.236,10.0
+g25-duraspace,4,6,gpt-5.1,0.5,True,,41.419,30.01,2.14,23.183,8.0,0.236,10.0
+g25-duraspace,4,7,gpt-5.1,0.5,True,,41.419,28.56,5.9,23.183,8.0,0.236,10.0
+g25-duraspace,4,8,gpt-5.1,0.5,True,,41.419,42.63,2.49,23.183,8.0,0.236,10.0
+g25-duraspace,4,9,gpt-5.1,0.5,True,,41.419,36.99,2.52,23.183,8.0,0.236,10.0
+g25-duraspace,5,0,gpt-5.1,0.5,True,,37.419,0.0,0.0,27.22,5.0,0.199,5.0
+g25-duraspace,5,1,gpt-5.1,0.5,True,,40.787,0.0,0.0,9.567,24.0,0.22,7.0
+g25-duraspace,5,2,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,5,3,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,5,4,gpt-5.1,0.5,True,,41.419,0.0,0.0,23.183,8.0,0.236,10.0
+g25-duraspace,5,5,gpt-5.1,0.5,True,,44.196,30.4,2.9,25.983,8.0,0.213,10.0
+g25-duraspace,5,6,gpt-5.1,0.5,True,,39.819,51.7,2.74,28.685,5.0,0.134,6.0
+g25-duraspace,5,7,gpt-5.1,0.5,True,,41.419,40.62,2.63,23.183,8.0,0.236,10.0
+g25-duraspace,5,8,gpt-5.1,0.5,True,,46.739000000000004,48.82,2.73,28.553,8.0,0.186,10.0
+g25-duraspace,5,9,gpt-5.1,0.5,True,,45.298,55.33,2.76,29.17,7.0,0.128,9.0
+g26-racdam,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.91,0.0,,,,
+g26-racdam,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g26-racdam,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g26-racdam,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g26-racdam,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g26-racdam,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g26-racdam,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.23,0.0,,,,
+g26-racdam,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,5,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g26-racdam,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g26-racdam,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.2,0.0,,,,
+g26-racdam,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g26-racdam,1,0,gpt-5.1,0.5,True,,33.028,41.28,2.92,9.591,20.0,0.437,3.0
+g26-racdam,1,1,gpt-5.1,0.5,True,,29.9,42.43,2.98,8.401,18.0,0.499,3.0
+g26-racdam,1,2,gpt-5.1,0.5,True,,35.987,59.27,2.84,13.594,17.0,0.393,5.0
+g26-racdam,1,3,gpt-5.1,0.5,True,,36.153999999999996,60.27,2.78,10.758,21.0,0.396,4.0
+g26-racdam,1,4,gpt-5.1,0.5,True,,39.264,68.81,2.84,6.85,27.0,0.414,5.0
+g26-racdam,1,5,gpt-5.1,0.5,True,,33.150000000000006,38.85,2.94,9.823,18.0,0.327,5.0
+g26-racdam,1,6,gpt-5.1,0.5,True,,34.39,48.15,2.9,9.996,20.0,0.394,4.0
+g26-racdam,1,7,gpt-5.1,0.5,True,,29.686999999999998,41.45,2.92,7.391,19.0,0.296,3.0
+g26-racdam,1,8,gpt-5.1,0.5,True,,37.489000000000004,38.3,2.79,16.263,15.0,0.226,6.0
+g26-racdam,1,9,gpt-5.1,0.5,True,,28.866,37.58,2.83,7.583,17.0,0.283,4.0
+g26-racdam,2,0,gpt-5.1,0.5,True,,28.866,0.0,0.0,7.583,17.0,0.283,4.0
+g26-racdam,2,1,gpt-5.1,0.5,True,,29.686999999999998,0.0,0.0,7.391,19.0,0.296,3.0
+g26-racdam,2,2,gpt-5.1,0.5,True,,29.9,0.0,0.0,8.401,18.0,0.499,3.0
+g26-racdam,2,3,gpt-5.1,0.5,True,,33.028,0.0,0.0,9.591,20.0,0.437,3.0
+g26-racdam,2,4,gpt-5.1,0.5,True,,33.150000000000006,0.0,0.0,9.823,18.0,0.327,5.0
+g26-racdam,2,5,gpt-5.1,0.5,True,,27.243,60.0,2.72,16.933,5.0,0.31,5.0
+g26-racdam,2,6,gpt-5.1,0.5,True,,27.104999999999997,38.31,2.86,12.767,10.0,0.338,4.0
+g26-racdam,2,7,gpt-5.1,0.5,True,,23.461000000000002,52.89,2.8,14.162,5.0,0.299,4.0
+g26-racdam,2,8,gpt-5.1,0.5,True,,29.506,57.4,2.82,19.207,5.0,0.299,5.0
+g26-racdam,2,9,gpt-5.1,0.5,True,,27.731,32.4,2.36,14.318,8.0,0.413,5.0
+g26-racdam,3,0,gpt-5.1,0.5,True,,23.461000000000002,0.0,0.0,14.162,5.0,0.299,4.0
+g26-racdam,3,1,gpt-5.1,0.5,True,,27.104999999999997,0.0,0.0,12.767,10.0,0.338,4.0
+g26-racdam,3,2,gpt-5.1,0.5,True,,27.243,0.0,0.0,16.933,5.0,0.31,5.0
+g26-racdam,3,3,gpt-5.1,0.5,True,,27.731,0.0,0.0,14.318,8.0,0.413,5.0
+g26-racdam,3,4,gpt-5.1,0.5,True,,28.866,0.0,0.0,7.583,17.0,0.283,4.0
+g26-racdam,3,5,gpt-5.1,0.5,True,,27.76,54.28,2.81,17.44,5.0,0.32,5.0
+g26-racdam,3,6,gpt-5.1,0.5,True,,29.522,35.24,2.89,18.246,6.0,0.276,5.0
+g26-racdam,3,7,gpt-5.1,0.5,True,,27.243,34.26,5.83,16.933,5.0,0.31,5.0
+g26-racdam,3,8,gpt-5.1,0.5,True,,29.425,60.64,2.82,19.123,5.0,0.302,5.0
+g26-racdam,3,9,gpt-5.1,0.5,True,,27.243,32.7,2.9,16.933,5.0,0.31,5.0
+g26-racdam,4,0,gpt-5.1,0.5,True,,23.461000000000002,0.0,0.0,14.162,5.0,0.299,4.0
+g26-racdam,4,1,gpt-5.1,0.5,True,,27.104999999999997,0.0,0.0,12.767,10.0,0.338,4.0
+g26-racdam,4,2,gpt-5.1,0.5,True,,27.243,0.0,0.0,16.933,5.0,0.31,5.0
+g26-racdam,4,3,gpt-5.1,0.5,True,,27.243,0.0,0.0,16.933,5.0,0.31,5.0
+g26-racdam,4,4,gpt-5.1,0.5,True,,27.243,0.0,0.0,16.933,5.0,0.31,5.0
+g26-racdam,4,5,gpt-5.1,0.5,True,,27.243,44.69,2.72,16.933,5.0,0.31,5.0
+g26-racdam,4,6,gpt-5.1,0.5,True,,27.243,30.96,2.88,16.933,5.0,0.31,5.0
+g26-racdam,4,7,gpt-5.1,0.5,True,,27.006,55.06,2.78,16.704,5.0,0.302,5.0
+g26-racdam,4,8,gpt-5.1,0.5,True,,27.793,35.27,2.99,17.476,5.0,0.317,5.0
+g26-racdam,4,9,gpt-5.1,0.5,True,,27.243,28.63,2.82,16.933,5.0,0.31,5.0
+g26-racdam,5,0,gpt-5.1,0.5,True,,23.461000000000002,0.0,0.0,14.162,5.0,0.299,4.0
+g26-racdam,5,1,gpt-5.1,0.5,True,,27.006,0.0,0.0,16.704,5.0,0.302,5.0
+g26-racdam,5,2,gpt-5.1,0.5,True,,27.104999999999997,0.0,0.0,12.767,10.0,0.338,4.0
+g26-racdam,5,3,gpt-5.1,0.5,True,,27.243,0.0,0.0,16.933,5.0,0.31,5.0
+g26-racdam,5,4,gpt-5.1,0.5,True,,27.243,0.0,0.0,16.933,5.0,0.31,5.0
+g26-racdam,5,5,gpt-5.1,0.5,True,,27.006,37.12,3.48,16.704,5.0,0.302,5.0
+g26-racdam,5,6,gpt-5.1,0.5,True,,27.129,31.19,2.65,16.829,5.0,0.3,5.0
+g26-racdam,5,7,gpt-5.1,0.5,True,,26.998,47.1,2.95,16.704,5.0,0.294,5.0
+g26-racdam,5,8,gpt-5.1,0.5,True,,27.006,56.38,2.88,16.704,5.0,0.302,5.0
+g26-racdam,5,9,gpt-5.1,0.5,True,,27.006,31.75,2.97,16.704,5.0,0.302,5.0
+g27-culrepo,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.43,0.0,,,,
+g27-culrepo,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g27-culrepo,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g27-culrepo,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.21,0.0,,,,
+g27-culrepo,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g27-culrepo,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g27-culrepo,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.2,0.0,,,,
+g27-culrepo,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.25,0.0,,,,
+g27-culrepo,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.2,0.0,,,,
+g27-culrepo,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.26,0.0,,,,
+g27-culrepo,2,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g27-culrepo,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g27-culrepo,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g27-culrepo,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g27-culrepo,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g27-culrepo,3,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g27-culrepo,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,4,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g27-culrepo,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g27-culrepo,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.25,0.0,,,,
+g27-culrepo,5,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g27-culrepo,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g27-culrepo,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.24,0.0,,,,
+g27-culrepo,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g27-culrepo,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g27-culrepo,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.25,0.0,,,,
+g27-culrepo,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g27-culrepo,1,0,gpt-5.1,0.5,True,,45.06,62.64,3.32,24.613,15.0,0.447,5.0
+g27-culrepo,1,1,gpt-5.1,0.5,True,,64.289,76.13,2.86,25.896,30.0,0.393,8.0
+g27-culrepo,1,2,gpt-5.1,0.5,True,,49.641000000000005,61.46,3.06,17.123,25.0,0.518,7.0
+g27-culrepo,1,3,gpt-5.1,0.5,True,,53.523,54.49,2.95,14.99,29.0,0.533,9.0
+g27-culrepo,1,4,gpt-5.1,0.5,True,,41.072,44.97,2.88,23.619,13.0,0.453,4.0
+g27-culrepo,1,5,gpt-5.1,0.5,True,,65.62299999999999,89.11,2.81,25.177,33.0,0.446,7.0
+g27-culrepo,1,6,gpt-5.1,0.5,True,,64.66499999999999,88.12,2.83,32.418,15.0,0.247,17.0
+g27-culrepo,1,7,gpt-5.1,0.5,True,,48.009,75.03,2.75,19.637,20.0,0.372,8.0
+g27-culrepo,1,8,gpt-5.1,0.5,True,,45.292,103.13,2.99,25.805,13.0,0.487,6.0
+g27-culrepo,1,9,gpt-5.1,0.5,True,,43.936,84.36,2.98,22.622,14.0,0.314,7.0
+g27-culrepo,2,0,gpt-5.1,0.5,True,,41.072,0.0,0.0,23.619,13.0,0.453,4.0
+g27-culrepo,2,1,gpt-5.1,0.5,True,,43.936,0.0,0.0,22.622,14.0,0.314,7.0
+g27-culrepo,2,2,gpt-5.1,0.5,True,,45.06,0.0,0.0,24.613,15.0,0.447,5.0
+g27-culrepo,2,3,gpt-5.1,0.5,True,,45.292,0.0,0.0,25.805,13.0,0.487,6.0
+g27-culrepo,2,4,gpt-5.1,0.5,True,,48.009,0.0,0.0,19.637,20.0,0.372,8.0
+g27-culrepo,2,5,gpt-5.1,0.5,True,,44.62,37.01,5.89,34.282,5.0,0.338,5.0
+g27-culrepo,2,6,gpt-5.1,0.5,True,,54.816,50.48,2.39,43.47,5.0,0.346,6.0
+g27-culrepo,2,7,gpt-5.1,0.5,True,,53.882,46.59,2.93,41.471,5.0,0.411,7.0
+g27-culrepo,2,8,gpt-5.1,0.5,True,,46.54600000000001,47.71,3.36,36.197,5.0,0.349,5.0
+g27-culrepo,2,9,gpt-5.1,0.5,True,,54.394000000000005,58.47,2.85,44.066,5.0,0.328,5.0
+g27-culrepo,3,0,gpt-5.1,0.5,True,,41.072,0.0,0.0,23.619,13.0,0.453,4.0
+g27-culrepo,3,1,gpt-5.1,0.5,True,,43.936,0.0,0.0,22.622,14.0,0.314,7.0
+g27-culrepo,3,2,gpt-5.1,0.5,True,,44.62,0.0,0.0,34.282,5.0,0.338,5.0
+g27-culrepo,3,3,gpt-5.1,0.5,True,,45.06,0.0,0.0,24.613,15.0,0.447,5.0
+g27-culrepo,3,4,gpt-5.1,0.5,True,,45.292,0.0,0.0,25.805,13.0,0.487,6.0
+g27-culrepo,3,5,gpt-5.1,0.5,True,,55.456,45.46,2.88,43.107,5.0,0.349,7.0
+g27-culrepo,3,6,gpt-5.1,0.5,True,,49.676,38.73,2.82,37.335,5.0,0.341,7.0
+g27-culrepo,3,7,gpt-5.1,0.5,True,,49.216,71.08,2.77,36.874,5.0,0.342,7.0
+g27-culrepo,3,8,gpt-5.1,0.5,True,,45.62,70.18,3.31,34.282,5.0,0.338,6.0
+g27-culrepo,3,9,gpt-5.1,0.5,True,,44.141,59.51,2.75,33.811,5.0,0.33,5.0
+g27-culrepo,4,0,gpt-5.1,0.5,True,,41.072,0.0,0.0,23.619,13.0,0.453,4.0
+g27-culrepo,4,1,gpt-5.1,0.5,True,,43.936,0.0,0.0,22.622,14.0,0.314,7.0
+g27-culrepo,4,2,gpt-5.1,0.5,True,,44.141,0.0,0.0,33.811,5.0,0.33,5.0
+g27-culrepo,4,3,gpt-5.1,0.5,True,,44.62,0.0,0.0,34.282,5.0,0.338,5.0
+g27-culrepo,4,4,gpt-5.1,0.5,True,,45.06,0.0,0.0,24.613,15.0,0.447,5.0
+g27-culrepo,4,5,gpt-5.1,0.5,True,,48.531,55.28,2.76,37.217,5.0,0.314,6.0
+g27-culrepo,4,6,gpt-5.1,0.5,True,,46.665,51.96,2.66,35.332,5.0,0.333,6.0
+g27-culrepo,4,7,gpt-5.1,0.5,True,,44.864999999999995,48.99,2.62,33.519,5.0,0.346,6.0
+g27-culrepo,4,8,gpt-5.1,0.5,True,,46.073,34.09,2.73,35.743,5.0,0.33,5.0
+g27-culrepo,4,9,gpt-5.1,0.5,True,,44.141,56.81,2.82,33.811,5.0,0.33,5.0
+g27-culrepo,5,0,gpt-5.1,0.5,True,,41.072,0.0,0.0,23.619,13.0,0.453,4.0
+g27-culrepo,5,1,gpt-5.1,0.5,True,,43.936,0.0,0.0,22.622,14.0,0.314,7.0
+g27-culrepo,5,2,gpt-5.1,0.5,True,,44.141,0.0,0.0,33.811,5.0,0.33,5.0
+g27-culrepo,5,3,gpt-5.1,0.5,True,,44.141,0.0,0.0,33.811,5.0,0.33,5.0
+g27-culrepo,5,4,gpt-5.1,0.5,True,,44.62,0.0,0.0,34.282,5.0,0.338,5.0
+g27-culrepo,5,5,gpt-5.1,0.5,True,,45.734,28.19,2.9,35.401,5.0,0.333,5.0
+g27-culrepo,5,6,gpt-5.1,0.5,True,,47.199,42.61,2.86,35.876,5.0,0.323,6.0
+g27-culrepo,5,7,gpt-5.1,0.5,True,,44.141,39.36,2.82,33.811,5.0,0.33,5.0
+g27-culrepo,5,8,gpt-5.1,0.5,True,,47.078,58.03,2.88,35.743,5.0,0.335,6.0
+g27-culrepo,5,9,gpt-5.1,0.5,True,,44.141,65.35,2.8,33.811,5.0,0.33,5.0
+g28-zooniverse,1,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.4,0.0,,,,
+g28-zooniverse,1,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g28-zooniverse,1,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g28-zooniverse,1,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g28-zooniverse,1,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g28-zooniverse,1,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g28-zooniverse,1,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g28-zooniverse,1,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g28-zooniverse,1,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,1,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,2,0,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,2,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g28-zooniverse,2,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,2,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,2,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.16,0.0,,,,
+g28-zooniverse,2,5,gemini-3.1-pro-preview,0.5,True,,9.652000000000001,36.79,3.49,2.337,5.0,0.315,2.0
+g28-zooniverse,2,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.21,0.0,,,,
+g28-zooniverse,2,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,2,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,2,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g28-zooniverse,3,0,gemini-3.1-pro-preview,0.5,True,,9.652000000000001,0.0,0.0,2.337,5.0,0.315,2.0
+g28-zooniverse,3,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,3,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,3,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.18,0.0,,,,
+g28-zooniverse,3,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g28-zooniverse,3,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g28-zooniverse,3,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,3,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,3,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,3,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g28-zooniverse,4,0,gemini-3.1-pro-preview,0.5,True,,9.652000000000001,0.0,0.0,2.337,5.0,0.315,2.0
+g28-zooniverse,4,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,4,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.19,0.0,,,,
+g28-zooniverse,4,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.23,0.0,,,,
+g28-zooniverse,5,0,gemini-3.1-pro-preview,0.5,True,,9.652000000000001,0.0,0.0,2.337,5.0,0.315,2.0
+g28-zooniverse,5,1,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,5,2,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,5,3,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,5,4,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.17,0.0,,,,
+g28-zooniverse,5,5,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.22,0.0,,,,
+g28-zooniverse,5,6,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.15,0.0,,,,
+g28-zooniverse,5,7,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,5,8,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.13,0.0,,,,
+g28-zooniverse,5,9,gemini-3.1-pro-preview,0.5,False,Invalid JSON / Generation Error,,0.14,0.0,,,,
+g28-zooniverse,1,0,gpt-5.1,0.5,True,,27.456,22.14,2.8,6.241,17.0,0.215,4.0
+g28-zooniverse,1,1,gpt-5.1,0.5,True,,25.9,25.66,3.23,5.663,17.0,0.237,3.0
+g28-zooniverse,1,2,gpt-5.1,0.5,True,,27.172,34.0,3.3,7.061,15.0,0.111,5.0
+g28-zooniverse,1,3,gpt-5.1,0.5,True,,29.915,21.93,2.43,6.645,17.0,0.27,6.0
+g28-zooniverse,1,4,gpt-5.1,0.5,True,,28.256,21.84,5.81,7.003,17.0,0.253,4.0
+g28-zooniverse,1,5,gpt-5.1,0.5,True,,28.913999999999998,21.46,2.69,6.569,17.0,0.345,5.0
+g28-zooniverse,1,6,gpt-5.1,0.5,True,,26.006,24.62,1.02,5.813,17.0,0.193,3.0
+g28-zooniverse,1,7,gpt-5.1,0.5,True,,20.957,20.83,5.85,4.733,13.0,0.224,3.0
+g28-zooniverse,1,8,gpt-5.1,0.5,True,,26.689999999999998,18.46,1.8,5.525,17.0,0.165,4.0
+g28-zooniverse,1,9,gpt-5.1,0.5,True,,27.583000000000002,20.87,2.84,6.373,18.0,0.21,3.0
+g28-zooniverse,2,0,gpt-5.1,0.5,True,,20.957,0.0,0.0,4.733,13.0,0.224,3.0
+g28-zooniverse,2,1,gpt-5.1,0.5,True,,25.9,0.0,0.0,5.663,17.0,0.237,3.0
+g28-zooniverse,2,2,gpt-5.1,0.5,True,,26.006,0.0,0.0,5.813,17.0,0.193,3.0
+g28-zooniverse,2,3,gpt-5.1,0.5,True,,26.689999999999998,0.0,0.0,5.525,17.0,0.165,4.0
+g28-zooniverse,2,4,gpt-5.1,0.5,True,,27.172,0.0,0.0,7.061,15.0,0.111,5.0
+g28-zooniverse,2,5,gpt-5.1,0.5,True,,29.845,18.61,2.83,8.74,16.0,0.105,5.0
+g28-zooniverse,2,6,gpt-5.1,0.5,True,,16.184,28.11,2.85,6.099,6.0,0.085,4.0
+g28-zooniverse,2,7,gpt-5.1,0.5,True,,18.115,24.25,6.11,9.071,5.0,0.044,4.0
+g28-zooniverse,2,8,gpt-5.1,0.5,True,,18.357,27.6,2.72,8.331,5.0,0.026,5.0
+g28-zooniverse,2,9,gpt-5.1,0.5,True,,15.358,26.9,2.78,5.309,6.0,0.049,4.0
+g28-zooniverse,3,0,gpt-5.1,0.5,True,,15.358,0.0,0.0,5.309,6.0,0.049,4.0
+g28-zooniverse,3,1,gpt-5.1,0.5,True,,16.184,0.0,0.0,6.099,6.0,0.085,4.0
+g28-zooniverse,3,2,gpt-5.1,0.5,True,,18.115,0.0,0.0,9.071,5.0,0.044,4.0
+g28-zooniverse,3,3,gpt-5.1,0.5,True,,18.357,0.0,0.0,8.331,5.0,0.026,5.0
+g28-zooniverse,3,4,gpt-5.1,0.5,True,,20.957,0.0,0.0,4.733,13.0,0.224,3.0
+g28-zooniverse,3,5,gpt-5.1,0.5,True,,18.483,30.57,5.91,8.457,5.0,0.026,5.0
+g28-zooniverse,3,6,gpt-5.1,0.5,True,,18.043,39.6,2.88,8.032,5.0,0.011,5.0
+g28-zooniverse,3,7,gpt-5.1,0.5,True,,18.112000000000002,38.54,5.89,9.071,5.0,0.041,4.0
+g28-zooniverse,3,8,gpt-5.1,0.5,True,,18.483,32.28,5.87,8.457,5.0,0.026,5.0
+g28-zooniverse,3,9,gpt-5.1,0.5,True,,19.066,40.15,2.77,9.042,5.0,0.024,5.0
+g28-zooniverse,4,0,gpt-5.1,0.5,True,,15.358,0.0,0.0,5.309,6.0,0.049,4.0
+g28-zooniverse,4,1,gpt-5.1,0.5,True,,16.184,0.0,0.0,6.099,6.0,0.085,4.0
+g28-zooniverse,4,2,gpt-5.1,0.5,True,,18.043,0.0,0.0,8.032,5.0,0.011,5.0
+g28-zooniverse,4,3,gpt-5.1,0.5,True,,18.112000000000002,0.0,0.0,9.071,5.0,0.041,4.0
+g28-zooniverse,4,4,gpt-5.1,0.5,True,,18.115,0.0,0.0,9.071,5.0,0.044,4.0
+g28-zooniverse,4,5,gpt-5.1,0.5,True,,18.043,24.1,2.7,8.032,5.0,0.011,5.0
+g28-zooniverse,4,6,gpt-5.1,0.5,True,,18.570999999999998,29.29,2.77,8.571,5.0,0.0,5.0
+g28-zooniverse,4,7,gpt-5.1,0.5,True,,18.043,31.9,2.87,8.032,5.0,0.011,5.0
+g28-zooniverse,4,8,gpt-5.1,0.5,True,,18.043,20.1,2.22,8.032,5.0,0.011,5.0
+g28-zooniverse,4,9,gpt-5.1,0.5,True,,18.043,28.43,2.89,8.032,5.0,0.011,5.0
+g28-zooniverse,5,0,gpt-5.1,0.5,True,,15.358,0.0,0.0,5.309,6.0,0.049,4.0
+g28-zooniverse,5,1,gpt-5.1,0.5,True,,16.184,0.0,0.0,6.099,6.0,0.085,4.0
+g28-zooniverse,5,2,gpt-5.1,0.5,True,,18.043,0.0,0.0,8.032,5.0,0.011,5.0
+g28-zooniverse,5,3,gpt-5.1,0.5,True,,18.043,0.0,0.0,8.032,5.0,0.011,5.0
+g28-zooniverse,5,4,gpt-5.1,0.5,True,,18.043,0.0,0.0,8.032,5.0,0.011,5.0
+g28-zooniverse,5,5,gpt-5.1,0.5,True,,18.043,40.93,2.95,8.032,5.0,0.011,5.0
+g28-zooniverse,5,6,gpt-5.1,0.5,True,,17.695999999999998,28.65,2.85,7.685,5.0,0.011,5.0
+g28-zooniverse,5,7,gpt-5.1,0.5,True,,18.043,33.87,2.75,8.032,5.0,0.011,5.0
+g28-zooniverse,5,8,gpt-5.1,0.5,True,,18.043,35.3,2.97,8.032,5.0,0.011,5.0
+g28-zooniverse,5,9,gpt-5.1,0.5,False,Invalid JSON / Generation Error,,2.11,0.0,,,,

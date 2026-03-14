@@ -1,0 +1,767 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "name",
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "UpdateUserProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        },
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "ListUserProfiles",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "AssignRole",
+          "params": [
+            "userId",
+            "role"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SponsorManagement",
+      "ops": [
+        {
+          "name": "ListSponsors",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetSponsorDetails",
+          "params": [
+            "sponsorId"
+          ]
+        },
+        {
+          "name": "CreateSponsor",
+          "params": [
+            "userId",
+            "sponsorshipLevel",
+            "companyInfo"
+          ]
+        },
+        {
+          "name": "UpdateSponsorProfile",
+          "params": [
+            "sponsorId",
+            "profileData"
+          ]
+        },
+        {
+          "name": "LinkAttendeesToSponsor",
+          "params": [
+            "sponsorId",
+            "attendeeIds"
+          ]
+        },
+        {
+          "name": "ListSponsorAttendees",
+          "params": [
+            "sponsorId"
+          ]
+        },
+        {
+          "name": "AssignSponsorToEvent",
+          "params": [
+            "sponsorId",
+            "eventId"
+          ]
+        },
+        {
+          "name": "AssignSponsorToTraining",
+          "params": [
+            "sponsorId",
+            "trainingId"
+          ]
+        },
+        {
+          "name": "AssignSponsorToSummit",
+          "params": [
+            "sponsorId",
+            "summitId"
+          ]
+        },
+        {
+          "name": "ListSponsorEngagements",
+          "params": [
+            "sponsorId"
+          ]
+        },
+        {
+          "name": "ListSponsorshipLevels",
+          "params": []
+        },
+        {
+          "name": "CreateIndividualSponsorship",
+          "params": [
+            "userId",
+            "levelId"
+          ]
+        },
+        {
+          "name": "CreateCompanySponsorship",
+          "params": [
+            "userId",
+            "companyId",
+            "levelId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TrainingManagement",
+      "ops": [
+        {
+          "name": "ListTrainings",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetTrainingDetails",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "CreateTraining",
+          "params": [
+            "trainerId",
+            "trainingData"
+          ]
+        },
+        {
+          "name": "UpdateTraining",
+          "params": [
+            "trainingId",
+            "trainerId",
+            "trainingData"
+          ]
+        },
+        {
+          "name": "GetTrainingMapInfo",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "RegisterForTraining",
+          "params": [
+            "userId",
+            "trainingId",
+            "date"
+          ]
+        },
+        {
+          "name": "EnforceDailyTrainingRegistrationLimit",
+          "params": [
+            "userId",
+            "date"
+          ]
+        },
+        {
+          "name": "AddToTrainingWaitlist",
+          "params": [
+            "userId",
+            "trainingId"
+          ]
+        },
+        {
+          "name": "GetUserTrainingRegistrations",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetTrainingAttendees",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "GetTrainingRegistrationStatus",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "GetAttendeeTrainingStatus",
+          "params": [
+            "attendeeId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SummitManagement",
+      "ops": [
+        {
+          "name": "ListSummits",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetSummitDetails",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "CreateSummit",
+          "params": [
+            "coordinatorId",
+            "summitData"
+          ]
+        },
+        {
+          "name": "UpdateSummit",
+          "params": [
+            "summitId",
+            "coordinatorId",
+            "summitData"
+          ]
+        },
+        {
+          "name": "ListSummitAgenda",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "ListSummitSponsors",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "RegisterForSummit",
+          "params": [
+            "userId",
+            "summitId"
+          ]
+        },
+        {
+          "name": "GetUserSummitRegistrations",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetSummitAttendees",
+          "params": [
+            "summitId"
+          ]
+        },
+        {
+          "name": "GetSummitSeatAvailability",
+          "params": [
+            "summitId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SessionManagement",
+      "ops": [
+        {
+          "name": "ListSessions",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetSessionDetails",
+          "params": [
+            "sessionId"
+          ]
+        },
+        {
+          "name": "SubmitSession",
+          "params": [
+            "userId",
+            "sessionData"
+          ]
+        },
+        {
+          "name": "EditSession",
+          "params": [
+            "sessionId",
+            "userId",
+            "sessionData"
+          ]
+        },
+        {
+          "name": "MarkSessionAccepted",
+          "params": [
+            "sessionId"
+          ]
+        },
+        {
+          "name": "BulkAcceptSessions",
+          "params": [
+            "sessionIds"
+          ]
+        },
+        {
+          "name": "ListApprovedSessions",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RegistrationManagement",
+      "ops": [
+        {
+          "name": "GetCampRegistrationForm",
+          "params": []
+        },
+        {
+          "name": "RegisterForCamp",
+          "params": [
+            "userData"
+          ]
+        },
+        {
+          "name": "GetRegistrationMenuLink",
+          "params": []
+        },
+        {
+          "name": "GetIndividualSponsorshipOptions",
+          "params": []
+        },
+        {
+          "name": "SelectIndividualSponsorshipOption",
+          "params": [
+            "userId",
+            "optionId"
+          ]
+        },
+        {
+          "name": "ApplyCancellationTerms",
+          "params": [
+            "registrationId",
+            "accepted"
+          ]
+        },
+        {
+          "name": "SetCancellationDeadline",
+          "params": [
+            "registrationType",
+            "deadline"
+          ]
+        },
+        {
+          "name": "GetRegistrationStatus",
+          "params": [
+            "attendeeId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ScheduleManagement",
+      "ops": [
+        {
+          "name": "AssignRoomToSlot",
+          "params": [
+            "roomId",
+            "timeSlotId",
+            "locationId",
+            "eventId"
+          ]
+        },
+        {
+          "name": "GetSchedule",
+          "params": [
+            "filters",
+            "date"
+          ]
+        },
+        {
+          "name": "GetUserSchedule",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "AddToUserSchedule",
+          "params": [
+            "userId",
+            "itemType",
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VenueManagement",
+      "ops": [
+        {
+          "name": "CreateVenue",
+          "params": [
+            "venueData"
+          ]
+        },
+        {
+          "name": "UpdateVenue",
+          "params": [
+            "venueId",
+            "venueData"
+          ]
+        },
+        {
+          "name": "ListVenues",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetVenueDetails",
+          "params": [
+            "venueId"
+          ]
+        },
+        {
+          "name": "GetVenueDirections",
+          "params": [
+            "venueId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CompanyManagement",
+      "ops": [
+        {
+          "name": "GetCompanyAttendees",
+          "params": [
+            "companyId"
+          ]
+        },
+        {
+          "name": "GetCompanySessions",
+          "params": [
+            "companyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PaymentBilling",
+      "ops": [
+        {
+          "name": "CreatePaymentSession",
+          "params": [
+            "userId",
+            "amount",
+            "currency",
+            "description",
+            "returnUrl"
+          ]
+        },
+        {
+          "name": "ChargeCard",
+          "params": [
+            "paymentSessionId",
+            "cardToken"
+          ]
+        },
+        {
+          "name": "RefundPayment",
+          "params": [
+            "paymentId",
+            "amount"
+          ]
+        },
+        {
+          "name": "ProcessStripeRefund",
+          "params": [
+            "stripeChargeId",
+            "amount"
+          ]
+        },
+        {
+          "name": "PayIndividualSponsorship",
+          "params": [
+            "userId",
+            "sponsorshipId",
+            "paymentInfo"
+          ]
+        },
+        {
+          "name": "PayCompanySponsorship",
+          "params": [
+            "userId",
+            "sponsorshipId",
+            "paymentInfo"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentManagement",
+      "ops": [
+        {
+          "name": "CreateBlogPost",
+          "params": [
+            "authorId",
+            "postData"
+          ]
+        },
+        {
+          "name": "UpdateBlogPost",
+          "params": [
+            "postId",
+            "authorId",
+            "postData"
+          ]
+        },
+        {
+          "name": "TagBlogPostForDrupalPlanet",
+          "params": [
+            "postId"
+          ]
+        },
+        {
+          "name": "ListBlogPosts",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetBlogPost",
+          "params": [
+            "postId"
+          ]
+        },
+        {
+          "name": "GetWysiwygConfig",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JobBoard",
+      "ops": [
+        {
+          "name": "CreateJobListing",
+          "params": [
+            "sponsorId",
+            "jobData"
+          ]
+        },
+        {
+          "name": "ListJobListings",
+          "params": [
+            "filters",
+            "pagination"
+          ]
+        },
+        {
+          "name": "GetJobListing",
+          "params": [
+            "jobId"
+          ]
+        },
+        {
+          "name": "LinkJobToSponsorProfile",
+          "params": [
+            "jobId",
+            "sponsorId"
+          ]
+        },
+        {
+          "name": "GetPostingInfoForSponsors",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "Newsletter",
+      "ops": [
+        {
+          "name": "SubscribeNewsletter",
+          "params": [
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendEmailToTrainers",
+          "params": [
+            "trainingIds",
+            "subject",
+            "body"
+          ]
+        },
+        {
+          "name": "NotifySessionSubmission",
+          "params": [
+            "userId",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "NotifySessionEvaluation",
+          "params": [
+            "userId",
+            "sessionId",
+            "status"
+          ]
+        },
+        {
+          "name": "EmailSummitAttendees",
+          "params": [
+            "summitId",
+            "subject",
+            "body"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MapAndLocation",
+      "ops": [
+        {
+          "name": "GetSiteMap",
+          "params": []
+        },
+        {
+          "name": "GetBuildingRoomMap",
+          "params": [
+            "buildingId",
+            "roomId"
+          ]
+        },
+        {
+          "name": "GetCodingLoungeInfo",
+          "params": []
+        },
+        {
+          "name": "GetTrainingLocationMap",
+          "params": [
+            "trainingId"
+          ]
+        },
+        {
+          "name": "GetSummitLocationMap",
+          "params": [
+            "summitId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "SponsorManagement",
+      "callee": "PaymentBilling"
+    },
+    {
+      "caller": "RegistrationManagement",
+      "callee": "PaymentBilling"
+    },
+    {
+      "caller": "TrainingManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "SessionManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "SummitManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "TrainingManagement",
+      "callee": "ScheduleManagement"
+    },
+    {
+      "caller": "SummitManagement",
+      "callee": "ScheduleManagement"
+    },
+    {
+      "caller": "SessionManagement",
+      "callee": "ScheduleManagement"
+    },
+    {
+      "caller": "ScheduleManagement",
+      "callee": "VenueManagement"
+    },
+    {
+      "caller": "TrainingManagement",
+      "callee": "VenueManagement"
+    },
+    {
+      "caller": "SummitManagement",
+      "callee": "VenueManagement"
+    },
+    {
+      "caller": "CompanyManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "JobBoard",
+      "callee": "SponsorManagement"
+    },
+    {
+      "caller": "SponsorManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "RegistrationManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "MapAndLocation",
+      "callee": "VenueManagement"
+    }
+  ]
+}

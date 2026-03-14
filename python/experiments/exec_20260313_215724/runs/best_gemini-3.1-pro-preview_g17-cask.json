@@ -1,0 +1,267 @@
+{
+  "microservices": [
+    {
+      "name": "AppManagement",
+      "ops": [
+        {
+          "name": "DeployApp",
+          "params": [
+            "appArtifact",
+            "includeDatasetTypes"
+          ]
+        },
+        {
+          "name": "RedeployApp",
+          "params": [
+            "appId",
+            "newArtifact"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetTypeManagement",
+      "ops": [
+        {
+          "name": "DeployDatasetType",
+          "params": [
+            "typeArtifact",
+            "version",
+            "isIndependent"
+          ]
+        },
+        {
+          "name": "DeleteDatasetType",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "GetDatasetTypeInfo",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "ListInstancesByType",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetInstanceLifecycle",
+      "ops": [
+        {
+          "name": "CreateDatasetInstance",
+          "params": [
+            "typeName",
+            "version",
+            "properties"
+          ]
+        },
+        {
+          "name": "UpgradeDatasetInstance",
+          "params": [
+            "instanceId",
+            "newVersion"
+          ]
+        },
+        {
+          "name": "DeleteDatasetInstance",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "CheckInstancesExist",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetInstanceConfig",
+      "ops": [
+        {
+          "name": "GetProperties",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "UpdateProperties",
+          "params": [
+            "instanceId",
+            "properties"
+          ]
+        },
+        {
+          "name": "UpdateSingleProperty",
+          "params": [
+            "instanceId",
+            "propertyName",
+            "value"
+          ]
+        },
+        {
+          "name": "RemoveSingleProperty",
+          "params": [
+            "instanceId",
+            "propertyName"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetInstanceAdmin",
+      "ops": [
+        {
+          "name": "MigrateDatasetInstance",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "TakeOffline",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "ExecuteCustomAdminOp",
+          "params": [
+            "instanceId",
+            "operationName",
+            "operationParams"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExploreManagement",
+      "ops": [
+        {
+          "name": "EnableExplore",
+          "params": [
+            "instanceId",
+            "exploreSchema"
+          ]
+        },
+        {
+          "name": "DisableExplore",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "UpdateExploreSchema",
+          "params": [
+            "instanceId",
+            "newSchema"
+          ]
+        },
+        {
+          "name": "QueryExploreData",
+          "params": [
+            "instanceId",
+            "query"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PipelineManagement",
+      "ops": [
+        {
+          "name": "CreatePipeline",
+          "params": [
+            "pipelineConfig",
+            "datasets"
+          ]
+        },
+        {
+          "name": "UpdatePipeline",
+          "params": [
+            "pipelineId",
+            "newConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PluginManagement",
+      "ops": [
+        {
+          "name": "DeployPlugin",
+          "params": [
+            "pluginArtifact"
+          ]
+        },
+        {
+          "name": "UpdatePlugin",
+          "params": [
+            "pluginId",
+            "newVersion"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetTypeManagement"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetInstanceLifecycle"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetInstanceConfig"
+    },
+    {
+      "caller": "DatasetTypeManagement",
+      "callee": "DatasetInstanceLifecycle"
+    },
+    {
+      "caller": "DatasetInstanceLifecycle",
+      "callee": "DatasetTypeManagement"
+    },
+    {
+      "caller": "DatasetInstanceLifecycle",
+      "callee": "ExploreManagement"
+    },
+    {
+      "caller": "DatasetInstanceConfig",
+      "callee": "ExploreManagement"
+    },
+    {
+      "caller": "DatasetInstanceConfig",
+      "callee": "DatasetInstanceAdmin"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "DatasetInstanceLifecycle"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "DatasetInstanceConfig"
+    },
+    {
+      "caller": "PluginManagement",
+      "callee": "DatasetTypeManagement"
+    },
+    {
+      "caller": "PluginManagement",
+      "callee": "DatasetInstanceLifecycle"
+    }
+  ]
+}

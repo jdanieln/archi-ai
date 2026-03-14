@@ -1,0 +1,123 @@
+{
+  "microservices": [
+    {
+      "name": "ContentManagement",
+      "ops": [
+        {
+          "name": "SearchContent",
+          "params": [
+            "searchQuery",
+            "filters"
+          ]
+        },
+        {
+          "name": "EditContent",
+          "params": [
+            "contentId",
+            "contentData"
+          ]
+        },
+        {
+          "name": "AddVideoToArticle",
+          "params": [
+            "articleId",
+            "videoUrl"
+          ]
+        },
+        {
+          "name": "AddBrightcoveVideo",
+          "params": [
+            "articleId",
+            "brightcoveVideoId"
+          ]
+        },
+        {
+          "name": "FormatContent",
+          "params": [
+            "contentId",
+            "formattingData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "CreateRole",
+          "params": [
+            "roleName",
+            "permissions"
+          ]
+        },
+        {
+          "name": "AssignRole",
+          "params": [
+            "userId",
+            "roleId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecruitmentManagement",
+      "ops": [
+        {
+          "name": "ConfigureRecruiter",
+          "params": [
+            "siteUrl",
+            "configuration"
+          ]
+        },
+        {
+          "name": "CreateRecruitmentTest",
+          "params": [
+            "testName",
+            "targetAudience"
+          ]
+        },
+        {
+          "name": "SubmitContactInfo",
+          "params": [
+            "participantName",
+            "email",
+            "researchId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MediaIntegration",
+      "ops": [
+        {
+          "name": "FetchBrightcoveVideo",
+          "params": [
+            "videoId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "recipient",
+            "message"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "ContentManagement",
+      "callee": "MediaIntegration"
+    },
+    {
+      "caller": "RecruitmentManagement",
+      "callee": "Notification"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "microservices": [
+    {
+      "name": "AccountManagement",
+      "ops": [
+        {
+          "name": "CreateAccount",
+          "params": [
+            "name",
+            "email",
+            "password",
+            "username"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "UpdateAccount",
+          "params": [
+            "accountId",
+            "name",
+            "email",
+            "password",
+            "username",
+            "timezone"
+          ]
+        },
+        {
+          "name": "DeleteAccount",
+          "params": [
+            "accountId"
+          ]
+        },
+        {
+          "name": "RequestPasswordReminder",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "SetTimezone",
+          "params": [
+            "accountId",
+            "timezone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GameManagement",
+      "ops": [
+        {
+          "name": "CreateGame",
+          "params": [
+            "moderatorId",
+            "name",
+            "description",
+            "deckType",
+            "maxEstimators"
+          ]
+        },
+        {
+          "name": "GenerateInviteUrl",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "BrowseGames",
+          "params": [
+            "moderatorId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ViewGameTranscript",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "ExportTranscriptHTML",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "ExportTranscriptCSV",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "DeleteGame",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ItemManagement",
+      "ops": [
+        {
+          "name": "AddItem",
+          "params": [
+            "gameId",
+            "content"
+          ]
+        },
+        {
+          "name": "EditItem",
+          "params": [
+            "itemId",
+            "content"
+          ]
+        },
+        {
+          "name": "DeleteItem",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "ListSessionItems",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "ImportItemsFromSpreadsheet",
+          "params": [
+            "gameId",
+            "file"
+          ]
+        },
+        {
+          "name": "PasteItemsFromClipboard",
+          "params": [
+            "gameId",
+            "rawText"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RoundManagement",
+      "ops": [
+        {
+          "name": "StartRound",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "SelectItemForEstimation",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "ReestimateItem",
+          "params": [
+            "gameId",
+            "itemId"
+          ]
+        },
+        {
+          "name": "ShowAllEstimatesNow",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "AcceptAverageEstimate",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "AcceptAgreedEstimate",
+          "params": [
+            "roundId",
+            "value"
+          ]
+        },
+        {
+          "name": "AutoFillConsensusEstimate",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "GetRoundHistory",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Estimation",
+      "ops": [
+        {
+          "name": "JoinGameAsEstimator",
+          "params": [
+            "gameId",
+            "name",
+            "photoUrl"
+          ]
+        },
+        {
+          "name": "SubmitEstimate",
+          "params": [
+            "roundId",
+            "estimatorId",
+            "value"
+          ]
+        },
+        {
+          "name": "ChangeEstimate",
+          "params": [
+            "roundId",
+            "estimatorId",
+            "value"
+          ]
+        },
+        {
+          "name": "ListCurrentEstimates",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "RevealEstimates",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "GetEstimatorPriorEstimatesForItem",
+          "params": [
+            "itemId",
+            "estimatorId"
+          ]
+        },
+        {
+          "name": "GetRoundEstimatesWithIdentities",
+          "params": [
+            "roundId"
+          ]
+        },
+        {
+          "name": "GetStoryAndEstimatesHistory",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeckConfiguration",
+      "ops": [
+        {
+          "name": "SetDeckTypeForGame",
+          "params": [
+            "gameId",
+            "deckType"
+          ]
+        },
+        {
+          "name": "GetDeckForGame",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Timer",
+      "ops": [
+        {
+          "name": "StartCountdown",
+          "params": [
+            "gameId",
+            "durationSeconds"
+          ]
+        },
+        {
+          "name": "ResetCountdownOnAllEstimatesPlayed",
+          "params": [
+            "gameId"
+          ]
+        },
+        {
+          "name": "GetTimerState",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendPasswordReminderEmail",
+          "params": [
+            "email",
+            "resetLink"
+          ]
+        },
+        {
+          "name": "SendGameInviteEmail",
+          "params": [
+            "emails",
+            "inviteUrl"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Presentation",
+      "ops": [
+        {
+          "name": "RenderErrorPage",
+          "params": [
+            "errorCode",
+            "message",
+            "requestUrl"
+          ]
+        },
+        {
+          "name": "GenerateSensibleUrl",
+          "params": [
+            "resourceType",
+            "resourceId",
+            "slug"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "ops": [
+        {
+          "name": "StoreUsageMetric",
+          "params": [
+            "eventType",
+            "userId",
+            "gameId",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetGameUsageMetrics",
+          "params": [
+            "requesterId",
+            "from",
+            "to"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResearchData",
+      "ops": [
+        {
+          "name": "StoreAnonymizedResult",
+          "params": [
+            "gameId",
+            "roundId",
+            "anonymizedEstimatorId",
+            "estimateValue",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetAnonymizedResults",
+          "params": [
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StaticContent",
+      "ops": [
+        {
+          "name": "GetGlossary",
+          "params": []
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "AccountManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "GameManagement",
+      "callee": "ItemManagement"
+    },
+    {
+      "caller": "GameManagement",
+      "callee": "RoundManagement"
+    },
+    {
+      "caller": "GameManagement",
+      "callee": "DeckConfiguration"
+    },
+    {
+      "caller": "GameManagement",
+      "callee": "Analytics"
+    },
+    {
+      "caller": "RoundManagement",
+      "callee": "Estimation"
+    },
+    {
+      "caller": "RoundManagement",
+      "callee": "Timer"
+    },
+    {
+      "caller": "RoundManagement",
+      "callee": "ResearchData"
+    },
+    {
+      "caller": "Estimation",
+      "callee": "DeckConfiguration"
+    },
+    {
+      "caller": "Estimation",
+      "callee": "Analytics"
+    },
+    {
+      "caller": "AccountManagement",
+      "callee": "Analytics"
+    },
+    {
+      "caller": "GameManagement",
+      "callee": "ResearchData"
+    },
+    {
+      "caller": "Presentation",
+      "callee": "GameManagement"
+    },
+    {
+      "caller": "Presentation",
+      "callee": "AccountManagement"
+    },
+    {
+      "caller": "Presentation",
+      "callee": "Estimation"
+    },
+    {
+      "caller": "Presentation",
+      "callee": "Timer"
+    },
+    {
+      "caller": "Presentation",
+      "callee": "StaticContent"
+    }
+  ]
+}

@@ -1,0 +1,813 @@
+{
+  "microservices": [
+    {
+      "name": "DataPackageIngestion",
+      "ops": [
+        {
+          "name": "ImportDataPackage",
+          "params": [
+            "sourceUri",
+            "targetEnvironment",
+            "options"
+          ]
+        },
+        {
+          "name": "ImportFromSpreadsheet",
+          "params": [
+            "fileUri",
+            "options"
+          ]
+        },
+        {
+          "name": "ImportFromEML",
+          "params": [
+            "emlUri",
+            "mappingConfig"
+          ]
+        },
+        {
+          "name": "ImportFromDatabase",
+          "params": [
+            "dbType",
+            "connectionConfig",
+            "query",
+            "options"
+          ]
+        },
+        {
+          "name": "ImportFromSpecialFormat",
+          "params": [
+            "format",
+            "sourceUri",
+            "mappingConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LanguageConnectors",
+      "ops": [
+        {
+          "name": "LoadInLanguage",
+          "params": [
+            "dataPackageUri",
+            "language",
+            "options"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OfficeAndStatsConnectors",
+      "ops": [
+        {
+          "name": "LoadInExcel",
+          "params": [
+            "dataPackageUri",
+            "options"
+          ]
+        },
+        {
+          "name": "LoadInSPSS",
+          "params": [
+            "dataPackageUri",
+            "options"
+          ]
+        },
+        {
+          "name": "LoadInSTATA",
+          "params": [
+            "dataPackageUri",
+            "options"
+          ]
+        },
+        {
+          "name": "LoadInLibreOffice",
+          "params": [
+            "dataPackageUri",
+            "options"
+          ]
+        },
+        {
+          "name": "LoadInPowerBI",
+          "params": [
+            "dataPackageUri",
+            "options"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FormatAndStorageIntegration",
+      "ops": [
+        {
+          "name": "IntegrateElasticsearch",
+          "params": [
+            "dataPackageUri",
+            "indexConfig"
+          ]
+        },
+        {
+          "name": "IntegrateMongo",
+          "params": [
+            "dataPackageUri",
+            "connectionConfig"
+          ]
+        },
+        {
+          "name": "IntegrateDAT",
+          "params": [
+            "dataPackageUri",
+            "datConfig"
+          ]
+        },
+        {
+          "name": "IntegrateFeather",
+          "params": [
+            "dataPackageUri",
+            "filePath"
+          ]
+        },
+        {
+          "name": "IntegrateHDF5",
+          "params": [
+            "dataPackageUri",
+            "filePath"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RepositoryConnectors",
+      "ops": [
+        {
+          "name": "IntegrateCKAN",
+          "params": [
+            "dataPackageUri",
+            "ckanConfig"
+          ]
+        },
+        {
+          "name": "IntegrateZenodo",
+          "params": [
+            "dataPackageUri",
+            "zenodoConfig"
+          ]
+        },
+        {
+          "name": "IntegrateMendeleyData",
+          "params": [
+            "dataPackageUri",
+            "mendeleyConfig"
+          ]
+        },
+        {
+          "name": "IntegrateEPrints",
+          "params": [
+            "dataPackageUri",
+            "eprintsConfig"
+          ]
+        },
+        {
+          "name": "IntegrateDSpace",
+          "params": [
+            "dataPackageUri",
+            "dspaceConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SpreadsheetConversion",
+      "ops": [
+        {
+          "name": "ExcelToDataPackage",
+          "params": [
+            "excelFileUri",
+            "schemaHints"
+          ]
+        },
+        {
+          "name": "DataPackageToExcel",
+          "params": [
+            "dataPackageUri",
+            "excelFileUri"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MLAndScientificConversion",
+      "ops": [
+        {
+          "name": "MLDatasetToDataPackage",
+          "params": [
+            "datasetUri",
+            "mlMetadata"
+          ]
+        },
+        {
+          "name": "NetCDFToDataPackage",
+          "params": [
+            "netcdfUri",
+            "mappingConfig"
+          ]
+        },
+        {
+          "name": "ImportToMLPlatform",
+          "params": [
+            "dataPackageUri",
+            "mlPlatformConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RelationalConversion",
+      "ops": [
+        {
+          "name": "ImportFromMSSQL",
+          "params": [
+            "connectionString",
+            "query",
+            "schemaConfig"
+          ]
+        },
+        {
+          "name": "ExportToMSSQL",
+          "params": [
+            "connectionString",
+            "tableName",
+            "dataPackageUri"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SchemaAndTyping",
+      "ops": [
+        {
+          "name": "AddTypeInformation",
+          "params": [
+            "dataPackageUri",
+            "schemaDefinition"
+          ]
+        },
+        {
+          "name": "AddOrUpdateColumns",
+          "params": [
+            "dataPackageUri",
+            "columnDefinitions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DescriptiveMetadata",
+      "ops": [
+        {
+          "name": "AddOrUpdateMetadataFields",
+          "params": [
+            "dataPackageUri",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AddFundingInfo",
+          "params": [
+            "dataPackageUri",
+            "fundingInfo"
+          ]
+        },
+        {
+          "name": "AddDOI",
+          "params": [
+            "dataPackageUri",
+            "doi"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReferenceDataEnrichment",
+      "ops": [
+        {
+          "name": "AddReferenceDataset",
+          "params": [
+            "dataPackageUri",
+            "referencePackageUri",
+            "joinConfig"
+          ]
+        },
+        {
+          "name": "AddCountryNamesFromCodes",
+          "params": [
+            "dataPackageUri",
+            "countryCodeField",
+            "countryRefPackageUri"
+          ]
+        },
+        {
+          "name": "AddInflationData",
+          "params": [
+            "dataPackageUri",
+            "inflationRefPackageUri",
+            "joinConfig"
+          ]
+        },
+        {
+          "name": "CreateProxyDataPackage",
+          "params": [
+            "sourceUri",
+            "proxyMetadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ControlledVocabularies",
+      "ops": [
+        {
+          "name": "ReferenceRemoteVocabulary",
+          "params": [
+            "dataPackageUri",
+            "columnName",
+            "vocabularyUri"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GeospatialAndMapping",
+      "ops": [
+        {
+          "name": "MapGeographicLines",
+          "params": [
+            "dataPackageUri",
+            "geometryColumns",
+            "mapConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationAuthoring",
+      "ops": [
+        {
+          "name": "CreateVisualization",
+          "params": [
+            "dataPackageUri",
+            "visualizationSpec"
+          ]
+        },
+        {
+          "name": "SaveVisualization",
+          "params": [
+            "dataPackageUri",
+            "visualizationConfig",
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationEmbedding",
+      "ops": [
+        {
+          "name": "GenerateEmbeddableSummary",
+          "params": [
+            "dataPackageUri",
+            "summaryConfig"
+          ]
+        },
+        {
+          "name": "CreateEmbeddableSummaryIframe",
+          "params": [
+            "dataPackageUri",
+            "iframeConfig"
+          ]
+        },
+        {
+          "name": "EmbedInteractivePreview",
+          "params": [
+            "dataPackageUri",
+            "embedOptions"
+          ]
+        },
+        {
+          "name": "EmbedPreviewButton",
+          "params": [
+            "dataPackageUri",
+            "buttonOptions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationCore",
+      "ops": [
+        {
+          "name": "ValidateAgainstProfile",
+          "params": [
+            "dataPackageUri",
+            "profileUri"
+          ]
+        },
+        {
+          "name": "GetValidationIssues",
+          "params": [
+            "dataPackageUri",
+            "profileUri"
+          ]
+        },
+        {
+          "name": "QuickValidate",
+          "params": [
+            "dataPackageUri"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationAutomation",
+      "ops": [
+        {
+          "name": "ValidateOnUpdate",
+          "params": [
+            "dataPackageUri",
+            "repositoryHookConfig"
+          ]
+        },
+        {
+          "name": "OnlineRepositoryValidation",
+          "params": [
+            "repositoryUri",
+            "hookConfig"
+          ]
+        },
+        {
+          "name": "ValidateOnMendeleyIngest",
+          "params": [
+            "dataPackageUri",
+            "profileUri"
+          ]
+        },
+        {
+          "name": "CliValidate",
+          "params": [
+            "path",
+            "profileUri",
+            "options"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationReporting",
+      "ops": [
+        {
+          "name": "GovernmentValidationReport",
+          "params": [
+            "dataPackageUri",
+            "profileUri"
+          ]
+        },
+        {
+          "name": "AssessGovernmentDataQuality",
+          "params": [
+            "dataPackageUri",
+            "qualityMetricsConfig"
+          ]
+        },
+        {
+          "name": "AssessDataQuality",
+          "params": [
+            "dataPackageUri",
+            "qualityCriteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageAndAvailability",
+      "ops": [
+        {
+          "name": "StoreDataOnline",
+          "params": [
+            "dataPackageUri",
+            "storageConfig"
+          ]
+        },
+        {
+          "name": "StoreInGitHub",
+          "params": [
+            "dataPackageUri",
+            "repoUri"
+          ]
+        },
+        {
+          "name": "StoreInCKAN",
+          "params": [
+            "dataPackageUri",
+            "ckanConfig"
+          ]
+        },
+        {
+          "name": "CheckDataAvailabilityPersistence",
+          "params": [
+            "dataPackageUri",
+            "checkConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PreviewAndAnalytics",
+      "ops": [
+        {
+          "name": "GenerateBasicStatistics",
+          "params": [
+            "dataPackageUri",
+            "statsConfig"
+          ]
+        },
+        {
+          "name": "TrackPreviewEvent",
+          "params": [
+            "dataPackageUri",
+            "userId",
+            "previewType",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetPreviewStats",
+          "params": [
+            "dataPackageUri",
+            "timeRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CleaningAndReconciliation",
+      "ops": [
+        {
+          "name": "ExportCleanedToDataPackage",
+          "params": [
+            "sourceTool",
+            "projectId",
+            "packageMetadata"
+          ]
+        },
+        {
+          "name": "GenerateOpenRefineReconciliationAPI",
+          "params": [
+            "dataPackageUri",
+            "serviceConfig"
+          ]
+        },
+        {
+          "name": "IntegrateOpenRefine",
+          "params": [
+            "dataPackageUri",
+            "openRefineConfig"
+          ]
+        },
+        {
+          "name": "IntegrateExcelOutput",
+          "params": [
+            "dataPackageUri",
+            "excelConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WebAndUIIntegration",
+      "ops": [
+        {
+          "name": "CreateJQueryAutocompletePlugin",
+          "params": [
+            "dataPackageUri",
+            "fieldMapping"
+          ]
+        },
+        {
+          "name": "CreateWebSocketProtocolEndpoint",
+          "params": [
+            "endpointId",
+            "toolsConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WizardAndMetadataUI",
+      "ops": [
+        {
+          "name": "GenerateMetadataWizard",
+          "params": [
+            "repositoryType",
+            "config"
+          ]
+        },
+        {
+          "name": "CustomizeWizard",
+          "params": [
+            "wizardId",
+            "dataType",
+            "uiConfig"
+          ]
+        },
+        {
+          "name": "AddBasicMetadata",
+          "params": [
+            "dataPackageUri",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReproducibilityService",
+      "ops": [
+        {
+          "name": "PackageReproducibleSteps",
+          "params": [
+            "dataPackageUri",
+            "workflowDefinition"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MatchmakingService",
+      "ops": [
+        {
+          "name": "RegisterDataOwner",
+          "params": [
+            "ownerId",
+            "datasetDescription"
+          ]
+        },
+        {
+          "name": "RegisterDataPackager",
+          "params": [
+            "packagerId",
+            "skills"
+          ]
+        },
+        {
+          "name": "MatchOwnersAndPackagers",
+          "params": [
+            "datasetId",
+            "criteria"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "LanguageConnectors",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "OfficeAndStatsConnectors",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "SpreadsheetConversion",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "MLAndScientificConversion",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "RelationalConversion",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "FormatAndStorageIntegration",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "RepositoryConnectors",
+      "callee": "DataPackageIngestion"
+    },
+    {
+      "caller": "SchemaAndTyping",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "DescriptiveMetadata",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "ReferenceDataEnrichment",
+      "callee": "SchemaAndTyping"
+    },
+    {
+      "caller": "ReferenceDataEnrichment",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "ControlledVocabularies",
+      "callee": "SchemaAndTyping"
+    },
+    {
+      "caller": "ControlledVocabularies",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "VisualizationAuthoring",
+      "callee": "LanguageConnectors"
+    },
+    {
+      "caller": "VisualizationAuthoring",
+      "callee": "PreviewAndAnalytics"
+    },
+    {
+      "caller": "VisualizationAuthoring",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "VisualizationEmbedding",
+      "callee": "VisualizationAuthoring"
+    },
+    {
+      "caller": "VisualizationEmbedding",
+      "callee": "PreviewAndAnalytics"
+    },
+    {
+      "caller": "GeospatialAndMapping",
+      "callee": "LanguageConnectors"
+    },
+    {
+      "caller": "GeospatialAndMapping",
+      "callee": "VisualizationAuthoring"
+    },
+    {
+      "caller": "ValidationAutomation",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "ValidationAutomation",
+      "callee": "StorageAndAvailability"
+    },
+    {
+      "caller": "ValidationReporting",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "StorageAndAvailability",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "PreviewAndAnalytics",
+      "callee": "StorageAndAvailability"
+    },
+    {
+      "caller": "CleaningAndReconciliation",
+      "callee": "SpreadsheetConversion"
+    },
+    {
+      "caller": "CleaningAndReconciliation",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "RepositoryConnectors",
+      "callee": "StorageAndAvailability"
+    },
+    {
+      "caller": "RepositoryConnectors",
+      "callee": "ValidationCore"
+    },
+    {
+      "caller": "WebAndUIIntegration",
+      "callee": "VisualizationEmbedding"
+    },
+    {
+      "caller": "WebAndUIIntegration",
+      "callee": "PreviewAndAnalytics"
+    },
+    {
+      "caller": "WizardAndMetadataUI",
+      "callee": "DescriptiveMetadata"
+    },
+    {
+      "caller": "WizardAndMetadataUI",
+      "callee": "RepositoryConnectors"
+    },
+    {
+      "caller": "ReproducibilityService",
+      "callee": "StorageAndAvailability"
+    },
+    {
+      "caller": "MatchmakingService",
+      "callee": "RepositoryConnectors"
+    }
+  ]
+}

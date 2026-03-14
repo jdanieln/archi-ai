@@ -1,0 +1,443 @@
+{
+  "microservices": [
+    {
+      "name": "CamperManagement",
+      "ops": [
+        {
+          "name": "AddCamper",
+          "params": [
+            "camperDetails"
+          ]
+        },
+        {
+          "name": "RemoveCamper",
+          "params": [
+            "camperId"
+          ]
+        },
+        {
+          "name": "UpdateCamper",
+          "params": [
+            "camperId",
+            "camperDetails"
+          ]
+        },
+        {
+          "name": "GetCamperRecords",
+          "params": [
+            "camperId",
+            "year"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ParentManagement",
+      "ops": [
+        {
+          "name": "CreateParentAccount",
+          "params": [
+            "parentDetails"
+          ]
+        },
+        {
+          "name": "UpdateParent",
+          "params": [
+            "parentId",
+            "parentDetails"
+          ]
+        },
+        {
+          "name": "RemoveParent",
+          "params": [
+            "parentId"
+          ]
+        },
+        {
+          "name": "GetParentDetails",
+          "params": [
+            "parentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnrollmentManagement",
+      "ops": [
+        {
+          "name": "EnrollCamper",
+          "params": [
+            "parentId",
+            "camperDetails"
+          ]
+        },
+        {
+          "name": "GetEnrolledCampers",
+          "params": [
+            "parentId"
+          ]
+        },
+        {
+          "name": "UpdateEmergencyInfo",
+          "params": [
+            "camperId",
+            "emergencyInfo"
+          ]
+        },
+        {
+          "name": "UpdateGuardianInfo",
+          "params": [
+            "camperId",
+            "guardianInfo"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StaffManagement",
+      "ops": [
+        {
+          "name": "AssignPosition",
+          "params": [
+            "staffId",
+            "position"
+          ]
+        },
+        {
+          "name": "WarnStaff",
+          "params": [
+            "staffId",
+            "reason"
+          ]
+        },
+        {
+          "name": "GetAssignedCampers",
+          "params": [
+            "staffId"
+          ]
+        },
+        {
+          "name": "GetAssignedCounselors",
+          "params": [
+            "camperId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GroupManagement",
+      "ops": [
+        {
+          "name": "CreateGroup",
+          "params": [
+            "groupDetails"
+          ]
+        },
+        {
+          "name": "UpdateGroup",
+          "params": [
+            "groupId",
+            "groupDetails"
+          ]
+        },
+        {
+          "name": "AssignCamperToGroup",
+          "params": [
+            "groupId",
+            "camperId"
+          ]
+        },
+        {
+          "name": "GetGroupDetails",
+          "params": [
+            "groupId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ActivityScheduling",
+      "ops": [
+        {
+          "name": "ScheduleActivity",
+          "params": [
+            "groupId",
+            "activityDetails"
+          ]
+        },
+        {
+          "name": "UpdateActivity",
+          "params": [
+            "activityId",
+            "activityDetails"
+          ]
+        },
+        {
+          "name": "DeleteActivity",
+          "params": [
+            "activityId"
+          ]
+        },
+        {
+          "name": "GetGroupSchedule",
+          "params": [
+            "groupId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FacilityManagement",
+      "ops": [
+        {
+          "name": "TrackFacilityUsage",
+          "params": [
+            "facilityId",
+            "timeSlot"
+          ]
+        },
+        {
+          "name": "ReportSupplies",
+          "params": [
+            "staffId",
+            "supplyDetails"
+          ]
+        },
+        {
+          "name": "ReportRepairs",
+          "params": [
+            "staffId",
+            "repairDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FormManagement",
+      "ops": [
+        {
+          "name": "CreateFormTemplate",
+          "params": [
+            "formDetails"
+          ]
+        },
+        {
+          "name": "SubmitForm",
+          "params": [
+            "userId",
+            "formId",
+            "formData"
+          ]
+        },
+        {
+          "name": "GetSubmittedForms",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetMedicalForms",
+          "params": [
+            "camperId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "ops": [
+        {
+          "name": "NotifyParents",
+          "params": [
+            "parentIds",
+            "message"
+          ]
+        },
+        {
+          "name": "SendMessage",
+          "params": [
+            "senderId",
+            "receiverId",
+            "message"
+          ]
+        },
+        {
+          "name": "SendBiWeeklyFeedback",
+          "params": [
+            "camperId",
+            "feedbackData"
+          ]
+        },
+        {
+          "name": "SubmitFeedback",
+          "params": [
+            "parentId",
+            "feedbackDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AttendanceTracking",
+      "ops": [
+        {
+          "name": "LogAttendance",
+          "params": [
+            "groupId",
+            "attendanceData"
+          ]
+        },
+        {
+          "name": "GetAttendance",
+          "params": [
+            "groupId",
+            "date"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TaskManagement",
+      "ops": [
+        {
+          "name": "SetReminder",
+          "params": [
+            "userId",
+            "taskDetails",
+            "time"
+          ]
+        },
+        {
+          "name": "SubmitTaskReport",
+          "params": [
+            "staffId",
+            "taskId",
+            "reportDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ConductManagement",
+      "ops": [
+        {
+          "name": "SuspendCamper",
+          "params": [
+            "camperId",
+            "reason"
+          ]
+        },
+        {
+          "name": "ReportBehavior",
+          "params": [
+            "staffId",
+            "camperId",
+            "behaviorDetails"
+          ]
+        },
+        {
+          "name": "ManageRules",
+          "params": [
+            "ruleDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PaymentManagement",
+      "ops": [
+        {
+          "name": "CheckPaymentStatus",
+          "params": [
+            "parentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MediaManagement",
+      "ops": [
+        {
+          "name": "SharePhoto",
+          "params": [
+            "camperId",
+            "photoData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NametagGeneration",
+      "ops": [
+        {
+          "name": "GenerateNametags",
+          "params": [
+            "camperIds"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "EnrollmentManagement",
+      "callee": "CamperManagement"
+    },
+    {
+      "caller": "EnrollmentManagement",
+      "callee": "ParentManagement"
+    },
+    {
+      "caller": "GroupManagement",
+      "callee": "CamperManagement"
+    },
+    {
+      "caller": "ActivityScheduling",
+      "callee": "GroupManagement"
+    },
+    {
+      "caller": "ActivityScheduling",
+      "callee": "FacilityManagement"
+    },
+    {
+      "caller": "AttendanceTracking",
+      "callee": "GroupManagement"
+    },
+    {
+      "caller": "FormManagement",
+      "callee": "CamperManagement"
+    },
+    {
+      "caller": "FormManagement",
+      "callee": "ParentManagement"
+    },
+    {
+      "caller": "Communication",
+      "callee": "ParentManagement"
+    },
+    {
+      "caller": "Communication",
+      "callee": "StaffManagement"
+    },
+    {
+      "caller": "ConductManagement",
+      "callee": "CamperManagement"
+    },
+    {
+      "caller": "ConductManagement",
+      "callee": "Communication"
+    },
+    {
+      "caller": "NametagGeneration",
+      "callee": "CamperManagement"
+    },
+    {
+      "caller": "MediaManagement",
+      "callee": "CamperManagement"
+    },
+    {
+      "caller": "StaffManagement",
+      "callee": "GroupManagement"
+    }
+  ]
+}

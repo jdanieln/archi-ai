@@ -1,0 +1,1090 @@
+{
+  "microservices": [
+    {
+      "name": "DeletionsProcessing",
+      "ops": [
+        {
+          "name": "ProcessDeletionsByDate",
+          "params": [
+            "deletionDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UIDesign",
+      "ops": [
+        {
+          "name": "RedesignResourcesPage",
+          "params": [
+            "pageId",
+            "designSpecId"
+          ]
+        },
+        {
+          "name": "RedesignLandingPage",
+          "params": [
+            "product",
+            "roundNumber",
+            "designSpecId"
+          ]
+        },
+        {
+          "name": "RedesignHomepage",
+          "params": [
+            "roundNumber",
+            "designSpecId"
+          ]
+        },
+        {
+          "name": "RedesignHelpPage",
+          "params": [
+            "roundNumber",
+            "designSpecId"
+          ]
+        },
+        {
+          "name": "ReportUserTestingToAgencies",
+          "params": [
+            "testReportId",
+            "agencyIds"
+          ]
+        },
+        {
+          "name": "TrackTechThursdayIssues",
+          "params": [
+            "issueList"
+          ]
+        },
+        {
+          "name": "BeginUserTesting",
+          "params": [
+            "testPlanId",
+            "participantGroupId"
+          ]
+        },
+        {
+          "name": "ScheduleUserTesting",
+          "params": [
+            "testSessionId",
+            "startTime",
+            "endTime",
+            "participantGroupId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UXResearch",
+      "ops": [
+        {
+          "name": "CreateUserTestingSummary",
+          "params": [
+            "sourceUserId",
+            "summaryPeriod"
+          ]
+        },
+        {
+          "name": "DesignImprovementSchedule",
+          "params": [
+            "sourceUserId",
+            "timeframe"
+          ]
+        },
+        {
+          "name": "DesignImprovementAudit",
+          "params": [
+            "sourceUserId",
+            "scope"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Logging",
+      "ops": [
+        {
+          "name": "ConfigureSubmissionLogging",
+          "params": [
+            "submissionId",
+            "logLevel",
+            "logContext"
+          ]
+        },
+        {
+          "name": "GetSubmissionLogs",
+          "params": [
+            "submissionId",
+            "fromTime",
+            "toTime"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SubmissionStatus",
+      "ops": [
+        {
+          "name": "UpdateFABSSubmissionOnStatusChange",
+          "params": [
+            "submissionId",
+            "publishStatus"
+          ]
+        },
+        {
+          "name": "PreventDoublePublishing",
+          "params": [
+            "submissionId",
+            "userId"
+          ]
+        },
+        {
+          "name": "DeactivatePublishButtonDuringDerivations",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "EnsureNoCreateOnInvalidCorrectionsOrDeletions",
+          "params": [
+            "submissionId",
+            "recordId",
+            "actionType"
+          ]
+        },
+        {
+          "name": "PreventDuplicateTransactionsOnPublish",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "GetRowsToBePublishedInfo",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "GetSubmissionCreatorInfo",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "UpdateSubmissionStatusLabels",
+          "params": [
+            "submissionId",
+            "statusLabel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Monitoring",
+      "ops": [
+        {
+          "name": "ConfigureNewRelicForApp",
+          "params": [
+            "applicationId",
+            "configProfileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ErrorMessaging",
+      "ops": [
+        {
+          "name": "UpdateUploadValidateErrorText",
+          "params": [
+            "errorCode",
+            "messageText"
+          ]
+        },
+        {
+          "name": "UpdateSubmissionErrorMessages",
+          "params": [
+            "errorCode",
+            "messageText"
+          ]
+        },
+        {
+          "name": "UpdateErrorCodesForClarity",
+          "params": [
+            "errorCode",
+            "messageText",
+            "logicDescription"
+          ]
+        },
+        {
+          "name": "ProvideHelpfulFileLevelError",
+          "params": [
+            "submissionId",
+            "fileName",
+            "errorCode"
+          ]
+        },
+        {
+          "name": "ExplainFileLevelErrors",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "ClarifyCFDAErrorTrigger",
+          "params": [
+            "submissionId",
+            "recordId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "D1FileGeneration",
+      "ops": [
+        {
+          "name": "GenerateD1File",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "SyncD1WithFPDSLoad",
+          "params": [
+            "submissionId",
+            "fpdsLoadId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PublishedFilesAccess",
+      "ops": [
+        {
+          "name": "ListPublishedFABSFiles",
+          "params": [
+            "page",
+            "pageSize",
+            "agencyId"
+          ]
+        },
+        {
+          "name": "GetRawAgencyPublishedFABSFile",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GrantFiltering",
+      "ops": [
+        {
+          "name": "FilterGrantRecordsForExternalSystem",
+          "params": [
+            "targetSystemId",
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationRules",
+      "ops": [
+        {
+          "name": "UpdateBrokerValidationRules",
+          "params": [
+            "ruleUpdateId"
+          ]
+        },
+        {
+          "name": "UpdateFABSValidationRulesForLoans",
+          "params": [
+            "allowZero",
+            "allowBlank"
+          ]
+        },
+        {
+          "name": "UpdateFABSValidationRulesForNonLoans",
+          "params": [
+            "allowZero",
+            "allowBlank"
+          ]
+        },
+        {
+          "name": "UpdateDUNSValidationForActionTypes",
+          "params": [
+            "allowedActionTypes"
+          ]
+        },
+        {
+          "name": "UpdateDUNSValidationForActionDates",
+          "params": [
+            "minDate",
+            "maxDate"
+          ]
+        },
+        {
+          "name": "UpdatePPoPZIPValidations",
+          "params": [
+            "validationSpecId"
+          ]
+        },
+        {
+          "name": "UpdateZIPLast4Optional",
+          "params": [
+            "isLast4Required"
+          ]
+        },
+        {
+          "name": "UpdateFABSValidationForFlexfields",
+          "params": [
+            "maxFlexfields",
+            "performanceThresholdMs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GTASWindow",
+      "ops": [
+        {
+          "name": "LoadGTASWindowData",
+          "params": [
+            "windowStart",
+            "windowEnd"
+          ]
+        },
+        {
+          "name": "IsWithinGTASWindow",
+          "params": [
+            "dateTime"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DFileGeneration",
+      "ops": [
+        {
+          "name": "RequestDFileGeneration",
+          "params": [
+            "submissionId",
+            "fileType"
+          ]
+        },
+        {
+          "name": "CacheDFileGenerationRequest",
+          "params": [
+            "submissionId",
+            "fileType"
+          ]
+        },
+        {
+          "name": "GenerateAndValidateDFilesFromSources",
+          "params": [
+            "submissionId",
+            "useFABS",
+            "useFPDS"
+          ]
+        },
+        {
+          "name": "DetermineDFileGenerationStrategy",
+          "params": [
+            "agencyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flexfields",
+      "ops": [
+        {
+          "name": "ValidateFlexfieldPerformance",
+          "params": [
+            "submissionId",
+            "flexfieldCount"
+          ]
+        },
+        {
+          "name": "IncludeFlexfieldsInWarningAndErrorFiles",
+          "params": [
+            "submissionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentMockups",
+      "ops": [
+        {
+          "name": "CreateContentMockups",
+          "params": [
+            "userId",
+            "submissionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnvironmentAccess",
+      "ops": [
+        {
+          "name": "ResetToStagingMAXPermissions",
+          "params": [
+            "environmentId"
+          ]
+        },
+        {
+          "name": "ConfigureTesterFeatureAccess",
+          "params": [
+            "testerId",
+            "environmentId",
+            "featureFlags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPoPDataQuality",
+      "ops": [
+        {
+          "name": "ValidatePPoPCodeAndDistrict",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "AddPPoPDerivationCases",
+          "params": [
+            "ppopCodePattern",
+            "derivationRuleId"
+          ]
+        },
+        {
+          "name": "AllowCitywidePPoPZIP",
+          "params": [
+            "citywideCode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SAMIntegration",
+      "ops": [
+        {
+          "name": "ValidateSAMDataCompleteness",
+          "params": [
+            "samExtractDate"
+          ]
+        },
+        {
+          "name": "ValidateDUNSWithSAM",
+          "params": [
+            "duns",
+            "actionType",
+            "actionDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indexing",
+      "ops": [
+        {
+          "name": "IndexDomainModelsForValidation",
+          "params": [
+            "modelName"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Derivations",
+      "ops": [
+        {
+          "name": "DeriveAllDataElements",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "DerivePPoPCodeCases",
+          "params": [
+            "submissionId",
+            "ppopCode"
+          ]
+        },
+        {
+          "name": "DeriveOfficeNamesFromCodes",
+          "params": [
+            "officeCodeList"
+          ]
+        },
+        {
+          "name": "DeriveHistoricalFABSFields",
+          "params": [
+            "historicalLoadId"
+          ]
+        },
+        {
+          "name": "DeriveFRECFromHistoricalFABS",
+          "params": [
+            "historicalLoadId"
+          ]
+        },
+        {
+          "name": "DeriveFundingAgencyCode",
+          "params": [
+            "submissionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HistoricalFABSLoader",
+      "ops": [
+        {
+          "name": "LoadHistoricalFABSData",
+          "params": [
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "EnsureHistoricalColumnsComplete",
+          "params": [
+            "loadId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HistoricalFPDSLoader",
+      "ops": [
+        {
+          "name": "LoadHistoricalFPDSData",
+          "params": [
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "LoadHistoricalAndFeedFPDSData",
+          "params": [
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "DetermineHistoricalFPDSLoadStrategy",
+          "params": [
+            "fromYear"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResourcesAndDocs",
+      "ops": [
+        {
+          "name": "UpdateBrokerResourcesForRelease",
+          "params": [
+            "releaseVersion"
+          ]
+        },
+        {
+          "name": "UpdateValidationDocsForRelease",
+          "params": [
+            "releaseVersion"
+          ]
+        },
+        {
+          "name": "UpdatePolicyProcedurePages",
+          "params": [
+            "releaseVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NASAFiltering",
+      "ops": [
+        {
+          "name": "HideNASAGrantsFromContractsView",
+          "params": [
+            "agencyCode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SchemaManagement",
+      "ops": [
+        {
+          "name": "UpdateFieldMaxLength",
+          "params": [
+            "fieldName",
+            "maxLength",
+            "schemaVersion"
+          ]
+        },
+        {
+          "name": "AllowSchemaHeaders",
+          "params": [
+            "schemaVersion",
+            "headerList"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AtomFeedMapping",
+      "ops": [
+        {
+          "name": "MapFederalActionObligationToAtomFeed",
+          "params": [
+            "recordId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SampleFiles",
+      "ops": [
+        {
+          "name": "UpdateFABSSampleFileHeaders",
+          "params": [
+            "schemaVersion"
+          ]
+        },
+        {
+          "name": "UpdateSampleFileLink",
+          "params": [
+            "dialogId",
+            "fileUrl"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FPDSData",
+      "ops": [
+        {
+          "name": "DailyFPDSDataLoad",
+          "params": [
+            "loadDate"
+          ]
+        },
+        {
+          "name": "LoadAllHistoricalFPDSForAgency",
+          "params": [
+            "agencyId",
+            "fromYear"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "USAspendingIntegration",
+      "ops": [
+        {
+          "name": "ExposeRawFABSFiles",
+          "params": [
+            "agencyId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "ExposeGrantRecordsOnly",
+          "params": [
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "ExposeFRECDataForUSASpending",
+          "params": [
+            "fromDate",
+            "toDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HeaderInfo",
+      "ops": [
+        {
+          "name": "UpdateHeaderTimestamp",
+          "params": [
+            "submissionId",
+            "updatedDateTime"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileUpload",
+      "ops": [
+        {
+          "name": "UploadSubmissionFile",
+          "params": [
+            "submissionId",
+            "fileName",
+            "fileType"
+          ]
+        },
+        {
+          "name": "ValidateFileExtension",
+          "params": [
+            "fileName",
+            "allowedExtensions"
+          ]
+        },
+        {
+          "name": "DownloadUploadedFABSFile",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "AcceptQuotedDataElements",
+          "params": [
+            "submissionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSDeployment",
+      "ops": [
+        {
+          "name": "DeployFABSProduction",
+          "params": [
+            "releaseVersion"
+          ]
+        },
+        {
+          "name": "LoadAllHistoricalFinancialAssistanceData",
+          "params": [
+            "fromYear"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSGroups",
+      "ops": [
+        {
+          "name": "ConfigureFABSGroupsForFREC",
+          "params": [
+            "groupConfigId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TestingSupport",
+      "ops": [
+        {
+          "name": "RunFABSFieldDerivationTest",
+          "params": [
+            "testFileId"
+          ]
+        },
+        {
+          "name": "VerifyDerivationResults",
+          "params": [
+            "testFileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZeroPadding",
+      "ops": [
+        {
+          "name": "EnforceZeroPaddedFields",
+          "params": [
+            "fieldNameList"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecipientValidation",
+      "ops": [
+        {
+          "name": "AllowIndividualRecipientWithoutDUNS",
+          "params": [
+            "submissionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSSubmissionDashboard",
+      "ops": [
+        {
+          "name": "GetSubmissionDashboardInfo",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "AddHelpfulDashboardInfo",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BrokerDataAccess",
+      "ops": [
+        {
+          "name": "QuickAccessBrokerData",
+          "params": [
+            "queryType",
+            "queryParams"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSLandingAndRouting",
+      "ops": [
+        {
+          "name": "ConfigureLandingPage",
+          "params": [
+            "agencyId"
+          ]
+        },
+        {
+          "name": "RouteToFABSOrDABS",
+          "params": [
+            "userId",
+            "targetApp"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSBannerMessages",
+      "ops": [
+        {
+          "name": "ConfigureAppSpecificBanners",
+          "params": [
+            "appName",
+            "bannerConfigId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSAccessControl",
+      "ops": [
+        {
+          "name": "GrantReadOnlyDABSAccessToFABSUser",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSPerformance",
+      "ops": [
+        {
+          "name": "RunFABSValidations",
+          "params": [
+            "submissionId"
+          ]
+        },
+        {
+          "name": "MonitorValidationPerformance",
+          "params": [
+            "submissionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SubmissionPeriods",
+      "ops": [
+        {
+          "name": "GetSubmissionPeriods",
+          "params": [
+            "fiscalYear"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileFGeneration",
+      "ops": [
+        {
+          "name": "GenerateFileF",
+          "params": [
+            "submissionId",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSFrontend",
+      "ops": [
+        {
+          "name": "UpdateFrontendURLs",
+          "params": [
+            "pageId",
+            "newUrl"
+          ]
+        },
+        {
+          "name": "UpdateLanguageForFABSPage",
+          "params": [
+            "pageId",
+            "languageSpecId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FABSValidationResults",
+      "ops": [
+        {
+          "name": "GetAccurateFABSErrors",
+          "params": [
+            "submissionId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "D1FileGeneration",
+      "callee": "FPDSData"
+    },
+    {
+      "caller": "D1FileGeneration",
+      "callee": "USAspendingIntegration"
+    },
+    {
+      "caller": "DFileGeneration",
+      "callee": "FABSPerformance"
+    },
+    {
+      "caller": "DFileGeneration",
+      "callee": "FPDSData"
+    },
+    {
+      "caller": "PublishedFilesAccess",
+      "callee": "USAspendingIntegration"
+    },
+    {
+      "caller": "GrantFiltering",
+      "callee": "USAspendingIntegration"
+    },
+    {
+      "caller": "ValidationRules",
+      "callee": "SAMIntegration"
+    },
+    {
+      "caller": "PPoPDataQuality",
+      "callee": "Derivations"
+    },
+    {
+      "caller": "HistoricalFABSLoader",
+      "callee": "Derivations"
+    },
+    {
+      "caller": "HistoricalFABSLoader",
+      "callee": "USAspendingIntegration"
+    },
+    {
+      "caller": "HistoricalFPDSLoader",
+      "callee": "FPDSData"
+    },
+    {
+      "caller": "FABSDeployment",
+      "callee": "HistoricalFABSLoader"
+    },
+    {
+      "caller": "FABSDeployment",
+      "callee": "HistoricalFPDSLoader"
+    },
+    {
+      "caller": "FABSSubmissionDashboard",
+      "callee": "SubmissionStatus"
+    },
+    {
+      "caller": "FABSSubmissionDashboard",
+      "callee": "FABSValidationResults"
+    },
+    {
+      "caller": "FileUpload",
+      "callee": "ValidationRules"
+    },
+    {
+      "caller": "FileUpload",
+      "callee": "FABSPerformance"
+    },
+    {
+      "caller": "FABSPerformance",
+      "callee": "Indexing"
+    },
+    {
+      "caller": "FABSPerformance",
+      "callee": "Derivations"
+    },
+    {
+      "caller": "SubmissionStatus",
+      "callee": "Derivations"
+    },
+    {
+      "caller": "SubmissionStatus",
+      "callee": "ErrorMessaging"
+    },
+    {
+      "caller": "USAspendingIntegration",
+      "callee": "GrantFiltering"
+    },
+    {
+      "caller": "USAspendingIntegration",
+      "callee": "Derivations"
+    },
+    {
+      "caller": "USAspendingIntegration",
+      "callee": "FPDSData"
+    },
+    {
+      "caller": "USAspendingIntegration",
+      "callee": "HistoricalFABSLoader"
+    },
+    {
+      "caller": "USAspendingIntegration",
+      "callee": "HistoricalFPDSLoader"
+    },
+    {
+      "caller": "BrokerDataAccess",
+      "callee": "Logging"
+    },
+    {
+      "caller": "BrokerDataAccess",
+      "callee": "FABSSubmissionDashboard"
+    },
+    {
+      "caller": "TestingSupport",
+      "callee": "Derivations"
+    },
+    {
+      "caller": "TestingSupport",
+      "callee": "FABSPerformance"
+    }
+  ]
+}

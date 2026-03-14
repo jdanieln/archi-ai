@@ -1,0 +1,1489 @@
+{
+  "microservices": [
+    {
+      "name": "Auth",
+      "ops": [
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "LoginWithActiveDirectory",
+          "params": [
+            "adUsername",
+            "adPassword"
+          ]
+        },
+        {
+          "name": "ResetPasswordRequest",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "resetToken",
+            "newPassword"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserDirectory",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "username",
+            "email",
+            "password",
+            "role"
+          ]
+        },
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateUserProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControl",
+      "ops": [
+        {
+          "name": "CreateUserGroup",
+          "params": [
+            "groupName",
+            "description"
+          ]
+        },
+        {
+          "name": "CreateUserRole",
+          "params": [
+            "roleName",
+            "description"
+          ]
+        },
+        {
+          "name": "AssignUserToGroup",
+          "params": [
+            "userId",
+            "groupId"
+          ]
+        },
+        {
+          "name": "AssignRoleToUser",
+          "params": [
+            "userId",
+            "roleId"
+          ]
+        },
+        {
+          "name": "AssignRightsToGroupOrRole",
+          "params": [
+            "targetType",
+            "targetId",
+            "rights"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PolicyEnforcement",
+      "ops": [
+        {
+          "name": "SetFileRestriction",
+          "params": [
+            "fileId",
+            "isRestricted",
+            "restrictionReason"
+          ]
+        },
+        {
+          "name": "SetFileGroupRestriction",
+          "params": [
+            "fileIds",
+            "isRestricted",
+            "restrictionReason"
+          ]
+        },
+        {
+          "name": "RestrictFileFromView",
+          "params": [
+            "fileId",
+            "restrictionLevel"
+          ]
+        },
+        {
+          "name": "RestrictFileGroupFromView",
+          "params": [
+            "fileIds",
+            "restrictionLevel"
+          ]
+        },
+        {
+          "name": "CheckFileAccess",
+          "params": [
+            "fileId",
+            "userId",
+            "ipAddress",
+            "operation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RestrictionRules",
+      "ops": [
+        {
+          "name": "SetRestrictionEndDateForFile",
+          "params": [
+            "fileId",
+            "endDate"
+          ]
+        },
+        {
+          "name": "SetRestrictionEndDateForFiles",
+          "params": [
+            "fileIds",
+            "endDate"
+          ]
+        },
+        {
+          "name": "AddDetailedRestrictionsToFiles",
+          "params": [
+            "fileIds",
+            "restrictionDetails"
+          ]
+        },
+        {
+          "name": "RestrictAccessByIP",
+          "params": [
+            "fileIds",
+            "allowedIpRanges"
+          ]
+        },
+        {
+          "name": "RestrictAccessByUser",
+          "params": [
+            "fileIds",
+            "allowedUserIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FieldVisibility",
+      "ops": [
+        {
+          "name": "LimitMetadataFieldVisibility",
+          "params": [
+            "fieldId",
+            "visibleToGroups",
+            "visibleToRoles"
+          ]
+        },
+        {
+          "name": "GetFieldVisibilityRules",
+          "params": [
+            "fieldId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RightsRegistry",
+      "ops": [
+        {
+          "name": "CreateRightsStatement",
+          "params": [
+            "label",
+            "description",
+            "status"
+          ]
+        },
+        {
+          "name": "ListRightsStatements",
+          "params": [
+            "status",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetRightsStatement",
+          "params": [
+            "rightsStatementId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RightsAssignment",
+      "ops": [
+        {
+          "name": "ApplyLicenseOrRightsStatement",
+          "params": [
+            "fileId",
+            "rightsStatementId"
+          ]
+        },
+        {
+          "name": "ApplyLicenseOrRightsStatementToGroup",
+          "params": [
+            "fileIds",
+            "rightsStatementId"
+          ]
+        },
+        {
+          "name": "SelectExistingRightsStatus",
+          "params": [
+            "fileId",
+            "rightsStatusId"
+          ]
+        },
+        {
+          "name": "SetRightsStatusMetadata",
+          "params": [
+            "fileId",
+            "rightsStatusId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RightsDisclosure",
+      "ops": [
+        {
+          "name": "GetFileRightsInfo",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "MakeRightsInfoPublic",
+          "params": [
+            "fileId",
+            "isPublic"
+          ]
+        },
+        {
+          "name": "GetPublicRightsInfo",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LicensingWorkflow",
+      "ops": [
+        {
+          "name": "SubmitLicensingRequest",
+          "params": [
+            "requesterId",
+            "fileIds",
+            "intendedUse",
+            "publicationDetails"
+          ]
+        },
+        {
+          "name": "GetLicensingRequest",
+          "params": [
+            "requestId"
+          ]
+        },
+        {
+          "name": "UpdateLicensingRequestStatus",
+          "params": [
+            "requestId",
+            "status",
+            "staffNotes"
+          ]
+        },
+        {
+          "name": "GenerateLicensingForm",
+          "params": [
+            "requestId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReproductionOrders",
+      "ops": [
+        {
+          "name": "OrderPhotoCopies",
+          "params": [
+            "requesterId",
+            "fileIds",
+            "deliveryFormat",
+            "deadline"
+          ]
+        },
+        {
+          "name": "RequestAnalogVersion",
+          "params": [
+            "userId",
+            "fileId",
+            "preferredDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IngestionCore",
+      "ops": [
+        {
+          "name": "UploadSingleFile",
+          "params": [
+            "uploaderId",
+            "fileBinary",
+            "filename",
+            "collectionId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadFileBatch",
+          "params": [
+            "uploaderId",
+            "files",
+            "collectionId",
+            "commonMetadata"
+          ]
+        },
+        {
+          "name": "IngestXDriveFiles",
+          "params": [
+            "uploaderId",
+            "paths",
+            "collectionId",
+            "metadataDefaults"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IngestionSpecialCollections",
+      "ops": [
+        {
+          "name": "UploadWorkingPapers",
+          "params": [
+            "uploaderId",
+            "files",
+            "tags",
+            "collectionId"
+          ]
+        },
+        {
+          "name": "UploadEducationalVisitScans",
+          "params": [
+            "uploaderId",
+            "files",
+            "visitId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadResearchRequestScans",
+          "params": [
+            "uploaderId",
+            "files",
+            "researchRequestId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadCollectionFiles",
+          "params": [
+            "uploaderId",
+            "files",
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IngestionAdministrative",
+      "ops": [
+        {
+          "name": "UploadInventories",
+          "params": [
+            "uploaderId",
+            "inventoryFiles",
+            "collectionId"
+          ]
+        },
+        {
+          "name": "UploadStaffForms",
+          "params": [
+            "uploaderId",
+            "files",
+            "formType"
+          ]
+        },
+        {
+          "name": "SupplyIncrementalAccruals",
+          "params": [
+            "donorRepId",
+            "files",
+            "collectionId",
+            "accrualDescription"
+          ]
+        },
+        {
+          "name": "AttachLoanDocumentation",
+          "params": [
+            "loanId",
+            "files",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileDerivatives",
+      "ops": [
+        {
+          "name": "CreateAccessCopy",
+          "params": [
+            "fileId",
+            "accessProfileId"
+          ]
+        },
+        {
+          "name": "CreateAccessCopiesForBatch",
+          "params": [
+            "fileIds",
+            "accessProfileId"
+          ]
+        },
+        {
+          "name": "CreateAccessDerivatives",
+          "params": [
+            "fileId",
+            "derivativeProfiles"
+          ]
+        },
+        {
+          "name": "CreateAccessDerivativesForBatch",
+          "params": [
+            "fileIds",
+            "derivativeProfiles"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MediaDerivatives",
+      "ops": [
+        {
+          "name": "CreateThumbnails",
+          "params": [
+            "fileIds",
+            "size"
+          ]
+        },
+        {
+          "name": "CreateFilmClips",
+          "params": [
+            "fileId",
+            "clipDefinitions"
+          ]
+        },
+        {
+          "name": "CreateStreamingDerivative",
+          "params": [
+            "fileId",
+            "mediaType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImageEditing",
+      "ops": [
+        {
+          "name": "RotateImage",
+          "params": [
+            "fileId",
+            "rotationDegrees"
+          ]
+        },
+        {
+          "name": "AutoAdjustImageLevels",
+          "params": [
+            "fileId",
+            "contrastSettings"
+          ]
+        },
+        {
+          "name": "ManualImageAdjustments",
+          "params": [
+            "fileId",
+            "adjustmentParams"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RedactionService",
+      "ops": [
+        {
+          "name": "RedactFileForPeriod",
+          "params": [
+            "fileId",
+            "redactionInstructions",
+            "endDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TechnicalMetadata",
+      "ops": [
+        {
+          "name": "GenerateTechnicalMetadata",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "GenerateTechnicalMetadataForBatch",
+          "params": [
+            "fileIds"
+          ]
+        },
+        {
+          "name": "RecordDigitizationDate",
+          "params": [
+            "fileId",
+            "digitizationDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DigitizationTracking",
+      "ops": [
+        {
+          "name": "AssignUniqueIdentifier",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "AssignUniqueIdentifiersToBatch",
+          "params": [
+            "fileIds"
+          ]
+        },
+        {
+          "name": "MarkAsScanned",
+          "params": [
+            "physicalItemId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "HasPhotoBeenScanned",
+          "params": [
+            "physicalItemId"
+          ]
+        },
+        {
+          "name": "MarkPartialFolderDigitization",
+          "params": [
+            "folderId",
+            "coverageDescription"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DigitizationPolicy",
+      "ops": [
+        {
+          "name": "SetDigitizationStandard",
+          "params": [
+            "fileId",
+            "standardType"
+          ]
+        },
+        {
+          "name": "SetColorMode",
+          "params": [
+            "fileId",
+            "colorMode"
+          ]
+        },
+        {
+          "name": "SetDigitizationPurpose",
+          "params": [
+            "fileId",
+            "purpose"
+          ]
+        },
+        {
+          "name": "SetDigitizationCoverageForFolder",
+          "params": [
+            "folderId",
+            "coverageStatus"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CoreMetadata",
+      "ops": [
+        {
+          "name": "BatchEditFileMetadata",
+          "params": [
+            "fileIds",
+            "metadataChanges"
+          ]
+        },
+        {
+          "name": "EmbedMetadataInFileHeader",
+          "params": [
+            "fileId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "TagFiles",
+          "params": [
+            "fileIds",
+            "tags"
+          ]
+        },
+        {
+          "name": "AddRestrictionEndDateMetadata",
+          "params": [
+            "fileId",
+            "endDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DescriptiveMetadata",
+      "ops": [
+        {
+          "name": "SetMaterialType",
+          "params": [
+            "fileId",
+            "materialType"
+          ]
+        },
+        {
+          "name": "RecordPhysicalLocation",
+          "params": [
+            "itemId",
+            "locationCode"
+          ]
+        },
+        {
+          "name": "AttachIndexCardMetadata",
+          "params": [
+            "indexCardId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AttachInventoryToCollection",
+          "params": [
+            "collectionId",
+            "inventoryId"
+          ]
+        },
+        {
+          "name": "SetUnprocessedCollectionInventory",
+          "params": [
+            "collectionId",
+            "inventoryId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImageMetadata",
+      "ops": [
+        {
+          "name": "SetPhotographer",
+          "params": [
+            "fileId",
+            "photographerName"
+          ]
+        },
+        {
+          "name": "SetPeopleInImage",
+          "params": [
+            "fileId",
+            "personIds"
+          ]
+        },
+        {
+          "name": "SetPlaceInImage",
+          "params": [
+            "fileId",
+            "placeId"
+          ]
+        },
+        {
+          "name": "SetImageRightsMetadata",
+          "params": [
+            "fileId",
+            "rightsStatementId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CitationMetadata",
+      "ops": [
+        {
+          "name": "SetCitationInfo",
+          "params": [
+            "fileId",
+            "citationData"
+          ]
+        },
+        {
+          "name": "SetCrossCollectionCitationInfo",
+          "params": [
+            "fileIds",
+            "citationData"
+          ]
+        },
+        {
+          "name": "LinkPublicationToCitation",
+          "params": [
+            "publicationId",
+            "citationId"
+          ]
+        },
+        {
+          "name": "LinkDigitalToAnalog",
+          "params": [
+            "fileId",
+            "analogItemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchCore",
+      "ops": [
+        {
+          "name": "KeywordSearchAllFiles",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "BrowseCollectionFiles",
+          "params": [
+            "collectionId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByTag",
+          "params": [
+            "tag",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByMaterialType",
+          "params": [
+            "materialType",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchAdvanced",
+      "ops": [
+        {
+          "name": "SearchUsingStructuredData",
+          "params": [
+            "criteria",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchCommonMaterialAcrossCollections",
+          "params": [
+            "query",
+            "collectionIds",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchUnprocessedCollectionsInventories",
+          "params": [
+            "query",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchImages",
+      "ops": [
+        {
+          "name": "SearchPhotoCollections",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByPhotographer",
+          "params": [
+            "photographerName",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByPersonInImage",
+          "params": [
+            "personName",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByPlaceInImage",
+          "params": [
+            "placeName",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByImageUpload",
+          "params": [
+            "imageBinary",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchTextual",
+      "ops": [
+        {
+          "name": "SearchOCRText",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchDiariesByKeyword",
+          "params": [
+            "officerId",
+            "query",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchByProgramOfficerDiaries",
+          "params": [
+            "officerId",
+            "query",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchRestricted",
+      "ops": [
+        {
+          "name": "SearchByRights",
+          "params": [
+            "rightsStatusId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchIndexCards",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "FindNonPublicFiles",
+          "params": [
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessDeliveryCore",
+      "ops": [
+        {
+          "name": "DownloadFile",
+          "params": [
+            "userId",
+            "fileId",
+            "format"
+          ]
+        },
+        {
+          "name": "StreamMedia",
+          "params": [
+            "userId",
+            "fileId",
+            "startTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "GetPublicAccessLink",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "ProvideUnprocessedDigitalAccess",
+          "params": [
+            "userId",
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessViews",
+      "ops": [
+        {
+          "name": "ViewThumbnail",
+          "params": [
+            "fileId",
+            "size"
+          ]
+        },
+        {
+          "name": "ViewFilmClip",
+          "params": [
+            "fileId",
+            "clipId"
+          ]
+        },
+        {
+          "name": "ViewCollectionFile",
+          "params": [
+            "userId",
+            "collectionFileId"
+          ]
+        },
+        {
+          "name": "ViewIndexCardImage",
+          "params": [
+            "indexCardId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessCollections",
+      "ops": [
+        {
+          "name": "AccessWorkingPapers",
+          "params": [
+            "userId",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "AccessEducationalOutreachMaterials",
+          "params": [
+            "userId",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "AccessDigitizedMaterialsWithoutMediation",
+          "params": [
+            "userId",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessDonorContent",
+      "ops": [
+        {
+          "name": "AccessDonorScannedImages",
+          "params": [
+            "donorRepId",
+            "collectionId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "AccessDescriptiveInfoForDonorImages",
+          "params": [
+            "donorRepId",
+            "collectionId",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CitationService",
+      "ops": [
+        {
+          "name": "GenerateStructuredCitation",
+          "params": [
+            "fileId",
+            "citationStyle"
+          ]
+        },
+        {
+          "name": "GetCitationForFile",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "GetCrossCollectionCitationInfo",
+          "params": [
+            "fileIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExportService",
+      "ops": [
+        {
+          "name": "ExportDescriptiveData",
+          "params": [
+            "filters",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UsageTracking",
+      "ops": [
+        {
+          "name": "TrackPhotoUse",
+          "params": [
+            "fileId",
+            "userId",
+            "useContext"
+          ]
+        },
+        {
+          "name": "TrackFileDownload",
+          "params": [
+            "fileId",
+            "userId",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetFileUsageHistory",
+          "params": [
+            "fileId",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "GetUserUsageSummary",
+          "params": [
+            "userId",
+            "fromDate",
+            "toDate"
+          ]
+        },
+        {
+          "name": "RecordReadingRoomRequest",
+          "params": [
+            "userId",
+            "fileId",
+            "requestType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "NotifyAlreadyDigitized",
+          "params": [
+            "userId",
+            "fileId",
+            "requestId"
+          ]
+        },
+        {
+          "name": "SendLicensingUpdate",
+          "params": [
+            "requestId",
+            "status"
+          ]
+        },
+        {
+          "name": "SendPasswordResetEmail",
+          "params": [
+            "email",
+            "resetToken"
+          ]
+        },
+        {
+          "name": "SendAccessLink",
+          "params": [
+            "userId",
+            "fileId",
+            "accessUrl"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SocialAndInteraction",
+      "ops": [
+        {
+          "name": "GenerateShareableLink",
+          "params": [
+            "fileId",
+            "platform",
+            "expiresAt"
+          ]
+        },
+        {
+          "name": "AskQuestionAboutFile",
+          "params": [
+            "userId",
+            "fileId",
+            "questionText"
+          ]
+        },
+        {
+          "name": "ShareReport",
+          "params": [
+            "userId",
+            "reportFileId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "LocateShareableSocialMediaMaterials",
+          "params": [
+            "query",
+            "rightsFilters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResearchOutputs",
+      "ops": [
+        {
+          "name": "UploadResearcherReport",
+          "params": [
+            "userId",
+            "reportFile",
+            "metadata"
+          ]
+        },
+        {
+          "name": "DownloadReport",
+          "params": [
+            "userId",
+            "reportId",
+            "format"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "Auth",
+      "callee": "UserDirectory"
+    },
+    {
+      "caller": "Auth",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "UserDirectory",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "AccessControl",
+      "callee": "PolicyEnforcement"
+    },
+    {
+      "caller": "AccessControl",
+      "callee": "FieldVisibility"
+    },
+    {
+      "caller": "PolicyEnforcement",
+      "callee": "RestrictionRules"
+    },
+    {
+      "caller": "PolicyEnforcement",
+      "callee": "RightsDisclosure"
+    },
+    {
+      "caller": "RightsAssignment",
+      "callee": "RightsRegistry"
+    },
+    {
+      "caller": "RightsAssignment",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "RightsDisclosure",
+      "callee": "RightsRegistry"
+    },
+    {
+      "caller": "LicensingWorkflow",
+      "callee": "RightsDisclosure"
+    },
+    {
+      "caller": "LicensingWorkflow",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "ReproductionOrders",
+      "callee": "RightsDisclosure"
+    },
+    {
+      "caller": "ReproductionOrders",
+      "callee": "UsageTracking"
+    },
+    {
+      "caller": "IngestionCore",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "IngestionCore",
+      "callee": "TechnicalMetadata"
+    },
+    {
+      "caller": "IngestionCore",
+      "callee": "DigitizationTracking"
+    },
+    {
+      "caller": "IngestionCore",
+      "callee": "FileDerivatives"
+    },
+    {
+      "caller": "IngestionSpecialCollections",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "IngestionSpecialCollections",
+      "callee": "DigitizationTracking"
+    },
+    {
+      "caller": "IngestionAdministrative",
+      "callee": "DescriptiveMetadata"
+    },
+    {
+      "caller": "FileDerivatives",
+      "callee": "MediaDerivatives"
+    },
+    {
+      "caller": "ImageEditing",
+      "callee": "MediaDerivatives"
+    },
+    {
+      "caller": "RedactionService",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "TechnicalMetadata",
+      "callee": "DigitizationPolicy"
+    },
+    {
+      "caller": "DigitizationTracking",
+      "callee": "DigitizationPolicy"
+    },
+    {
+      "caller": "CoreMetadata",
+      "callee": "FieldVisibility"
+    },
+    {
+      "caller": "DescriptiveMetadata",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "ImageMetadata",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "CitationMetadata",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "SearchCore",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "SearchCore",
+      "callee": "PolicyEnforcement"
+    },
+    {
+      "caller": "SearchAdvanced",
+      "callee": "SearchCore"
+    },
+    {
+      "caller": "SearchImages",
+      "callee": "ImageMetadata"
+    },
+    {
+      "caller": "SearchImages",
+      "callee": "SearchCore"
+    },
+    {
+      "caller": "SearchTextual",
+      "callee": "SearchCore"
+    },
+    {
+      "caller": "SearchRestricted",
+      "callee": "SearchCore"
+    },
+    {
+      "caller": "SearchRestricted",
+      "callee": "RightsDisclosure"
+    },
+    {
+      "caller": "AccessDeliveryCore",
+      "callee": "PolicyEnforcement"
+    },
+    {
+      "caller": "AccessDeliveryCore",
+      "callee": "RightsDisclosure"
+    },
+    {
+      "caller": "AccessDeliveryCore",
+      "callee": "UsageTracking"
+    },
+    {
+      "caller": "AccessViews",
+      "callee": "AccessDeliveryCore"
+    },
+    {
+      "caller": "AccessCollections",
+      "callee": "AccessDeliveryCore"
+    },
+    {
+      "caller": "AccessDonorContent",
+      "callee": "AccessDeliveryCore"
+    },
+    {
+      "caller": "CitationService",
+      "callee": "CitationMetadata"
+    },
+    {
+      "caller": "CitationService",
+      "callee": "RightsDisclosure"
+    },
+    {
+      "caller": "ExportService",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "ExportService",
+      "callee": "DescriptiveMetadata"
+    },
+    {
+      "caller": "UsageTracking",
+      "callee": "UserDirectory"
+    },
+    {
+      "caller": "NotificationService",
+      "callee": "UserDirectory"
+    },
+    {
+      "caller": "NotificationService",
+      "callee": "CitationService"
+    },
+    {
+      "caller": "SocialAndInteraction",
+      "callee": "AccessDeliveryCore"
+    },
+    {
+      "caller": "SocialAndInteraction",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "SocialAndInteraction",
+      "callee": "SearchCore"
+    },
+    {
+      "caller": "ResearchOutputs",
+      "callee": "CoreMetadata"
+    },
+    {
+      "caller": "ResearchOutputs",
+      "callee": "AccessDeliveryCore"
+    }
+  ]
+}

@@ -1,0 +1,804 @@
+{
+  "microservices": [
+    {
+      "name": "UserInterface",
+      "ops": [
+        {
+          "name": "RenderWebPortal",
+          "params": [
+            "userId",
+            "locale",
+            "theme"
+          ]
+        },
+        {
+          "name": "RenderPureIntegrationView",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "RenderVREIntegrationView",
+          "params": [
+            "userId",
+            "toolId"
+          ]
+        },
+        {
+          "name": "SwitchLanguage",
+          "params": [
+            "userId",
+            "locale"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuthAndIdentity",
+      "ops": [
+        {
+          "name": "AuthenticateUser",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "AuthenticateViaLDAP",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "ResolveExternalCollaborator",
+          "params": [
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetDeposit",
+      "ops": [
+        {
+          "name": "CreateDataset",
+          "params": [
+            "depositorId",
+            "title",
+            "description"
+          ]
+        },
+        {
+          "name": "UpdateDataset",
+          "params": [
+            "datasetId",
+            "depositorId",
+            "changes"
+          ]
+        },
+        {
+          "name": "DepositFiles",
+          "params": [
+            "datasetId",
+            "fileList",
+            "uploadToken"
+          ]
+        },
+        {
+          "name": "DepositLargeFile",
+          "params": [
+            "datasetId",
+            "fileName",
+            "chunkId",
+            "chunkData"
+          ]
+        },
+        {
+          "name": "LinkExternalData",
+          "params": [
+            "datasetId",
+            "externalRepository",
+            "externalIdentifier",
+            "accessUrl"
+          ]
+        },
+        {
+          "name": "SetEmbargo",
+          "params": [
+            "datasetId",
+            "embargoEndDate",
+            "embargoReason"
+          ]
+        },
+        {
+          "name": "SetLicense",
+          "params": [
+            "datasetId",
+            "licenseType",
+            "licenseText"
+          ]
+        },
+        {
+          "name": "SetCollaboratorAccess",
+          "params": [
+            "datasetId",
+            "collaboratorId",
+            "accessLevel"
+          ]
+        },
+        {
+          "name": "SetDisposalPolicy",
+          "params": [
+            "datasetId",
+            "disposalDate",
+            "policyDetails"
+          ]
+        },
+        {
+          "name": "AssignDepositorDelegate",
+          "params": [
+            "datasetId",
+            "ownerId",
+            "delegateId",
+            "permissions"
+          ]
+        },
+        {
+          "name": "AttachSubjectMetadata",
+          "params": [
+            "datasetId",
+            "discipline",
+            "subjectMetadata"
+          ]
+        },
+        {
+          "name": "LinkToProjectDMP",
+          "params": [
+            "datasetId",
+            "dmpId"
+          ]
+        },
+        {
+          "name": "ManageLiveData",
+          "params": [
+            "projectId",
+            "datasetId",
+            "liveDataEndpoint"
+          ]
+        },
+        {
+          "name": "CreateDatasetVersion",
+          "params": [
+            "datasetId",
+            "baseVersionId",
+            "changeSummary"
+          ]
+        },
+        {
+          "name": "DepositViaAPI",
+          "params": [
+            "apiClientId",
+            "swordPackage",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "AutoFillMetadataFromSystems",
+          "params": [
+            "depositorId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ReusePreviousDepositMetadata",
+          "params": [
+            "depositorId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ValidateRequiredMetadata",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ImportExternalMetadataBatch",
+          "params": [
+            "sourceSystem",
+            "batchPayload"
+          ]
+        },
+        {
+          "name": "AttachProjectMetadata",
+          "params": [
+            "datasetId",
+            "projectId",
+            "projectMetadata"
+          ]
+        },
+        {
+          "name": "GetMetadataForHarvest",
+          "params": [
+            "funderId",
+            "filter"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControl",
+      "ops": [
+        {
+          "name": "SetDatasetPermissions",
+          "params": [
+            "datasetId",
+            "principalId",
+            "accessLevel"
+          ]
+        },
+        {
+          "name": "GrantPrivilegedAccess",
+          "params": [
+            "datasetId",
+            "collaboratorId",
+            "accessLevel"
+          ]
+        },
+        {
+          "name": "CheckAccess",
+          "params": [
+            "datasetId",
+            "userId",
+            "operation"
+          ]
+        },
+        {
+          "name": "ConfigureExternalAccess",
+          "params": [
+            "datasetId",
+            "externalUserId",
+            "accessLevel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageService",
+      "ops": [
+        {
+          "name": "StoreFile",
+          "params": [
+            "datasetId",
+            "filePath",
+            "storageTier"
+          ]
+        },
+        {
+          "name": "StoreOnExistingSystems",
+          "params": [
+            "datasetId",
+            "filePath",
+            "systemId"
+          ]
+        },
+        {
+          "name": "StoreOnHCPObjectStore",
+          "params": [
+            "datasetId",
+            "objectKey",
+            "data"
+          ]
+        },
+        {
+          "name": "RetrieveFile",
+          "params": [
+            "datasetId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "ExportAllData",
+          "params": [
+            "targetSystem",
+            "exportFormat"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntegrityAndPreservation",
+      "ops": [
+        {
+          "name": "GenerateChecksum",
+          "params": [
+            "datasetId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "VerifyChecksum",
+          "params": [
+            "datasetId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "RecordPreservationMetadata",
+          "params": [
+            "datasetId",
+            "preservationLevel"
+          ]
+        },
+        {
+          "name": "ApproveDisposal",
+          "params": [
+            "datasetId",
+            "adminId"
+          ]
+        },
+        {
+          "name": "ExecuteDisposal",
+          "params": [
+            "datasetId",
+            "disposalDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOIAndIdentifierService",
+      "ops": [
+        {
+          "name": "MintDOI",
+          "params": [
+            "datasetId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "GetDOI",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "GetPersistentURL",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "RegisterPersistentLinkWithPublisher",
+          "params": [
+            "datasetId",
+            "articleId",
+            "publisherId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LinkingAndIntegration",
+      "ops": [
+        {
+          "name": "LinkDatasetToPublicationOpus",
+          "params": [
+            "datasetId",
+            "opusPublicationId"
+          ]
+        },
+        {
+          "name": "LinkDatasetToPure",
+          "params": [
+            "datasetId",
+            "pureRecordId"
+          ]
+        },
+        {
+          "name": "IntegrateWithCRIS",
+          "params": [
+            "datasetId",
+            "crisRecordId"
+          ]
+        },
+        {
+          "name": "LinkDatasetToProject",
+          "params": [
+            "datasetId",
+            "projectId"
+          ]
+        },
+        {
+          "name": "ExposeToPrimo",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ExposeToVRE",
+          "params": [
+            "datasetId",
+            "vreId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchAndDiscovery",
+      "ops": [
+        {
+          "name": "SearchArchiveWeb",
+          "params": [
+            "query",
+            "filters",
+            "locale"
+          ]
+        },
+        {
+          "name": "SearchArchivePrimo",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "GetDatasetVersionsOverview",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "GetSubjectSpecificMetadata",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PreviewAndCitation",
+      "ops": [
+        {
+          "name": "ListDatasetFiles",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "PreviewFile",
+          "params": [
+            "datasetId",
+            "fileId"
+          ]
+        },
+        {
+          "name": "GetExampleCitation",
+          "params": [
+            "datasetId",
+            "citationStyle"
+          ]
+        },
+        {
+          "name": "GetCitationWithDOI",
+          "params": [
+            "datasetId",
+            "citationStyle"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdminCuration",
+      "ops": [
+        {
+          "name": "ReviewDatasetBeforePublication",
+          "params": [
+            "datasetId",
+            "adminId"
+          ]
+        },
+        {
+          "name": "ApproveDatasetForPublication",
+          "params": [
+            "datasetId",
+            "adminId"
+          ]
+        },
+        {
+          "name": "RejectDataset",
+          "params": [
+            "datasetId",
+            "adminId",
+            "reason"
+          ]
+        },
+        {
+          "name": "SetMinimumMetadataProfile",
+          "params": [
+            "profileId",
+            "requiredFields"
+          ]
+        },
+        {
+          "name": "QueryArchiveHoldings",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "PromoteOpenStandards",
+          "params": [
+            "datasetId",
+            "formatRecommendations"
+          ]
+        },
+        {
+          "name": "ImportWholesaleFromExternalCentre",
+          "params": [
+            "sourceCentreId",
+            "transferPackage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsAndImpact",
+      "ops": [
+        {
+          "name": "TrackDownload",
+          "params": [
+            "datasetId",
+            "userId",
+            "country",
+            "sector"
+          ]
+        },
+        {
+          "name": "GetDownloadStatistics",
+          "params": [
+            "datasetId",
+            "groupBy"
+          ]
+        },
+        {
+          "name": "SegmentStatsByCountryAndSector",
+          "params": [
+            "datasetId",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "TrackCitation",
+          "params": [
+            "datasetId",
+            "source",
+            "citationId"
+          ]
+        },
+        {
+          "name": "GetCitationCounts",
+          "params": [
+            "datasetId",
+            "source"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExternalHarvesting",
+      "ops": [
+        {
+          "name": "ExposeMetadataForFunder",
+          "params": [
+            "funderId",
+            "protocol",
+            "fromDate"
+          ]
+        },
+        {
+          "name": "HarvestMetadataOnOutputs",
+          "params": [
+            "funderId",
+            "projectIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ComplianceAndReporting",
+      "ops": [
+        {
+          "name": "ReportOnProjectDeposits",
+          "params": [
+            "projectId",
+            "funderId"
+          ]
+        },
+        {
+          "name": "CheckDMPCompliance",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GenerateFunderComplianceReport",
+          "params": [
+            "funderId",
+            "timeRange"
+          ]
+        },
+        {
+          "name": "GenerateIPRiskAssessment",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "APIIntegration",
+      "ops": [
+        {
+          "name": "Sword2Deposit",
+          "params": [
+            "apiClientId",
+            "package",
+            "metadata"
+          ]
+        },
+        {
+          "name": "RegisterApiClient",
+          "params": [
+            "clientName",
+            "contactEmail"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserInterface",
+      "callee": "AuthAndIdentity"
+    },
+    {
+      "caller": "UserInterface",
+      "callee": "DatasetDeposit"
+    },
+    {
+      "caller": "UserInterface",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "UserInterface",
+      "callee": "PreviewAndCitation"
+    },
+    {
+      "caller": "UserInterface",
+      "callee": "AnalyticsAndImpact"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "IntegrityAndPreservation"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "DOIAndIdentifierService"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "LinkingAndIntegration"
+    },
+    {
+      "caller": "DatasetDeposit",
+      "callee": "AdminCuration"
+    },
+    {
+      "caller": "MetadataService",
+      "callee": "LinkingAndIntegration"
+    },
+    {
+      "caller": "MetadataService",
+      "callee": "ExternalHarvesting"
+    },
+    {
+      "caller": "AccessControl",
+      "callee": "AuthAndIdentity"
+    },
+    {
+      "caller": "StorageService",
+      "callee": "IntegrityAndPreservation"
+    },
+    {
+      "caller": "IntegrityAndPreservation",
+      "callee": "AdminCuration"
+    },
+    {
+      "caller": "DOIAndIdentifierService",
+      "callee": "ExternalHarvesting"
+    },
+    {
+      "caller": "LinkingAndIntegration",
+      "callee": "ExternalHarvesting"
+    },
+    {
+      "caller": "SearchAndDiscovery",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "SearchAndDiscovery",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "PreviewAndCitation",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "PreviewAndCitation",
+      "callee": "DOIAndIdentifierService"
+    },
+    {
+      "caller": "AdminCuration",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "AdminCuration",
+      "callee": "ComplianceAndReporting"
+    },
+    {
+      "caller": "AnalyticsAndImpact",
+      "callee": "SearchAndDiscovery"
+    },
+    {
+      "caller": "AnalyticsAndImpact",
+      "callee": "ExternalHarvesting"
+    },
+    {
+      "caller": "ExternalHarvesting",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "ComplianceAndReporting",
+      "callee": "AnalyticsAndImpact"
+    },
+    {
+      "caller": "ComplianceAndReporting",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "APIIntegration",
+      "callee": "DatasetDeposit"
+    },
+    {
+      "caller": "APIIntegration",
+      "callee": "AuthAndIdentity"
+    }
+  ]
+}

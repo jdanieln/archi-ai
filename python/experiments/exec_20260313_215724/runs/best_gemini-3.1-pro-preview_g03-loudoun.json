@@ -1,0 +1,603 @@
+{
+  "microservices": [
+    {
+      "name": "IdentityService",
+      "ops": [
+        {
+          "name": "CreateCustomerAccount",
+          "params": [
+            "username",
+            "password",
+            "email"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PortalInformationService",
+      "ops": [
+        {
+          "name": "SearchPublicInformation",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "ResearchRequirements",
+          "params": [
+            "serviceType"
+          ]
+        },
+        {
+          "name": "SelectService",
+          "params": [
+            "serviceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ApplicationCoreService",
+      "ops": [
+        {
+          "name": "RequestPreAppAssistance",
+          "params": [
+            "applicantId",
+            "requestDetails"
+          ]
+        },
+        {
+          "name": "SubmitApplication",
+          "params": [
+            "applicantId",
+            "applicationData"
+          ]
+        },
+        {
+          "name": "ModifyApplication",
+          "params": [
+            "applicationId",
+            "modifiedData"
+          ]
+        },
+        {
+          "name": "CheckTransactionStatus",
+          "params": [
+            "transactionId"
+          ]
+        },
+        {
+          "name": "SetFinalActionStatus",
+          "params": [
+            "applicationId",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ApplicationReviewService",
+      "ops": [
+        {
+          "name": "PerformCompletenessReview",
+          "params": [
+            "applicationId",
+            "reviewData"
+          ]
+        },
+        {
+          "name": "AssignAppForDetailedReview",
+          "params": [
+            "applicationId",
+            "reviewerId"
+          ]
+        },
+        {
+          "name": "PerformStaffReview",
+          "params": [
+            "applicationId",
+            "reviewData"
+          ]
+        },
+        {
+          "name": "RecordInternalNote",
+          "params": [
+            "recordId",
+            "noteText"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DocumentService",
+      "ops": [
+        {
+          "name": "SubmitSupportingDocumentation",
+          "params": [
+            "applicationId",
+            "documents"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PaymentService",
+      "ops": [
+        {
+          "name": "PayFee",
+          "params": [
+            "applicationId",
+            "amount"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowService",
+      "ops": [
+        {
+          "name": "ApplyHold",
+          "params": [
+            "entityId",
+            "reason"
+          ]
+        },
+        {
+          "name": "RemoveHold",
+          "params": [
+            "entityId",
+            "resolution"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CommunicationService",
+      "ops": [
+        {
+          "name": "SendFormalResponse",
+          "params": [
+            "applicantId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProfferService",
+      "ops": [
+        {
+          "name": "TrackDraftProffers",
+          "params": [
+            "applicationId",
+            "profferData"
+          ]
+        },
+        {
+          "name": "ManageApprovedProffers",
+          "params": [
+            "profferId",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OrdinanceService",
+      "ops": [
+        {
+          "name": "ManageOrdinances",
+          "params": [
+            "ordinanceId",
+            "ordinanceData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MeetingService",
+      "ops": [
+        {
+          "name": "ScheduleMeeting",
+          "params": [
+            "participants",
+            "dateTime"
+          ]
+        },
+        {
+          "name": "RequestPlanReviewMeeting",
+          "params": [
+            "planId",
+            "applicantId"
+          ]
+        },
+        {
+          "name": "RecordMeetingOutcome",
+          "params": [
+            "meetingId",
+            "outcome"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanningService",
+      "ops": [
+        {
+          "name": "TrackPlanAmendments",
+          "params": [
+            "planId",
+            "amendmentData"
+          ]
+        },
+        {
+          "name": "EvaluatePlanConsistency",
+          "params": [
+            "planId",
+            "applicationData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReportingService",
+      "ops": [
+        {
+          "name": "GeneratePlanningReport",
+          "params": [
+            "reportType",
+            "parameters"
+          ]
+        },
+        {
+          "name": "DevelopStaffReport",
+          "params": [
+            "applicationId",
+            "reportData"
+          ]
+        },
+        {
+          "name": "CreateCustomReport",
+          "params": [
+            "queryParameters",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZoningService",
+      "ops": [
+        {
+          "name": "ProcessZoningInfoRequests",
+          "params": [
+            "requestId",
+            "responseData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PermitService",
+      "ops": [
+        {
+          "name": "IssueZoningPermit",
+          "params": [
+            "applicationId",
+            "permitData"
+          ]
+        },
+        {
+          "name": "IssueDevelopmentPermit",
+          "params": [
+            "applicationId",
+            "permitData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HearingManagementService",
+      "ops": [
+        {
+          "name": "ManageHearingCalendars",
+          "params": [
+            "calendarId",
+            "hearingData"
+          ]
+        },
+        {
+          "name": "AssignHearingDate",
+          "params": [
+            "applicationId",
+            "date"
+          ]
+        },
+        {
+          "name": "ManageAffidavits",
+          "params": [
+            "hearingId",
+            "affidavitData"
+          ]
+        },
+        {
+          "name": "SatisfyHearingRequirements",
+          "params": [
+            "hearingId",
+            "requirementsData"
+          ]
+        },
+        {
+          "name": "PrepareForHearingExecution",
+          "params": [
+            "hearingId",
+            "preparationData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HearingDecisionService",
+      "ops": [
+        {
+          "name": "CaptureHearingDecision",
+          "params": [
+            "hearingId",
+            "decision"
+          ]
+        },
+        {
+          "name": "ProcessAppeals",
+          "params": [
+            "appealId",
+            "outcome"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanReviewAssignmentService",
+      "ops": [
+        {
+          "name": "AssignPlansForReview",
+          "params": [
+            "planId",
+            "reviewerId"
+          ]
+        },
+        {
+          "name": "ManagePlanReviewerWorkload",
+          "params": [
+            "reviewerId",
+            "workloadData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanReviewExecutionService",
+      "ops": [
+        {
+          "name": "ReviewPlans",
+          "params": [
+            "planId",
+            "reviewData"
+          ]
+        },
+        {
+          "name": "ResubmitPlans",
+          "params": [
+            "planId",
+            "revisedPlans"
+          ]
+        },
+        {
+          "name": "ReviewCodeModifications",
+          "params": [
+            "modificationId",
+            "decision"
+          ]
+        },
+        {
+          "name": "TrackCompletionOfPlanReviews",
+          "params": [
+            "planId",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BondService",
+      "ops": [
+        {
+          "name": "ManageBonds",
+          "params": [
+            "projectId",
+            "bondData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProjectService",
+      "ops": [
+        {
+          "name": "CompleteBuildingDevelopmentProject",
+          "params": [
+            "projectId",
+            "completionData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InspectionSchedulingService",
+      "ops": [
+        {
+          "name": "RequestInspection",
+          "params": [
+            "projectId",
+            "inspectionType"
+          ]
+        },
+        {
+          "name": "CreateInspection",
+          "params": [
+            "projectId",
+            "scheduleData"
+          ]
+        },
+        {
+          "name": "AssignInspections",
+          "params": [
+            "inspectionId",
+            "inspectorId"
+          ]
+        },
+        {
+          "name": "ManageInspectorWorkload",
+          "params": [
+            "inspectorId",
+            "workloadData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InspectionExecutionService",
+      "ops": [
+        {
+          "name": "ConductInspections",
+          "params": [
+            "inspectionId",
+            "results"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnforcementService",
+      "ops": [
+        {
+          "name": "IssueNoticeOfViolation",
+          "params": [
+            "propertyId",
+            "violationData"
+          ]
+        },
+        {
+          "name": "SendCitationsAndFines",
+          "params": [
+            "propertyOwnerId",
+            "citationData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PropertyService",
+      "ops": [
+        {
+          "name": "SearchPropertyInformation",
+          "params": [
+            "propertyId",
+            "query"
+          ]
+        },
+        {
+          "name": "CreateCondoUnit",
+          "params": [
+            "parentParcelId",
+            "unitData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GISService",
+      "ops": [
+        {
+          "name": "NotifyGeospatialAttributesChange",
+          "params": [
+            "propertyId",
+            "changes"
+          ]
+        },
+        {
+          "name": "UpdateGISPropertyManagement",
+          "params": [
+            "parcelPin",
+            "gisData"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "ApplicationCoreService",
+      "callee": "DocumentService"
+    },
+    {
+      "caller": "ApplicationCoreService",
+      "callee": "PaymentService"
+    },
+    {
+      "caller": "ApplicationReviewService",
+      "callee": "ApplicationCoreService"
+    },
+    {
+      "caller": "ApplicationReviewService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "WorkflowService",
+      "callee": "ApplicationCoreService"
+    },
+    {
+      "caller": "PermitService",
+      "callee": "ApplicationCoreService"
+    },
+    {
+      "caller": "HearingManagementService",
+      "callee": "ApplicationCoreService"
+    },
+    {
+      "caller": "HearingDecisionService",
+      "callee": "ApplicationCoreService"
+    },
+    {
+      "caller": "PlanReviewExecutionService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "InspectionExecutionService",
+      "callee": "ProjectService"
+    },
+    {
+      "caller": "InspectionExecutionService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "EnforcementService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "GISService",
+      "callee": "PropertyService"
+    },
+    {
+      "caller": "MeetingService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "ZoningService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "ReportingService",
+      "callee": "ApplicationCoreService"
+    }
+  ]
+}

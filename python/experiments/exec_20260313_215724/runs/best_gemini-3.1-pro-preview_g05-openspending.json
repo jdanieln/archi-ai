@@ -1,0 +1,399 @@
+{
+  "microservices": [
+    {
+      "name": "DatasetManagement",
+      "ops": [
+        {
+          "name": "CreateDataset",
+          "params": [
+            "datasetData",
+            "visibility"
+          ]
+        },
+        {
+          "name": "EditDataset",
+          "params": [
+            "datasetId",
+            "datasetData"
+          ]
+        },
+        {
+          "name": "DeleteDataset",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "UpdateVisibility",
+          "params": [
+            "datasetId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "GetDatasets",
+          "params": [
+            "userId",
+            "filter"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataModelManagement",
+      "ops": [
+        {
+          "name": "EditDataModel",
+          "params": [
+            "datasetId",
+            "modelData"
+          ]
+        },
+        {
+          "name": "EditDataSource",
+          "params": [
+            "datasetId",
+            "sourceData"
+          ]
+        },
+        {
+          "name": "AddConstants",
+          "params": [
+            "datasetId",
+            "constants"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataImport",
+      "ops": [
+        {
+          "name": "ImportFile",
+          "params": [
+            "file",
+            "format"
+          ]
+        },
+        {
+          "name": "ImportFromUrl",
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "BulkImport",
+          "params": [
+            "dataBatch"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataValidation",
+      "ops": [
+        {
+          "name": "ValidateCSV",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "GetMapRequirements",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataSync",
+      "ops": [
+        {
+          "name": "ConfigureAutoUpdate",
+          "params": [
+            "datasetId",
+            "sourceConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GeoSpatialService",
+      "ops": [
+        {
+          "name": "AddGeoJSONSource",
+          "params": [
+            "sourceData"
+          ]
+        },
+        {
+          "name": "GetBorderingLocations",
+          "params": [
+            "locationId"
+          ]
+        },
+        {
+          "name": "GetPolygons",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "GetLocationByHASC",
+          "params": [
+            "hascCode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataQuery",
+      "ops": [
+        {
+          "name": "QueryCube",
+          "params": [
+            "datasetId",
+            "dimensions",
+            "measures",
+            "filters"
+          ]
+        },
+        {
+          "name": "QueryMultipleDatasets",
+          "params": [
+            "metadata",
+            "dataParams"
+          ]
+        },
+        {
+          "name": "GetRelativePercentage",
+          "params": [
+            "datasetId",
+            "measure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataNormalization",
+      "ops": [
+        {
+          "name": "NormalizeMeasure",
+          "params": [
+            "datasetId",
+            "measure",
+            "contextType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CurrencyService",
+      "ops": [
+        {
+          "name": "ConvertCurrency",
+          "params": [
+            "amounts",
+            "targetCurrency"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataExport",
+      "ops": [
+        {
+          "name": "ExportCSV",
+          "params": [
+            "queryId"
+          ]
+        },
+        {
+          "name": "ExportImage",
+          "params": [
+            "viewStateId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationState",
+      "ops": [
+        {
+          "name": "SaveViewState",
+          "params": [
+            "stateData"
+          ]
+        },
+        {
+          "name": "GetDefaultVisualization",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ShareViewState",
+          "params": [
+            "viewStateId",
+            "network"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationConfig",
+      "ops": [
+        {
+          "name": "UpdateStyling",
+          "params": [
+            "viewerId",
+            "stylingConfig"
+          ]
+        },
+        {
+          "name": "UpdateColors",
+          "params": [
+            "visualizationId",
+            "colors"
+          ]
+        },
+        {
+          "name": "SetMapZoom",
+          "params": [
+            "mapId",
+            "zoomLevel"
+          ]
+        },
+        {
+          "name": "GetVisualizationDescription",
+          "params": [
+            "visualizationId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchDatasets",
+          "params": [
+            "query",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "CheckUserRole",
+          "params": [
+            "userId",
+            "role"
+          ]
+        },
+        {
+          "name": "SetUsername",
+          "params": [
+            "userId",
+            "username"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlatformConfiguration",
+      "ops": [
+        {
+          "name": "UpdateBranding",
+          "params": [
+            "brandName",
+            "icon",
+            "primaryColor"
+          ]
+        },
+        {
+          "name": "TranslateHierarchies",
+          "params": [
+            "viewerId",
+            "language"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentManagement",
+      "ops": [
+        {
+          "name": "GetBlogPosts",
+          "params": []
+        },
+        {
+          "name": "GetGalleryExamples",
+          "params": []
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DataImport",
+      "callee": "DataValidation"
+    },
+    {
+      "caller": "DataImport",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "DataSync",
+      "callee": "DataImport"
+    },
+    {
+      "caller": "DataModelManagement",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "DataQuery",
+      "callee": "CurrencyService"
+    },
+    {
+      "caller": "DataQuery",
+      "callee": "DataNormalization"
+    },
+    {
+      "caller": "VisualizationState",
+      "callee": "DataQuery"
+    },
+    {
+      "caller": "VisualizationState",
+      "callee": "GeoSpatialService"
+    },
+    {
+      "caller": "VisualizationConfig",
+      "callee": "PlatformConfiguration"
+    },
+    {
+      "caller": "DataExport",
+      "callee": "DataQuery"
+    },
+    {
+      "caller": "DataExport",
+      "callee": "VisualizationState"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "DatasetManagement"
+    },
+    {
+      "caller": "DatasetManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "PlatformConfiguration",
+      "callee": "UserManagement"
+    }
+  ]
+}

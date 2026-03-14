@@ -1,0 +1,367 @@
+{
+  "microservices": [
+    {
+      "name": "PrivacyService",
+      "ops": [
+        {
+          "name": "UpdatePermissions",
+          "params": [
+            "userId",
+            "permissions"
+          ]
+        },
+        {
+          "name": "VerifyAccess",
+          "params": [
+            "ownerId",
+            "requesterId",
+            "dataType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SettingsService",
+      "ops": [
+        {
+          "name": "UpdateAccessibility",
+          "params": [
+            "userId",
+            "visualAid",
+            "hearingAid"
+          ]
+        },
+        {
+          "name": "UpdateInteractionPrefs",
+          "params": [
+            "userId",
+            "speechRate",
+            "interactionMode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeviceService",
+      "ops": [
+        {
+          "name": "CheckBattery",
+          "params": [
+            "deviceId"
+          ]
+        },
+        {
+          "name": "NotifyLowBattery",
+          "params": [
+            "deviceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CommunicationService",
+      "ops": [
+        {
+          "name": "InitiateCall",
+          "params": [
+            "callerId",
+            "calleeId",
+            "isVideo"
+          ]
+        },
+        {
+          "name": "SendMessage",
+          "params": [
+            "senderId",
+            "receiverId",
+            "content"
+          ]
+        },
+        {
+          "name": "ManageContacts",
+          "params": [
+            "userId",
+            "contactData",
+            "action"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AgendaService",
+      "ops": [
+        {
+          "name": "ManageEvent",
+          "params": [
+            "userId",
+            "eventDetails",
+            "action"
+          ]
+        },
+        {
+          "name": "GetReminders",
+          "params": [
+            "userId",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "SetRoutine",
+          "params": [
+            "userId",
+            "routineType",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NavigationService",
+      "ops": [
+        {
+          "name": "CalculateRoute",
+          "params": [
+            "userId",
+            "destination"
+          ]
+        },
+        {
+          "name": "RequestTransport",
+          "params": [
+            "userId",
+            "transportType",
+            "time"
+          ]
+        },
+        {
+          "name": "GetLocationInfo",
+          "params": [
+            "locationId",
+            "infoType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SmartHomeService",
+      "ops": [
+        {
+          "name": "ControlAppliance",
+          "params": [
+            "userId",
+            "applianceId",
+            "state"
+          ]
+        },
+        {
+          "name": "ManageDoorAccess",
+          "params": [
+            "userId",
+            "doorId",
+            "action"
+          ]
+        },
+        {
+          "name": "ControlMedia",
+          "params": [
+            "userId",
+            "mediaId",
+            "action"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EmergencyService",
+      "ops": [
+        {
+          "name": "TriggerEmergency",
+          "params": [
+            "userId",
+            "emergencyType",
+            "location"
+          ]
+        },
+        {
+          "name": "DetectFall",
+          "params": [
+            "userId",
+            "sensorData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HealthService",
+      "ops": [
+        {
+          "name": "LogVitalSigns",
+          "params": [
+            "userId",
+            "vitalType",
+            "value"
+          ]
+        },
+        {
+          "name": "GetVitalSigns",
+          "params": [
+            "userId",
+            "requesterId",
+            "vitalType"
+          ]
+        },
+        {
+          "name": "LogMedicineIntake",
+          "params": [
+            "userId",
+            "medicineId",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ActivityService",
+      "ops": [
+        {
+          "name": "StartActivity",
+          "params": [
+            "userId",
+            "activityId",
+            "activityType"
+          ]
+        },
+        {
+          "name": "LogPerformance",
+          "params": [
+            "userId",
+            "activityId",
+            "metrics"
+          ]
+        },
+        {
+          "name": "SuggestActivities",
+          "params": [
+            "userId",
+            "location",
+            "interests"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SocialService",
+      "ops": [
+        {
+          "name": "ManageSocialGroup",
+          "params": [
+            "userId",
+            "groupId",
+            "action"
+          ]
+        },
+        {
+          "name": "GetEventInvitations",
+          "params": [
+            "userId",
+            "location"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MarketplaceService",
+      "ops": [
+        {
+          "name": "PublishApp",
+          "params": [
+            "developerId",
+            "appDetails"
+          ]
+        },
+        {
+          "name": "ManageAppPricing",
+          "params": [
+            "developerId",
+            "appId",
+            "price"
+          ]
+        },
+        {
+          "name": "SubmitFeedback",
+          "params": [
+            "userId",
+            "appId",
+            "feedback"
+          ]
+        },
+        {
+          "name": "ReportCrash",
+          "params": [
+            "appId",
+            "crashDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PaymentService",
+      "ops": [
+        {
+          "name": "ProcessPayment",
+          "params": [
+            "userId",
+            "amount",
+            "recipientId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "EmergencyService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "EmergencyService",
+      "callee": "NavigationService"
+    },
+    {
+      "caller": "HealthService",
+      "callee": "PrivacyService"
+    },
+    {
+      "caller": "HealthService",
+      "callee": "EmergencyService"
+    },
+    {
+      "caller": "ActivityService",
+      "callee": "HealthService"
+    },
+    {
+      "caller": "AgendaService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "AgendaService",
+      "callee": "HealthService"
+    },
+    {
+      "caller": "MarketplaceService",
+      "callee": "PaymentService"
+    },
+    {
+      "caller": "PaymentService",
+      "callee": "PrivacyService"
+    },
+    {
+      "caller": "SocialService",
+      "callee": "CommunicationService"
+    },
+    {
+      "caller": "SocialService",
+      "callee": "NavigationService"
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "microservices": [
+    {
+      "name": "UserService",
+      "ops": [
+        {
+          "name": "CreateAccount",
+          "params": [
+            "username",
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "LinkEmail",
+          "params": [
+            "userId",
+            "email"
+          ]
+        },
+        {
+          "name": "AddFavoriteFacility",
+          "params": [
+            "userId",
+            "facilityId"
+          ]
+        },
+        {
+          "name": "BlockUserIP",
+          "params": [
+            "adminId",
+            "ipAddress"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FacilitySearchService",
+      "ops": [
+        {
+          "name": "GetFacilitiesByZip",
+          "params": [
+            "zipCode"
+          ]
+        },
+        {
+          "name": "GetFacilitiesByWasteType",
+          "params": [
+            "wasteType"
+          ]
+        },
+        {
+          "name": "GetFacilityHours",
+          "params": [
+            "facilityId"
+          ]
+        },
+        {
+          "name": "GetEcoFriendlyFacilities",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "FacilityAdminService",
+      "ops": [
+        {
+          "name": "AddFacility",
+          "params": [
+            "adminId",
+            "facilityData"
+          ]
+        },
+        {
+          "name": "UpdateFacility",
+          "params": [
+            "adminId",
+            "facilityId",
+            "facilityData"
+          ]
+        },
+        {
+          "name": "RemoveFacility",
+          "params": [
+            "adminId",
+            "facilityId"
+          ]
+        },
+        {
+          "name": "UpdateAcceptedMaterials",
+          "params": [
+            "facilityId",
+            "materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MapService",
+      "ops": [
+        {
+          "name": "GetRecyclingBins",
+          "params": [
+            "location"
+          ]
+        },
+        {
+          "name": "GetSpecialWasteSites",
+          "params": [
+            "location"
+          ]
+        },
+        {
+          "name": "GetFacilityLocations",
+          "params": [
+            "location"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PickupSchedulingService",
+      "ops": [
+        {
+          "name": "SchedulePickup",
+          "params": [
+            "userId",
+            "pickupTime",
+            "location"
+          ]
+        },
+        {
+          "name": "UploadUserSchedule",
+          "params": [
+            "userId",
+            "scheduleData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EventService",
+      "ops": [
+        {
+          "name": "GetDisposalEvents",
+          "params": [
+            "location"
+          ]
+        },
+        {
+          "name": "SubscribeToEvents",
+          "params": [
+            "email",
+            "location"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "SendEmailNotification",
+          "params": [
+            "email",
+            "message"
+          ]
+        },
+        {
+          "name": "SendPushNotification",
+          "params": [
+            "userId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FeedbackService",
+      "ops": [
+        {
+          "name": "SubmitFeedback",
+          "params": [
+            "userId",
+            "message"
+          ]
+        },
+        {
+          "name": "GetFeedbacks",
+          "params": [
+            "adminId"
+          ]
+        },
+        {
+          "name": "ReplyToQuestion",
+          "params": [
+            "questionId",
+            "replyMessage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MessagingService",
+      "ops": [
+        {
+          "name": "ContactAdmin",
+          "params": [
+            "userId",
+            "message"
+          ]
+        },
+        {
+          "name": "ContactFacility",
+          "params": [
+            "userId",
+            "facilityId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BillingAndTransactionService",
+      "ops": [
+        {
+          "name": "GetTransactionHistory",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetActivityFees",
+          "params": [
+            "companyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsService",
+      "ops": [
+        {
+          "name": "GetUsageStats",
+          "params": []
+        },
+        {
+          "name": "GetFacilityStats",
+          "params": [
+            "facilityId"
+          ]
+        },
+        {
+          "name": "GetCompanyPerformance",
+          "params": [
+            "companyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SystemMonitoringService",
+      "ops": [
+        {
+          "name": "GetSystemStatus",
+          "params": [
+            "adminId"
+          ]
+        },
+        {
+          "name": "GetErrorLogs",
+          "params": [
+            "adminId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RoutingService",
+      "ops": [
+        {
+          "name": "GetOptimalRoute",
+          "params": [
+            "startLocation",
+            "destinations"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HRService",
+      "ops": [
+        {
+          "name": "GetEmployees",
+          "params": [
+            "companyId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RewardService",
+      "ops": [
+        {
+          "name": "GetUserRewards",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecommendationService",
+      "ops": [
+        {
+          "name": "GetFacilityRecommendations",
+          "params": [
+            "userId",
+            "scheduleData"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "PickupSchedulingService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "EventService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "FeedbackService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "MessagingService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "RecommendationService",
+      "callee": "FacilitySearchService"
+    },
+    {
+      "caller": "RoutingService",
+      "callee": "FacilitySearchService"
+    },
+    {
+      "caller": "UserService",
+      "callee": "FacilitySearchService"
+    }
+  ]
+}

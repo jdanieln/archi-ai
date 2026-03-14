@@ -1,0 +1,694 @@
+{
+  "microservices": [
+    {
+      "name": "AppManagement",
+      "ops": [
+        {
+          "name": "CreateAppArtifact",
+          "params": [
+            "appId",
+            "version",
+            "artifactContent",
+            "includedDatasetTypes",
+            "includedPlugins"
+          ]
+        },
+        {
+          "name": "DeployApp",
+          "params": [
+            "appId",
+            "version",
+            "datasetConfigs",
+            "failOnDatasetError"
+          ]
+        },
+        {
+          "name": "RedeployApp",
+          "params": [
+            "appId",
+            "newVersion",
+            "datasetReconfigurations",
+            "failOnIncompatibleDatasets"
+          ]
+        },
+        {
+          "name": "ListAppDatasets",
+          "params": [
+            "appId"
+          ]
+        },
+        {
+          "name": "GetAppDatasetUsage",
+          "params": [
+            "appId",
+            "datasetInstanceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetTypeRegistry",
+      "ops": [
+        {
+          "name": "DeployDatasetTypeFromApp",
+          "params": [
+            "typeName",
+            "version",
+            "appId",
+            "artifactContent",
+            "shared"
+          ]
+        },
+        {
+          "name": "DeployDatasetTypeStandalone",
+          "params": [
+            "typeName",
+            "version",
+            "interfaceArtifact",
+            "implementationArtifact",
+            "runtimeInjectionRequired"
+          ]
+        },
+        {
+          "name": "ShareDatasetTypeFromApp",
+          "params": [
+            "appId",
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "GetDatasetTypeDefinition",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "ListDatasetTypeVersions",
+          "params": [
+            "typeName"
+          ]
+        },
+        {
+          "name": "DeleteDatasetTypeVersion",
+          "params": [
+            "typeName",
+            "version",
+            "force"
+          ]
+        },
+        {
+          "name": "AssignDatasetTypeVersion",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "GetDatasetTypePropertiesMetadata",
+          "params": [
+            "typeName",
+            "version"
+          ]
+        },
+        {
+          "name": "GetDatasetTypeUpgradability",
+          "params": [
+            "typeName",
+            "fromVersion",
+            "toVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetInstanceManagement",
+      "ops": [
+        {
+          "name": "CreateDatasetInstance",
+          "params": [
+            "instanceId",
+            "typeName",
+            "typeVersion",
+            "ownerAppId",
+            "ownerPipelineId",
+            "properties",
+            "schema",
+            "exploreConfig"
+          ]
+        },
+        {
+          "name": "CreateDatasetInstanceWithoutCode",
+          "params": [
+            "instanceId",
+            "typeName",
+            "typeVersion",
+            "properties",
+            "schema"
+          ]
+        },
+        {
+          "name": "GetDatasetInstance",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "ListDatasetInstancesByType",
+          "params": [
+            "typeName",
+            "typeVersion"
+          ]
+        },
+        {
+          "name": "ListDatasetInstancesByOwner",
+          "params": [
+            "ownerType",
+            "ownerId"
+          ]
+        },
+        {
+          "name": "UpgradeDatasetInstanceCode",
+          "params": [
+            "instanceId",
+            "targetTypeVersion",
+            "allowSharedUpgrade"
+          ]
+        },
+        {
+          "name": "OfflineDatasetInstance",
+          "params": [
+            "instanceId",
+            "reason"
+          ]
+        },
+        {
+          "name": "OnlineDatasetInstance",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "RunDatasetAdminOperation",
+          "params": [
+            "instanceId",
+            "operationName",
+            "operationParams"
+          ]
+        },
+        {
+          "name": "DeleteDatasetInstance",
+          "params": [
+            "instanceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetConfiguration",
+      "ops": [
+        {
+          "name": "GetSupportedProperties",
+          "params": [
+            "typeName",
+            "typeVersion"
+          ]
+        },
+        {
+          "name": "GetInstanceProperties",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "GetUpdatableProperties",
+          "params": [
+            "typeName",
+            "typeVersion"
+          ]
+        },
+        {
+          "name": "UpdateDatasetProperties",
+          "params": [
+            "instanceId",
+            "properties",
+            "requireMigration",
+            "atomic"
+          ]
+        },
+        {
+          "name": "PatchDatasetProperty",
+          "params": [
+            "instanceId",
+            "propertyName",
+            "newValue"
+          ]
+        },
+        {
+          "name": "RemoveDatasetProperty",
+          "params": [
+            "instanceId",
+            "propertyName"
+          ]
+        },
+        {
+          "name": "TriggerDatasetMigration",
+          "params": [
+            "instanceId",
+            "migrationParams"
+          ]
+        },
+        {
+          "name": "ValidateDatasetReconfiguration",
+          "params": [
+            "instanceId",
+            "newProperties"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetSchemaService",
+      "ops": [
+        {
+          "name": "SetDatasetSchemaJson",
+          "params": [
+            "instanceId",
+            "schemaJson"
+          ]
+        },
+        {
+          "name": "SetDatasetSchemaSql",
+          "params": [
+            "instanceId",
+            "schemaSql"
+          ]
+        },
+        {
+          "name": "GetDatasetSchema",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "SetDatasetTTL",
+          "params": [
+            "instanceId",
+            "ttlConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetExploreService",
+      "ops": [
+        {
+          "name": "ConfigureExploreOnCreate",
+          "params": [
+            "instanceId",
+            "exploreEnabled",
+            "exploreSchema"
+          ]
+        },
+        {
+          "name": "EnableExplore",
+          "params": [
+            "instanceId",
+            "exploreSchema"
+          ]
+        },
+        {
+          "name": "DisableExplore",
+          "params": [
+            "instanceId"
+          ]
+        },
+        {
+          "name": "UpdateExploreOnReconfigure",
+          "params": [
+            "instanceId",
+            "newExploreConfig"
+          ]
+        },
+        {
+          "name": "ValidateExploreChange",
+          "params": [
+            "instanceId",
+            "changeType",
+            "newExploreConfig"
+          ]
+        },
+        {
+          "name": "GetExploreConfig",
+          "params": [
+            "instanceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetUpgradeEngine",
+      "ops": [
+        {
+          "name": "ValidateInstanceUpgrade",
+          "params": [
+            "instanceId",
+            "fromVersion",
+            "toVersion"
+          ]
+        },
+        {
+          "name": "RunUpgradeStep",
+          "params": [
+            "instanceId",
+            "fromVersion",
+            "toVersion"
+          ]
+        },
+        {
+          "name": "RunPostUpgradeMigration",
+          "params": [
+            "instanceId",
+            "fromVersion",
+            "toVersion"
+          ]
+        },
+        {
+          "name": "RejectUpgrade",
+          "params": [
+            "instanceId",
+            "fromVersion",
+            "toVersion",
+            "reason"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PipelineManagement",
+      "ops": [
+        {
+          "name": "CreatePipeline",
+          "params": [
+            "pipelineId",
+            "config",
+            "newDatasetInstances",
+            "requiredDatasetVersions"
+          ]
+        },
+        {
+          "name": "UpdatePipelineVersion",
+          "params": [
+            "pipelineId",
+            "newConfig",
+            "pluginVersions"
+          ]
+        },
+        {
+          "name": "ListPipelineDatasets",
+          "params": [
+            "pipelineId"
+          ]
+        },
+        {
+          "name": "ValidatePipelineDatasetCompatibility",
+          "params": [
+            "pipelineId",
+            "datasetBindings"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HydratorDatasetAccess",
+      "ops": [
+        {
+          "name": "CreatePipelineDatasetInstance",
+          "params": [
+            "pipelineId",
+            "instanceId",
+            "typeName",
+            "typeVersion",
+            "properties",
+            "schema"
+          ]
+        },
+        {
+          "name": "BindExistingDatasetToPipeline",
+          "params": [
+            "pipelineId",
+            "instanceId",
+            "role"
+          ]
+        },
+        {
+          "name": "ExplorePipelineDatasets",
+          "params": [
+            "pipelineId"
+          ]
+        },
+        {
+          "name": "UpgradePipelineDatasetInstance",
+          "params": [
+            "pipelineId",
+            "instanceId",
+            "targetTypeVersion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PluginManagement",
+      "ops": [
+        {
+          "name": "DeployPluginArtifact",
+          "params": [
+            "pluginId",
+            "version",
+            "artifactContent",
+            "includedDatasetTypes"
+          ]
+        },
+        {
+          "name": "UseExternalDatasetTypeInPlugin",
+          "params": [
+            "pluginId",
+            "version",
+            "typeName",
+            "typeVersion"
+          ]
+        },
+        {
+          "name": "CreatePluginManagedDatasetInstance",
+          "params": [
+            "pluginId",
+            "pipelineId",
+            "instanceId",
+            "typeName",
+            "typeVersion",
+            "properties"
+          ]
+        },
+        {
+          "name": "UpgradePluginDatasetCode",
+          "params": [
+            "pluginId",
+            "oldVersion",
+            "newVersion",
+            "affectedInstances"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RuntimeInjectionService",
+      "ops": [
+        {
+          "name": "InjectDatasetImplementationAtRuntime",
+          "params": [
+            "appId",
+            "typeName",
+            "typeVersion"
+          ]
+        },
+        {
+          "name": "ResolveDatasetInterfaceForTests",
+          "params": [
+            "typeName",
+            "mockImplementationConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetExplorationUI",
+      "ops": [
+        {
+          "name": "ExploreDatasetInstance",
+          "params": [
+            "instanceId",
+            "query",
+            "limit"
+          ]
+        },
+        {
+          "name": "ListExplorableDatasets",
+          "params": [
+            "ownerType",
+            "ownerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ErrorHandlingService",
+      "ops": [
+        {
+          "name": "FailAppDeploymentOnDatasetError",
+          "params": [
+            "appId",
+            "errors"
+          ]
+        },
+        {
+          "name": "FailAppRedeploymentOnDatasetReconfigError",
+          "params": [
+            "appId",
+            "errors"
+          ]
+        },
+        {
+          "name": "FailPipelineCreationOnDatasetIncompatibility",
+          "params": [
+            "pipelineId",
+            "datasetId",
+            "reason"
+          ]
+        },
+        {
+          "name": "FailDeploymentOnVersionConflict",
+          "params": [
+            "ownerType",
+            "ownerId",
+            "typeName",
+            "conflictingVersions"
+          ]
+        },
+        {
+          "name": "BuildMeaningfulErrorMessage",
+          "params": [
+            "context",
+            "details"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetTypeRegistry"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetInstanceManagement"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetConfiguration"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetSchemaService"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "AppManagement",
+      "callee": "ErrorHandlingService"
+    },
+    {
+      "caller": "DatasetTypeRegistry",
+      "callee": "DatasetInstanceManagement"
+    },
+    {
+      "caller": "DatasetInstanceManagement",
+      "callee": "DatasetUpgradeEngine"
+    },
+    {
+      "caller": "DatasetInstanceManagement",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "DatasetConfiguration",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "DatasetConfiguration",
+      "callee": "DatasetUpgradeEngine"
+    },
+    {
+      "caller": "DatasetSchemaService",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "DatasetUpgradeEngine",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "HydratorDatasetAccess"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "DatasetInstanceManagement"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "DatasetTypeRegistry"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "DatasetConfiguration"
+    },
+    {
+      "caller": "PipelineManagement",
+      "callee": "ErrorHandlingService"
+    },
+    {
+      "caller": "HydratorDatasetAccess",
+      "callee": "DatasetInstanceManagement"
+    },
+    {
+      "caller": "HydratorDatasetAccess",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "PluginManagement",
+      "callee": "DatasetTypeRegistry"
+    },
+    {
+      "caller": "PluginManagement",
+      "callee": "DatasetInstanceManagement"
+    },
+    {
+      "caller": "PluginManagement",
+      "callee": "HydratorDatasetAccess"
+    },
+    {
+      "caller": "RuntimeInjectionService",
+      "callee": "DatasetTypeRegistry"
+    },
+    {
+      "caller": "DatasetExplorationUI",
+      "callee": "DatasetExploreService"
+    },
+    {
+      "caller": "DatasetExplorationUI",
+      "callee": "DatasetInstanceManagement"
+    }
+  ]
+}

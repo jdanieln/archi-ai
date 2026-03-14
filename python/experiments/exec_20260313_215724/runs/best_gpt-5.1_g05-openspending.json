@@ -1,0 +1,775 @@
+{
+  "microservices": [
+    {
+      "name": "DatasetCatalog",
+      "ops": [
+        {
+          "name": "CreateDataset",
+          "params": [
+            "ownerId",
+            "title",
+            "metadata",
+            "visibility"
+          ]
+        },
+        {
+          "name": "EditDatasetMetadata",
+          "params": [
+            "datasetId",
+            "changes",
+            "userId"
+          ]
+        },
+        {
+          "name": "DeleteDataset",
+          "params": [
+            "datasetId",
+            "userId",
+            "reason"
+          ]
+        },
+        {
+          "name": "SetDatasetVisibility",
+          "params": [
+            "datasetId",
+            "visibility",
+            "actorId",
+            "reason"
+          ]
+        },
+        {
+          "name": "GetDatasetMetadata",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetOwnership",
+      "ops": [
+        {
+          "name": "ListUserDatasets",
+          "params": [
+            "userId",
+            "status",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "ListAllDatasetsForAdmin",
+          "params": [
+            "adminId",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetSearch",
+      "ops": [
+        {
+          "name": "IndexDatasetMetadata",
+          "params": [
+            "datasetId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SearchPublicDatasets",
+          "params": [
+            "query",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DatasetSync",
+      "ops": [
+        {
+          "name": "ConfigureAutoUpdate",
+          "params": [
+            "datasetId",
+            "sourceConfig",
+            "schedule",
+            "userId"
+          ]
+        },
+        {
+          "name": "TriggerDatasetUpdateFromSource",
+          "params": [
+            "datasetId",
+            "triggerType",
+            "actorId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataModelManagement",
+      "ops": [
+        {
+          "name": "EditDataModel",
+          "params": [
+            "datasetId",
+            "modelChanges",
+            "userId"
+          ]
+        },
+        {
+          "name": "EditDataSource",
+          "params": [
+            "datasetId",
+            "sourceConfigChanges",
+            "userId"
+          ]
+        },
+        {
+          "name": "ConfigureConstants",
+          "params": [
+            "datasetId",
+            "constantsDefinition",
+            "userId"
+          ]
+        },
+        {
+          "name": "GetMapVisualisationRequirements",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataImport",
+      "ops": [
+        {
+          "name": "ImportFromExcel",
+          "params": [
+            "datasetId",
+            "fileId",
+            "userId",
+            "mappingConfig"
+          ]
+        },
+        {
+          "name": "ImportFromJSON",
+          "params": [
+            "datasetId",
+            "fileId",
+            "userId",
+            "mappingConfig"
+          ]
+        },
+        {
+          "name": "ImportFromGoogleSpreadsheet",
+          "params": [
+            "datasetId",
+            "spreadsheetUrl",
+            "userId",
+            "mappingConfig"
+          ]
+        },
+        {
+          "name": "ImportFromFiscalDataPackage",
+          "params": [
+            "datasetId",
+            "descriptorFileId",
+            "userId",
+            "importOptions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BulkIngestion",
+      "ops": [
+        {
+          "name": "BulkUploadViaPythonClient",
+          "params": [
+            "datasetId",
+            "payloadDescriptor",
+            "authToken"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CSVValidation",
+      "ops": [
+        {
+          "name": "ValidateCSVFile",
+          "params": [
+            "fileId",
+            "validationOptions"
+          ]
+        },
+        {
+          "name": "ValidateCSVSchema",
+          "params": [
+            "fileId",
+            "schemaDefinition"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GeoDataRegistry",
+      "ops": [
+        {
+          "name": "AddGeoJSONSource",
+          "params": [
+            "adminId",
+            "sourceUrl",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SubmitGeoJSONSourceByPublisher",
+          "params": [
+            "userId",
+            "sourceUrl",
+            "metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GeoQuery",
+      "ops": [
+        {
+          "name": "GetBorderingRegions",
+          "params": [
+            "regionId",
+            "regionType"
+          ]
+        },
+        {
+          "name": "GetDynamicPolygons",
+          "params": [
+            "filters",
+            "resolution",
+            "regionType"
+          ]
+        },
+        {
+          "name": "GetHASCGeometries",
+          "params": [
+            "hascCodes",
+            "level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsQuery",
+      "ops": [
+        {
+          "name": "QueryCube",
+          "params": [
+            "datasetId",
+            "dimensions",
+            "measures",
+            "filters",
+            "sort",
+            "aggregations"
+          ]
+        },
+        {
+          "name": "QueryMultipleDatasetsByMetadata",
+          "params": [
+            "metadataFilters",
+            "queryDefinition"
+          ]
+        },
+        {
+          "name": "QueryMultipleDatasetsByData",
+          "params": [
+            "dataFilters",
+            "queryDefinition"
+          ]
+        },
+        {
+          "name": "GetCubeCSV",
+          "params": [
+            "queryId",
+            "delimiter",
+            "locale"
+          ]
+        },
+        {
+          "name": "GetRelativePercentageOfTotal",
+          "params": [
+            "datasetId",
+            "measure",
+            "filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CurrencyConversion",
+      "ops": [
+        {
+          "name": "ConvertMeasuresToCurrency",
+          "params": [
+            "datasetId",
+            "measures",
+            "targetCurrency",
+            "date",
+            "filters"
+          ]
+        },
+        {
+          "name": "ConvertQueryResultCurrencies",
+          "params": [
+            "queryId",
+            "targetCurrency",
+            "roundingMode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NormalisationService",
+      "ops": [
+        {
+          "name": "NormaliseByPopulation",
+          "params": [
+            "datasetId",
+            "measure",
+            "populationSourceId",
+            "filters",
+            "perUnit"
+          ]
+        },
+        {
+          "name": "NormaliseByArea",
+          "params": [
+            "datasetId",
+            "measure",
+            "areaSourceId",
+            "filters",
+            "perUnit"
+          ]
+        },
+        {
+          "name": "NormaliseByGDP",
+          "params": [
+            "datasetId",
+            "measure",
+            "gdpSourceId",
+            "filters",
+            "perUnit"
+          ]
+        },
+        {
+          "name": "NormaliseByGINI",
+          "params": [
+            "datasetId",
+            "measure",
+            "giniSourceId",
+            "filters",
+            "indexType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationService",
+      "ops": [
+        {
+          "name": "GetVisualisationData",
+          "params": [
+            "datasetId",
+            "viewType",
+            "filters",
+            "year",
+            "viewStateId"
+          ]
+        },
+        {
+          "name": "DownloadVisualisationCSV",
+          "params": [
+            "viewStateId",
+            "delimiter",
+            "locale"
+          ]
+        },
+        {
+          "name": "DownloadVisualisationImage",
+          "params": [
+            "viewStateId",
+            "format",
+            "resolution"
+          ]
+        },
+        {
+          "name": "GetDefaultVisualisationsForLatestYear",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "GetVisualisationDescription",
+          "params": [
+            "visualisationId",
+            "locale"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MapVisualisationConfig",
+      "ops": [
+        {
+          "name": "ConfigureMapZoomSteps",
+          "params": [
+            "datasetId",
+            "zoomLevels"
+          ]
+        },
+        {
+          "name": "ConfigureMapColorScheme",
+          "params": [
+            "datasetId",
+            "colorSchemeId"
+          ]
+        },
+        {
+          "name": "EnsureMapColorConsistency",
+          "params": [
+            "datasetId",
+            "colorRules"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ViewStateService",
+      "ops": [
+        {
+          "name": "PersistViewState",
+          "params": [
+            "userId",
+            "datasetId",
+            "viewConfig",
+            "visibility",
+            "title"
+          ]
+        },
+        {
+          "name": "GetViewState",
+          "params": [
+            "viewStateId"
+          ]
+        },
+        {
+          "name": "ListGalleryVisualizations",
+          "params": [
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SharingService",
+      "ops": [
+        {
+          "name": "GenerateShareableURL",
+          "params": [
+            "viewStateId",
+            "channel"
+          ]
+        },
+        {
+          "name": "ShareViewURL",
+          "params": [
+            "viewStateId",
+            "network",
+            "message"
+          ]
+        },
+        {
+          "name": "ShareViewImage",
+          "params": [
+            "viewStateId",
+            "network",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BrandingService",
+      "ops": [
+        {
+          "name": "SetFrontendBranding",
+          "params": [
+            "adminId",
+            "brandName",
+            "iconUrl",
+            "primaryColor"
+          ]
+        },
+        {
+          "name": "CustomizeEmbeddedVisualizationColors",
+          "params": [
+            "embedId",
+            "colorScheme"
+          ]
+        },
+        {
+          "name": "CustomizeEmbeddedViewerStyle",
+          "params": [
+            "embedId",
+            "styleConfig"
+          ]
+        },
+        {
+          "name": "TranslateViewerHierarchies",
+          "params": [
+            "languageCode",
+            "translations"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "SetUsername",
+          "params": [
+            "userId",
+            "username"
+          ]
+        },
+        {
+          "name": "GetUserRoles",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "IsPublisher",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "IsAdministrator",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentHub",
+      "ops": [
+        {
+          "name": "PublishBlogPost",
+          "params": [
+            "authorId",
+            "title",
+            "content",
+            "tags"
+          ]
+        },
+        {
+          "name": "ListBlogPosts",
+          "params": [
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "PublishExampleAppEntry",
+          "params": [
+            "authorId",
+            "title",
+            "description",
+            "url",
+            "tags"
+          ]
+        },
+        {
+          "name": "ListExampleApps",
+          "params": [
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DatasetCatalog",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "DatasetCatalog",
+      "callee": "DatasetOwnership"
+    },
+    {
+      "caller": "DatasetCatalog",
+      "callee": "DatasetSearch"
+    },
+    {
+      "caller": "DatasetCatalog",
+      "callee": "DatasetSync"
+    },
+    {
+      "caller": "DatasetOwnership",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "DatasetSearch",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "DatasetSync",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "DatasetSync",
+      "callee": "DataImport"
+    },
+    {
+      "caller": "DatasetSync",
+      "callee": "BulkIngestion"
+    },
+    {
+      "caller": "DataModelManagement",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "DataModelManagement",
+      "callee": "GeoDataRegistry"
+    },
+    {
+      "caller": "DataImport",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "DataImport",
+      "callee": "DataModelManagement"
+    },
+    {
+      "caller": "DataImport",
+      "callee": "CSVValidation"
+    },
+    {
+      "caller": "BulkIngestion",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "BulkIngestion",
+      "callee": "DataModelManagement"
+    },
+    {
+      "caller": "GeoDataRegistry",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "GeoQuery",
+      "callee": "GeoDataRegistry"
+    },
+    {
+      "caller": "AnalyticsQuery",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "AnalyticsQuery",
+      "callee": "GeoQuery"
+    },
+    {
+      "caller": "AnalyticsQuery",
+      "callee": "CurrencyConversion"
+    },
+    {
+      "caller": "AnalyticsQuery",
+      "callee": "NormalisationService"
+    },
+    {
+      "caller": "CurrencyConversion",
+      "callee": "AnalyticsQuery"
+    },
+    {
+      "caller": "NormalisationService",
+      "callee": "AnalyticsQuery"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "AnalyticsQuery"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "ViewStateService"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "GeoQuery"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "MapVisualisationConfig"
+    },
+    {
+      "caller": "MapVisualisationConfig",
+      "callee": "VisualizationService"
+    },
+    {
+      "caller": "ViewStateService",
+      "callee": "VisualizationService"
+    },
+    {
+      "caller": "ViewStateService",
+      "callee": "DatasetCatalog"
+    },
+    {
+      "caller": "ViewStateService",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "SharingService",
+      "callee": "ViewStateService"
+    },
+    {
+      "caller": "SharingService",
+      "callee": "VisualizationService"
+    },
+    {
+      "caller": "BrandingService",
+      "callee": "VisualizationService"
+    },
+    {
+      "caller": "BrandingService",
+      "callee": "ViewStateService"
+    },
+    {
+      "caller": "ContentHub",
+      "callee": "VisualizationService"
+    },
+    {
+      "caller": "ContentHub",
+      "callee": "ViewStateService"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "DatasetOwnership"
+    }
+  ]
+}

@@ -1,0 +1,1310 @@
+{
+  "microservices": [
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterUser",
+          "params": [
+            "userId",
+            "role",
+            "profileData"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateUserPreferences",
+          "params": [
+            "userId",
+            "preferences"
+          ]
+        },
+        {
+          "name": "SetAccessibilityOptions",
+          "params": [
+            "userId",
+            "visualSettings",
+            "hearingSettings",
+            "interactionMode"
+          ]
+        },
+        {
+          "name": "SetDeviceOwnership",
+          "params": [
+            "userId",
+            "deviceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PrivacyAndConsent",
+      "ops": [
+        {
+          "name": "GetDataUsageInfo",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SetDataSharingPermission",
+          "params": [
+            "userId",
+            "dataType",
+            "allowedParties"
+          ]
+        },
+        {
+          "name": "GetDataSharingSettings",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdatePrivacySettings",
+          "params": [
+            "userId",
+            "privacyOptions"
+          ]
+        },
+        {
+          "name": "SetVitalDataAccess",
+          "params": [
+            "userId",
+            "caregiverId",
+            "permissions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SpeechInteraction",
+      "ops": [
+        {
+          "name": "ConfigureSpeechOutput",
+          "params": [
+            "userId",
+            "speed",
+            "clarity",
+            "language"
+          ]
+        },
+        {
+          "name": "ConfigureSpeechInput",
+          "params": [
+            "userId",
+            "voiceProfileId",
+            "activationMode"
+          ]
+        },
+        {
+          "name": "StartVoiceSession",
+          "params": [
+            "userId",
+            "activationSource"
+          ]
+        },
+        {
+          "name": "StopVoiceSession",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "RepeatLastPhrase",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SetWakeWordOrButtonMode",
+          "params": [
+            "userId",
+            "mode",
+            "buttonId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeviceManagement",
+      "ops": [
+        {
+          "name": "RegisterDevice",
+          "params": [
+            "deviceId",
+            "userId",
+            "deviceType"
+          ]
+        },
+        {
+          "name": "GetDeviceStatus",
+          "params": [
+            "deviceId"
+          ]
+        },
+        {
+          "name": "ConfigurePreinstalledApps",
+          "params": [
+            "deviceId",
+            "appList"
+          ]
+        },
+        {
+          "name": "SetWearableProfile",
+          "params": [
+            "deviceId",
+            "formFactor",
+            "designPreferences"
+          ]
+        },
+        {
+          "name": "SetBatteryThresholdAlert",
+          "params": [
+            "deviceId",
+            "thresholdLevel"
+          ]
+        },
+        {
+          "name": "NotifyLowBatteryOnExit",
+          "params": [
+            "deviceId",
+            "userLocation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OnboardingAndTutorial",
+      "ops": [
+        {
+          "name": "StartIntroductionConversation",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetUsageInstructions",
+          "params": [
+            "userId",
+            "topic"
+          ]
+        },
+        {
+          "name": "RequestAfterSalesSupport",
+          "params": [
+            "userId",
+            "issueDescription"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CommerceAndDistribution",
+      "ops": [
+        {
+          "name": "FindPurchaseLocation",
+          "params": [
+            "userLocation",
+            "shopType"
+          ]
+        },
+        {
+          "name": "GetDevicePricingOptions",
+          "params": [
+            "deviceModel",
+            "userId"
+          ]
+        },
+        {
+          "name": "ProcessSmallPayment",
+          "params": [
+            "userId",
+            "amount",
+            "currency",
+            "merchantId"
+          ]
+        },
+        {
+          "name": "EnableSmallPayments",
+          "params": [
+            "userId",
+            "paymentMethodId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualSupport",
+      "ops": [
+        {
+          "name": "RenderVisualAid",
+          "params": [
+            "userId",
+            "contentType",
+            "contentId"
+          ]
+        },
+        {
+          "name": "ZoomContent",
+          "params": [
+            "userId",
+            "contentId",
+            "zoomLevel"
+          ]
+        },
+        {
+          "name": "SetHighVisibilityMode",
+          "params": [
+            "userId",
+            "enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AppMarketplace",
+      "ops": [
+        {
+          "name": "ListAvailableApps",
+          "params": [
+            "userId",
+            "interests"
+          ]
+        },
+        {
+          "name": "RecommendAppsByInterest",
+          "params": [
+            "userId",
+            "interestProfile"
+          ]
+        },
+        {
+          "name": "InstallApp",
+          "params": [
+            "userId",
+            "deviceId",
+            "appId"
+          ]
+        },
+        {
+          "name": "UpdateAppCatalog",
+          "params": [
+            "newApps"
+          ]
+        },
+        {
+          "name": "GetAppInfo",
+          "params": [
+            "appId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "ops": [
+        {
+          "name": "SendMessage",
+          "params": [
+            "senderId",
+            "recipientId",
+            "channel",
+            "content"
+          ]
+        },
+        {
+          "name": "StartVideoCall",
+          "params": [
+            "callerId",
+            "calleeId",
+            "context"
+          ]
+        },
+        {
+          "name": "StartVoiceCall",
+          "params": [
+            "callerId",
+            "calleeId"
+          ]
+        },
+        {
+          "name": "NotifyRealWorldInteraction",
+          "params": [
+            "userId",
+            "suggestionType"
+          ]
+        },
+        {
+          "name": "MaintainContactList",
+          "params": [
+            "userId",
+            "operation",
+            "contactData"
+          ]
+        },
+        {
+          "name": "OneButtonCaregiverCall",
+          "params": [
+            "userId",
+            "caregiverId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationAndReminders",
+      "ops": [
+        {
+          "name": "ScheduleWakeUpCall",
+          "params": [
+            "userId",
+            "time"
+          ]
+        },
+        {
+          "name": "ScheduleAgendaReminder",
+          "params": [
+            "userId",
+            "eventId",
+            "time"
+          ]
+        },
+        {
+          "name": "ScheduleMedicationReminder",
+          "params": [
+            "userId",
+            "medicationPlanId"
+          ]
+        },
+        {
+          "name": "SendCaregiverOnTheWayAlert",
+          "params": [
+            "userId",
+            "caregiverId",
+            "eta"
+          ]
+        },
+        {
+          "name": "ScheduleItemChecklistReminder",
+          "params": [
+            "userId",
+            "items",
+            "trigger"
+          ]
+        },
+        {
+          "name": "ScheduleExerciseReminder",
+          "params": [
+            "userId",
+            "frequency"
+          ]
+        },
+        {
+          "name": "SendLowBatteryAlert",
+          "params": [
+            "userId",
+            "deviceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AgendaAndTasks",
+      "ops": [
+        {
+          "name": "CreateAppointment",
+          "params": [
+            "userId",
+            "title",
+            "datetime",
+            "location"
+          ]
+        },
+        {
+          "name": "CreateAppointmentBySpeech",
+          "params": [
+            "userId",
+            "speechInput"
+          ]
+        },
+        {
+          "name": "GetAgenda",
+          "params": [
+            "userId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "SetDayNightRhythmSupport",
+          "params": [
+            "userId",
+            "sleepPattern"
+          ]
+        },
+        {
+          "name": "ManageChecklistForLeavingHome",
+          "params": [
+            "userId",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MobilityAndNavigation",
+      "ops": [
+        {
+          "name": "GetPublicTransportSupport",
+          "params": [
+            "userId",
+            "origin",
+            "destination",
+            "time"
+          ]
+        },
+        {
+          "name": "StartNavigation",
+          "params": [
+            "userId",
+            "origin",
+            "destination",
+            "mode"
+          ]
+        },
+        {
+          "name": "StartTouristicWalk",
+          "params": [
+            "userId",
+            "routeId"
+          ]
+        },
+        {
+          "name": "RequestTaxi",
+          "params": [
+            "userId",
+            "pickupLocation",
+            "time"
+          ]
+        },
+        {
+          "name": "NavigateToEvent",
+          "params": [
+            "userId",
+            "eventId"
+          ]
+        },
+        {
+          "name": "AssistMildCognitiveNavigation",
+          "params": [
+            "userId",
+            "currentLocation",
+            "destination"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SmartHomeControl",
+      "ops": [
+        {
+          "name": "ViewDoorCamera",
+          "params": [
+            "userId",
+            "deviceId"
+          ]
+        },
+        {
+          "name": "OpenDoor",
+          "params": [
+            "userId",
+            "doorLockId"
+          ]
+        },
+        {
+          "name": "PickUpPhoneAtHome",
+          "params": [
+            "userId",
+            "callId"
+          ]
+        },
+        {
+          "name": "SetLightState",
+          "params": [
+            "userId",
+            "lightId",
+            "state"
+          ]
+        },
+        {
+          "name": "SetHeatingState",
+          "params": [
+            "userId",
+            "heatingId",
+            "targetTemperature"
+          ]
+        },
+        {
+          "name": "ControlMediaDevice",
+          "params": [
+            "userId",
+            "deviceId",
+            "command"
+          ]
+        },
+        {
+          "name": "WatchMovie",
+          "params": [
+            "userId",
+            "movieId"
+          ]
+        },
+        {
+          "name": "ListenToNews",
+          "params": [
+            "userId",
+            "newsSource"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EmergencyAndSafety",
+      "ops": [
+        {
+          "name": "TriggerEmergencyCall",
+          "params": [
+            "userId",
+            "reason"
+          ]
+        },
+        {
+          "name": "TriggerVideoEmergencyCall",
+          "params": [
+            "userId",
+            "caregiverId",
+            "reason"
+          ]
+        },
+        {
+          "name": "ContactNearestCaregiver",
+          "params": [
+            "userId",
+            "urgencyLevel"
+          ]
+        },
+        {
+          "name": "ConfigureEmergencyContacts",
+          "params": [
+            "userId",
+            "contacts"
+          ]
+        },
+        {
+          "name": "DetectFall",
+          "params": [
+            "userId",
+            "sensorData"
+          ]
+        },
+        {
+          "name": "SendFallAlert",
+          "params": [
+            "userId",
+            "contactId",
+            "location"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MedicationManagement",
+      "ops": [
+        {
+          "name": "DefineMedicationPlan",
+          "params": [
+            "userId",
+            "planDetails"
+          ]
+        },
+        {
+          "name": "RecordMedicationIntake",
+          "params": [
+            "userId",
+            "medicationId",
+            "time",
+            "taken"
+          ]
+        },
+        {
+          "name": "GetMedicationIntakeStatus",
+          "params": [
+            "userId",
+            "medicationId",
+            "date"
+          ]
+        },
+        {
+          "name": "GetPatientMedicationStatus",
+          "params": [
+            "caregiverId",
+            "patientId",
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ShoppingAndPayments",
+      "ops": [
+        {
+          "name": "CreateGroceryOrder",
+          "params": [
+            "userId",
+            "items",
+            "deliveryTime"
+          ]
+        },
+        {
+          "name": "SubmitGroceryOrder",
+          "params": [
+            "userId",
+            "orderId",
+            "paymentMethodId"
+          ]
+        },
+        {
+          "name": "PaySmallAmount",
+          "params": [
+            "userId",
+            "amount",
+            "currency",
+            "recipient"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SocialAndCommunity",
+      "ops": [
+        {
+          "name": "CreateHealthSocialGroup",
+          "params": [
+            "userId",
+            "diseaseType",
+            "groupName"
+          ]
+        },
+        {
+          "name": "InviteToSocialGroup",
+          "params": [
+            "userId",
+            "groupId",
+            "inviteeId"
+          ]
+        },
+        {
+          "name": "GetLocalArtAndMuseums",
+          "params": [
+            "userLocation",
+            "preferences"
+          ]
+        },
+        {
+          "name": "GetLocalSocialActivities",
+          "params": [
+            "userLocation",
+            "interests"
+          ]
+        },
+        {
+          "name": "SendPersonalizedEventInvitation",
+          "params": [
+            "userId",
+            "eventId"
+          ]
+        },
+        {
+          "name": "OrganizeGroupMeeting",
+          "params": [
+            "userId",
+            "participants",
+            "location",
+            "time"
+          ]
+        },
+        {
+          "name": "SuggestSportsClasses",
+          "params": [
+            "userLocation",
+            "userPreferences"
+          ]
+        },
+        {
+          "name": "PromoteFaceToFaceContacts",
+          "params": [
+            "userId",
+            "suggestionContext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HealthMonitoring",
+      "ops": [
+        {
+          "name": "RecordVitalSigns",
+          "params": [
+            "userId",
+            "bloodPressure",
+            "temperature",
+            "heartRate",
+            "breathingFrequency",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "GetVitalSigns",
+          "params": [
+            "userId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "GetActivityLevel",
+          "params": [
+            "userId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "LocateUser",
+          "params": [
+            "requesterId",
+            "userId"
+          ]
+        },
+        {
+          "name": "DetectPainOrStress",
+          "params": [
+            "userId",
+            "skinConductanceData"
+          ]
+        },
+        {
+          "name": "RecordSteps",
+          "params": [
+            "userId",
+            "stepCount",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "ShowVitalsToUser",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SetWeightControlPlan",
+          "params": [
+            "userId",
+            "targetWeight",
+            "duration"
+          ]
+        },
+        {
+          "name": "GetWeightControlStatus",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MotivationAndCoaching",
+      "ops": [
+        {
+          "name": "SetGoalsAndMissions",
+          "params": [
+            "userId",
+            "goals"
+          ]
+        },
+        {
+          "name": "ProvideDailyExercisePlan",
+          "params": [
+            "userId",
+            "day"
+          ]
+        },
+        {
+          "name": "ProvideNonMedicationTips",
+          "params": [
+            "userId",
+            "healthIssues"
+          ]
+        },
+        {
+          "name": "RemindGoodPosture",
+          "params": [
+            "userId",
+            "frequency"
+          ]
+        },
+        {
+          "name": "MotivateForExercise",
+          "params": [
+            "userId",
+            "channel"
+          ]
+        },
+        {
+          "name": "ConfigureSpontaneousQuestions",
+          "params": [
+            "userId",
+            "timeWindows",
+            "topics"
+          ]
+        },
+        {
+          "name": "AskInterestBasedQuestion",
+          "params": [
+            "userId",
+            "interests"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SeriousGamesAndTraining",
+      "ops": [
+        {
+          "name": "ListAvailableGames",
+          "params": [
+            "userId",
+            "preferences"
+          ]
+        },
+        {
+          "name": "StartGame",
+          "params": [
+            "userId",
+            "gameId"
+          ]
+        },
+        {
+          "name": "SetGameDurationLimit",
+          "params": [
+            "userId",
+            "gameId",
+            "maxDuration"
+          ]
+        },
+        {
+          "name": "ConfigureImaginationGames",
+          "params": [
+            "userId",
+            "preferences"
+          ]
+        },
+        {
+          "name": "ConfigureSportsGames",
+          "params": [
+            "userId",
+            "favoriteSports"
+          ]
+        },
+        {
+          "name": "ConfigureMemoryAndHealthGames",
+          "params": [
+            "userId",
+            "difficulty"
+          ]
+        },
+        {
+          "name": "ConfigureMuscleGroupTraining",
+          "params": [
+            "userId",
+            "muscleGroups"
+          ]
+        },
+        {
+          "name": "TrackTrainingPerformance",
+          "params": [
+            "userId",
+            "sessionId",
+            "metrics"
+          ]
+        },
+        {
+          "name": "ProposeComplexThinkingTraining",
+          "params": [
+            "caregiverId",
+            "userId"
+          ]
+        },
+        {
+          "name": "ProposeCombinedMentalPhysicalGames",
+          "params": [
+            "caregiverId",
+            "userId"
+          ]
+        },
+        {
+          "name": "ValidateExerciseExecution",
+          "params": [
+            "caregiverId",
+            "userId",
+            "exerciseData"
+          ]
+        },
+        {
+          "name": "GenerateExerciseSummary",
+          "params": [
+            "caregiverId",
+            "userId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "ConfigureCarerCoPlayGame",
+          "params": [
+            "caregiverId",
+            "userId",
+            "gameId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WearablesAndDesign",
+      "ops": [
+        {
+          "name": "RegisterWearable",
+          "params": [
+            "deviceId",
+            "userId",
+            "sensorTypes"
+          ]
+        },
+        {
+          "name": "SetWearableDesignPreferences",
+          "params": [
+            "userId",
+            "deviceId",
+            "styleOptions"
+          ]
+        },
+        {
+          "name": "ConfigureNonStigmatizingMode",
+          "params": [
+            "userId",
+            "deviceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeveloperPortal",
+      "ops": [
+        {
+          "name": "RegisterDeveloper",
+          "params": [
+            "developerId",
+            "profile"
+          ]
+        },
+        {
+          "name": "PublishApp",
+          "params": [
+            "developerId",
+            "appMetadata",
+            "binary"
+          ]
+        },
+        {
+          "name": "UpdateApp",
+          "params": [
+            "developerId",
+            "appId",
+            "newVersion"
+          ]
+        },
+        {
+          "name": "GetAppAnalytics",
+          "params": [
+            "developerId",
+            "appId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "ConfigureAppPricing",
+          "params": [
+            "developerId",
+            "appId",
+            "pricingModel"
+          ]
+        },
+        {
+          "name": "GetMarketplaceFees",
+          "params": [
+            "developerId"
+          ]
+        },
+        {
+          "name": "NotifyAppStateChange",
+          "params": [
+            "developerId",
+            "appId",
+            "newState"
+          ]
+        },
+        {
+          "name": "GetCrashReports",
+          "params": [
+            "developerId",
+            "appId",
+            "dateRange"
+          ]
+        },
+        {
+          "name": "ManageAppPresentation",
+          "params": [
+            "developerId",
+            "appId",
+            "presentationAssets"
+          ]
+        },
+        {
+          "name": "DefineUserQuestionsForApp",
+          "params": [
+            "developerId",
+            "appId",
+            "questionPatterns"
+          ]
+        },
+        {
+          "name": "RequestDevSupport",
+          "params": [
+            "developerId",
+            "topic",
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeveloperAPI",
+      "ops": [
+        {
+          "name": "GetAPIDocumentation",
+          "params": [
+            "developerId",
+            "apiVersion"
+          ]
+        },
+        {
+          "name": "RequestOSFeatureAccess",
+          "params": [
+            "developerId",
+            "appId",
+            "features"
+          ]
+        },
+        {
+          "name": "ReadHealthSensorData",
+          "params": [
+            "developerId",
+            "appId",
+            "userId",
+            "sensorTypes"
+          ]
+        },
+        {
+          "name": "ControlRuntimeFunctions",
+          "params": [
+            "developerId",
+            "appId",
+            "functionSet"
+          ]
+        },
+        {
+          "name": "ManageUserSettingsForApp",
+          "params": [
+            "developerId",
+            "appId",
+            "settingsSchema"
+          ]
+        },
+        {
+          "name": "UseHighLevelAPIComponents",
+          "params": [
+            "developerId",
+            "appId",
+            "components"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "UserManagement",
+      "callee": "PrivacyAndConsent"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "SpeechInteraction"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "VisualSupport"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "DeviceManagement"
+    },
+    {
+      "caller": "PrivacyAndConsent",
+      "callee": "HealthMonitoring"
+    },
+    {
+      "caller": "SpeechInteraction",
+      "callee": "OnboardingAndTutorial"
+    },
+    {
+      "caller": "SpeechInteraction",
+      "callee": "NotificationAndReminders"
+    },
+    {
+      "caller": "SpeechInteraction",
+      "callee": "AgendaAndTasks"
+    },
+    {
+      "caller": "DeviceManagement",
+      "callee": "NotificationAndReminders"
+    },
+    {
+      "caller": "OnboardingAndTutorial",
+      "callee": "Communication"
+    },
+    {
+      "caller": "CommerceAndDistribution",
+      "callee": "ShoppingAndPayments"
+    },
+    {
+      "caller": "VisualSupport",
+      "callee": "SocialAndCommunity"
+    },
+    {
+      "caller": "AppMarketplace",
+      "callee": "DeveloperPortal"
+    },
+    {
+      "caller": "AppMarketplace",
+      "callee": "DeveloperAPI"
+    },
+    {
+      "caller": "Communication",
+      "callee": "SocialAndCommunity"
+    },
+    {
+      "caller": "Communication",
+      "callee": "EmergencyAndSafety"
+    },
+    {
+      "caller": "NotificationAndReminders",
+      "callee": "AgendaAndTasks"
+    },
+    {
+      "caller": "NotificationAndReminders",
+      "callee": "MedicationManagement"
+    },
+    {
+      "caller": "NotificationAndReminders",
+      "callee": "MotivationAndCoaching"
+    },
+    {
+      "caller": "AgendaAndTasks",
+      "callee": "MobilityAndNavigation"
+    },
+    {
+      "caller": "MobilityAndNavigation",
+      "callee": "HealthMonitoring"
+    },
+    {
+      "caller": "SmartHomeControl",
+      "callee": "EmergencyAndSafety"
+    },
+    {
+      "caller": "EmergencyAndSafety",
+      "callee": "Communication"
+    },
+    {
+      "caller": "EmergencyAndSafety",
+      "callee": "HealthMonitoring"
+    },
+    {
+      "caller": "MedicationManagement",
+      "callee": "NotificationAndReminders"
+    },
+    {
+      "caller": "ShoppingAndPayments",
+      "callee": "CommerceAndDistribution"
+    },
+    {
+      "caller": "SocialAndCommunity",
+      "callee": "MobilityAndNavigation"
+    },
+    {
+      "caller": "HealthMonitoring",
+      "callee": "WearablesAndDesign"
+    },
+    {
+      "caller": "HealthMonitoring",
+      "callee": "SeriousGamesAndTraining"
+    },
+    {
+      "caller": "MotivationAndCoaching",
+      "callee": "SeriousGamesAndTraining"
+    },
+    {
+      "caller": "SeriousGamesAndTraining",
+      "callee": "HealthMonitoring"
+    },
+    {
+      "caller": "SeriousGamesAndTraining",
+      "callee": "MotivationAndCoaching"
+    },
+    {
+      "caller": "WearablesAndDesign",
+      "callee": "DeviceManagement"
+    },
+    {
+      "caller": "DeveloperPortal",
+      "callee": "DeveloperAPI"
+    },
+    {
+      "caller": "DeveloperAPI",
+      "callee": "HealthMonitoring"
+    },
+    {
+      "caller": "DeveloperAPI",
+      "callee": "UserManagement"
+    }
+  ]
+}

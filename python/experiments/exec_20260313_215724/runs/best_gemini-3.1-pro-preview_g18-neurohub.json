@@ -1,0 +1,580 @@
+{
+  "microservices": [
+    {
+      "name": "SystemAdminService",
+      "ops": [
+        {
+          "name": "InstallNode",
+          "params": [
+            "osVersion"
+          ]
+        },
+        {
+          "name": "BackupSystem",
+          "params": [
+            "backupConfig"
+          ]
+        },
+        {
+          "name": "MigrateData",
+          "params": [
+            "sourceVersion",
+            "targetVersion"
+          ]
+        },
+        {
+          "name": "UpdateTheme",
+          "params": [
+            "themeSettings"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TestingService",
+      "ops": [
+        {
+          "name": "ExecuteAcceptanceTests",
+          "params": [
+            "targetId"
+          ]
+        },
+        {
+          "name": "GetTestResults",
+          "params": [
+            "testId"
+          ]
+        },
+        {
+          "name": "ConfigureNightlyBuilds",
+          "params": [
+            "buildConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LogbookService",
+      "ops": [
+        {
+          "name": "CreatePage",
+          "params": [
+            "experimentId",
+            "content"
+          ]
+        },
+        {
+          "name": "NavigatePages",
+          "params": [
+            "currentPageId",
+            "direction"
+          ]
+        },
+        {
+          "name": "AddHtmlTable",
+          "params": [
+            "pageId",
+            "tableData"
+          ]
+        },
+        {
+          "name": "InsertSymbol",
+          "params": [
+            "pageId",
+            "symbol"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LogbookTemplateService",
+      "ops": [
+        {
+          "name": "CreateTemplate",
+          "params": [
+            "templateData"
+          ]
+        },
+        {
+          "name": "ApplyTemplate",
+          "params": [
+            "pageId",
+            "templateId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileTransferService",
+      "ops": [
+        {
+          "name": "UploadFile",
+          "params": [
+            "fileData",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadDirectory",
+          "params": [
+            "directoryData"
+          ]
+        },
+        {
+          "name": "DownloadFiles",
+          "params": [
+            "fileIds"
+          ]
+        },
+        {
+          "name": "AccessNetworkDrive",
+          "params": [
+            "workspaceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileManagementService",
+      "ops": [
+        {
+          "name": "MoveFiles",
+          "params": [
+            "fileIds",
+            "destinationPath"
+          ]
+        },
+        {
+          "name": "RestoreFile",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "ManageVersions",
+          "params": [
+            "fileId",
+            "versionAction"
+          ]
+        },
+        {
+          "name": "LockFile",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileAttachmentService",
+      "ops": [
+        {
+          "name": "AttachToPage",
+          "params": [
+            "fileIds",
+            "pageId"
+          ]
+        },
+        {
+          "name": "LinkFiles",
+          "params": [
+            "sourceId",
+            "targetId",
+            "linkType"
+          ]
+        },
+        {
+          "name": "GetUnattachedAlerts",
+          "params": [
+            "workspaceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "AssignMetadata",
+          "params": [
+            "entityId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "ValidateField",
+          "params": [
+            "fieldId",
+            "value"
+          ]
+        },
+        {
+          "name": "AutoInsertMetadata",
+          "params": [
+            "entityId"
+          ]
+        },
+        {
+          "name": "GetStandardMetadata",
+          "params": [
+            "dataType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TaggingService",
+      "ops": [
+        {
+          "name": "AssignTag",
+          "params": [
+            "entityId",
+            "tag"
+          ]
+        },
+        {
+          "name": "GetControlledVocabulary",
+          "params": [
+            "category"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchFiles",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "SearchLogbooks",
+          "params": [
+            "query",
+            "logbookIds"
+          ]
+        },
+        {
+          "name": "SearchByMetadata",
+          "params": [
+            "metadataQuery"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProtocolService",
+      "ops": [
+        {
+          "name": "CreateProtocol",
+          "params": [
+            "protocolData"
+          ]
+        },
+        {
+          "name": "BranchProtocol",
+          "params": [
+            "protocolId"
+          ]
+        },
+        {
+          "name": "GetProtocolHistory",
+          "params": [
+            "protocolId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExperimentService",
+      "ops": [
+        {
+          "name": "CreateExperiment",
+          "params": [
+            "protocolId"
+          ]
+        },
+        {
+          "name": "LinkRuns",
+          "params": [
+            "runIds",
+            "experimentId"
+          ]
+        },
+        {
+          "name": "MarkDataQuality",
+          "params": [
+            "dataId",
+            "quality"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowService",
+      "ops": [
+        {
+          "name": "RecordExecution",
+          "params": [
+            "workflowId",
+            "logbookId"
+          ]
+        },
+        {
+          "name": "SavePlan",
+          "params": [
+            "workflowId",
+            "planDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControlService",
+      "ops": [
+        {
+          "name": "SetPermissions",
+          "params": [
+            "entityId",
+            "userId",
+            "level"
+          ]
+        },
+        {
+          "name": "ShareEntity",
+          "params": [
+            "entityId",
+            "targetUsers"
+          ]
+        },
+        {
+          "name": "GetUserActivity",
+          "params": [
+            "userId",
+            "timeRange"
+          ]
+        },
+        {
+          "name": "SecureRemoteAccess",
+          "params": [
+            "userId",
+            "credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SocialIntegrationService",
+      "ops": [
+        {
+          "name": "PushToTwitter",
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "FetchTwitterFeed",
+          "params": [
+            "accountId"
+          ]
+        },
+        {
+          "name": "SendToMailingList",
+          "params": [
+            "newsItem"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ScienceIntegrationService",
+      "ops": [
+        {
+          "name": "SyncWormbase",
+          "params": [
+            "strainData"
+          ]
+        },
+        {
+          "name": "NotifyMendeley",
+          "params": [
+            "paperData"
+          ]
+        },
+        {
+          "name": "ManageReferences",
+          "params": [
+            "referenceData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CalendarService",
+      "ops": [
+        {
+          "name": "CreateEvent",
+          "params": [
+            "eventDetails"
+          ]
+        },
+        {
+          "name": "GetEvents",
+          "params": [
+            "groupId"
+          ]
+        },
+        {
+          "name": "SyncExternalCalendar",
+          "params": [
+            "eventData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InventoryService",
+      "ops": [
+        {
+          "name": "UpdateInventory",
+          "params": [
+            "itemId",
+            "details"
+          ]
+        },
+        {
+          "name": "BookEquipment",
+          "params": [
+            "equipmentId",
+            "timeSlot"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollaborationService",
+      "ops": [
+        {
+          "name": "SubmitFeedback",
+          "params": [
+            "formId",
+            "feedbackData"
+          ]
+        },
+        {
+          "name": "HostSpreadsheet",
+          "params": [
+            "spreadsheetData"
+          ]
+        },
+        {
+          "name": "ShareNotes",
+          "params": [
+            "noteId",
+            "userIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuditService",
+      "ops": [
+        {
+          "name": "VerifyProvenance",
+          "params": [
+            "entityId"
+          ]
+        },
+        {
+          "name": "TrackDataProvenance",
+          "params": [
+            "experimentId",
+            "dataIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataCurationService",
+      "ops": [
+        {
+          "name": "ArchiveData",
+          "params": [
+            "dataIds"
+          ]
+        },
+        {
+          "name": "GetFileTimeline",
+          "params": [
+            "dateRange"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "TestingService",
+      "callee": "SystemAdminService"
+    },
+    {
+      "caller": "FileTransferService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "FileAttachmentService",
+      "callee": "LogbookService"
+    },
+    {
+      "caller": "FileAttachmentService",
+      "callee": "FileManagementService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "TaggingService"
+    },
+    {
+      "caller": "ExperimentService",
+      "callee": "ProtocolService"
+    },
+    {
+      "caller": "ExperimentService",
+      "callee": "AuditService"
+    },
+    {
+      "caller": "WorkflowService",
+      "callee": "LogbookService"
+    },
+    {
+      "caller": "CollaborationService",
+      "callee": "AccessControlService"
+    },
+    {
+      "caller": "LogbookTemplateService",
+      "callee": "LogbookService"
+    },
+    {
+      "caller": "InventoryService",
+      "callee": "CalendarService"
+    },
+    {
+      "caller": "SocialIntegrationService",
+      "callee": "AccessControlService"
+    },
+    {
+      "caller": "FileManagementService",
+      "callee": "AccessControlService"
+    },
+    {
+      "caller": "ScienceIntegrationService",
+      "callee": "AccessControlService"
+    }
+  ]
+}

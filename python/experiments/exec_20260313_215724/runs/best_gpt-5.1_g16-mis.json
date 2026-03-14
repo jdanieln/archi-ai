@@ -1,0 +1,993 @@
+{
+  "microservices": [
+    {
+      "name": "CollectionLifecycle",
+      "ops": [
+        {
+          "name": "SetItemExpiryDate",
+          "params": [
+            "itemId",
+            "expiryDate",
+            "expiryAction"
+          ]
+        },
+        {
+          "name": "GetItemExpiryInfo",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "MapItemsToCollection",
+          "params": [
+            "itemIds",
+            "sourceCollectionId",
+            "targetCollectionId"
+          ]
+        },
+        {
+          "name": "MoveItemsBetweenCollections",
+          "params": [
+            "itemIds",
+            "sourceCollectionId",
+            "targetCollectionId"
+          ]
+        },
+        {
+          "name": "CreateCollectionDepositForm",
+          "params": [
+            "collectionId",
+            "formDefinition"
+          ]
+        },
+        {
+          "name": "GetCollectionDashboardSummary",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetRecentSubmissionsForCollection",
+          "params": [
+            "collectionId",
+            "sinceDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FinancialResponsibility",
+      "ops": [
+        {
+          "name": "CreateFinancialContact",
+          "params": [
+            "name",
+            "phone",
+            "email",
+            "title",
+            "address"
+          ]
+        },
+        {
+          "name": "UpdateFinancialContact",
+          "params": [
+            "contactId",
+            "name",
+            "phone",
+            "email",
+            "title",
+            "address"
+          ]
+        },
+        {
+          "name": "AssignFinancialContactToItem",
+          "params": [
+            "itemId",
+            "contactId"
+          ]
+        },
+        {
+          "name": "GetStorageByFinancialContactReport",
+          "params": [
+            "startDate",
+            "endDate",
+            "groupBy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "ops": [
+        {
+          "name": "SearchWithDateDelimiters",
+          "params": [
+            "queryString",
+            "fromDate",
+            "toDate",
+            "beforeDate",
+            "afterDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EventAudit",
+      "ops": [
+        {
+          "name": "RecordPublicationEvent",
+          "params": [
+            "itemId",
+            "eventType",
+            "performedBy",
+            "timestamp",
+            "comment"
+          ]
+        },
+        {
+          "name": "GetItemEventHistory",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "EvaluateFedoraAuditIntegration",
+          "params": [
+            "fedoraInstanceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReplicationPolicy",
+      "ops": [
+        {
+          "name": "SetCollectionReplicationPolicy",
+          "params": [
+            "collectionId",
+            "replicate",
+            "primarySiteId",
+            "additionalSiteIds"
+          ]
+        },
+        {
+          "name": "QueueCollectionForReplicationOnIngest",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetItemReplicationStatus",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetCollectionReplicationSummary",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EncryptionAndFixity",
+      "ops": [
+        {
+          "name": "EncryptCollection",
+          "params": [
+            "collectionId",
+            "encryptionKeyId"
+          ]
+        },
+        {
+          "name": "GenerateEncryptedFileChecksum",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "ReplicateEncryptedFile",
+          "params": [
+            "itemId",
+            "targetSiteId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EmbargoManagement",
+      "ops": [
+        {
+          "name": "SetItemEmbargo",
+          "params": [
+            "itemId",
+            "embargoReleaseDate",
+            "postEmbargoPermissions"
+          ]
+        },
+        {
+          "name": "LiftEmbargo",
+          "params": [
+            "itemId",
+            "performedBy"
+          ]
+        },
+        {
+          "name": "AutoLiftEmbargoOnReleaseDate",
+          "params": [
+            "currentDate"
+          ]
+        },
+        {
+          "name": "EditEmbargoLength",
+          "params": [
+            "itemId",
+            "newReleaseDate"
+          ]
+        },
+        {
+          "name": "GrantEmbargoPrivileges",
+          "params": [
+            "adminUserId",
+            "granteeUserId"
+          ]
+        },
+        {
+          "name": "GetItemEmbargoStatus",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetAllETDEmbargoSummary",
+          "params": [
+            "format",
+            "filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LicenseManagement",
+      "ops": [
+        {
+          "name": "ConfigureCollectionLicenses",
+          "params": [
+            "collectionId",
+            "licenseOptions"
+          ]
+        },
+        {
+          "name": "PresentLicenseForDeposit",
+          "params": [
+            "collectionId",
+            "depositorId"
+          ]
+        },
+        {
+          "name": "RecordAcceptedLicense",
+          "params": [
+            "itemId",
+            "licenseId",
+            "acceptedBy",
+            "acceptedAt"
+          ]
+        },
+        {
+          "name": "GetItemLicenseInfo",
+          "params": [
+            "itemId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BatchIngest",
+      "ops": [
+        {
+          "name": "BatchIngestETDsFromProQuest",
+          "params": [
+            "batchPackageLocation",
+            "collectionId"
+          ]
+        },
+        {
+          "name": "SetEmbargoAndPermissionsForBatch",
+          "params": [
+            "batchId",
+            "embargoConfig",
+            "permissionConfig"
+          ]
+        },
+        {
+          "name": "ProvideBatchIngestFormatSpec",
+          "params": [
+            "ingestType"
+          ]
+        },
+        {
+          "name": "GetFolderIngestDocumentation",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "MetadataExposure",
+      "ops": [
+        {
+          "name": "ExposeDescriptiveRecordExternally",
+          "params": [
+            "itemId",
+            "targetSystem"
+          ]
+        },
+        {
+          "name": "ExposeViaOAIPMH",
+          "params": [
+            "setSpec",
+            "from",
+            "until",
+            "metadataPrefix"
+          ]
+        },
+        {
+          "name": "ProvideLinkedDataInterface",
+          "params": [
+            "resourceId",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuthorityControl",
+      "ops": [
+        {
+          "name": "PerformAuthorAuthorityControl",
+          "params": [
+            "collectionId",
+            "authorName",
+            "authorIdentifier"
+          ]
+        },
+        {
+          "name": "AssignCanonicalAuthorIdentifier",
+          "params": [
+            "itemId",
+            "authorId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AuditReporting",
+      "ops": [
+        {
+          "name": "GetEmbargoMetadataReport",
+          "params": [
+            "collectionId",
+            "format"
+          ]
+        },
+        {
+          "name": "GetErrorSummary",
+          "params": [
+            "sinceDate",
+            "deduplicate"
+          ]
+        },
+        {
+          "name": "GetUsageStatisticsDashboard",
+          "params": [
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "GetCollectionSizeStatistics",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "GetRecentSubmissionWidgetData",
+          "params": [
+            "collectionId",
+            "limit"
+          ]
+        },
+        {
+          "name": "GetUserActivityReport",
+          "params": [
+            "startDate",
+            "endDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserActivity",
+      "ops": [
+        {
+          "name": "ViewAuthenticatedAndAnonymousUsers",
+          "params": [
+            "sinceDate"
+          ]
+        },
+        {
+          "name": "GetResolverReferrersForItem",
+          "params": [
+            "itemId",
+            "sinceDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SystemMessaging",
+      "ops": [
+        {
+          "name": "ScheduleRepositoryMessage",
+          "params": [
+            "messageText",
+            "startTime",
+            "endTime",
+            "audience"
+          ]
+        },
+        {
+          "name": "GetActiveRepositoryMessages",
+          "params": [
+            "currentTime"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageAndDR",
+      "ops": [
+        {
+          "name": "GetCollectionStorageUsage",
+          "params": [
+            "collectionId"
+          ]
+        },
+        {
+          "name": "ProvideDisasterRecoveryPlan",
+          "params": []
+        },
+        {
+          "name": "ProvideServerSLA",
+          "params": []
+        },
+        {
+          "name": "EnsureFailoverAccess",
+          "params": [
+            "failureScenario"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IndexManagement",
+      "ops": [
+        {
+          "name": "RebuildRepositoryIndex",
+          "params": [
+            "scope",
+            "reindexStrategy"
+          ]
+        },
+        {
+          "name": "UpdateIndexIncrementally",
+          "params": [
+            "sinceDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FedoraIntegration",
+      "ops": [
+        {
+          "name": "UpgradeToFedora4",
+          "params": [
+            "migrationPlanId"
+          ]
+        },
+        {
+          "name": "MigrateApplicationsAndData",
+          "params": [
+            "sourceFedoraInstanceId",
+            "targetFedoraInstanceId"
+          ]
+        },
+        {
+          "name": "ConfigureFedoraConnector",
+          "params": [
+            "fedoraInstanceId",
+            "connectorConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExternalSystemIntegration",
+      "ops": [
+        {
+          "name": "ConfigureSymplecticElementsIntegration",
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "SyncFromSymplecticElements",
+          "params": [
+            "sinceDate"
+          ]
+        },
+        {
+          "name": "SyncToSymplecticElements",
+          "params": [
+            "sinceDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOIManagement",
+      "ops": [
+        {
+          "name": "PropagateMetadataChangesToEZID",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "GetDOIAssignmentInfo",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "ProvideDOIAssignmentGuidance",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "FormatValidation",
+      "ops": [
+        {
+          "name": "ValidateSubmittedFiles",
+          "params": [
+            "ingestId"
+          ]
+        },
+        {
+          "name": "NotifyDepositorOfFormatIssues",
+          "params": [
+            "ingestId",
+            "depositorId"
+          ]
+        },
+        {
+          "name": "ListAcceptedContentTypes",
+          "params": []
+        },
+        {
+          "name": "ListAcceptedAndRecommendedFormats",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "GroupAndPermissionManagement",
+      "ops": [
+        {
+          "name": "CreateDepositGroup",
+          "params": [
+            "collectionId",
+            "groupName",
+            "defaultPermissions",
+            "depositWindowStart",
+            "depositWindowEnd"
+          ]
+        },
+        {
+          "name": "AddUsersToDepositGroup",
+          "params": [
+            "groupId",
+            "userIds"
+          ]
+        },
+        {
+          "name": "RemoveUsersFromDepositGroup",
+          "params": [
+            "groupId",
+            "userIds"
+          ]
+        },
+        {
+          "name": "AddUserToGroup",
+          "params": [
+            "groupId",
+            "userId"
+          ]
+        },
+        {
+          "name": "RemoveUserFromGroup",
+          "params": [
+            "groupId",
+            "userId"
+          ]
+        },
+        {
+          "name": "CreateUserGroup",
+          "params": [
+            "groupName",
+            "description"
+          ]
+        },
+        {
+          "name": "SetGroupPermissionsOnCollection",
+          "params": [
+            "collectionId",
+            "groupId",
+            "permissions"
+          ]
+        },
+        {
+          "name": "GrantEmbargoManagementRole",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControl",
+      "ops": [
+        {
+          "name": "RestrictCollectionToIPRange",
+          "params": [
+            "collectionId",
+            "ipRanges"
+          ]
+        },
+        {
+          "name": "SetItemPermissions",
+          "params": [
+            "itemId",
+            "permissions"
+          ]
+        },
+        {
+          "name": "BulkUpdateItemPermissions",
+          "params": [
+            "itemIds",
+            "permissions"
+          ]
+        },
+        {
+          "name": "ViewObjectPermissions",
+          "params": [
+            "itemIds"
+          ]
+        },
+        {
+          "name": "SetWhitelistIPBypassAuth",
+          "params": [
+            "ipAddresses"
+          ]
+        },
+        {
+          "name": "EnforceSubmitterCannotModifyExistingItems",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContactAndRequestAccess",
+      "ops": [
+        {
+          "name": "EnableDirectContactForRestrictedItems",
+          "params": [
+            "collectionId",
+            "curatorContactInfo"
+          ]
+        },
+        {
+          "name": "SubmitAccessRequest",
+          "params": [
+            "itemId",
+            "requesterId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SuperuserScope",
+      "ops": [
+        {
+          "name": "EnterSuperuserScope",
+          "params": [
+            "userId",
+            "reason"
+          ]
+        },
+        {
+          "name": "ExitSuperuserScope",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Versioning",
+      "ops": [
+        {
+          "name": "ListObjectVersions",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "RestoreObjectVersion",
+          "params": [
+            "itemId",
+            "versionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataEditing",
+      "ops": [
+        {
+          "name": "EditItemMetadata",
+          "params": [
+            "itemId",
+            "metadata",
+            "editorId"
+          ]
+        },
+        {
+          "name": "AllowExternalResearchersMetadataEdit",
+          "params": [
+            "itemId",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ClassManagementDashboard",
+      "ops": [
+        {
+          "name": "ManageClassMembers",
+          "params": [
+            "classId",
+            "netIdsToAdd",
+            "netIdsToRemove"
+          ]
+        },
+        {
+          "name": "GrantSubmitPermissionsByNetIds",
+          "params": [
+            "classId",
+            "netIds"
+          ]
+        },
+        {
+          "name": "ValidateNetIds",
+          "params": [
+            "netIds"
+          ]
+        },
+        {
+          "name": "SetSubmissionWindowForClass",
+          "params": [
+            "classId",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "GetClassSubmissionStatus",
+          "params": [
+            "classId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UIStatusDisplay",
+      "ops": [
+        {
+          "name": "DisplayEmbargoStatusOnItemPage",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "HighlightEmbargoReleaseDate",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "DisplayReplicationStatusOnItemPage",
+          "params": [
+            "itemId"
+          ]
+        },
+        {
+          "name": "DisplayReplicationSummaryOnDashboard",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "CollectionLifecycle",
+      "callee": "ReplicationPolicy"
+    },
+    {
+      "caller": "CollectionLifecycle",
+      "callee": "EncryptionAndFixity"
+    },
+    {
+      "caller": "CollectionLifecycle",
+      "callee": "UIStatusDisplay"
+    },
+    {
+      "caller": "FinancialResponsibility",
+      "callee": "AuditReporting"
+    },
+    {
+      "caller": "Search",
+      "callee": "EmbargoManagement"
+    },
+    {
+      "caller": "EventAudit",
+      "callee": "FedoraIntegration"
+    },
+    {
+      "caller": "ReplicationPolicy",
+      "callee": "StorageAndDR"
+    },
+    {
+      "caller": "ReplicationPolicy",
+      "callee": "UIStatusDisplay"
+    },
+    {
+      "caller": "EncryptionAndFixity",
+      "callee": "ReplicationPolicy"
+    },
+    {
+      "caller": "EmbargoManagement",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "EmbargoManagement",
+      "callee": "UIStatusDisplay"
+    },
+    {
+      "caller": "LicenseManagement",
+      "callee": "MetadataExposure"
+    },
+    {
+      "caller": "BatchIngest",
+      "callee": "EmbargoManagement"
+    },
+    {
+      "caller": "BatchIngest",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "BatchIngest",
+      "callee": "FormatValidation"
+    },
+    {
+      "caller": "MetadataExposure",
+      "callee": "DOIManagement"
+    },
+    {
+      "caller": "MetadataExposure",
+      "callee": "FedoraIntegration"
+    },
+    {
+      "caller": "AuthorityControl",
+      "callee": "MetadataEditing"
+    },
+    {
+      "caller": "AuditReporting",
+      "callee": "UserActivity"
+    },
+    {
+      "caller": "AuditReporting",
+      "callee": "StorageAndDR"
+    },
+    {
+      "caller": "UserActivity",
+      "callee": "SystemMessaging"
+    },
+    {
+      "caller": "SystemMessaging",
+      "callee": "UIStatusDisplay"
+    },
+    {
+      "caller": "StorageAndDR",
+      "callee": "ReplicationPolicy"
+    },
+    {
+      "caller": "IndexManagement",
+      "callee": "FedoraIntegration"
+    },
+    {
+      "caller": "FedoraIntegration",
+      "callee": "ExternalSystemIntegration"
+    },
+    {
+      "caller": "ExternalSystemIntegration",
+      "callee": "FedoraIntegration"
+    },
+    {
+      "caller": "DOIManagement",
+      "callee": "MetadataExposure"
+    },
+    {
+      "caller": "FormatValidation",
+      "callee": "SystemMessaging"
+    },
+    {
+      "caller": "GroupAndPermissionManagement",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "AccessControl",
+      "callee": "GroupAndPermissionManagement"
+    },
+    {
+      "caller": "ContactAndRequestAccess",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "SuperuserScope",
+      "callee": "AccessControl"
+    },
+    {
+      "caller": "Versioning",
+      "callee": "FedoraIntegration"
+    },
+    {
+      "caller": "MetadataEditing",
+      "callee": "AuthorityControl"
+    },
+    {
+      "caller": "ClassManagementDashboard",
+      "callee": "GroupAndPermissionManagement"
+    },
+    {
+      "caller": "ClassManagementDashboard",
+      "callee": "UserActivity"
+    },
+    {
+      "caller": "UIStatusDisplay",
+      "callee": "EmbargoManagement"
+    },
+    {
+      "caller": "UIStatusDisplay",
+      "callee": "ReplicationPolicy"
+    }
+  ]
+}

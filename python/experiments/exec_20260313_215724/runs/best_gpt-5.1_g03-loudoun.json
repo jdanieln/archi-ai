@@ -1,0 +1,739 @@
+{
+  "microservices": [
+    {
+      "name": "PublicInformation",
+      "ops": [
+        {
+          "name": "SearchPublicInformation",
+          "params": [
+            "query",
+            "propertyId",
+            "serviceType",
+            "processType",
+            "filters",
+            "page",
+            "pageSize"
+          ]
+        },
+        {
+          "name": "SearchPropertyInformation",
+          "params": [
+            "propertyId",
+            "address",
+            "ownerName",
+            "includeHistory"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ServiceCatalog",
+      "ops": [
+        {
+          "name": "ListServices",
+          "params": [
+            "category",
+            "applicantType"
+          ]
+        },
+        {
+          "name": "GetServiceRequirements",
+          "params": [
+            "serviceId"
+          ]
+        },
+        {
+          "name": "SelectServiceForApplication",
+          "params": [
+            "customerId",
+            "serviceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "RegisterCustomerPortalUser",
+          "params": [
+            "username",
+            "email",
+            "password",
+            "contactInfo"
+          ]
+        },
+        {
+          "name": "AuthenticateUser",
+          "params": [
+            "usernameOrEmail",
+            "password"
+          ]
+        },
+        {
+          "name": "GetUserProfile",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ApplicationManagement",
+      "ops": [
+        {
+          "name": "RequestPreApplicationAssistance",
+          "params": [
+            "customerId",
+            "serviceId",
+            "description",
+            "preferredDates"
+          ]
+        },
+        {
+          "name": "CreateApplication",
+          "params": [
+            "customerId",
+            "serviceId",
+            "initialData"
+          ]
+        },
+        {
+          "name": "SubmitApplication",
+          "params": [
+            "applicationId",
+            "applicantId",
+            "applicationData"
+          ]
+        },
+        {
+          "name": "SubmitSupportingDocumentation",
+          "params": [
+            "applicationId",
+            "applicantId",
+            "documents"
+          ]
+        },
+        {
+          "name": "ModifyApplication",
+          "params": [
+            "applicationId",
+            "applicantId",
+            "updatedData"
+          ]
+        },
+        {
+          "name": "GetApplicationStatus",
+          "params": [
+            "applicationId",
+            "requesterId"
+          ]
+        },
+        {
+          "name": "SetApplicationFinalAction",
+          "params": [
+            "applicationId",
+            "staffId",
+            "finalAction",
+            "notes"
+          ]
+        },
+        {
+          "name": "RecordInternalNote",
+          "params": [
+            "recordId",
+            "staffId",
+            "noteText",
+            "visibility"
+          ]
+        },
+        {
+          "name": "ApplyHold",
+          "params": [
+            "recordId",
+            "staffId",
+            "reasonCode",
+            "comments"
+          ]
+        },
+        {
+          "name": "RemoveHold",
+          "params": [
+            "recordId",
+            "staffId",
+            "reason"
+          ]
+        },
+        {
+          "name": "SendFormalResponseToApplicant",
+          "params": [
+            "applicationId",
+            "staffId",
+            "templateId",
+            "messageBody"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowReview",
+      "ops": [
+        {
+          "name": "PerformCompletenessReview",
+          "params": [
+            "applicationId",
+            "staffId",
+            "result",
+            "comments"
+          ]
+        },
+        {
+          "name": "AssignApplicationForDetailedReview",
+          "params": [
+            "applicationId",
+            "staffId",
+            "assigneeId"
+          ]
+        },
+        {
+          "name": "PerformStaffReview",
+          "params": [
+            "applicationId",
+            "staffId",
+            "result",
+            "comments"
+          ]
+        },
+        {
+          "name": "TrackDraftProffers",
+          "params": [
+            "applicationId",
+            "staffId",
+            "profferDraft"
+          ]
+        },
+        {
+          "name": "ManageApprovedProffers",
+          "params": [
+            "applicationId",
+            "staffId",
+            "approvedProfferData"
+          ]
+        },
+        {
+          "name": "ManageOrdinances",
+          "params": [
+            "staffId",
+            "ordinanceData",
+            "action"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MeetingManagement",
+      "ops": [
+        {
+          "name": "ScheduleMeeting",
+          "params": [
+            "organizerId",
+            "participants",
+            "subject",
+            "dateTime",
+            "location",
+            "relatedRecordId"
+          ]
+        },
+        {
+          "name": "RequestPlanReviewMeeting",
+          "params": [
+            "applicationId",
+            "applicantId",
+            "preferredDates",
+            "agenda"
+          ]
+        },
+        {
+          "name": "ConductPlanReviewMeeting",
+          "params": [
+            "meetingId",
+            "staffId",
+            "outcomeSummary",
+            "recordingReference"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanningManagement",
+      "ops": [
+        {
+          "name": "TrackPlanAmendmentsAndStudies",
+          "params": [
+            "staffId",
+            "planId",
+            "workDescription",
+            "status",
+            "location"
+          ]
+        },
+        {
+          "name": "GeneratePlanningReports",
+          "params": [
+            "staffId",
+            "reportType",
+            "filters",
+            "format"
+          ]
+        },
+        {
+          "name": "EvaluateComprehensivePlanConsistency",
+          "params": [
+            "applicationId",
+            "staffId",
+            "evaluationResult",
+            "comments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZoningManagement",
+      "ops": [
+        {
+          "name": "ProcessZoningInformationRequest",
+          "params": [
+            "requestId",
+            "staffId",
+            "responseText"
+          ]
+        },
+        {
+          "name": "IssueZoningPermit",
+          "params": [
+            "applicationId",
+            "staffId",
+            "permitType",
+            "conditions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HearingManagement",
+      "ops": [
+        {
+          "name": "ManageHearingCalendars",
+          "params": [
+            "staffId",
+            "action",
+            "calendarData"
+          ]
+        },
+        {
+          "name": "AssignHearingDate",
+          "params": [
+            "applicationId",
+            "staffId",
+            "hearingDate",
+            "hearingBody"
+          ]
+        },
+        {
+          "name": "ManageAffidavits",
+          "params": [
+            "applicationId",
+            "staffId",
+            "affidavitData",
+            "action"
+          ]
+        },
+        {
+          "name": "SatisfyHearingRequirements",
+          "params": [
+            "applicationId",
+            "applicantId",
+            "requirementsData"
+          ]
+        },
+        {
+          "name": "PrepareAndSupportHearingExecution",
+          "params": [
+            "hearingId",
+            "staffId",
+            "checklistStatus"
+          ]
+        },
+        {
+          "name": "CaptureHearingDecision",
+          "params": [
+            "hearingId",
+            "staffId",
+            "decision",
+            "conditions",
+            "notes"
+          ]
+        },
+        {
+          "name": "ProcessAppeal",
+          "params": [
+            "appealId",
+            "staffId",
+            "decision",
+            "impactNotes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanReviewManagement",
+      "ops": [
+        {
+          "name": "AssignPlansForReview",
+          "params": [
+            "applicationId",
+            "staffId",
+            "reviewerId"
+          ]
+        },
+        {
+          "name": "ManagePlanReviewerWorkload",
+          "params": [
+            "supervisorId",
+            "workloadAdjustments"
+          ]
+        },
+        {
+          "name": "ReviewPlans",
+          "params": [
+            "applicationId",
+            "reviewerId",
+            "result",
+            "conditions",
+            "corrections"
+          ]
+        },
+        {
+          "name": "ResubmitPlans",
+          "params": [
+            "applicationId",
+            "applicantId",
+            "revisedPlans"
+          ]
+        },
+        {
+          "name": "ReviewCodeModifications",
+          "params": [
+            "applicationId",
+            "staffId",
+            "codeModificationRequestId",
+            "decision",
+            "comments"
+          ]
+        },
+        {
+          "name": "TrackCompletionOfRequiredPlanReviews",
+          "params": [
+            "applicationId",
+            "staffId",
+            "completionStatus"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PermitManagement",
+      "ops": [
+        {
+          "name": "IssueDevelopmentPermit",
+          "params": [
+            "applicationId",
+            "staffId",
+            "permitData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FinancialManagement",
+      "ops": [
+        {
+          "name": "PayFee",
+          "params": [
+            "applicationId",
+            "payerId",
+            "amount",
+            "paymentMethod",
+            "feeType"
+          ]
+        },
+        {
+          "name": "ManageBonds",
+          "params": [
+            "projectId",
+            "staffId",
+            "bondData",
+            "action"
+          ]
+        },
+        {
+          "name": "CompleteBuildingDevelopmentProject",
+          "params": [
+            "projectId",
+            "applicantId",
+            "completionData"
+          ]
+        },
+        {
+          "name": "SendCitationsAndFines",
+          "params": [
+            "violationId",
+            "staffId",
+            "recipientId",
+            "amount",
+            "deliveryMethod"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InspectionManagement",
+      "ops": [
+        {
+          "name": "RequestInspection",
+          "params": [
+            "projectId",
+            "customerId",
+            "inspectionType",
+            "preferredDate"
+          ]
+        },
+        {
+          "name": "CreateInspection",
+          "params": [
+            "projectId",
+            "staffId",
+            "inspectionType",
+            "scheduledDate"
+          ]
+        },
+        {
+          "name": "AssignInspections",
+          "params": [
+            "supervisorId",
+            "inspectionId",
+            "inspectorId"
+          ]
+        },
+        {
+          "name": "ManageInspectorWorkload",
+          "params": [
+            "supervisorId",
+            "workloadAdjustments"
+          ]
+        },
+        {
+          "name": "ConductInspection",
+          "params": [
+            "inspectionId",
+            "inspectorId",
+            "result",
+            "findings",
+            "followUpActions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnforcementManagement",
+      "ops": [
+        {
+          "name": "IssueNoticeOfViolation",
+          "params": [
+            "recordId",
+            "staffId",
+            "violationDetails",
+            "recipientId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GISPropertyManagement",
+      "ops": [
+        {
+          "name": "UpdateGISProperty",
+          "params": [
+            "staffId",
+            "parcelPin",
+            "gisLayerRef",
+            "changeType"
+          ]
+        },
+        {
+          "name": "CreateCondoUnit",
+          "params": [
+            "staffId",
+            "parentParcelId",
+            "unitNumber",
+            "childParcelId",
+            "addressId"
+          ]
+        },
+        {
+          "name": "NotifyGeospatialAttributeChange",
+          "params": [
+            "recordId",
+            "changedAttributes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reporting",
+      "ops": [
+        {
+          "name": "CreateCustomQueryOrReport",
+          "params": [
+            "staffId",
+            "queryDefinition",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "ops": [
+        {
+          "name": "SendNotification",
+          "params": [
+            "recipientId",
+            "channel",
+            "templateId",
+            "messageBody",
+            "relatedRecordId"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "PublicInformation",
+      "callee": "GISPropertyManagement"
+    },
+    {
+      "caller": "ServiceCatalog",
+      "callee": "PublicInformation"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "ApplicationManagement",
+      "callee": "UserManagement"
+    },
+    {
+      "caller": "ApplicationManagement",
+      "callee": "ServiceCatalog"
+    },
+    {
+      "caller": "ApplicationManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "WorkflowReview",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "WorkflowReview",
+      "callee": "Notification"
+    },
+    {
+      "caller": "MeetingManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "MeetingManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "PlanningManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "PlanningManagement",
+      "callee": "Reporting"
+    },
+    {
+      "caller": "ZoningManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "ZoningManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "HearingManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "HearingManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "PlanReviewManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "PlanReviewManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "PermitManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "PermitManagement",
+      "callee": "FinancialManagement"
+    },
+    {
+      "caller": "FinancialManagement",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "FinancialManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "InspectionManagement",
+      "callee": "PermitManagement"
+    },
+    {
+      "caller": "InspectionManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "EnforcementManagement",
+      "callee": "InspectionManagement"
+    },
+    {
+      "caller": "EnforcementManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "GISPropertyManagement",
+      "callee": "Notification"
+    },
+    {
+      "caller": "Reporting",
+      "callee": "ApplicationManagement"
+    },
+    {
+      "caller": "Reporting",
+      "callee": "PlanningManagement"
+    }
+  ]
+}

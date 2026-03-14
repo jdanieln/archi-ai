@@ -1,0 +1,426 @@
+{
+  "microservices": [
+    {
+      "name": "UserProfileService",
+      "ops": [
+        {
+          "name": "UpdateProfile",
+          "params": [
+            "userId",
+            "profileData",
+            "privacySettings"
+          ]
+        },
+        {
+          "name": "GetProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "SearchProfiles",
+          "params": [
+            "searchCriteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MembershipService",
+      "ops": [
+        {
+          "name": "ResetPassword",
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "RenewMembership",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CertificationApplicationService",
+      "ops": [
+        {
+          "name": "SubmitApplication",
+          "params": [
+            "userId",
+            "certificationType",
+            "applicationData"
+          ]
+        },
+        {
+          "name": "ReviewApplication",
+          "params": [
+            "adminId",
+            "applicationId",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CertificationRegistryService",
+      "ops": [
+        {
+          "name": "GetRegistry",
+          "params": [
+            "certificationType"
+          ]
+        },
+        {
+          "name": "UploadParticipants",
+          "params": [
+            "trainerId",
+            "classId",
+            "fileData"
+          ]
+        },
+        {
+          "name": "ApproveClassParticipants",
+          "params": [
+            "adminId",
+            "classId",
+            "proofOfPayment"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CourseService",
+      "ops": [
+        {
+          "name": "CreateCourseEvent",
+          "params": [
+            "trainerId",
+            "courseData",
+            "hasListingFee"
+          ]
+        },
+        {
+          "name": "UpdateCourseEvent",
+          "params": [
+            "courseId",
+            "courseData"
+          ]
+        },
+        {
+          "name": "DeleteCourseEvent",
+          "params": [
+            "courseId"
+          ]
+        },
+        {
+          "name": "CopyCourseEvent",
+          "params": [
+            "courseId",
+            "newTrainerId"
+          ]
+        },
+        {
+          "name": "ChangeCourseType",
+          "params": [
+            "courseId",
+            "newType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CourseDiscoveryService",
+      "ops": [
+        {
+          "name": "ListUpcoming",
+          "params": [
+            "eventType",
+            "page"
+          ]
+        },
+        {
+          "name": "SearchCourses",
+          "params": [
+            "searchCriteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NewsService",
+      "ops": [
+        {
+          "name": "GetNews",
+          "params": [
+            "status",
+            "page"
+          ]
+        },
+        {
+          "name": "SubmitNews",
+          "params": [
+            "visitorId",
+            "newsData"
+          ]
+        },
+        {
+          "name": "ManageNewsItem",
+          "params": [
+            "editorId",
+            "newsId",
+            "newsData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ArticleService",
+      "ops": [
+        {
+          "name": "GetArticles",
+          "params": [
+            "accessLevel",
+            "page"
+          ]
+        },
+        {
+          "name": "ManageArticle",
+          "params": [
+            "editorId",
+            "articleId",
+            "articleData"
+          ]
+        },
+        {
+          "name": "SearchArticles",
+          "params": [
+            "searchQuery"
+          ]
+        },
+        {
+          "name": "AddComment",
+          "params": [
+            "visitorId",
+            "articleId",
+            "commentData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JobBoardService",
+      "ops": [
+        {
+          "name": "PostJob",
+          "params": [
+            "recruiterId",
+            "jobData"
+          ]
+        },
+        {
+          "name": "ReviewJob",
+          "params": [
+            "adminId",
+            "jobId",
+            "status"
+          ]
+        },
+        {
+          "name": "ManageJob",
+          "params": [
+            "jobId",
+            "jobData"
+          ]
+        },
+        {
+          "name": "ExtendJob",
+          "params": [
+            "jobId",
+            "days"
+          ]
+        },
+        {
+          "name": "ListJobs",
+          "params": [
+            "page"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResourceFAQService",
+      "ops": [
+        {
+          "name": "GetFAQs",
+          "params": []
+        },
+        {
+          "name": "ManageFAQ",
+          "params": [
+            "editorId",
+            "faqId",
+            "faqData"
+          ]
+        },
+        {
+          "name": "SearchFAQs",
+          "params": [
+            "searchQuery"
+          ]
+        },
+        {
+          "name": "DownloadResource",
+          "params": [
+            "resourceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SurveyRatingService",
+      "ops": [
+        {
+          "name": "SubmitSurvey",
+          "params": [
+            "courseId",
+            "participantId",
+            "surveyData"
+          ]
+        },
+        {
+          "name": "GetClassResults",
+          "params": [
+            "classId"
+          ]
+        },
+        {
+          "name": "GetTrainerRating",
+          "params": [
+            "trainerId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BillingService",
+      "ops": [
+        {
+          "name": "ProcessPayment",
+          "params": [
+            "userId",
+            "amount",
+            "paymentType"
+          ]
+        },
+        {
+          "name": "SetFee",
+          "params": [
+            "adminId",
+            "feeType",
+            "amount"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SponsorshipService",
+      "ops": [
+        {
+          "name": "RegisterSponsor",
+          "params": [
+            "companyData",
+            "logoData"
+          ]
+        },
+        {
+          "name": "GetRandomSponsorLogo",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "SendMemberEmail",
+          "params": [
+            "senderId",
+            "recipientId",
+            "message"
+          ]
+        },
+        {
+          "name": "SendSystemEmail",
+          "params": [
+            "recipientEmail",
+            "templateId",
+            "templateData"
+          ]
+        },
+        {
+          "name": "ManageEmailTemplate",
+          "params": [
+            "editorId",
+            "templateId",
+            "templateData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FeedService",
+      "ops": [
+        {
+          "name": "GetRSSFeed",
+          "params": [
+            "feedType"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "JobBoardService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "CertificationApplicationService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "CertificationRegistryService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "CertificationRegistryService",
+      "callee": "BillingService"
+    },
+    {
+      "caller": "SurveyRatingService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "CourseService",
+      "callee": "BillingService"
+    },
+    {
+      "caller": "MembershipService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "UserProfileService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "SponsorshipService",
+      "callee": "BillingService"
+    },
+    {
+      "caller": "NewsService",
+      "callee": "NotificationService"
+    }
+  ]
+}

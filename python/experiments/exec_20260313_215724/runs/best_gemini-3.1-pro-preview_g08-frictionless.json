@@ -1,0 +1,210 @@
+{
+  "microservices": [
+    {
+      "name": "DataIntegrationService",
+      "ops": [
+        {
+          "name": "ExportPackage",
+          "params": [
+            "datasetId",
+            "targetFormat"
+          ]
+        },
+        {
+          "name": "ImportPackage",
+          "params": [
+            "sourceData",
+            "sourceFormat"
+          ]
+        },
+        {
+          "name": "PublishToExternalPlatform",
+          "params": [
+            "datasetId",
+            "platformConfig"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "UpdateMetadata",
+          "params": [
+            "datasetId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "AddReferenceData",
+          "params": [
+            "datasetId",
+            "referenceData"
+          ]
+        },
+        {
+          "name": "AssignDOI",
+          "params": [
+            "datasetId",
+            "doi"
+          ]
+        },
+        {
+          "name": "AddFundingInfo",
+          "params": [
+            "datasetId",
+            "fundingDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VisualizationService",
+      "ops": [
+        {
+          "name": "CreateVisualization",
+          "params": [
+            "datasetId",
+            "config"
+          ]
+        },
+        {
+          "name": "SaveVisualization",
+          "params": [
+            "datasetId",
+            "visualizationData"
+          ]
+        },
+        {
+          "name": "GeneratePreview",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ValidationService",
+      "ops": [
+        {
+          "name": "ValidatePackage",
+          "params": [
+            "datasetId",
+            "profile"
+          ]
+        },
+        {
+          "name": "GetValidationReport",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "CheckPersistence",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageService",
+      "ops": [
+        {
+          "name": "StoreDataset",
+          "params": [
+            "file",
+            "metadata"
+          ]
+        },
+        {
+          "name": "GetDataset",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsService",
+      "ops": [
+        {
+          "name": "TrackPreview",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "GetUsageStats",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StatisticsService",
+      "ops": [
+        {
+          "name": "GenerateStatistics",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "CreateSummaryIframe",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowService",
+      "ops": [
+        {
+          "name": "SaveReproducibleSteps",
+          "params": [
+            "datasetId",
+            "steps"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DataIntegrationService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "VisualizationService",
+      "callee": "AnalyticsService"
+    },
+    {
+      "caller": "ValidationService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "StatisticsService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "MetadataService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "StorageService",
+      "callee": "ValidationService"
+    },
+    {
+      "caller": "WorkflowService",
+      "callee": "StorageService"
+    }
+  ]
+}

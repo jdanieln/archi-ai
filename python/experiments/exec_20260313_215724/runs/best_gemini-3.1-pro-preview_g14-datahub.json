@@ -1,0 +1,362 @@
+{
+  "microservices": [
+    {
+      "name": "IdentityService",
+      "ops": [
+        {
+          "name": "SignUp",
+          "params": [
+            "email",
+            "password"
+          ]
+        },
+        {
+          "name": "OAuthSignUp",
+          "params": [
+            "provider",
+            "token"
+          ]
+        },
+        {
+          "name": "GetProfile",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateProfile",
+          "params": [
+            "userId",
+            "profileData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OrganizationService",
+      "ops": [
+        {
+          "name": "InviteMember",
+          "params": [
+            "orgId",
+            "email"
+          ]
+        },
+        {
+          "name": "RemoveMember",
+          "params": [
+            "orgId",
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateRole",
+          "params": [
+            "orgId",
+            "userId",
+            "role"
+          ]
+        },
+        {
+          "name": "GetMembers",
+          "params": [
+            "orgId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PackageRegistryService",
+      "ops": [
+        {
+          "name": "CreatePackage",
+          "params": [
+            "publisherId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UpdatePackage",
+          "params": [
+            "packageId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "DeletePackage",
+          "params": [
+            "packageId",
+            "permanent"
+          ]
+        },
+        {
+          "name": "RestorePackage",
+          "params": [
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PackagePublishingService",
+      "ops": [
+        {
+          "name": "PublishPackage",
+          "params": [
+            "packageId",
+            "visibility"
+          ]
+        },
+        {
+          "name": "UnpublishPackage",
+          "params": [
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PackageCatalogService",
+      "ops": [
+        {
+          "name": "SearchPackages",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "SearchPublisherPackages",
+          "params": [
+            "publisherId",
+            "query"
+          ]
+        },
+        {
+          "name": "BrowsePublishers",
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "GetPackageDetails",
+          "params": [
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PackageVersioningService",
+      "ops": [
+        {
+          "name": "CreateVersion",
+          "params": [
+            "packageId",
+            "versionData"
+          ]
+        },
+        {
+          "name": "TagVersion",
+          "params": [
+            "packageId",
+            "versionId",
+            "tag"
+          ]
+        },
+        {
+          "name": "OverwriteTag",
+          "params": [
+            "packageId",
+            "tag",
+            "versionData"
+          ]
+        },
+        {
+          "name": "GetSchemaChanges",
+          "params": [
+            "packageId",
+            "versionA",
+            "versionB"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataValidationService",
+      "ops": [
+        {
+          "name": "ValidatePackage",
+          "params": [
+            "packageData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageService",
+      "ops": [
+        {
+          "name": "ImportAndCache",
+          "params": [
+            "packageId",
+            "sourceUrl"
+          ]
+        },
+        {
+          "name": "DownloadPackage",
+          "params": [
+            "packageId",
+            "version",
+            "format"
+          ]
+        },
+        {
+          "name": "DownloadAsSQLite",
+          "params": [
+            "packageId",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PreviewService",
+      "ops": [
+        {
+          "name": "PreviewPackage",
+          "params": [
+            "packageData"
+          ]
+        },
+        {
+          "name": "ListExamples",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsService",
+      "ops": [
+        {
+          "name": "RecordDownload",
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "GetPackageMetrics",
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "GetPlatformMetrics",
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "NotifyPackageUpdate",
+          "params": [
+            "packageId",
+            "changes"
+          ]
+        },
+        {
+          "name": "SendInvitation",
+          "params": [
+            "email",
+            "orgId"
+          ]
+        },
+        {
+          "name": "SubscribeToPackage",
+          "params": [
+            "userId",
+            "packageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BillingService",
+      "ops": [
+        {
+          "name": "GetPricingPlans",
+          "params": []
+        },
+        {
+          "name": "SubscribeToPlan",
+          "params": [
+            "userId",
+            "planId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdminConfigService",
+      "ops": [
+        {
+          "name": "UpdateSiteConfig",
+          "params": [
+            "configKey",
+            "configValue"
+          ]
+        },
+        {
+          "name": "GetSiteConfig",
+          "params": [
+            "configKey"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "PackageRegistryService",
+      "callee": "DataValidationService"
+    },
+    {
+      "caller": "PackageRegistryService",
+      "callee": "PackageVersioningService"
+    },
+    {
+      "caller": "PackagePublishingService",
+      "callee": "PackageRegistryService"
+    },
+    {
+      "caller": "PackagePublishingService",
+      "callee": "PackageCatalogService"
+    },
+    {
+      "caller": "PackagePublishingService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "StorageService",
+      "callee": "AnalyticsService"
+    },
+    {
+      "caller": "OrganizationService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "IdentityService",
+      "callee": "BillingService"
+    },
+    {
+      "caller": "PreviewService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "PackageCatalogService",
+      "callee": "AnalyticsService"
+    }
+  ]
+}
