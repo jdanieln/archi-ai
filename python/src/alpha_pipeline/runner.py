@@ -7,38 +7,47 @@ import random
 import time
 import tempfile
 import subprocess
+import warnings
+import re
+from pathlib import Path
 from copy import deepcopy
 from datetime import datetime
-from pathlib import Path
+from typing import Optional, List
+
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 from dotenv import load_dotenv
-import openai
+import litellm
+import google.generativeai as genai
+import pandas as pd
 
 # ──────────────────────────────────────────────────────────
-# 0) Configuración de rutas y .env
+# 0) Configuración de Rutas y Entorno
 # ──────────────────────────────────────────────────────────
 PYTHON_ROOT       = Path(__file__).resolve().parents[2]
 ENV_PATH          = PYTHON_ROOT / ".env"
 LEAN_PROJECT_DIR  = PYTHON_ROOT / "formal"
 USER_STORIES_DIR  = PYTHON_ROOT.parent / "data" / "user-stories-datasets"
 EXPERIMENT_DIR    = PYTHON_ROOT / "experiments"
-DB_FILE           = EXPERIMENT_DIR / "program_db.jsonl"
 
-EXPERIMENT_DIR.mkdir(exist_ok=True)
+EXECUTION_TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
+CURRENT_EXECUTION_DIR = EXPERIMENT_DIR / f"exec_{EXECUTION_TIMESTAMP}"
+RUNS_DIR          = CURRENT_EXECUTION_DIR / "runs"
+CSV_MASTER_PATH   = CURRENT_EXECUTION_DIR / "results.csv"
+DB_FILE           = CURRENT_EXECUTION_DIR / "program_db.jsonl"
 
-if not ENV_PATH.is_file():
-    raise FileNotFoundError(f"No encontré {ENV_PATH}")
-load_dotenv(dotenv_path=ENV_PATH)
+CURRENT_EXECUTION_DIR.mkdir(parents=True, exist_ok=True)
+RUNS_DIR.mkdir(parents=True, exist_ok=True)
+
+if ENV_PATH.is_file():
+    load_dotenv(dotenv_path=ENV_PATH)
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 # ──────────────────────────────────────────────────────────
-# 1) API Key de OpenAI
-# ──────────────────────────────────────────────────────────
-openai.api_key = os.getenv("OPENAI_API_KEY")
-if not openai.api_key:
-    raise RuntimeError("OPENAI_API_KEY no está definido en .env")
-
-# ──────────────────────────────────────────────────────────
-# 2) Parámetros evolutivos y modelos
+# 2) Parámetros Evolutivos Genuinos (Paper)
 # ──────────────────────────────────────────────────────────
 POP_SIZE        = 10
 GENERATIONS     = 5
@@ -46,10 +55,10 @@ ELITE           = 5
 MUT_RATE        = 0.2
 N_INSPIRATIONS  = 3
 TEMP_OPTIONS    = [0.5]
-MODELS          = ["gpt-4o-mini"]
+MODELS          = ["gemini-3.1-pro-preview", "gpt-5.1"]
 
 # ──────────────────────────────────────────────────────────
-# 3) Plantillas de prompt (microservicios)
+# 3) Prompts
 # ──────────────────────────────────────────────────────────
 _SIMPLE_PROMPT = """
 Analiza las siguientes historias de usuario y descubre microservicios, operaciones y sus parámetros.
@@ -84,16 +93,18 @@ Prompt Sampler AlphaEvolve:
 1) Contexto – Historias de usuario:
 {stories}
 
-2) Genotipo padre (ejemplo válido):
+2) Genotipo padre (ejemplo válido de generación previa):
 {parent}
 
-3) Inspiraciones (otros ejemplos válidos, hasta {n_insp}):
+3) Inspiraciones (otros ejemplos válidos y élite, hasta {n_insp}):
 {inspirations}
 
 Definición de microservicio:
 - Debe tener una sola responsabilidad (1–5 operaciones como máximo).
 - Ser independiente y débilmente acoplado.
 - Tener un bounded context claro.
+
+Usa el padre y las inspiraciones para proponer una MEJOR arquitectura.
 
 Salida esperada (SOLO JSON):
 {{
@@ -102,27 +113,23 @@ Salida esperada (SOLO JSON):
       "name": "...",
       "ops": [
         {{ "name": "...", "params": ["..."] }},
-        …
+        ...
       ]
     }},
-    …
+    ...
   ],
   "calls": [
     {{ "caller": "...", "callee": "..." }},
-    …
+    ...
   ]
 }}
 
 **NO** agregues texto antes ni después del objeto JSON.
 """
 
-def build_prompt(stories: str,
-                 parent: dict | None = None,
-                 inspirations: list[dict] | None = None) -> str:
+def build_prompt(stories: str, parent: Optional[dict] = None, inspirations: Optional[List[dict]] = None) -> str:
     inspirations = inspirations or []
-    insp_str = "\n\n".join(
-        json.dumps(i, ensure_ascii=False) for i in inspirations[:N_INSPIRATIONS]
-    )
+    insp_str = "\n\n".join(json.dumps(i, ensure_ascii=False) for i in inspirations[:N_INSPIRATIONS])
     if parent is not None:
         return _INSPIRATION_PROMPT.format(
             stories=stories,
@@ -134,71 +141,71 @@ def build_prompt(stories: str,
         return _SIMPLE_PROMPT.format(stories=stories)
 
 # ──────────────────────────────────────────────────────────
-# 4) Helpers de DB de programas
+# 4) DB Program Helpers
 # ──────────────────────────────────────────────────────────
 def save_to_db(record: dict):
     with open(DB_FILE, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 def load_best_n(n: int) -> list[dict]:
-    if not DB_FILE.exists():
+    if not DB_FILE.exists(): return []
+    try:
+        recs = [json.loads(line) for line in DB_FILE.read_text(encoding="utf-8").splitlines() if line.strip()]
+        valid_recs = [r for r in recs if r.get("valid") and r.get("fitness") is not None]
+        valid_recs.sort(key=lambda r: float(r["fitness"]))
+        return [r["genotype"] for r in valid_recs[:n]]
+    except Exception:
         return []
-    recs = [json.loads(line) for line in DB_FILE.read_text(encoding="utf-8").splitlines()]
-    recs.sort(key=lambda r: r["fitness"])
-    return [r["genotype"] for r in recs[:n]]
 
 # ──────────────────────────────────────────────────────────
-# 5) LLM ensemble + Prompt Sampling
+# 5) Generación con LLM
 # ──────────────────────────────────────────────────────────
-def extract_prompt_ensemble(stories: str,
-                            temperature: float,
-                            parent: dict=None,
-                            inspirations: list[dict]=None
-                            ) -> tuple[str, dict]:
-    prompt     = build_prompt(stories, parent, inspirations)
-    candidates = []
-    last_model = MODELS[0]
-    last_gt    = {}
-
-    for model in MODELS:
-        last_model = model
-        try:
-            resp = openai.chat.completions.create(
+def call_llm(model: str, prompt: str, temp: float) -> tuple[dict, str]:
+    try:
+        if model.startswith("gemini"):
+            gemini_model = genai.GenerativeModel(model)
+            response = gemini_model.generate_content(
+                prompt,
+                generation_config=genai.GenerationConfig(temperature=temp)
+            )
+            raw_content = response.text
+        else:
+            response = litellm.completion(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=temperature
+                temperature=temp
             )
-            text = resp.choices[0].message.content
-        except Exception as e:
-            print(f"[WARN] fallo API con {model}: {e}", file=sys.stderr)
-            continue
-
-        try:
-            gt = json.loads(text)
-        except json.JSONDecodeError:
-            gt = {"_raw": text}
-
-        candidates.append((model, gt))
-        last_gt = gt
-
-    for model, gt in candidates:
-        valid, _, _ = lean_evaluate(gt)
-        if valid:
-            return model, gt
-
-    if candidates:
-        return candidates[-1]
-    return last_model, last_gt
+            raw_content = response.choices[0].message.content
+            
+        if "```json" in raw_content:
+            raw_content = raw_content.split("```json")[1].split("```")[0]
+        elif "```" in raw_content:
+            raw_content = raw_content.split("```")[1]
+            
+        match = re.search(r'\{.*\}', raw_content, re.DOTALL)
+        if match: raw_content = match.group(0)
+        raw_content = re.sub(r',\s*\}', '}', raw_content)
+        raw_content = re.sub(r',\s*\]', ']', raw_content)
+            
+        return json.loads(raw_content), raw_content
+    except json.JSONDecodeError as e:
+        return {}, raw_content if 'raw_content' in locals() else ""
+    except Exception as e:
+        print(f"[WARN] API failure {model}: {e}", file=sys.stderr)
+        return {}, ""
 
 # ──────────────────────────────────────────────────────────
-# 6) Validación & métricas en Lean
+# 6) Validación en Lean
 # ──────────────────────────────────────────────────────────
-def lean_evaluate(genotype: dict) -> (bool, str, dict):
+def lean_evaluate(genotype: dict) -> tuple[bool, str, dict]:
     with tempfile.NamedTemporaryFile(
             mode="w", suffix=".json", delete=False,
             dir=LEAN_PROJECT_DIR, encoding="utf-8"
     ) as tmp:
-        json.dump(genotype, tmp, ensure_ascii=False)
+        try:
+            json.dump(genotype, tmp, ensure_ascii=False)
+        except Exception as e:
+            return False, f"JSON Error: {e}", {}
         path = tmp.name
 
     try:
@@ -210,30 +217,32 @@ def lean_evaluate(genotype: dict) -> (bool, str, dict):
         try:
             data = json.loads(res.stdout)
         except Exception:
-            data = {}
+            return False, res.stdout, {}
+            
         return (
             data.get("status") == "OK",
             data.get("message", ""),
             data.get("metrics", {})
         )
     finally:
-        os.remove(path)
+        if os.path.exists(path):
+            os.remove(path)
 
 # ──────────────────────────────────────────────────────────
-# 7) Clase Individual + operadores genéticos
+# 7) GA: Individual, Crossover, Mutación
 # ──────────────────────────────────────────────────────────
 class Individual:
     def __init__(self, story_name: str, stories: str,
-                 temp: float, gen_id: int, ind_id: int,
-                 parent: dict=None, inspirations: list[dict]=None):
+                 temp: float, gen_id: int, ind_id: int, model: str,
+                 parent: Optional[dict]=None, inspirations: Optional[List[dict]]=None):
         self.story_name    = story_name
         self.stories       = stories
         self.temperature   = temp
         self.gen_id        = gen_id
         self.indiv_id      = ind_id
+        self.model         = model
         self.parent        = parent
         self.inspirations  = inspirations or []
-        self.model         = None
         self.genotype      = None
         self.valid         = False
         self.validation    = ""
@@ -241,34 +250,59 @@ class Individual:
         self.fitness       = float("inf")
 
     def evaluate(self):
+        # Si el individuo ya tiene un genotipo válido (ej. copiado de élite), no re-evaluar
+        if getattr(self, "genotype", None) is not None and getattr(self, "valid", False):
+            # Simulamos que costó 0 tiempo de API y usamos las métricas cacheadas
+            self.metrics["time_llm"] = 0.0
+            self.metrics["time_lean"] = 0.0
+            
+            # Guardamos el snapshot de historia para esta generación
+            save_to_db({
+                "timestamp":  datetime.now().isoformat(),
+                "story":      self.story_name,
+                "gen":        self.gen_id,
+                "ind":        self.indiv_id,
+                "model":      self.model,
+                "temp":       self.temperature,
+                "valid":      self.valid,
+                "validation": self.validation,
+                "fitness":    self.fitness,
+                "metrics":    self.metrics,
+                "genotype":   self.genotype
+            })
+            return
+
         global_insp = load_best_n(N_INSPIRATIONS)
         insp = (self.inspirations or []) + global_insp
-
+        
+        prompt = build_prompt(self.stories, self.parent, insp)
+        
         start_llm = time.time()
-        model, geno = extract_prompt_ensemble(
-            self.stories, self.temperature, self.parent, insp
-        )
+        self.genotype, raw = call_llm(self.model, prompt, self.temperature)
         self.metrics["time_llm"] = round(time.time() - start_llm, 2)
-        self.model = model
-        self.genotype = geno
+        
+        if not self.genotype:
+            self.valid = False
+            self.validation = "Invalid JSON / Generation Error"
+            self.metrics["time_lean"] = 0
+        else:
+            start_lean = time.time()
+            self.valid, self.validation, metrics = lean_evaluate(self.genotype)
+            self.metrics["time_lean"] = round(time.time() - start_lean, 2)
+            self.metrics.update(metrics)
 
-        start_lean = time.time()
-        self.valid, self.validation, metrics = lean_evaluate(self.genotype)
-        self.metrics["time_lean"] = round(time.time() - start_lean, 2)
-        self.metrics.update(metrics)
-
-        if not self.valid or not metrics:
+        if not self.valid or not self.metrics.get("lcom_avg") is not None:
             self.fitness = 1e6 + len(str(self.validation))
         else:
             self.fitness = (
-                    metrics.get("lcom_avg",    0.0) +
-                    metrics.get("sgm_max",     0.0) +
-                    metrics.get("sgm_sd_sum",  0.0) +
-                    metrics.get("coupling_max",0.0)
+                    self.metrics.get("lcom_avg",    0.0) +
+                    self.metrics.get("sgm_max",     0.0) +
+                    self.metrics.get("sgm_sd_sum",  0.0) +
+                    self.metrics.get("coupling_max",0.0)
             )
 
         save_to_db({
-            "timestamp":  datetime.utcnow().isoformat(),
+            "timestamp":  datetime.now().isoformat(),
             "story":      self.story_name,
             "gen":        self.gen_id,
             "ind":        self.indiv_id,
@@ -283,8 +317,9 @@ class Individual:
 
 def crossover(p1: Individual, p2: Individual, gen_id: int, child_id: int) -> Individual:
     temp = random.choice([p1.temperature, p2.temperature])
+    # Mantener el modelo del padre base
     return Individual(
-        p1.story_name, p1.stories, temp, gen_id, child_id,
+        p1.story_name, p1.stories, temp, gen_id, child_id, p1.model,
         parent=p1.genotype,
         inspirations=deepcopy(p1.inspirations)
     )
@@ -294,25 +329,28 @@ def mutate(ind: Individual):
         ind.temperature = random.choice(TEMP_OPTIONS)
 
 # ──────────────────────────────────────────────────────────
-# 8) Bucle evolutivo por archivo (cada txt es independiente)
+# 8) Bucle de Evolución
 # ──────────────────────────────────────────────────────────
-def run_evolution(story_name: str, stories: str):
+def run_evolution(story_name: str, stories: str, model: str):
     population = [
-        Individual(story_name, stories, random.choice(TEMP_OPTIONS), 0, i)
+        Individual(story_name, stories, random.choice(TEMP_OPTIONS), 1, i, model)
         for i in range(POP_SIZE)
     ]
     records = []
 
-    for gen in range(1, GENERATIONS+1):
-        print(f"\n— Story={story_name} · Generación {gen}/{GENERATIONS} —")
+    for gen in range(1, GENERATIONS + 1):
+        print(f"\n— Model={model} · Story={story_name} · Generación {gen}/{GENERATIONS} —")
+        
+        # Evaluación de la población
         for ind in population:
             ind.gen_id = gen
             start = time.time()
             ind.evaluate()
             elapsed = time.time() - start
             status = "OK" if ind.valid else "ERR"
-            print(f"[{gen},{ind.indiv_id}] model={ind.model} temp={ind.temperature:.2f} "
+            print(f"[{gen},{ind.indiv_id}] temp={ind.temperature:.2f} "
                   f"fit={ind.fitness:.3f} ({status}), t={elapsed:.1f}s")
+                  
             rec = {
                 "story":      story_name,
                 "gen":        ind.gen_id,
@@ -321,73 +359,74 @@ def run_evolution(story_name: str, stories: str):
                 "temp":       ind.temperature,
                 "valid":      ind.valid,
                 "validation": ind.validation,
-                "fitness":    ind.fitness,
-                **ind.metrics
+                "fitness":    ind.fitness if ind.valid else None,
+                "time_llm":   ind.metrics.get("time_llm", 0),
+                "time_lean":  ind.metrics.get("time_lean", 0),
+                "sgm_sd_sum": ind.metrics.get("sgm_sd_sum", None),
+                "sgm_max":    ind.metrics.get("sgm_max", None),
+                "lcom_avg":   ind.metrics.get("lcom_avg", None),
+                "coupling_max":ind.metrics.get("coupling_max", None)
             }
             records.append(rec)
 
+        # Selección natural (Elitismo)
         population.sort(key=lambda x: x.fitness)
         parents       = population[:ELITE]
-        top_genotypes = [deepcopy(p.genotype) for p in parents]
+        top_genotypes = [deepcopy(p.genotype) for p in parents if p.genotype]
 
-        offspring = []
-        next_id   = 0
-        while len(offspring) < POP_SIZE - ELITE:
-            p1, p2 = random.sample(parents, 2)
-            child  = crossover(p1, p2, gen, next_id)
-            child.inspirations = top_genotypes
-            mutate(child)
-            offspring.append(child)
-            next_id += 1
+        # Cruce y Reemplazo
+        if gen < GENERATIONS:
+            offspring = []
+            next_id   = ELITE
+            while len(offspring) < POP_SIZE - ELITE:
+                p1, p2 = random.sample(parents, 2)
+                child  = crossover(p1, p2, gen + 1, next_id)
+                child.inspirations = top_genotypes
+                mutate(child)
+                offspring.append(child)
+                next_id += 1
 
-        population = parents + offspring
-        for i, p in enumerate(population[:ELITE]):
-            p.indiv_id = i
+            population = parents + offspring
+            for i, p in enumerate(population[:ELITE]):
+                p.indiv_id = i
 
     best = min(population, key=lambda x: x.fitness)
-    print(f"\n>> Mejor en {story_name}: gen={best.gen_id}, ind={best.indiv_id}, "
-          f"model={best.model}, fit={best.fitness:.3f}, valid={best.valid}")
+    status_best = "OK" if best.valid else "FAIL"
+    print(f"\n>> Mejor {model} en {story_name}: gen={best.gen_id}, ind={best.indiv_id}, fit={best.fitness:.3f} ({status_best})")
     return best, records
 
 # ──────────────────────────────────────────────────────────
-# 9) Persistencia de resultados (global CSV + mejores por archivo)
-# ──────────────────────────────────────────────────────────
-def persist_results(per_file_results: dict[str, tuple]):
-    # CSV combinado
-    all_recs = []
-    for _, (_, records) in per_file_results.items():
-        all_recs.extend(records)
-    csv_path = EXPERIMENT_DIR / "results.csv"
-    with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(all_recs[0].keys()))
-        writer.writeheader()
-        writer.writerows(all_recs)
-    print(f"✅ Metrics CSV guardado en {csv_path}")
-
-    # Genotipos ganadores por archivo
-    for story, (best, _) in per_file_results.items():
-        out_path = EXPERIMENT_DIR / f"best_{story}.json"
-        with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(best.genotype, f, ensure_ascii=False, indent=2)
-        print(f"✅ Mejor genotipo para {story} guardado en {out_path}")
-
-# ──────────────────────────────────────────────────────────
-# 10) Entry Point: procesar cada rq.txt de forma independiente
+# 9) Main
 # ──────────────────────────────────────────────────────────
 def main():
     if not USER_STORIES_DIR.exists():
-        print(f"ERROR: no existe {USER_STORIES_DIR}", file=sys.stderr)
+        print(f"ERROR: {USER_STORIES_DIR} no encontrado.")
         sys.exit(1)
 
-    per_file_results = {}
-    for txt in sorted(USER_STORIES_DIR.glob("*.txt")):
-        name   = txt.name
-        text   = txt.read_text(encoding="utf-8", errors="replace")
-        best, records = run_evolution(name, text)
-        per_file_results[name] = (best, records)
+    all_results = []
+    datasets = sorted(USER_STORIES_DIR.glob("*.txt"))
+    
+    total_executions = len(MODELS) * len(datasets) * POP_SIZE * GENERATIONS
+    print(f"🚀 Iniciando Pipeline Evolutivo Real (GA). Evaluaciones Maximas: {total_executions}")
+    
+    for txt in datasets:
+        dataset_id = txt.stem
+        stories = txt.read_text(encoding="utf-8", errors="replace")
+        
+        for model in MODELS:
+            best, records = run_evolution(dataset_id, stories, model)
+            all_results.extend(records)
+            
+            # Guardamos el archivo json de corrida por LLM
+            out_path = RUNS_DIR / f"best_{model.replace('/', '_')}_{dataset_id}.json"
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(best.genotype if best.genotype else {}, f, ensure_ascii=False, indent=2)
 
-    if per_file_results:
-        persist_results(per_file_results)
+    # Persistir CSV final global
+    if all_results:
+        df = pd.DataFrame(all_results)
+        df.to_csv(CSV_MASTER_PATH, index=False)
+        print(f"📊 Exportado CSV global a: {CSV_MASTER_PATH}")
 
 if __name__ == "__main__":
     main()
