@@ -1,30 +1,114 @@
 {
   "microservices": [
     {
-      "name": "SearchDiscoveryService",
+      "name": "MusicDiscoveryService",
       "ops": [
         {
-          "name": "SearchByFingerprint",
+          "name": "searchByFingerprint",
           "params": [
-            "audioData"
+            "audioFingerprint"
           ]
         },
         {
-          "name": "SearchByMetadata",
+          "name": "searchByProfile",
           "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "searchBySimilarUsers",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "searchByVideoSimilarity",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "searchByMetadata",
+          "params": [
+            "metadataTags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoManagementService",
+      "ops": [
+        {
+          "name": "uploadTaggedVideo",
+          "params": [
+            "videoFile",
             "tags"
           ]
         },
         {
-          "name": "SearchByLocation",
+          "name": "getThumbnailSequences",
           "params": [
-            "geoCoordinates"
+            "videoId"
           ]
         },
         {
-          "name": "SearchBySpeech",
+          "name": "getSimilarVideos",
           "params": [
-            "speechAudio"
+            "videoId"
+          ]
+        },
+        {
+          "name": "getPerceptuallySimilarVideos",
+          "params": [
+            "videoId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoEntityRecognitionService",
+      "ops": [
+        {
+          "name": "identifyPersons",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "identifyProducts",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "identifyLogos",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "identifyBrands",
+          "params": [
+            "videoId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VideoSegmentationService",
+      "ops": [
+        {
+          "name": "editSegmentation",
+          "params": [
+            "videoId",
+            "segments"
+          ]
+        },
+        {
+          "name": "annotateNewsSegment",
+          "params": [
+            "segmentId",
+            "topic"
           ]
         }
       ]
@@ -33,171 +117,186 @@
       "name": "RecommendationService",
       "ops": [
         {
-          "name": "RecommendByProfile",
+          "name": "recommendByProfile",
           "params": [
             "userId"
           ]
         },
         {
-          "name": "RecommendByContext",
+          "name": "recommendByNewsEvents",
           "params": [
-            "contextData",
             "location"
           ]
         },
         {
-          "name": "RecommendSimilarContent",
-          "params": [
-            "mediaId"
-          ]
-        },
-        {
-          "name": "RecommendProjects",
-          "params": [
-            "userId"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ContentAnalysisService",
-      "ops": [
-        {
-          "name": "IdentifyEntities",
-          "params": [
-            "mediaId"
-          ]
-        },
-        {
-          "name": "AnalyzeQuality",
-          "params": [
-            "mediaId"
-          ]
-        },
-        {
-          "name": "FilterInappropriateContent",
-          "params": [
-            "mediaId"
-          ]
-        },
-        {
-          "name": "CheckCopyright",
-          "params": [
-            "mediaId"
-          ]
-        },
-        {
-          "name": "DetectSimilarity",
-          "params": [
-            "mediaId"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VideoProcessingService",
-      "ops": [
-        {
-          "name": "SegmentVideo",
-          "params": [
-            "videoId"
-          ]
-        },
-        {
-          "name": "GenerateThumbnails",
-          "params": [
-            "videoId"
-          ]
-        },
-        {
-          "name": "ExtractTopics",
-          "params": [
-            "segmentId"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ScientificImageAnalysis",
-      "ops": [
-        {
-          "name": "PreclassifySubject",
-          "params": [
-            "imageId",
-            "projectType"
-          ]
-        },
-        {
-          "name": "DetectEmptyImages",
-          "params": [
-            "imageId",
-            "projectType"
-          ]
-        },
-        {
-          "name": "FilterArtefacts",
+          "name": "recommendVideosByImage",
           "params": [
             "imageId"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "name": "GeoLocationService",
+      "ops": [
         {
-          "name": "DetectFeatures",
+          "name": "getContentByLocation",
           "params": [
-            "imageId",
-            "featureTypes"
+            "coordinates",
+            "radius"
           ]
         }
       ]
     },
     {
-      "name": "ScientificMediaAnalysis",
+      "name": "SearchService",
       "ops": [
         {
-          "name": "AnalyzeVideoMotion",
+          "name": "searchBySpeech",
           "params": [
-            "videoId"
+            "audioQuery"
           ]
         },
         {
-          "name": "DetectVideoEvents",
+          "name": "searchByLowLevelInfo",
           "params": [
-            "videoId",
-            "eventType"
+            "assetInfo"
           ]
         },
         {
-          "name": "ProcessAudioNoise",
+          "name": "searchByHighLevelInfo",
+          "params": [
+            "metadataTags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentModerationService",
+      "ops": [
+        {
+          "name": "prefilterNudity",
+          "params": [
+            "contentId"
+          ]
+        },
+        {
+          "name": "checkCopyright",
+          "params": [
+            "contentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentQualityService",
+      "ops": [
+        {
+          "name": "rankByAVQuality",
+          "params": [
+            "videoIds"
+          ]
+        },
+        {
+          "name": "assessAudioEditing",
           "params": [
             "audioId"
           ]
-        },
-        {
-          "name": "GroupAudioPatterns",
-          "params": [
-            "audioId",
-            "patternType"
-          ]
         }
       ]
     },
     {
-      "name": "VolunteerManagement",
+      "name": "VolunteerManagementService",
       "ops": [
         {
-          "name": "IdentifyVolunteerType",
+          "name": "identifyVolunteerType",
           "params": [
             "userId"
           ]
         },
         {
-          "name": "CalculateClassificationWeight",
+          "name": "assessClassificationWeight",
           "params": [
             "userId",
-            "classificationId"
+            "experienceLevel"
           ]
         },
         {
-          "name": "EvaluateComment",
+          "name": "recommendProjects",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VolunteerInteractionService",
+      "ops": [
+        {
+          "name": "evaluateInterruption",
+          "params": [
+            "userId",
+            "context"
+          ]
+        },
+        {
+          "name": "determineInterruptionFormat",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "evaluateEducation",
+          "params": [
+            "userId",
+            "context"
+          ]
+        },
+        {
+          "name": "determineEducationFormat",
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "determineEducationContent",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZoonibotService",
+      "ops": [
+        {
+          "name": "evaluateBotComment",
+          "params": [
+            "subjectId",
+            "context"
+          ]
+        },
+        {
+          "name": "evaluateBotExplanation",
+          "params": [
+            "subjectId",
+            "context"
+          ]
+        },
+        {
+          "name": "generateBotResponse",
+          "params": [
+            "userId",
+            "context"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TalkAnalysisService",
+      "ops": [
+        {
+          "name": "detectInterestingComment",
           "params": [
             "commentId"
           ]
@@ -205,43 +304,174 @@
       ]
     },
     {
-      "name": "VolunteerInteraction",
+      "name": "SubjectManagementService",
       "ops": [
         {
-          "name": "DetermineInterruption",
+          "name": "assessSubjectAppeal",
           "params": [
-            "userId",
-            "context"
+            "subjectId",
+            "annotations",
+            "comments"
           ]
         },
         {
-          "name": "DetermineEducation",
+          "name": "promptScientist",
           "params": [
-            "userId",
-            "context"
+            "subjectId",
+            "annotations"
           ]
         },
         {
-          "name": "TriggerBotAction",
+          "name": "groupSimilarSubjects",
           "params": [
-            "context",
-            "actionType"
+            "subjectIds"
           ]
         }
       ]
     },
     {
-      "name": "MetadataManagement",
+      "name": "AstroImageAnalysisService",
       "ops": [
         {
-          "name": "ManageTags",
+          "name": "preclassifyGalaxyZoo",
           "params": [
-            "mediaId",
-            "tags"
+            "imageId"
           ]
         },
         {
-          "name": "SummarizeArticles",
+          "name": "removeArtefacts",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "detectTransientObjects",
+          "params": [
+            "imageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SerengetiAnalysisService",
+      "ops": [
+        {
+          "name": "detectEmptySerengeti",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "detectImageSeries",
+          "params": [
+            "imageIds"
+          ]
+        },
+        {
+          "name": "preclassifyAnimalSpecies",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "preclassifyAnimalAttributes",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "detectAnimalNumber",
+          "params": [
+            "imageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlanktonAnalysisService",
+      "ops": [
+        {
+          "name": "segmentPlankton",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "detectEmptyPlankton",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "detectPlanktonSizeOrientation",
+          "params": [
+            "imageId"
+          ]
+        },
+        {
+          "name": "preclassifyPlanktonSpecies",
+          "params": [
+            "imageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WormAnalysisService",
+      "ops": [
+        {
+          "name": "analyzeWormMotion",
+          "params": [
+            "videoId"
+          ]
+        },
+        {
+          "name": "detectEggLaying",
+          "params": [
+            "videoId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SatelliteAnalysisService",
+      "ops": [
+        {
+          "name": "detectSatelliteFeatures",
+          "params": [
+            "imageId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BioAudioAnalysisService",
+      "ops": [
+        {
+          "name": "removeBackgroundNoise",
+          "params": [
+            "audioId"
+          ]
+        },
+        {
+          "name": "groupWhaleCalls",
+          "params": [
+            "audioIds"
+          ]
+        },
+        {
+          "name": "countWhales",
+          "params": [
+            "audioId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ArticleManagementService",
+      "ops": [
+        {
+          "name": "summarizeArticles",
           "params": [
             "articleIds"
           ]
@@ -251,32 +481,36 @@
   ],
   "calls": [
     {
-      "caller": "SearchDiscoveryService",
-      "callee": "ContentAnalysisService"
-    },
-    {
-      "caller": "SearchDiscoveryService",
-      "callee": "MetadataManagement"
+      "caller": "MusicDiscoveryService",
+      "callee": "RecommendationService"
     },
     {
       "caller": "RecommendationService",
-      "callee": "ContentAnalysisService"
+      "callee": "GeoLocationService"
     },
     {
-      "caller": "RecommendationService",
-      "callee": "VolunteerManagement"
+      "caller": "VideoManagementService",
+      "callee": "ContentModerationService"
     },
     {
-      "caller": "VolunteerInteraction",
-      "callee": "VolunteerManagement"
+      "caller": "VideoManagementService",
+      "callee": "ContentQualityService"
     },
     {
-      "caller": "ScientificImageAnalysis",
-      "callee": "ContentAnalysisService"
+      "caller": "SubjectManagementService",
+      "callee": "TalkAnalysisService"
     },
     {
-      "caller": "VideoProcessingService",
-      "callee": "MetadataManagement"
+      "caller": "ZoonibotService",
+      "callee": "TalkAnalysisService"
+    },
+    {
+      "caller": "ZoonibotService",
+      "callee": "SubjectManagementService"
+    },
+    {
+      "caller": "VolunteerInteractionService",
+      "callee": "VolunteerManagementService"
     }
   ]
 }

@@ -1,1 +1,336 @@
-{}
+{
+  "microservices": [
+    {
+      "name": "DatasetLifecycleService",
+      "ops": [
+        {
+          "name": "createDataset",
+          "params": [
+            "userId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "addVersion",
+          "params": [
+            "datasetId",
+            "fileData"
+          ]
+        },
+        {
+          "name": "updateStatus",
+          "params": [
+            "datasetId",
+            "status"
+          ]
+        },
+        {
+          "name": "setDisposalPolicy",
+          "params": [
+            "datasetId",
+            "policyDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileStorageService",
+      "ops": [
+        {
+          "name": "uploadFile",
+          "params": [
+            "datasetId",
+            "fileStream"
+          ]
+        },
+        {
+          "name": "verifyIntegrity",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "exportData",
+          "params": [
+            "targetSystem"
+          ]
+        },
+        {
+          "name": "importWholesale",
+          "params": [
+            "sourceUrl"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "updateMetadata",
+          "params": [
+            "datasetId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "autofillMetadata",
+          "params": [
+            "userId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "validateMinimumMetadata",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "harvestMetadata",
+          "params": [
+            "criteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchAndDiscoveryService",
+      "ops": [
+        {
+          "name": "searchArchive",
+          "params": [
+            "query",
+            "language"
+          ]
+        },
+        {
+          "name": "queryAdminArchive",
+          "params": [
+            "queryParams"
+          ]
+        },
+        {
+          "name": "getDatasetDetails",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "examineFiles",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessControlService",
+      "ops": [
+        {
+          "name": "authenticateUser",
+          "params": [
+            "credentials"
+          ]
+        },
+        {
+          "name": "grantPrivilegedAccess",
+          "params": [
+            "datasetId",
+            "userId"
+          ]
+        },
+        {
+          "name": "delegateRole",
+          "params": [
+            "ownerId",
+            "delegateId",
+            "role"
+          ]
+        },
+        {
+          "name": "verifyAccess",
+          "params": [
+            "userId",
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IdentifierService",
+      "ops": [
+        {
+          "name": "mintDOI",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "generatePersistentUrl",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "generateCitation",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetricsService",
+      "ops": [
+        {
+          "name": "trackDownload",
+          "params": [
+            "datasetId",
+            "location",
+            "sector"
+          ]
+        },
+        {
+          "name": "trackCitation",
+          "params": [
+            "datasetId",
+            "source"
+          ]
+        },
+        {
+          "name": "getSegmentedStats",
+          "params": [
+            "datasetId",
+            "segmentation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntegrationService",
+      "ops": [
+        {
+          "name": "linkPublication",
+          "params": [
+            "datasetId",
+            "publicationId"
+          ]
+        },
+        {
+          "name": "linkProjectDMP",
+          "params": [
+            "datasetId",
+            "projectId"
+          ]
+        },
+        {
+          "name": "registerExternalData",
+          "params": [
+            "repoUrl",
+            "metadata"
+          ]
+        },
+        {
+          "name": "syncWithCRIS",
+          "params": [
+            "datasetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReviewAndComplianceService",
+      "ops": [
+        {
+          "name": "reviewDataset",
+          "params": [
+            "datasetId",
+            "adminId",
+            "status"
+          ]
+        },
+        {
+          "name": "approveDisposal",
+          "params": [
+            "datasetId",
+            "adminId"
+          ]
+        },
+        {
+          "name": "applyLicense",
+          "params": [
+            "datasetId",
+            "licenseType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DepositAPIService",
+      "ops": [
+        {
+          "name": "ingestFromAPI",
+          "params": [
+            "payload",
+            "sourceSystem"
+          ]
+        },
+        {
+          "name": "ingestOnBehalf",
+          "params": [
+            "facilityManagerId",
+            "researcherId",
+            "payload"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "DepositAPIService",
+      "callee": "DatasetLifecycleService"
+    },
+    {
+      "caller": "DepositAPIService",
+      "callee": "AccessControlService"
+    },
+    {
+      "caller": "DatasetLifecycleService",
+      "callee": "FileStorageService"
+    },
+    {
+      "caller": "DatasetLifecycleService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "SearchAndDiscoveryService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "SearchAndDiscoveryService",
+      "callee": "FileStorageService"
+    },
+    {
+      "caller": "ReviewAndComplianceService",
+      "callee": "DatasetLifecycleService"
+    },
+    {
+      "caller": "ReviewAndComplianceService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "IntegrationService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "IdentifierService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "MetricsService",
+      "callee": "MetadataService"
+    }
+  ]
+}

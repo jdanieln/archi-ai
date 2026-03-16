@@ -1,1 +1,405 @@
-{}
+{
+  "microservices": [
+    {
+      "name": "IdentityService",
+      "ops": [
+        {
+          "name": "AuthenticateUser",
+          "params": [
+            "credentials",
+            "authProvider"
+          ]
+        },
+        {
+          "name": "ManageAccount",
+          "params": [
+            "accountId",
+            "accountData"
+          ]
+        },
+        {
+          "name": "ManageRoles",
+          "params": [
+            "accountId",
+            "roleData"
+          ]
+        },
+        {
+          "name": "AssociateIdentifier",
+          "params": [
+            "accountId",
+            "identifierData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IngestionService",
+      "ops": [
+        {
+          "name": "UploadItem",
+          "params": [
+            "userId",
+            "fileData",
+            "metadata"
+          ]
+        },
+        {
+          "name": "BatchUpload",
+          "params": [
+            "userId",
+            "files",
+            "metadataList"
+          ]
+        },
+        {
+          "name": "AddSupplementaryFiles",
+          "params": [
+            "itemId",
+            "filesData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentDeliveryService",
+      "ops": [
+        {
+          "name": "DownloadItem",
+          "params": [
+            "itemId",
+            "userId"
+          ]
+        },
+        {
+          "name": "StreamMedia",
+          "params": [
+            "itemId",
+            "userId"
+          ]
+        },
+        {
+          "name": "GenerateCitation",
+          "params": [
+            "itemId",
+            "format"
+          ]
+        },
+        {
+          "name": "CheckAccess",
+          "params": [
+            "itemId",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LifecycleService",
+      "ops": [
+        {
+          "name": "CreateVersion",
+          "params": [
+            "itemId",
+            "newFileData",
+            "versionNotes"
+          ]
+        },
+        {
+          "name": "UnpublishItem",
+          "params": [
+            "itemId",
+            "reason"
+          ]
+        },
+        {
+          "name": "SetEmbargo",
+          "params": [
+            "itemId",
+            "expirationDate"
+          ]
+        },
+        {
+          "name": "ApplyLicense",
+          "params": [
+            "itemId",
+            "licenseType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollectionService",
+      "ops": [
+        {
+          "name": "CreateCollection",
+          "params": [
+            "ownerId",
+            "collectionData"
+          ]
+        },
+        {
+          "name": "UpdateCollection",
+          "params": [
+            "collectionId",
+            "updateData"
+          ]
+        },
+        {
+          "name": "AssignItemToCollection",
+          "params": [
+            "itemId",
+            "collectionId"
+          ]
+        },
+        {
+          "name": "SetSortOrder",
+          "params": [
+            "collectionId",
+            "sortCriteria"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "UpdateMetadata",
+          "params": [
+            "itemId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "ManageCustomFields",
+          "params": [
+            "collectionId",
+            "fieldDefinition"
+          ]
+        },
+        {
+          "name": "ManageClassifications",
+          "params": [
+            "classificationData"
+          ]
+        },
+        {
+          "name": "ManageRelationships",
+          "params": [
+            "sourceId",
+            "targetId",
+            "relationType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchDiscoveryService",
+      "ops": [
+        {
+          "name": "Search",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "Browse",
+          "params": [
+            "category",
+            "sortOrder"
+          ]
+        },
+        {
+          "name": "IndexItem",
+          "params": [
+            "itemId",
+            "indexData"
+          ]
+        },
+        {
+          "name": "HarvestOAI",
+          "params": [
+            "endpoint",
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "Subscribe",
+          "params": [
+            "userId",
+            "targetId",
+            "targetType"
+          ]
+        },
+        {
+          "name": "Unsubscribe",
+          "params": [
+            "userId",
+            "targetId"
+          ]
+        },
+        {
+          "name": "SendNotification",
+          "params": [
+            "targetId",
+            "message",
+            "type"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CalendarService",
+      "ops": [
+        {
+          "name": "AddReleaseDate",
+          "params": [
+            "itemId",
+            "releaseDate"
+          ]
+        },
+        {
+          "name": "GetReleaseCalendar",
+          "params": [
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AnalyticsService",
+      "ops": [
+        {
+          "name": "LogUsage",
+          "params": [
+            "itemId",
+            "userId",
+            "actionType"
+          ]
+        },
+        {
+          "name": "GetUsageStats",
+          "params": [
+            "targetId",
+            "metricType"
+          ]
+        },
+        {
+          "name": "GetSubscribersList",
+          "params": [
+            "targetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PreservationService",
+      "ops": [
+        {
+          "name": "StoreRedundantly",
+          "params": [
+            "assetId",
+            "fileData"
+          ]
+        },
+        {
+          "name": "MonitorIntegrity",
+          "params": [
+            "assetId"
+          ]
+        },
+        {
+          "name": "RestoreAsset",
+          "params": [
+            "assetId",
+            "versionId"
+          ]
+        },
+        {
+          "name": "ScheduleDisposition",
+          "params": [
+            "assetId",
+            "dispositionDate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SupportService",
+      "ops": [
+        {
+          "name": "SubmitTicket",
+          "params": [
+            "userId",
+            "issueDetails"
+          ]
+        },
+        {
+          "name": "ContactAuthor",
+          "params": [
+            "senderId",
+            "authorId",
+            "message"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "IngestionService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "IngestionService",
+      "callee": "PreservationService"
+    },
+    {
+      "caller": "IngestionService",
+      "callee": "SearchDiscoveryService"
+    },
+    {
+      "caller": "ContentDeliveryService",
+      "callee": "AnalyticsService"
+    },
+    {
+      "caller": "LifecycleService",
+      "callee": "SearchDiscoveryService"
+    },
+    {
+      "caller": "LifecycleService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "LifecycleService",
+      "callee": "PreservationService"
+    },
+    {
+      "caller": "CollectionService",
+      "callee": "SearchDiscoveryService"
+    },
+    {
+      "caller": "MetadataService",
+      "callee": "SearchDiscoveryService"
+    },
+    {
+      "caller": "CalendarService",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "SupportService",
+      "callee": "IdentityService"
+    },
+    {
+      "caller": "AnalyticsService",
+      "callee": "IdentityService"
+    }
+  ]
+}

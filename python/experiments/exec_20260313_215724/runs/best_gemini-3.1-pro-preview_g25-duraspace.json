@@ -1,1 +1,464 @@
-{}
+{
+  "microservices": [
+    {
+      "name": "RepositoryService",
+      "ops": [
+        {
+          "name": "GetRepositoryAssets",
+          "params": [
+            "repositoryId",
+            "userId"
+          ]
+        },
+        {
+          "name": "UpdateRepositoryInfo",
+          "params": [
+            "repositoryId",
+            "repositoryData"
+          ]
+        },
+        {
+          "name": "SetAccessControl",
+          "params": [
+            "repositoryId",
+            "accessRules"
+          ]
+        },
+        {
+          "name": "ContactRepository",
+          "params": [
+            "repositoryId",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollectionService",
+      "ops": [
+        {
+          "name": "ListCollections",
+          "params": [
+            "repositoryId"
+          ]
+        },
+        {
+          "name": "ComposeCollection",
+          "params": [
+            "collectionId",
+            "criteria",
+            "sourceIds"
+          ]
+        },
+        {
+          "name": "LinkCollections",
+          "params": [
+            "sourceId",
+            "targetId",
+            "relationType"
+          ]
+        },
+        {
+          "name": "GetCollectionDetails",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ObjectService",
+      "ops": [
+        {
+          "name": "GetObjectDetails",
+          "params": [
+            "objectId"
+          ]
+        },
+        {
+          "name": "SetObjectStructure",
+          "params": [
+            "objectId",
+            "structureData"
+          ]
+        },
+        {
+          "name": "GetObjectHierarchy",
+          "params": [
+            "objectId"
+          ]
+        },
+        {
+          "name": "GetParentContainers",
+          "params": [
+            "objectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ComponentService",
+      "ops": [
+        {
+          "name": "ListComponentParts",
+          "params": [
+            "objectId"
+          ]
+        },
+        {
+          "name": "LinkComponent",
+          "params": [
+            "componentId",
+            "targetId",
+            "targetType"
+          ]
+        },
+        {
+          "name": "UpdateComponentOrder",
+          "params": [
+            "objectId",
+            "componentIds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FileService",
+      "ops": [
+        {
+          "name": "AssociateFile",
+          "params": [
+            "fileId",
+            "targetId",
+            "targetType"
+          ]
+        },
+        {
+          "name": "GetFileDetails",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "DownloadFile",
+          "params": [
+            "fileId",
+            "userId"
+          ]
+        },
+        {
+          "name": "GetFileGenerationInfo",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PreservationService",
+      "ops": [
+        {
+          "name": "SetMasterFileInfo",
+          "params": [
+            "fileId",
+            "preservationData"
+          ]
+        },
+        {
+          "name": "UpdateChecksum",
+          "params": [
+            "fileId",
+            "checksum",
+            "method"
+          ]
+        },
+        {
+          "name": "VerifyChecksums",
+          "params": [
+            "repositoryId"
+          ]
+        },
+        {
+          "name": "ReportObsolescence",
+          "params": [
+            "fileId",
+            "issueDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DescriptiveMetadataService",
+      "ops": [
+        {
+          "name": "UpdateCoreMetadata",
+          "params": [
+            "targetId",
+            "targetType",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SetOriginInfo",
+          "params": [
+            "targetId",
+            "targetType",
+            "originData"
+          ]
+        },
+        {
+          "name": "SetNotes",
+          "params": [
+            "targetId",
+            "targetType",
+            "notes"
+          ]
+        },
+        {
+          "name": "SetLanguage",
+          "params": [
+            "targetId",
+            "targetType",
+            "language"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RelationalMetadataService",
+      "ops": [
+        {
+          "name": "RegisterNameRole",
+          "params": [
+            "targetId",
+            "targetType",
+            "nameId",
+            "role"
+          ]
+        },
+        {
+          "name": "AddSubject",
+          "params": [
+            "targetId",
+            "targetType",
+            "subjectId"
+          ]
+        },
+        {
+          "name": "SetGeoCoordinates",
+          "params": [
+            "targetId",
+            "targetType",
+            "coordinates"
+          ]
+        },
+        {
+          "name": "AddExternalLink",
+          "params": [
+            "targetId",
+            "targetType",
+            "url"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RightsService",
+      "ops": [
+        {
+          "name": "SetCopyrightStatus",
+          "params": [
+            "targetId",
+            "targetType",
+            "copyrightData"
+          ]
+        },
+        {
+          "name": "SetLicenseAndStatute",
+          "params": [
+            "targetId",
+            "targetType",
+            "legalData"
+          ]
+        },
+        {
+          "name": "GetRightsStatus",
+          "params": [
+            "targetId",
+            "targetType"
+          ]
+        },
+        {
+          "name": "CheckExpirations",
+          "params": [
+            "dateRange"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PolicyAndAccessService",
+      "ops": [
+        {
+          "name": "SetLibraryPolicy",
+          "params": [
+            "targetId",
+            "targetType",
+            "policyData"
+          ]
+        },
+        {
+          "name": "UpdatePermissions",
+          "params": [
+            "targetId",
+            "targetType",
+            "permissions"
+          ]
+        },
+        {
+          "name": "CheckPermissions",
+          "params": [
+            "targetId",
+            "targetType",
+            "action",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EventService",
+      "ops": [
+        {
+          "name": "RecordEvent",
+          "params": [
+            "targetId",
+            "targetType",
+            "eventType",
+            "agentId",
+            "outcome"
+          ]
+        },
+        {
+          "name": "GetLifecycleEvents",
+          "params": [
+            "targetId",
+            "targetType"
+          ]
+        },
+        {
+          "name": "TrackModification",
+          "params": [
+            "targetId",
+            "targetType",
+            "fieldModified"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchAssets",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "BrowseByHierarchy",
+          "params": [
+            "category",
+            "level"
+          ]
+        },
+        {
+          "name": "SearchByMetadata",
+          "params": [
+            "field",
+            "value"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "SearchService",
+      "callee": "CollectionService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "ObjectService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "DescriptiveMetadataService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "RelationalMetadataService"
+    },
+    {
+      "caller": "ObjectService",
+      "callee": "CollectionService"
+    },
+    {
+      "caller": "ObjectService",
+      "callee": "RepositoryService"
+    },
+    {
+      "caller": "ComponentService",
+      "callee": "ObjectService"
+    },
+    {
+      "caller": "FileService",
+      "callee": "ComponentService"
+    },
+    {
+      "caller": "FileService",
+      "callee": "ObjectService"
+    },
+    {
+      "caller": "PreservationService",
+      "callee": "FileService"
+    },
+    {
+      "caller": "PreservationService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "DescriptiveMetadataService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "RelationalMetadataService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "RightsService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "PolicyAndAccessService",
+      "callee": "RightsService"
+    },
+    {
+      "caller": "PolicyAndAccessService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "CollectionService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "ObjectService",
+      "callee": "EventService"
+    },
+    {
+      "caller": "RepositoryService",
+      "callee": "EventService"
+    }
+  ]
+}

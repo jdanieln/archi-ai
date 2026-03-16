@@ -1,1 +1,462 @@
-{}
+{
+  "microservices": [
+    {
+      "name": "AuthService",
+      "ops": [
+        {
+          "name": "AuthenticateLDAP",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "AuthenticateLocal",
+          "params": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "Login",
+          "params": [
+            "username",
+            "credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserService",
+      "ops": [
+        {
+          "name": "CreateUser",
+          "params": [
+            "adminId",
+            "userData"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "userId",
+            "newPassword"
+          ]
+        },
+        {
+          "name": "AssignRole",
+          "params": [
+            "userId",
+            "roleType",
+            "scopeId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnumService",
+      "ops": [
+        {
+          "name": "GetEnumValues",
+          "params": [
+            "enumName"
+          ]
+        },
+        {
+          "name": "ManageEnumList",
+          "params": [
+            "enumName",
+            "values"
+          ]
+        },
+        {
+          "name": "BulkUpdateEnum",
+          "params": [
+            "enumName",
+            "oldValue",
+            "newValue"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ImportService",
+      "ops": [
+        {
+          "name": "ImportEAD",
+          "params": [
+            "file",
+            "sourceSystem"
+          ]
+        },
+        {
+          "name": "ImportCSV",
+          "params": [
+            "file",
+            "recordType"
+          ]
+        },
+        {
+          "name": "ImportMARCXML",
+          "params": [
+            "file",
+            "targetType"
+          ]
+        },
+        {
+          "name": "ImportEACCPF",
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "GetImportStatus",
+          "params": [
+            "importJobId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExportService",
+      "ops": [
+        {
+          "name": "ExportEAD",
+          "params": [
+            "descriptionId"
+          ]
+        },
+        {
+          "name": "ExportEACCPF",
+          "params": [
+            "agentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ResourceService",
+      "ops": [
+        {
+          "name": "ManageResourceRecord",
+          "params": [
+            "resourceId",
+            "resourceData"
+          ]
+        },
+        {
+          "name": "AssignComponentId",
+          "params": [
+            "componentId",
+            "uniqueIdentifier"
+          ]
+        },
+        {
+          "name": "AssignDescriptionLevel",
+          "params": [
+            "resourceId",
+            "level",
+            "customValue"
+          ]
+        },
+        {
+          "name": "AddAdministrativeData",
+          "params": [
+            "resourceId",
+            "adminData"
+          ]
+        },
+        {
+          "name": "GetFindingAid",
+          "params": [
+            "resourceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ArchivalDescriptionService",
+      "ops": [
+        {
+          "name": "ManageArchivalDescription",
+          "params": [
+            "repositoryId",
+            "descriptionId",
+            "data"
+          ]
+        },
+        {
+          "name": "ViewArchivalDescription",
+          "params": [
+            "descriptionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HierarchyService",
+      "ops": [
+        {
+          "name": "RearrangeHierarchy",
+          "params": [
+            "recordId",
+            "recordType",
+            "newPosition"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AgentService",
+      "ops": [
+        {
+          "name": "ManageAgentRecord",
+          "params": [
+            "agentId",
+            "agentData"
+          ]
+        },
+        {
+          "name": "ManageNameFormSource",
+          "params": [
+            "agentId",
+            "sourceData"
+          ]
+        },
+        {
+          "name": "LinkAgentRole",
+          "params": [
+            "agentId",
+            "recordId",
+            "roleType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SubjectService",
+      "ops": [
+        {
+          "name": "AssociateIdentifier",
+          "params": [
+            "subjectId",
+            "identifierString"
+          ]
+        },
+        {
+          "name": "LinkSubjectToResource",
+          "params": [
+            "subjectId",
+            "resourceId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SystemConfigService",
+      "ops": [
+        {
+          "name": "GetContextualHelp",
+          "params": [
+            "contextId"
+          ]
+        },
+        {
+          "name": "ConfigureHelpCenter",
+          "params": [
+            "url",
+            "topicMappings"
+          ]
+        },
+        {
+          "name": "LoadExternalConfig",
+          "params": [
+            "configPath"
+          ]
+        },
+        {
+          "name": "ConfigureDatabase",
+          "params": [
+            "location",
+            "enableBackup"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RepositoryService",
+      "ops": [
+        {
+          "name": "ManageRepositoryProperties",
+          "params": [
+            "repositoryId",
+            "properties"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecordManagementService",
+      "ops": [
+        {
+          "name": "StoreSourceId",
+          "params": [
+            "recordId",
+            "sourceSystem",
+            "sourceId"
+          ]
+        },
+        {
+          "name": "AddNote",
+          "params": [
+            "recordId",
+            "recordType",
+            "noteData"
+          ]
+        },
+        {
+          "name": "ManageRecordLock",
+          "params": [
+            "recordId",
+            "userId",
+            "action"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchRepository",
+          "params": [
+            "repositoryId",
+            "query",
+            "recordTypes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CollectionService",
+      "ops": [
+        {
+          "name": "ManageCollectionSubrecord",
+          "params": [
+            "collectionId",
+            "subrecordData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EventService",
+      "ops": [
+        {
+          "name": "ManageEvent",
+          "params": [
+            "eventId",
+            "eventData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DigitalObjectService",
+      "ops": [
+        {
+          "name": "ManageDigitalObject",
+          "params": [
+            "objectId",
+            "objectData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RightsService",
+      "ops": [
+        {
+          "name": "ManageRightsStatement",
+          "params": [
+            "statementId",
+            "statementData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContainerService",
+      "ops": [
+        {
+          "name": "AssociateInstance",
+          "params": [
+            "containerId",
+            "instanceId"
+          ]
+        },
+        {
+          "name": "AssignLocation",
+          "params": [
+            "containerId",
+            "locationData"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "ImportService",
+      "callee": "ResourceService"
+    },
+    {
+      "caller": "ImportService",
+      "callee": "AgentService"
+    },
+    {
+      "caller": "ImportService",
+      "callee": "SubjectService"
+    },
+    {
+      "caller": "ExportService",
+      "callee": "ResourceService"
+    },
+    {
+      "caller": "ExportService",
+      "callee": "AgentService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "ResourceService"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "DigitalObjectService"
+    },
+    {
+      "caller": "SubjectService",
+      "callee": "ResourceService"
+    },
+    {
+      "caller": "AgentService",
+      "callee": "ResourceService"
+    },
+    {
+      "caller": "HierarchyService",
+      "callee": "ResourceService"
+    },
+    {
+      "caller": "HierarchyService",
+      "callee": "DigitalObjectService"
+    },
+    {
+      "caller": "ResourceService",
+      "callee": "RecordManagementService"
+    },
+    {
+      "caller": "ArchivalDescriptionService",
+      "callee": "RecordManagementService"
+    }
+  ]
+}

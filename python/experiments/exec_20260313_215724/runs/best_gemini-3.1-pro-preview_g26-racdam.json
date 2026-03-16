@@ -1,1 +1,429 @@
-{}
+{
+  "microservices": [
+    {
+      "name": "RightsManagement",
+      "ops": [
+        {
+          "name": "ApplyLicense",
+          "params": [
+            "fileId",
+            "licenseId"
+          ]
+        },
+        {
+          "name": "GetRightsInfo",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "ManageRightsStatements",
+          "params": [
+            "statementData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RestrictionManagement",
+      "ops": [
+        {
+          "name": "SetRestriction",
+          "params": [
+            "targetId",
+            "targetType",
+            "restrictionData"
+          ]
+        },
+        {
+          "name": "SetRestrictionEndDate",
+          "params": [
+            "targetId",
+            "endDate"
+          ]
+        },
+        {
+          "name": "RedactInformation",
+          "params": [
+            "fileId",
+            "redactionData",
+            "duration"
+          ]
+        },
+        {
+          "name": "CheckAccess",
+          "params": [
+            "fileId",
+            "userId",
+            "ipAddress"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AssetIngestion",
+      "ops": [
+        {
+          "name": "UploadFile",
+          "params": [
+            "fileData",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadBatch",
+          "params": [
+            "filesData",
+            "metadata"
+          ]
+        },
+        {
+          "name": "UploadInventory",
+          "params": [
+            "inventoryData"
+          ]
+        },
+        {
+          "name": "SupplyAccrual",
+          "params": [
+            "collectionId",
+            "filesData"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AssetProcessing",
+      "ops": [
+        {
+          "name": "CreateDerivative",
+          "params": [
+            "fileId",
+            "type"
+          ]
+        },
+        {
+          "name": "AdjustImage",
+          "params": [
+            "fileId",
+            "operations"
+          ]
+        },
+        {
+          "name": "AssignUniqueIdentifier",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "ExtractTechnicalMetadata",
+          "params": [
+            "fileId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataManagement",
+      "ops": [
+        {
+          "name": "BatchEditMetadata",
+          "params": [
+            "fileIds",
+            "metadata"
+          ]
+        },
+        {
+          "name": "EmbedMetadata",
+          "params": [
+            "fileId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "SetFieldVisibility",
+          "params": [
+            "fieldId",
+            "groupId",
+            "isVisible"
+          ]
+        },
+        {
+          "name": "UpdateAssetTags",
+          "params": [
+            "fileId",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SearchService",
+      "ops": [
+        {
+          "name": "SearchFiles",
+          "params": [
+            "query",
+            "filters"
+          ]
+        },
+        {
+          "name": "SearchByImage",
+          "params": [
+            "imageData"
+          ]
+        },
+        {
+          "name": "SearchOCRText",
+          "params": [
+            "query",
+            "collectionId"
+          ]
+        },
+        {
+          "name": "BrowseCollection",
+          "params": [
+            "collectionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DiscoveryService",
+      "ops": [
+        {
+          "name": "GetThumbnails",
+          "params": [
+            "fileIds"
+          ]
+        },
+        {
+          "name": "GetFileDetails",
+          "params": [
+            "fileId"
+          ]
+        },
+        {
+          "name": "CheckDigitizationStatus",
+          "params": [
+            "assetId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccessDelivery",
+      "ops": [
+        {
+          "name": "DownloadFile",
+          "params": [
+            "fileId",
+            "userId"
+          ]
+        },
+        {
+          "name": "StreamMedia",
+          "params": [
+            "fileId",
+            "mediaType"
+          ]
+        },
+        {
+          "name": "ExportData",
+          "params": [
+            "query",
+            "format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RequestManagement",
+      "ops": [
+        {
+          "name": "SubmitLicensingForm",
+          "params": [
+            "userId",
+            "fileId",
+            "details"
+          ]
+        },
+        {
+          "name": "OrderCopies",
+          "params": [
+            "userId",
+            "fileIds",
+            "format"
+          ]
+        },
+        {
+          "name": "RequestAnalogVersion",
+          "params": [
+            "userId",
+            "objectId"
+          ]
+        },
+        {
+          "name": "SubmitQuestion",
+          "params": [
+            "userId",
+            "fileId",
+            "questionText"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CitationSharing",
+      "ops": [
+        {
+          "name": "GenerateCitation",
+          "params": [
+            "fileId",
+            "format"
+          ]
+        },
+        {
+          "name": "LinkPublication",
+          "params": [
+            "fileId",
+            "publicationId"
+          ]
+        },
+        {
+          "name": "ShareAsset",
+          "params": [
+            "fileId",
+            "platform"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UserManagement",
+      "ops": [
+        {
+          "name": "ManageGroupsAndRoles",
+          "params": [
+            "groupData",
+            "roleData"
+          ]
+        },
+        {
+          "name": "AssignUserToGroup",
+          "params": [
+            "userId",
+            "groupId"
+          ]
+        },
+        {
+          "name": "AuthenticateUser",
+          "params": [
+            "credentials",
+            "useAD"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "params": [
+            "userId",
+            "newPassword"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UsageTracking",
+      "ops": [
+        {
+          "name": "TrackAssetUsage",
+          "params": [
+            "fileId",
+            "userId",
+            "actionType"
+          ]
+        },
+        {
+          "name": "GetUserDownloads",
+          "params": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NotificationService",
+      "ops": [
+        {
+          "name": "SendDigitizationAlert",
+          "params": [
+            "userId",
+            "assetId"
+          ]
+        },
+        {
+          "name": "SendCitationEmail",
+          "params": [
+            "userId",
+            "fileId",
+            "emailDetails"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "AssetIngestion",
+      "callee": "AssetProcessing"
+    },
+    {
+      "caller": "AssetIngestion",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "AssetProcessing",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "RestrictionManagement"
+    },
+    {
+      "caller": "SearchService",
+      "callee": "RightsManagement"
+    },
+    {
+      "caller": "DiscoveryService",
+      "callee": "RestrictionManagement"
+    },
+    {
+      "caller": "AccessDelivery",
+      "callee": "RestrictionManagement"
+    },
+    {
+      "caller": "AccessDelivery",
+      "callee": "UsageTracking"
+    },
+    {
+      "caller": "RequestManagement",
+      "callee": "DiscoveryService"
+    },
+    {
+      "caller": "RequestManagement",
+      "callee": "NotificationService"
+    },
+    {
+      "caller": "UserManagement",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "CitationSharing",
+      "callee": "MetadataManagement"
+    },
+    {
+      "caller": "NotificationService",
+      "callee": "CitationSharing"
+    }
+  ]
+}

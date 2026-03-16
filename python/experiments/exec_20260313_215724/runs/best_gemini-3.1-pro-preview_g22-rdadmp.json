@@ -1,1 +1,370 @@
-{}
+{
+  "microservices": [
+    {
+      "name": "DMPCoreService",
+      "ops": [
+        {
+          "name": "CreateDMP",
+          "params": [
+            "projectId",
+            "ownerId"
+          ]
+        },
+        {
+          "name": "UpdateDMP",
+          "params": [
+            "dmpId",
+            "dmpData"
+          ]
+        },
+        {
+          "name": "GetDMPStatus",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "GetMandatoryTopics",
+          "params": [
+            "templateId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProjectAdminService",
+      "ops": [
+        {
+          "name": "GetProjectDetails",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetRolesAndResponsibilities",
+          "params": [
+            "projectId"
+          ]
+        },
+        {
+          "name": "GetCostingAndResources",
+          "params": [
+            "projectId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MetadataService",
+      "ops": [
+        {
+          "name": "RecordMetadata",
+          "params": [
+            "dmpId",
+            "metadata"
+          ]
+        },
+        {
+          "name": "GetDatasetDescription",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "AddMultilingualMetadata",
+          "params": [
+            "datasetId",
+            "language",
+            "content"
+          ]
+        },
+        {
+          "name": "ExtractMetadataPointers",
+          "params": [
+            "dmpId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataTechnicalService",
+      "ops": [
+        {
+          "name": "SetDataTypesAndFormats",
+          "params": [
+            "datasetId",
+            "dataTypes",
+            "formats"
+          ]
+        },
+        {
+          "name": "GetSoftwareRequirements",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "SetDataDependencies",
+          "params": [
+            "datasetId",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "ValidateFileFormat",
+          "params": [
+            "fileId",
+            "formatType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StorageService",
+      "ops": [
+        {
+          "name": "SetStorageLocation",
+          "params": [
+            "datasetId",
+            "stage",
+            "location"
+          ]
+        },
+        {
+          "name": "EstimateStorageVolume",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "GetITRequirements",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "EvaluateStorageSystem",
+          "params": [
+            "datasetId",
+            "sizeRequirements"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ArchivingService",
+      "ops": [
+        {
+          "name": "SetConservationPeriod",
+          "params": [
+            "datasetId",
+            "period"
+          ]
+        },
+        {
+          "name": "EstimateArchivingTime",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "CheckRepositoryFit",
+          "params": [
+            "repositoryId",
+            "datasetId"
+          ]
+        },
+        {
+          "name": "ListExternalRepositories",
+          "params": [
+            "institutionId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SecurityService",
+      "ops": [
+        {
+          "name": "SetSecurityRequirements",
+          "params": [
+            "datasetId",
+            "securityLevel"
+          ]
+        },
+        {
+          "name": "CheckDataSensitivity",
+          "params": [
+            "datasetId"
+          ]
+        },
+        {
+          "name": "PlanAnonymization",
+          "params": [
+            "datasetId",
+            "anonymizationStrategy"
+          ]
+        },
+        {
+          "name": "GetSensitiveDataReport",
+          "params": [
+            "departmentId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LegalAndEthicsService",
+      "ops": [
+        {
+          "name": "CheckEthicalCompliance",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "SetLegalStatusAndOwnership",
+          "params": [
+            "datasetId",
+            "legalStatus",
+            "ownerId"
+          ]
+        },
+        {
+          "name": "SetDataRightsAndLicenses",
+          "params": [
+            "datasetId",
+            "licenseType"
+          ]
+        },
+        {
+          "name": "StoreThirdPartyAgreement",
+          "params": [
+            "datasetId",
+            "agreementDetails"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FinanceAndFundingService",
+      "ops": [
+        {
+          "name": "EstimateDataCosts",
+          "params": [
+            "dmpId",
+            "costDetails"
+          ]
+        },
+        {
+          "name": "TrackFunderObligations",
+          "params": [
+            "dmpId",
+            "funderId"
+          ]
+        },
+        {
+          "name": "CheckFunderCompliance",
+          "params": [
+            "dmpId",
+            "funderRules"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReportingAndPublicationService",
+      "ops": [
+        {
+          "name": "GenerateUsageReport",
+          "params": [
+            "departmentId",
+            "timeframe"
+          ]
+        },
+        {
+          "name": "LinkPublication",
+          "params": [
+            "dmpId",
+            "publicationId",
+            "crisSystem"
+          ]
+        },
+        {
+          "name": "GetPersistentIdentifiers",
+          "params": [
+            "dmpId"
+          ]
+        },
+        {
+          "name": "VerifyCitationAffiliation",
+          "params": [
+            "datasetId",
+            "affiliationId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntegrationService",
+      "ops": [
+        {
+          "name": "PrepopulateDMP",
+          "params": [
+            "dmpId",
+            "sourceSystemId"
+          ]
+        },
+        {
+          "name": "ImportMetadata",
+          "params": [
+            "dmpId",
+            "sourceTool"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "IntegrationService",
+      "callee": "DMPCoreService"
+    },
+    {
+      "caller": "IntegrationService",
+      "callee": "MetadataService"
+    },
+    {
+      "caller": "StorageService",
+      "callee": "DataTechnicalService"
+    },
+    {
+      "caller": "ArchivingService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "ArchivingService",
+      "callee": "DataTechnicalService"
+    },
+    {
+      "caller": "LegalAndEthicsService",
+      "callee": "SecurityService"
+    },
+    {
+      "caller": "FinanceAndFundingService",
+      "callee": "StorageService"
+    },
+    {
+      "caller": "ReportingAndPublicationService",
+      "callee": "DMPCoreService"
+    },
+    {
+      "caller": "ReportingAndPublicationService",
+      "callee": "SecurityService"
+    },
+    {
+      "caller": "DMPCoreService",
+      "callee": "ProjectAdminService"
+    }
+  ]
+}
