@@ -2,101 +2,127 @@
 
 **Repository Name**: `archi-ai`
 
-ArchiGenMS es un proyecto de investigación que aprovecha la inteligencia artificial y la computación evolutiva para diseñar arquitecturas de microservicios automáticamente a partir de historias de usuario. El sistema utiliza **Lean 4** para la validación formal de las arquitecturas generadas, asegurando su corrección y calidad estructural.
+ArchiGenMS is a research project that leverages Artificial Intelligence and Evolutionary Computing to automatically design microservice architectures from user stories. The system uses **Lean 4** for formal validation of the generated architectures, ensuring their correctness and structural quality.
 
-## ✨ Características Principales
+## ✨ Main Features
 
-* **Diseño Automatizado de Arquitecturas**: Genera arquitecturas de microservicios a partir de historias de usuario en lenguaje natural.
-* **Enfoque Evolutivo**: Implementa un algoritmo genético que explora el espacio de soluciones para encontrar diseños óptimos, guiado por métricas de calidad de software.
-* **Integración con LLMs**: Utiliza modelos de lenguaje (como GPT-4o-mini) para interpretar requisitos y proponer candidatos iniciales y mutaciones.
-* **Validación Formal**: Integra el asistente de pruebas **Lean 4** para validar matemáticamente la estructura y calcular métricas precisas (LCOM, SGM, Acoplamiento).
+*   **Automated Architecture Design**: Generates microservice architectures from natural language user stories.
+*   **Evolutionary Approach**: Implements a genetic algorithm that explores the solution space to find optimal designs, guided by software quality metrics.
+*   **LLM Integration**: Utilizes Large Language Models (such as **Gemini 3.1 Pro Preview** and **GPT-5.1**) to interpret requirements and propose initial candidates and mutations.
+*   **Formal Validation**: Integrates the **Lean 4** proof assistant to mathematically validate the structure and calculate precise metrics (LCOM, SGM, Coupling).
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
-* **Lenguaje Principal**: Python 3.x
-* **Validación Formal**: [Lean 4](https://leanprover.github.io/)
-* **Inteligencia Artificial**: OpenAI API (`gpt-4o-mini`)
-* **Librerías Clave**:
-    * `numpy`, `networkx`, `nltk` (Análisis y Evolución)
-    * `python-dotenv` (Gestión de configuración)
+*   **Main Language**: Python 3.x
+*   **Formal Validation**: [Lean 4](https://leanprover.github.io/)
+*   **Artificial Intelligence**: 
+    *   Google Generative AI (`gemini-3.1-pro-preview`)
+    *   OpenAI API / LiteLLM (`gpt-5.1`)
+*   **Key Libraries**:
+    *   `numpy`, `networkx`, `nltk` (Analysis and Evolution)
+    *   `pandas` (Data processing)
+    *   `python-dotenv` (Configuration management)
+    *   `litellm` (Multi-provider LLM support)
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
 ```
 archi-ai/
 ├── data/
-│   └── user-stories-datasets/  # Conjuntos de datos con historias de usuario (.txt)
+│   └── user-stories-datasets/  # Datasets with user stories (.txt)
 ├── python/
-│   ├── experiments/            # Resultados: mejores arquitecturas (JSON) y métricas (CSV)
-│   ├── formal/                 # Código Lean 4 para validación y métricas
+│   ├── experiments/            # Results: best architectures (JSON) and metrics (CSV)
+│   │   └── exec_20260313_215724/ # Latest consolidated experiment results
+│   ├── formal/                 # Lean 4 code for validation and metrics
 │   │   ├── src/
 │   │   │   ├── ValidateGenotype.lean
 │   │   │   └── ServiceMetrics.lean
-│   │   └── lakefile.lean       # Configuración del proyecto Lean
+│   │   └── lakefile.lean       # Lean project configuration
 │   ├── src/
-│   │   └── alpha_pipeline/     # Lógica del algoritmo evolutivo
-│   │       └── runner.py       # Script principal de ejecución
-│   └── requirements.txt        # Dependencias de Python
-├── .env                        # Variables de entorno (API Keys)
-└── README.md
+│   │   └── alpha_pipeline/     # Evolutionary algorithm logic
+│   │       ├── runner.py       # Main delivery script
+│   │       └── recovery_runner.py # specialized script for partial/recovery runs
+│   ├── .venv_recovery/         # Recommended virtual environment
+│   └── requirements.txt        # Python dependencies
+├── .env                        # Environment variables (API Keys)
+├── README.md                   # This file (English)
+└── README_es.md                # Spanish version
 ```
 
-## 🚀 Cómo Empezar
+## 🚀 Getting Started
 
-### Prerrequisitos
+### Prerequisites
 
-1.  **Python 3.9+**
-2.  **Lean 4**: Instalado vía [elan](https://github.com/leanprover/elan).
-3.  **OpenAI API Key**: Necesaria para el funcionamiento del LLM.
+1.  **Python 3.10+**
+2.  **Lean 4**: Installed via [elan](https://github.com/leanprover/elan).
+3.  **API Keys**: `GEMINI_API_KEY` and/or `OPENAI_API_KEY` are required.
 
-### Instalación
+### Installation
 
-1.  **Clona el repositorio:**
+1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/tu_usuario/archi-ai.git
+    git clone https://github.com/jdanieln/archi-ai.git
     cd archi-ai
     ```
 
-2.  **Configura el entorno de Python:**
+2.  **Set up the Python environment:**
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # En Windows: venv\Scripts\activate
-    pip install -r python/requirements.txt
+    cd python
+    python3 -m venv .venv_recovery
+    source .venv_recovery/bin/activate
+    pip install -r requirements.txt
     ```
 
-3.  **Compila el proyecto Lean:**
-    Es necesario compilar el validador formal antes de ejecutar el pipeline.
+3.  **Build the Lean project:**
+    You must compile the formal validator before running the pipeline.
 
     ```bash
-    cd python/formal
+    cd formal
     lake build
     cd ../..
     ```
 
-4.  **Configura las variables de entorno:**
-    Crea un archivo `.env` en la raíz del proyecto:
+4.  **Configure environment variables:**
+    Create a `.env` file in the root directory:
 
     ```bash
-    OPENAI_API_KEY='tu_clave_de_api_aqui'
+    GEMINI_API_KEY='your_api_key_here'
+    OPENAI_API_KEY='your_api_key_here'
     ```
 
-## 🏃‍♂️ Cómo Usarlo
+## 🏃‍♂️ Usage
 
-Para ejecutar el pipeline evolutivo y generar una arquitectura para un conjunto de historias de usuario específico:
+To run the evolutionary pipeline and generate an architecture for all datasets:
 
 ```bash
-python python/src/alpha_pipeline/runner.py
+cd python
+source .venv_recovery/bin/activate
+python src/alpha_pipeline/runner.py
 ```
-*Nota: Actualmente el script `runner.py` procesa automáticamente todos los archivos `.txt` en `data/user-stories-datasets`. Puedes modificar el `main` en `runner.py` si deseas ejecutar uno específico.*
 
-### Resultados
-Los resultados se guardan en `python/experiments`:
-* **`results.csv`**: Métricas detalladas de todos los individuos y generaciones.
-* **`best_*.json`**: La mejor arquitectura encontrada para cada dataset.
-* **`program_db.jsonl`**: Registro histórico de todas las soluciones generadas.
+### Recovery Actions
+If an experiment fails mid-run (e.g., due to API quotas), you can use the specialized recovery script to resume from a specific story without losing previous data:
 
-## 📄 Licencia
+```bash
+python src/alpha_pipeline/recovery_runner.py
+```
+*Note: This script is currently configured to target specific failed stories like `g28-zooniverse`.*
 
-Este proyecto es parte de una investigación académica. Consulta el archivo `LICENSE` para más detalles.
+### Results
+Results are stored in `python/experiments/exec_20260313_215724`:
+*   **`results.csv`**: Detailed metrics for all individuals and generations.
+*   **`best_*.json`**: The best architecture found for each dataset.
+*   **`program_db.jsonl`**: Historical log of all generated solutions.
+
+## 📄 License & Citation
+
+This project is part of academic research. Please refer to the `LICENSE` file for details.
+
+### Citation
+*Paper title and DOI to be added upon publication.*
+> **José Daniel Narváez Flores** (2025). ArchiGenMS: Generative AI and Formal Verification in Microservice Discovery.
+
+---
+*Para la versión en español, consulta [README_es.md](README_es.md).*
